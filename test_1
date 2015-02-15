@@ -2,4 +2,6 @@ class Person
 Person.new
     blah blah
     blah
+    
+    DOOKIE
 end
