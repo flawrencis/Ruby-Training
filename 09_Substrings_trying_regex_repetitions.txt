@@ -1,0 +1,1699 @@
+Last login: Sat Feb 14 17:40:19 on console
+If you need to create a platform specific folder using Phonegap, please do the following:
+1) First, run the 'echo PATH=$PATH:/Users/francislawrence/Programming/phonegap-2.9.1/lib/<specific_platform>/bin' command.
+2) Then, you need to change your working directory to the bin of that platform in that same phonegap folder.
+3) Then, run the 'create name com.example.name Name' command.
+
+Also, if you need to change any of these settings, go to your home directory (~) and type ‘nano .bash_profile’.
+
+Also, if you need to do the EMULATE command, you have to go to the app folder and then run ‘ripple emulate’.
+18:41:54|~ $ ruby -v
+ruby 2.0.0p481 (2014-05-08 revision 45883) [universal.x86_64-darwin14]
+18:41:58|~ $ irb
+irb(main):001:0> 1+1
+=> 2
+irb(main):002:0> 10.times do print "Hello!" en
+irb(main):003:1> 10.times do print "Hello!" end
+irb(main):004:1> 
+irb(main):005:1* 10.times do print "Hello!" end
+irb(main):006:1> 10 times do print "hello!" end
+irb(main):007:1> print "hello!"
+irb(main):008:1> print "hello!" end
+SyntaxError: (irb):2: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+(irb):6: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+10 times do print "hello!" end
+        ^
+	from /usr/bin/irb:12:in `<main>'
+irb(main):009:0> 10.times do print "Hello!" end
+Hello!Hello!Hello!Hello!Hello!Hello!Hello!Hello!Hello!Hello!=> 10
+irb(main):010:0> fdfd
+NameError: undefined local variable or method `fdfd' for main:Object
+	from (irb):10
+	from /usr/bin/irb:12:in `<main>'
+irb(main):011:0> 10.times do print "Hello!" en
+irb(main):012:1> 10.times do print "Hello!" en
+irb(main):013:2> 10.times do print "Hello!" en
+irb(main):014:3> print "hello"
+irb(main):015:3> 
+irb(main):016:3* 
+irb(main):017:3* print "hello!"
+irb(main):018:3> 5+5
+irb(main):019:3> print "hello!" end
+irb(main):020:2> print "hello!" end
+irb(main):021:1> print "hello!" end
+SyntaxError: (irb):11: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+(irb):12: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+(irb):13: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+	from /usr/bin/irb:12:in `<main>'
+irb(main):022:0> print "hello!" en
+SyntaxError: (irb):22: syntax error, unexpected tIDENTIFIER, expecting end-of-input
+	from /usr/bin/irb:12:in `<main>'
+irb(main):023:0> 10.times print "hello!" en
+SyntaxError: (irb):23: syntax error, unexpected tIDENTIFIER, expecting end-of-input
+	from /usr/bin/irb:12:in `<main>'
+irb(main):024:0> 10.times do print "Hello!" en
+irb(main):025:1> end
+SyntaxError: (irb):24: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+	from /usr/bin/irb:12:in `<main>'
+irb(main):026:0> 10.times do print "Hello!" en
+irb(main):027:1> 10.times do print "Hello!" en
+irb(main):028:2> 10.times do print "Hello!" en
+irb(main):029:3> end
+irb(main):030:2> end
+irb(main):031:1> end
+SyntaxError: (irb):26: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+(irb):27: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+(irb):28: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+	from /usr/bin/irb:12:in `<main>'
+irb(main):032:0> end
+SyntaxError: (irb):32: syntax error, unexpected keyword_end
+	from /usr/bin/irb:12:in `<main>'
+irb(main):033:0> class Person
+irb(main):034:1> attr_accessor :name, :age, :gender
+irb(main):035:1> end
+=> nil
+irb(main):036:0> person_instance = Person.new
+=> #<Person:0x007fb07a030228>
+irb(main):037:0> person_instance.name=
+irb(main):038:0* "Francis"
+=> "Francis"
+irb(main):039:0> person_instance
+=> #<Person:0x007fb07a030228 @name="Francis">
+irb(main):040:0> person_instance.age=24
+=> 24
+irb(main):041:0> person_instance.gender="male"
+=> "male"
+irb(main):042:0> puts person_instance.name
+Francis
+=> nil
+irb(main):043:0> class Cat
+irb(main):044:1> attr_accessor :name, :age, :gender, :color
+irb(main):045:1> end
+=> nil
+irb(main):046:0> class Dog
+irb(main):047:1> attr_accessor :name, :age, :gender, :color
+irb(main):048:1> end
+=> nil
+irb(main):049:0> class Snake
+irb(main):050:1> attr_accessor :name, :age, :gender, :color
+irb(main):051:1> end
+=> nil
+irb(main):052:0> rover=Dog.new
+=> #<Dog:0x007fb079823fa8>
+irb(main):053:0> rover.age=5
+=> 5
+irb(main):054:0> rover.color=orange
+NameError: undefined local variable or method `orange' for main:Object
+	from (irb):54
+	from /usr/bin/irb:12:in `<main>'
+irb(main):055:0> rover.color="orange"
+=> "orange"
+irb(main):056:0> exit
+19:23:14|~ $ irb
+irb(main):001:0> class Pet
+irb(main):002:1> attr_accessor :name, :age, :gender, :color
+irb(main):003:1> end
+=> nil
+irb(main):004:0> class Cat<Pet
+irb(main):005:1> end
+=> nil
+irb(main):006:0> class Dog<Pet
+irb(main):007:1> end
+=> nil
+irb(main):008:0> class Snake<Pet
+irb(main):009:1> end
+=> nil
+irb(main):010:0> class Snake<Pet
+irb(main):011:1> attr_accessor :length
+irb(main):012:1> end
+=> nil
+irb(main):013:0> snake
+NameError: undefined local variable or method `snake' for main:Object
+	from (irb):13
+	from /usr/bin/irb:12:in `<main>'
+irb(main):014:0> Snake
+=> Snake
+irb(main):015:0> snake=Snake.new
+=> #<Snake:0x007fbeaa01f110>
+irb(main):016:0> snake.name="Sammy"
+=> "Sammy"
+irb(main):017:0> snake.length=10
+=> 10
+irb(main):018:0> snake
+=> #<Snake:0x007fbeaa01f110 @name="Sammy", @length=10>
+irb(main):019:0> snake.color
+=> nil
+irb(main):020:0> snake.color="green"
+=> "green"
+irb(main):021:0> snake
+=> #<Snake:0x007fbeaa01f110 @name="Sammy", @length=10, @color="green">
+irb(main):022:0> class Dog<Pet
+irb(main):023:1> def bark
+irb(main):024:2> puts "Woof!"
+irb(main):025:2> end
+irb(main):026:1> end
+=> nil
+irb(main):027:0> bark
+NameError: undefined local variable or method `bark' for main:Object
+	from (irb):27
+	from /usr/bin/irb:12:in `<main>'
+irb(main):028:0> rover
+NameError: undefined local variable or method `rover' for main:Object
+	from (irb):28
+	from /usr/bin/irb:12:in `<main>'
+irb(main):029:0> rover=Dog.new
+=> #<Dog:0x007fbeab853010>
+irb(main):030:0> rover.bark
+Woof!
+=> nil
+irb(main):031:0> puts "Jerry McGuire".chop
+Jerry McGuir
+=> nil
+irb(main):032:0> puts "Jerry McGuire".chop
+Jerry McGuir
+=> nil
+irb(main):033:0> puts "FrancisLawrence".chop
+FrancisLawrenc
+=> nil
+irb(main):034:0> puts "FrancisLawrence".hash
+4568813287146813492
+=> nil
+irb(main):035:0> puts "Francis Lawrence".hash
+-518175684460862859
+=> nil
+irb(main):036:0> bark.class
+NameError: undefined local variable or method `bark' for main:Object
+	from (irb):36
+	from /usr/bin/irb:12:in `<main>'
+irb(main):037:0> Dog.bark.class
+NoMethodError: undefined method `bark' for Dog:Class
+	from (irb):37
+	from /usr/bin/irb:12:in `<main>'
+irb(main):038:0> dog.bark
+NameError: undefined local variable or method `dog' for main:Object
+	from (irb):38
+	from /usr/bin/irb:12:in `<main>'
+irb(main):039:0> Dog.bark
+NoMethodError: undefined method `bark' for Dog:Class
+	from (irb):39
+	from /usr/bin/irb:12:in `<main>'
+irb(main):040:0> rover.bark
+Woof!
+=> nil
+irb(main):041:0> rover.bark.class
+Woof!
+=> NilClass
+irb(main):042:0> x=5
+=> 5
+irb(main):043:0> x=6
+=> 6
+irb(main):044:0> X=5
+=> 5
+irb(main):045:0> X=6
+(irb):45: warning: already initialized constant X
+(irb):44: warning: previous definition of X was here
+=> 6
+irb(main):046:0> "Francis Lawrence".scan(/./) {|thing| puts thing}
+F
+r
+a
+n
+c
+i
+s
+ 
+L
+a
+w
+r
+e
+n
+c
+e
+=> "Francis Lawrence"
+irb(main):047:0> "Francis Lawrence".scan(/\w/) {|thing| puts thing}
+F
+r
+a
+n
+c
+i
+s
+L
+a
+w
+r
+e
+n
+c
+e
+=> "Francis Lawrence"
+irb(main):048:0> puts "You have vowels in your name." if "Francis Lawrence"=~/[aeiou]/
+You have vowels in your name.
+=> nil
+irb(main):049:0> puts "You have no vowels in your name." unless "Francis Lawrence"=~/[aeiou]/
+=> nil
+irb(main):050:0> timecurrent=Time.new
+=> 2015-02-14 20:19:09 -0600
+irb(main):051:0> values=timecurrent.to_a
+=> [9, 19, 20, 14, 2, 2015, 6, 45, false, "CST"]
+irb(main):052:0> puts Time.utc(*values)
+2015-02-14 20:19:09 UTC
+=> nil
+irb(main):053:0> timecurrent.zone
+=> "CST"
+irb(main):054:0> timecurrent.gmtime
+=> 2015-02-15 02:19:09 UTC
+irb(main):055:0> exit
+13:50:51|~ $ ls
+Applications		Documents		Dropbox			Library			Music			Programming		apache-ant-1.9.4
+Desktop			Downloads		Google Drive		Movies			Pictures		Public			clubside
+13:50:51|~ $ ls help
+ls: help: No such file or directory
+13:50:54|~ $ help ls
+-bash: help: no help topics match `ls'.  Try `help help' or `man -k ls' or `info ls'.
+13:50:57|~ $ man ls
+
+[1]+  Stopped                 man ls
+13:53:30|~ $ ls --
+Applications		Documents		Dropbox			Library			Music			Programming		apache-ant-1.9.4
+Desktop			Downloads		Google Drive		Movies			Pictures		Public			clubside
+13:53:35|~ $ ls
+Applications		Documents		Dropbox			Library			Music			Programming		apache-ant-1.9.4
+Desktop			Downloads		Google Drive		Movies			Pictures		Public			clubside
+13:53:39|~ $ cd clubside
+13:53:44|clubside $ ls
+hooks		platforms	plugins		www
+13:53:45|clubside $ ls -
+ls: -: No such file or directory
+13:53:49|clubside $ ls --
+hooks		platforms	plugins		www
+13:53:52|clubside $ ls -a
+.		..		.DS_Store	.cordova	.git		hooks		platforms	plugins		www
+13:53:56|clubside $ man ls
+
+[2]+  Stopped                 man ls
+13:54:40|clubside $ open .git
+13:54:46|clubside $ cd ~
+13:58:47|~ $ ls
+Applications		Documents		Dropbox			Library			Music			Programming		apache-ant-1.9.4
+Desktop			Downloads		Google Drive		Movies			Pictures		Public			clubside
+13:58:50|~ $ cd programming
+13:58:53|programming $ ls
+AndroidStudioProjects	Education		GoogleMaps-iOS-1.9.1	Java_workspace		phonegap-2.9.1		webshim-1.15.6
+13:58:54|programming $ mkdir "Ruby-Training_l"
+13:59:17|programming $ ls
+AndroidStudioProjects	Education		GoogleMaps-iOS-1.9.1	Java_workspace		Ruby-Training_l		phonegap-2.9.1		webshim-1.15.6
+13:59:19|programming $ cd ruby-training_l
+13:59:35|ruby-training_l $ git remote add origin https://github.com/flawrencis/Ruby-Training.git
+fatal: Not a git repository (or any of the parent directories): .git
+14:00:05|ruby-training_l $ git init
+Initialized empty Git repository in /Users/francislawrence/Programming/Ruby-Training_l/.git/
+14:00:27|ruby-training_l $ git remote add origin https://github.com/flawrencis/Ruby-Training.git
+14:00:32|ruby-training_l $ git add test_1
+14:02:32|ruby-training_l $ git commit -m "First test"
+[master (root-commit) 21fd178] First test
+ 1 file changed, 3 insertions(+)
+ create mode 100644 test_1
+14:03:05|ruby-training_l $ git push -u origin master
+Username for 'https://github.com': flawrencis
+Password for 'https://flawrencis@github.com': 
+To https://github.com/flawrencis/Ruby-Training.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/flawrencis/Ruby-Training.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+14:05:03|ruby-training_l $ git pull origin master
+warning: no common commits
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0)
+Unpacking objects: 100% (3/3), done.
+From https://github.com/flawrencis/Ruby-Training
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> origin/master
+Merge made by the 'recursive' strategy.
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md
+14:08:02|ruby-training_l $ git push -u origin master
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 552 bytes | 0 bytes/s, done.
+Total 5 (delta 0), reused 0 (delta 0)
+To https://github.com/flawrencis/Ruby-Training.git
+   97a86ef..6fb366f  master -> master
+Branch master set up to track remote branch master from origin.
+14:08:38|ruby-training_l $ git push
+Everything up-to-date
+14:10:18|ruby-training_l $ git push
+Everything up-to-date
+14:10:35|ruby-training_l $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   test_1
+
+no changes added to commit (use "git add" and/or "git commit -a")
+14:10:58|ruby-training_l $ git commit -a
+Aborting commit due to empty commit message.
+14:11:48|ruby-training_l $ git commit -a
+Aborting commit due to empty commit message.
+14:12:44|ruby-training_l $ git commit -a
+[master 6ef99c4] here we go. do you see this?
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+14:12:58|ruby-training_l $ git push
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 330 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/flawrencis/Ruby-Training.git
+   6fb366f..6ef99c4  master -> master
+14:13:16|ruby-training_l $ git commit -a -m "DOOKIE"
+[master 15734c3] DOOKIE
+ 1 file changed, 2 insertions(+)
+14:17:30|ruby-training_l $ git branch new_branch
+14:17:47|ruby-training_l $ git checkout new_branch
+Switched to branch 'new_branch'
+14:17:54|ruby-training_l $ git add test_1
+14:18:14|ruby-training_l $ git commit -m "For the new branch!"
+-bash: !": event not found
+14:18:47|ruby-training_l $ git commit -m "For the new branch"
+On branch new_branch
+Changes not staged for commit:
+	modified:   test_1
+
+no changes added to commit
+14:19:14|ruby-training_l $ git add test_1
+14:19:31|ruby-training_l $ git add test_1.rb
+14:20:20|ruby-training_l $ git status
+On branch new_branch
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   test_1
+	new file:   test_1.rb
+
+14:20:23|ruby-training_l $ git commit -m "For the new branch!"
+-bash: !": event not found
+14:20:34|ruby-training_l $ git commit -m "For the new branch"
+[new_branch bd16025] For the new branch
+ 2 files changed, 11 insertions(+)
+ create mode 100644 test_1.rb
+14:20:44|ruby-training_l $ git push
+fatal: The current branch new_branch has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin new_branch
+
+14:21:00|ruby-training_l $ git push --set-upstream origin new_branch
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 634 bytes | 0 bytes/s, done.
+Total 6 (delta 1), reused 0 (delta 0)
+To https://github.com/flawrencis/Ruby-Training.git
+ * [new branch]      new_branch -> new_branch
+Branch new_branch set up to track remote branch new_branch from origin.
+14:21:25|ruby-training_l $ git log
+commit bd16025cc208c0dd342073d9b9fb9aaf97680d4c
+Author: Francis Lawrence <franciselawrence@gmail.com>
+Date:   Sun Feb 15 14:20:44 2015 -0600
+
+    For the new branch
+
+commit 15734c34f519386ac1081d687d80a72b3caf631c
+Author: Francis Lawrence <franciselawrence@gmail.com>
+Date:   Sun Feb 15 14:17:30 2015 -0600
+
+    DOOKIE
+
+commit 6ef99c4ca152a0ba2db08db36be668d85cefe4b5
+Author: Francis Lawrence <franciselawrence@gmail.com>
+Date:   Sun Feb 15 14:12:46 2015 -0600
+
+    here we go. do you see this?
+
+commit 6fb366f84c47bc8655c661131516b3085d0781bc
+Merge: 21fd178 97a86ef
+Author: Francis Lawrence <franciselawrence@gmail.com>
+Date:   Sun Feb 15 14:06:02 2015 -0600
+
+    Merge branch 'master' of https://github.com/flawrencis/Ruby-Training
+    
+    What am I doing?
+
+commit 21fd178272c397e03a7facec08df910d562b57ef
+Author: Francis Lawrence <franciselawrence@gmail.com>
+Date:   Sun Feb 15 14:03:05 2015 -0600
+
+    First test
+
+commit 97a86ef9cc7fb2689724eae017a79609458204a2
+Author: flawrencis <franciselawrence@gmail.com>
+Date:   Sun Feb 15 13:45:29 2015 -0600
+
+    Initial commit
+14:47:06|ruby-training_l $ ruby
+^Cruby: Interrupt
+
+16:12:51|ruby-training_l $ irb
+irb(main):001:0> new_array=[1,2,3,4]
+=> [1, 2, 3, 4]
+irb(main):002:0> new_array+=3
+TypeError: no implicit conversion of Fixnum into Array
+	from (irb):2:in `+'
+	from (irb):2
+	from /usr/bin/irb:12:in `<main>'
+irb(main):003:0> new_array[]+=3
+ArgumentError: wrong number of arguments (0 for 1..2)
+	from (irb):3:in `[]'
+	from (irb):3
+	from /usr/bin/irb:12:in `<main>'
+irb(main):004:0> new_array.each+=3
+NoMethodError: undefined method `+' for #<Enumerator: [1, 2, 3, 4]:each>
+	from (irb):4
+	from /usr/bin/irb:12:in `<main>'
+irb(main):005:0> new_array.each{|digit| digit+=3}
+=> [1, 2, 3, 4]
+irb(main):006:0> digit
+NameError: undefined local variable or method `digit' for main:Object
+	from (irb):6
+	from /usr/bin/irb:12:in `<main>'
+irb(main):007:0> clear
+NameError: undefined local variable or method `clear' for main:Object
+	from (irb):7
+	from /usr/bin/irb:12:in `<main>'
+irb(main):008:0> new_array
+=> [1, 2, 3, 4]
+irb(main):009:0> new_array[0..4]+=3
+TypeError: no implicit conversion of Fixnum into Array
+	from (irb):9:in `+'
+	from (irb):9
+	from /usr/bin/irb:12:in `<main>'
+irb(main):010:0> new_array[4]+=3
+NoMethodError: undefined method `+' for nil:NilClass
+	from (irb):10
+	from /usr/bin/irb:12:in `<main>'
+irb(main):011:0> new_array
+=> [1, 2, 3, 4]
+irb(main):012:0> new_array[0..3]+=3
+TypeError: no implicit conversion of Fixnum into Array
+	from (irb):12:in `+'
+	from (irb):12
+	from /usr/bin/irb:12:in `<main>'
+irb(main):013:0> new_array[0]+=3
+=> 4
+irb(main):014:0> new_array
+=> [4, 2, 3, 4]
+irb(main):015:0> new_array[0,3]+=3
+TypeError: no implicit conversion of Fixnum into Array
+	from (irb):15:in `+'
+	from (irb):15
+	from /usr/bin/irb:12:in `<main>'
+irb(main):016:0> new_array
+=> [4, 2, 3, 4]
+irb(main):017:0> letter_hash=Hash.new
+=> {}
+irb(main):018:0> letter_hash["#{a..z}"]=>4
+SyntaxError: (irb):18: syntax error, unexpected =>, expecting end-of-input
+letter_hash["#{a..z}"]=>4
+                        ^
+	from /usr/bin/irb:12:in `<main>'
+irb(main):019:0> letter_hash["#{a..z}"]
+NameError: undefined local variable or method `a' for main:Object
+	from (irb):19
+	from /usr/bin/irb:12:in `<main>'
+irb(main):020:0> letter_hash["#{'a..z'}"]
+=> nil
+irb(main):021:0> letter_hash["#{'a..z'}"]=>brian
+SyntaxError: (irb):21: syntax error, unexpected =>, expecting end-of-input
+letter_hash["#{'a..z'}"]=>brian
+                          ^
+	from /usr/bin/irb:12:in `<main>'
+irb(main):022:0> letter_hash["#{'a..z'}"]=>"brian"
+SyntaxError: (irb):22: syntax error, unexpected =>, expecting end-of-input
+letter_hash["#{'a..z'}"]=>"brian"
+                          ^
+	from /usr/bin/irb:12:in `<main>'
+irb(main):023:0> letter_hash
+=> {}
+irb(main):024:0> letter_hash[1]=>"a"
+SyntaxError: (irb):24: syntax error, unexpected =>, expecting end-of-input
+letter_hash[1]=>"a"
+                ^
+	from /usr/bin/irb:12:in `<main>'
+irb(main):025:0> letter_hash{"a..z"=>1..26}
+SyntaxError: (irb):25: syntax error, unexpected =>, expecting '}'
+letter_hash{"a..z"=>1..26}
+                    ^
+	from /usr/bin/irb:12:in `<main>'
+irb(main):026:0> letter_hash{["a..z"]=>1..26}
+SyntaxError: (irb):26: syntax error, unexpected =>, expecting '}'
+letter_hash{["a..z"]=>1..26}
+                      ^
+	from /usr/bin/irb:12:in `<main>'
+irb(main):027:0> letter_hash{("a..z")=>(1..26)}
+SyntaxError: (irb):27: syntax error, unexpected =>, expecting '}'
+letter_hash{("a..z")=>(1..26)}
+                      ^
+	from /usr/bin/irb:12:in `<main>'
+irb(main):028:0> a..z
+NameError: undefined local variable or method `a' for main:Object
+	from (irb):28
+	from /usr/bin/irb:12:in `<main>'
+irb(main):029:0> "a..z'
+irb(main):030:0" 
+irb(main):031:0" "
+=> "a..z'\n\n"
+irb(main):032:0> "a".."z"
+=> "a".."z"
+irb(main):033:0> "a".to_i
+=> 0
+irb(main):034:0> "b".to_i
+=> 0
+irb(main):035:0> "c".to_i
+=> 0
+irb(main):036:0> "a".output_id
+NoMethodError: undefined method `output_id' for "a":String
+	from (irb):36
+	from /usr/bin/irb:12:in `<main>'
+irb(main):037:0> 23.to_S
+NoMethodError: undefined method `to_S' for 23:Fixnum
+	from (irb):37
+	from /usr/bin/irb:12:in `<main>'
+irb(main):038:0> 23.to_s
+=> "23"
+irb(main):039:0> my_str="i love you"
+=> "i love you"
+irb(main):040:0> my_str.to_i
+=> 0
+irb(main):041:0> my_str.to_f
+=> 0.0
+irb(main):042:0> my_str.to_d
+NoMethodError: undefined method `to_d' for "i love you":String
+	from (irb):42
+	from /usr/bin/irb:12:in `<main>'
+irb(main):043:0> exit
+16:42:17|ruby-training_l $ git status
+On branch new_branch
+Your branch is up-to-date with 'origin/new_branch'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	09_Caesar-Cipher.rb
+
+nothing added to commit but untracked files present (use "git add" to track)
+16:42:20|ruby-training_l $ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+16:42:29|ruby-training_l $ git add.
+error: key does not contain variable name: pager.add.
+error: key does not contain variable name: alias.add.
+git: 'add.' is not a git command. See 'git --help'.
+
+Did you mean this?
+	add
+16:42:34|ruby-training_l $ git add .
+16:42:44|ruby-training_l $ git status
+On branch new_branch
+Your branch is up-to-date with 'origin/new_branch'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   09_Caesar-Cipher.rb
+
+16:42:47|ruby-training_l $ git commit -m "Before finding answer."
+[new_branch d58fb32] Before finding answer.
+ 1 file changed, 12 insertions(+)
+ create mode 100644 09_Caesar-Cipher.rb
+16:43:04|ruby-training_l $ git status
+On branch new_branch
+Your branch is ahead of 'origin/new_branch' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working directory clean
+16:43:12|ruby-training_l $ git add -a
+error: unknown switch `a'
+usage: git add [options] [--] <pathspec>...
+
+    -n, --dry-run         dry run
+    -v, --verbose         be verbose
+
+    -i, --interactive     interactive picking
+    -p, --patch           select hunks interactively
+    -e, --edit            edit current diff and apply
+    -f, --force           allow adding otherwise ignored files
+    -u, --update          update tracked files
+    -N, --intent-to-add   record only the fact that the path will be added later
+    -A, --all             add changes from all tracked and untracked files
+    --ignore-removal      ignore paths removed in the working tree (same as --no-all)
+    --refresh             don't add, only refresh the index
+    --ignore-errors       just skip files which cannot be added because of errors
+    --ignore-missing      check if - even missing - files are ignored in dry run
+
+16:43:18|ruby-training_l $ git add 09_caesar-cipher.rb
+16:44:03|ruby-training_l $ git status
+On branch new_branch
+Your branch is ahead of 'origin/new_branch' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   09_Caesar-Cipher.rb
+
+no changes added to commit (use "git add" and/or "git commit -a")
+16:44:51|ruby-training_l $ git add 09_Caesar-Cipher.rb
+16:45:30|ruby-training_l $ git status
+On branch new_branch
+Your branch is ahead of 'origin/new_branch' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   09_Caesar-Cipher.rb
+
+16:45:32|ruby-training_l $ git commit -m "Upon getting help"
+[new_branch 9a6fa46] Upon getting help
+ 1 file changed, 10 insertions(+), 11 deletions(-)
+16:45:50|ruby-training_l $ ruby 09_Caesar-Cipher.rb 
+Give me a sentence.
+What the heck.
+Give me a number 0-10.
+8
+09_Caesar-Cipher.rb:9:in `+': String can't be coerced into Fixnum (TypeError)
+	from 09_Caesar-Cipher.rb:9:in `block in <main>'
+	from 09_Caesar-Cipher.rb:8:in `each'
+	from 09_Caesar-Cipher.rb:8:in `<main>'
+16:55:00|ruby-training_l $ "a".ord
+-bash: a.ord: command not found
+16:55:40|ruby-training_l $ irb
+irb(main):001:0> "a".ord
+=> 97
+irb(main):002:0> letter="a"
+=> "a"
+irb(main):003:0> new_letter=letter.ord+3
+=> 100
+irb(main):004:0> new_letter.chr
+=> "d"
+irb(main):005:0> exit
+16:57:03|ruby-training_l $ ruby 09_Caesar-Cipher.rb 
+Give me a sentence.
+I do not care 
+Give me a number 0-10.
+6
+["I", " ", "d", "o", " ", "n", "o", "t", " ", "c", "a", "r", "e"]
+09_Caesar-Cipher.rb:11:in `+': String can't be coerced into Fixnum (TypeError)
+	from 09_Caesar-Cipher.rb:11:in `block in <main>'
+	from 09_Caesar-Cipher.rb:10:in `each'
+	from 09_Caesar-Cipher.rb:10:in `<main>'
+16:57:22|ruby-training_l $ ruby 09_Caesar-Cipher.rb 
+Give me a sentence.
+stop it
+Give me a number 0-10.
+2
+["s", "t", "o", "p", " ", "i", "t"]
+"s"
+09_Caesar-Cipher.rb:12:in `+': String can't be coerced into Fixnum (TypeError)
+	from 09_Caesar-Cipher.rb:12:in `block in <main>'
+	from 09_Caesar-Cipher.rb:11:in `each'
+	from 09_Caesar-Cipher.rb:11:in `<main>'
+16:57:57|ruby-training_l $ ruby 09_Caesar-Cipher.rb 
+Give me a sentence.
+stop it
+Give me a number 0-10.
+2
+["s", "t", "o", "p", " ", "i", "t"]
+"s"
+09_Caesar-Cipher.rb:12:in `+': String can't be coerced into Fixnum (TypeError)
+	from 09_Caesar-Cipher.rb:12:in `block in <main>'
+	from 09_Caesar-Cipher.rb:11:in `each'
+	from 09_Caesar-Cipher.rb:11:in `<main>'
+16:58:24|ruby-training_l $ ruby 09_Caesar-Cipher.rb 
+Give me a sentence.
+sto pit
+Give me a number 0-10.
+5
+["s", "t", "o", " ", "p", "i", "t"]
+"s"
+09_Caesar-Cipher.rb:30:in `<main>': undefined local variable or method `output_array' for main:Object (NameError)
+16:58:58|ruby-training_l $ ruby 09_Caesar-Cipher.rb 
+Give me a sentence.
+stop it
+Give me a number 0-10.
+1
+["s", "t", "o", "p", " ", "i", "t"]
+"s"
+09_Caesar-Cipher.rb:30:in `<main>': undefined local variable or method `output_array' for main:Object (NameError)
+16:59:30|ruby-training_l $ ruby 09_Caesar-Cipher.rb 
+Give me a sentence.
+stop it
+Give me a number 0-10.
+4
+["s", "t", "o", "p", " ", "i", "t"]
+"s"
+wxst mx
+17:01:52|ruby-training_l $ ruby 09_Caesar-Cipher.rb 
+Give me a sentence.
+Stop that!
+Give me a number 0-10.
+3
+["S", "t", "o", "p", " ", "t", "h", "a", "t", "!"]
+"S"
+Vwrs wkdw$
+17:02:03|ruby-training_l $ ruby 09_Caesar-Cipher.rb 
+Give me a sentence.
+Go for it, man!
+Give me a number 0-10.
+5
+["G", "o", " ", "f", "o", "r", " ", "i", "t", ",", " ", "m", "a", "n", "!"]
+"G"
+Go for it, man!
+17:02:59|ruby-training_l $ ruby 09_Caesar-Cipher.rb 
+Give me a sentence.
+Go for it, man!
+Give me a number 0-10.
+3
+["G", "o", " ", "f", "o", "r", " ", "i", "t", ",", " ", "m", "a", "n", "!"]
+"G"
+Jr iru lw, pdq!
+17:05:45|ruby-training_l $ git pull CodeLessons/RubyBuildingBlocks/caesar.rb
+fatal: 'CodeLessons/RubyBuildingBlocks/caesar.rb' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+17:07:29|ruby-training_l $ irb
+irb(main):001:0> "17".to_i
+=> 17
+irb(main):002:0> price_array = Array.new
+=> []
+irb(main):003:0> price_array=[17,3,6,9,15,8,6,1,10]
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):004:0> price_array.index
+=> #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>
+irb(main):005:0> buy_day=17
+=> 17
+irb(main):006:0> price_array.index 17
+=> 0
+irb(main):007:0> buy_day=15
+=> 15
+irb(main):008:0> price_array.index 15
+=> 4
+irb(main):009:0> (price_array.index 15).to_s
+=> "4"
+irb(main):010:0> price_array.to_s
+=> "[17, 3, 6, 9, 15, 8, 6, 1, 10]"
+irb(main):011:0> price_array.to_s!
+NoMethodError: undefined method `to_s!' for [17, 3, 6, 9, 15, 8, 6, 1, 10]:Array
+	from (irb):11
+	from /usr/bin/irb:12:in `<main>'
+irb(main):012:0> price_array_string=Array.new(price_array.to_s)
+TypeError: no implicit conversion of String into Integer
+	from (irb):12:in `initialize'
+	from (irb):12:in `new'
+	from (irb):12
+	from /usr/bin/irb:12:in `<main>'
+irb(main):013:0> price_array_string=Array.new(price_array).to_S
+NoMethodError: undefined method `to_S' for [17, 3, 6, 9, 15, 8, 6, 1, 10]:Array
+	from (irb):13
+	from /usr/bin/irb:12:in `<main>'
+irb(main):014:0> price_array_string=Array.new(price_array).to_s
+=> "[17, 3, 6, 9, 15, 8, 6, 1, 10]"
+irb(main):015:0> price_array_back_to_Array=Array.new(price_array_string).to_A
+TypeError: no implicit conversion of String into Integer
+	from (irb):15:in `initialize'
+	from (irb):15:in `new'
+	from (irb):15
+	from /usr/bin/irb:12:in `<main>'
+irb(main):016:0> price_array_back_to_Array=Array.new(price_array_string).to_a
+TypeError: no implicit conversion of String into Integer
+	from (irb):16:in `initialize'
+	from (irb):16:in `new'
+	from (irb):16
+	from /usr/bin/irb:12:in `<main>'
+irb(main):017:0> price_array_back_to_Array=Array.new(price_array_string)
+TypeError: no implicit conversion of String into Integer
+	from (irb):17:in `initialize'
+	from (irb):17:in `new'
+	from (irb):17
+	from /usr/bin/irb:12:in `<main>'
+irb(main):018:0> exit
+13:55:57|ruby-training_l $ ruby 09_Stock-Picker.rb
+09_Stock-Picker.rb:25: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+13:56:22|ruby-training_l $ clear
+
+13:56:32|ruby-training_l $ clear screen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13:56:43|ruby-training_l $ home
+-bash: home: command not found
+13:56:50|ruby-training_l $ ruby /09_Stock-Picker.rb
+ruby: No such file or directory -- /09_Stock-Picker.rb (LoadError)
+13:57:22|ruby-training_l $ ruby 09_Stock-Picker.rb
+13:58:52|ruby-training_l $ irb
+irb(main):001:0> ex=5
+=> 5
+irb(main):002:0> p ex
+5
+=> 5
+irb(main):003:0> xit
+NameError: undefined local variable or method `xit' for main:Object
+	from (irb):3
+	from /usr/bin/irb:12:in `<main>'
+irb(main):004:0> exit
+13:59:48|ruby-training_l $ ruby 09_Stock-Picker.rb
+13:59:56|ruby-training_l $ profit_array=Array.new
+14:00:24|ruby-training_l $     profit_hash = Hash.new
+-bash: profit_hash: command not found
+14:00:24|ruby-training_l $     price_array_selling=Array.new(price_array_buying)
+-bash: syntax error near unexpected token `('
+14:00:24|ruby-training_l $     price_array_buying.each do |buy_value|
+>         price_array_selling.each do |sell_value|
+>             day_combo_array = Array.new
+-bash: price_array_buying.each: command not found
+-bash: buy_value: command not found
+-bash: price_array_selling.each: command not found
+-bash: sell_value: command not found
+-bash: day_combo_array: command not found
+14:00:24|ruby-training_l $             day_combo_array[1]=price_array_buying.index
+14:00:24|ruby-training_l $             day_combo_array[2]=price_array_selling.index
+14:00:24|ruby-training_l $             
+14:00:24|ruby-training_l $             profit_value=sell_value-buy_value
+14:00:24|ruby-training_l $ #            profit_array << day_combo_array profit_value
+14:00:24|ruby-training_l $ #            Would be so much easier with a hash
+14:00:24|ruby-training_l $             profit_hash[day_combo_array]=profit_value
+14:00:24|ruby-training_l $             end
+-bash: end: command not found
+14:00:24|ruby-training_l $         end
+-bash: end: command not found
+14:00:24|ruby-training_l $     p profit_hash
+-bash: p: command not found
+14:00:31|ruby-training_l $ irb
+irb(main):001:0> profit_array=Array.new
+=> []
+irb(main):002:0>     profit_hash = Hash.new
+=> {}
+irb(main):003:0>     price_array_selling=Array.new(price_array_buying)
+NameError: undefined local variable or method `price_array_buying' for main:Object
+	from (irb):3
+	from /usr/bin/irb:12:in `<main>'
+irb(main):004:0>     price_array_buying.each do |buy_value|
+irb(main):005:1*         price_array_selling.each do |sell_value|
+irb(main):006:2*             day_combo_array = Array.new
+irb(main):007:2>             day_combo_array[1]=price_array_buying.index
+irb(main):008:2>             day_combo_array[2]=price_array_selling.index
+irb(main):009:2>             
+irb(main):010:2*             profit_value=sell_value-buy_value
+irb(main):011:2> #            profit_array << day_combo_array profit_value
+irb(main):012:2* #            Would be so much easier with a hash
+irb(main):013:2*             profit_hash[day_combo_array]=profit_value
+irb(main):014:2>             end
+irb(main):015:1>         end
+NameError: undefined local variable or method `price_array_buying' for main:Object
+	from (irb):4
+	from /usr/bin/irb:12:in `<main>'
+irb(main):016:0> d_b=Array.new(5,6,7,8)
+ArgumentError: wrong number of arguments (4 for 0..2)
+	from (irb):16:in `initialize'
+	from (irb):16:in `new'
+	from (irb):16
+	from /usr/bin/irb:12:in `<main>'
+irb(main):017:0> d_b=Array.new([5,6,7,8])
+=> [5, 6, 7, 8]
+irb(main):018:0> price_array_buying=Array.new([17,3,6,9,15,8,6,1,10])
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):019:0>     profit_array=Array.new
+=> []
+irb(main):020:0>     profit_hash = Hash.new
+=> {}
+irb(main):021:0>     price_array_selling=Array.new(price_array_buying)
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):022:0>     price_array_buying.each do |buy_value|
+irb(main):023:1*         price_array_selling.each do |sell_value|
+irb(main):024:2*             day_combo_array = Array.new
+irb(main):025:2>             day_combo_array[1]=price_array_buying.index
+irb(main):026:2>             day_combo_array[2]=price_array_selling.index
+irb(main):027:2>             
+irb(main):028:2*             profit_value=sell_value-buy_value
+irb(main):029:2>             profit_hash[day_combo_array]=profit_value
+irb(main):030:2>             end
+irb(main):031:1>         end
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):032:0>     p profit_hash
+{[nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>0, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-14, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-11, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-8, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-2, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-9, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-11, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-16, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-7, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>14, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>0, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>3, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>6, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>12, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>5, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>3, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-2, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>7, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>11, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-3, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>0, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>3, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>9, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>2, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>0, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-5, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>4, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>8, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-6, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-3, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>0, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>6, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-1, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-3, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-8, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>1, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>2, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-12, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-9, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-6, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>0, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-7, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-9, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-14, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-5, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>9, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-5, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-2, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>1, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>7, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>0, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-2, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-7, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>2, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>11, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-3, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>0, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>3, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>9, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>2, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>0, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-5, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>4, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>16, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>2, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>5, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>8, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>14, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>7, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>5, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>0, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>9, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>7, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-7, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-4, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-1, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>5, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-2, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-4, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-9, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>0}
+=> {[nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>0, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-14, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-11, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-8, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-2, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-9, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-11, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-16, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-7, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>14, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>0, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>3, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>6, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>12, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>5, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>3, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-2, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>7, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>11, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-3, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>0, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>3, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>9, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>2, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>0, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-5, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>4, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>8, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-6, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-3, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>0, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>6, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-1, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-3, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-8, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>1, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>2, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-12, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-9, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-6, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>0, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-7, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-9, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-14, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-5, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>9, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-5, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-2, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>1, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>7, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>0, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-2, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-7, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>2, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>11, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-3, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>0, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>3, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>9, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>2, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>0, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-5, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>4, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>16, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>2, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>5, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>8, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>14, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>7, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>5, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>0, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>9, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>7, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-7, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-4, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-1, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>5, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-2, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-4, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>-9, [nil, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>, #<Enumerator: [17, 3, 6, 9, 15, 8, 6, 1, 10]:index>]=>0}
+irb(main):033:0> price_array_buying=Array.new([17,3,6,9,15,8,6,1,10])
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):034:0>     profit_array=Array.new
+=> []
+irb(main):035:0>     profit_hash = Hash.new
+=> {}
+irb(main):036:0>     price_array_selling=Array.new(price_array_buying)
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):037:0>     price_array_buying.each_with_index do |buy_value, buy_index|
+irb(main):038:1*         price_array_selling.each_with_index do |sell_value,sell_index|
+irb(main):039:2*             day_combo_array = Array.new
+irb(main):040:2>             day_combo_array[1]=buy_index
+irb(main):041:2>             day_combo_array[2]=sell_index
+irb(main):042:2>             
+irb(main):043:2*             profit_value=sell_value-buy_value
+irb(main):044:2>             profit_hash[day_combo_array]=profit_value
+irb(main):045:2>             end
+irb(main):046:1>         end
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):047:0>     p profit_hash
+{[nil, 0, 0]=>0, [nil, 0, 1]=>-14, [nil, 0, 2]=>-11, [nil, 0, 3]=>-8, [nil, 0, 4]=>-2, [nil, 0, 5]=>-9, [nil, 0, 6]=>-11, [nil, 0, 7]=>-16, [nil, 0, 8]=>-7, [nil, 1, 0]=>14, [nil, 1, 1]=>0, [nil, 1, 2]=>3, [nil, 1, 3]=>6, [nil, 1, 4]=>12, [nil, 1, 5]=>5, [nil, 1, 6]=>3, [nil, 1, 7]=>-2, [nil, 1, 8]=>7, [nil, 2, 0]=>11, [nil, 2, 1]=>-3, [nil, 2, 2]=>0, [nil, 2, 3]=>3, [nil, 2, 4]=>9, [nil, 2, 5]=>2, [nil, 2, 6]=>0, [nil, 2, 7]=>-5, [nil, 2, 8]=>4, [nil, 3, 0]=>8, [nil, 3, 1]=>-6, [nil, 3, 2]=>-3, [nil, 3, 3]=>0, [nil, 3, 4]=>6, [nil, 3, 5]=>-1, [nil, 3, 6]=>-3, [nil, 3, 7]=>-8, [nil, 3, 8]=>1, [nil, 4, 0]=>2, [nil, 4, 1]=>-12, [nil, 4, 2]=>-9, [nil, 4, 3]=>-6, [nil, 4, 4]=>0, [nil, 4, 5]=>-7, [nil, 4, 6]=>-9, [nil, 4, 7]=>-14, [nil, 4, 8]=>-5, [nil, 5, 0]=>9, [nil, 5, 1]=>-5, [nil, 5, 2]=>-2, [nil, 5, 3]=>1, [nil, 5, 4]=>7, [nil, 5, 5]=>0, [nil, 5, 6]=>-2, [nil, 5, 7]=>-7, [nil, 5, 8]=>2, [nil, 6, 0]=>11, [nil, 6, 1]=>-3, [nil, 6, 2]=>0, [nil, 6, 3]=>3, [nil, 6, 4]=>9, [nil, 6, 5]=>2, [nil, 6, 6]=>0, [nil, 6, 7]=>-5, [nil, 6, 8]=>4, [nil, 7, 0]=>16, [nil, 7, 1]=>2, [nil, 7, 2]=>5, [nil, 7, 3]=>8, [nil, 7, 4]=>14, [nil, 7, 5]=>7, [nil, 7, 6]=>5, [nil, 7, 7]=>0, [nil, 7, 8]=>9, [nil, 8, 0]=>7, [nil, 8, 1]=>-7, [nil, 8, 2]=>-4, [nil, 8, 3]=>-1, [nil, 8, 4]=>5, [nil, 8, 5]=>-2, [nil, 8, 6]=>-4, [nil, 8, 7]=>-9, [nil, 8, 8]=>0}
+=> {[nil, 0, 0]=>0, [nil, 0, 1]=>-14, [nil, 0, 2]=>-11, [nil, 0, 3]=>-8, [nil, 0, 4]=>-2, [nil, 0, 5]=>-9, [nil, 0, 6]=>-11, [nil, 0, 7]=>-16, [nil, 0, 8]=>-7, [nil, 1, 0]=>14, [nil, 1, 1]=>0, [nil, 1, 2]=>3, [nil, 1, 3]=>6, [nil, 1, 4]=>12, [nil, 1, 5]=>5, [nil, 1, 6]=>3, [nil, 1, 7]=>-2, [nil, 1, 8]=>7, [nil, 2, 0]=>11, [nil, 2, 1]=>-3, [nil, 2, 2]=>0, [nil, 2, 3]=>3, [nil, 2, 4]=>9, [nil, 2, 5]=>2, [nil, 2, 6]=>0, [nil, 2, 7]=>-5, [nil, 2, 8]=>4, [nil, 3, 0]=>8, [nil, 3, 1]=>-6, [nil, 3, 2]=>-3, [nil, 3, 3]=>0, [nil, 3, 4]=>6, [nil, 3, 5]=>-1, [nil, 3, 6]=>-3, [nil, 3, 7]=>-8, [nil, 3, 8]=>1, [nil, 4, 0]=>2, [nil, 4, 1]=>-12, [nil, 4, 2]=>-9, [nil, 4, 3]=>-6, [nil, 4, 4]=>0, [nil, 4, 5]=>-7, [nil, 4, 6]=>-9, [nil, 4, 7]=>-14, [nil, 4, 8]=>-5, [nil, 5, 0]=>9, [nil, 5, 1]=>-5, [nil, 5, 2]=>-2, [nil, 5, 3]=>1, [nil, 5, 4]=>7, [nil, 5, 5]=>0, [nil, 5, 6]=>-2, [nil, 5, 7]=>-7, [nil, 5, 8]=>2, [nil, 6, 0]=>11, [nil, 6, 1]=>-3, [nil, 6, 2]=>0, [nil, 6, 3]=>3, [nil, 6, 4]=>9, [nil, 6, 5]=>2, [nil, 6, 6]=>0, [nil, 6, 7]=>-5, [nil, 6, 8]=>4, [nil, 7, 0]=>16, [nil, 7, 1]=>2, [nil, 7, 2]=>5, [nil, 7, 3]=>8, [nil, 7, 4]=>14, [nil, 7, 5]=>7, [nil, 7, 6]=>5, [nil, 7, 7]=>0, [nil, 7, 8]=>9, [nil, 8, 0]=>7, [nil, 8, 1]=>-7, [nil, 8, 2]=>-4, [nil, 8, 3]=>-1, [nil, 8, 4]=>5, [nil, 8, 5]=>-2, [nil, 8, 6]=>-4, [nil, 8, 7]=>-9, [nil, 8, 8]=>0}
+irb(main):048:0> puts profit_hash
+{[nil, 0, 0]=>0, [nil, 0, 1]=>-14, [nil, 0, 2]=>-11, [nil, 0, 3]=>-8, [nil, 0, 4]=>-2, [nil, 0, 5]=>-9, [nil, 0, 6]=>-11, [nil, 0, 7]=>-16, [nil, 0, 8]=>-7, [nil, 1, 0]=>14, [nil, 1, 1]=>0, [nil, 1, 2]=>3, [nil, 1, 3]=>6, [nil, 1, 4]=>12, [nil, 1, 5]=>5, [nil, 1, 6]=>3, [nil, 1, 7]=>-2, [nil, 1, 8]=>7, [nil, 2, 0]=>11, [nil, 2, 1]=>-3, [nil, 2, 2]=>0, [nil, 2, 3]=>3, [nil, 2, 4]=>9, [nil, 2, 5]=>2, [nil, 2, 6]=>0, [nil, 2, 7]=>-5, [nil, 2, 8]=>4, [nil, 3, 0]=>8, [nil, 3, 1]=>-6, [nil, 3, 2]=>-3, [nil, 3, 3]=>0, [nil, 3, 4]=>6, [nil, 3, 5]=>-1, [nil, 3, 6]=>-3, [nil, 3, 7]=>-8, [nil, 3, 8]=>1, [nil, 4, 0]=>2, [nil, 4, 1]=>-12, [nil, 4, 2]=>-9, [nil, 4, 3]=>-6, [nil, 4, 4]=>0, [nil, 4, 5]=>-7, [nil, 4, 6]=>-9, [nil, 4, 7]=>-14, [nil, 4, 8]=>-5, [nil, 5, 0]=>9, [nil, 5, 1]=>-5, [nil, 5, 2]=>-2, [nil, 5, 3]=>1, [nil, 5, 4]=>7, [nil, 5, 5]=>0, [nil, 5, 6]=>-2, [nil, 5, 7]=>-7, [nil, 5, 8]=>2, [nil, 6, 0]=>11, [nil, 6, 1]=>-3, [nil, 6, 2]=>0, [nil, 6, 3]=>3, [nil, 6, 4]=>9, [nil, 6, 5]=>2, [nil, 6, 6]=>0, [nil, 6, 7]=>-5, [nil, 6, 8]=>4, [nil, 7, 0]=>16, [nil, 7, 1]=>2, [nil, 7, 2]=>5, [nil, 7, 3]=>8, [nil, 7, 4]=>14, [nil, 7, 5]=>7, [nil, 7, 6]=>5, [nil, 7, 7]=>0, [nil, 7, 8]=>9, [nil, 8, 0]=>7, [nil, 8, 1]=>-7, [nil, 8, 2]=>-4, [nil, 8, 3]=>-1, [nil, 8, 4]=>5, [nil, 8, 5]=>-2, [nil, 8, 6]=>-4, [nil, 8, 7]=>-9, [nil, 8, 8]=>0}
+=> nil
+irb(main):049:0>     price_array_buying=Array.new([17,3,6,9,15,8,6,1,10])
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):050:0>     profit_array=Array.new
+=> []
+irb(main):051:0>     profit_hash = Hash.new
+=> {}
+irb(main):052:0>     price_array_selling=Array.new(price_array_buying)
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):053:0>     price_array_buying.each_with_index do |buy_value, buy_index|
+irb(main):054:1*         price_array_selling.each_with_index do |sell_value,sell_index|
+irb(main):055:2*             day_combo_array = Array.new
+irb(main):056:2>             day_combo_array[0]=buy_index
+irb(main):057:2>             day_combo_array[1]=sell_index
+irb(main):058:2>             
+irb(main):059:2*             profit_value=sell_value-buy_value
+irb(main):060:2>             profit_hash[day_combo_array]=profit_value
+irb(main):061:2>             end
+irb(main):062:1>         end
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):063:0>     p profit_hash
+{[0, 0]=>0, [0, 1]=>-14, [0, 2]=>-11, [0, 3]=>-8, [0, 4]=>-2, [0, 5]=>-9, [0, 6]=>-11, [0, 7]=>-16, [0, 8]=>-7, [1, 0]=>14, [1, 1]=>0, [1, 2]=>3, [1, 3]=>6, [1, 4]=>12, [1, 5]=>5, [1, 6]=>3, [1, 7]=>-2, [1, 8]=>7, [2, 0]=>11, [2, 1]=>-3, [2, 2]=>0, [2, 3]=>3, [2, 4]=>9, [2, 5]=>2, [2, 6]=>0, [2, 7]=>-5, [2, 8]=>4, [3, 0]=>8, [3, 1]=>-6, [3, 2]=>-3, [3, 3]=>0, [3, 4]=>6, [3, 5]=>-1, [3, 6]=>-3, [3, 7]=>-8, [3, 8]=>1, [4, 0]=>2, [4, 1]=>-12, [4, 2]=>-9, [4, 3]=>-6, [4, 4]=>0, [4, 5]=>-7, [4, 6]=>-9, [4, 7]=>-14, [4, 8]=>-5, [5, 0]=>9, [5, 1]=>-5, [5, 2]=>-2, [5, 3]=>1, [5, 4]=>7, [5, 5]=>0, [5, 6]=>-2, [5, 7]=>-7, [5, 8]=>2, [6, 0]=>11, [6, 1]=>-3, [6, 2]=>0, [6, 3]=>3, [6, 4]=>9, [6, 5]=>2, [6, 6]=>0, [6, 7]=>-5, [6, 8]=>4, [7, 0]=>16, [7, 1]=>2, [7, 2]=>5, [7, 3]=>8, [7, 4]=>14, [7, 5]=>7, [7, 6]=>5, [7, 7]=>0, [7, 8]=>9, [8, 0]=>7, [8, 1]=>-7, [8, 2]=>-4, [8, 3]=>-1, [8, 4]=>5, [8, 5]=>-2, [8, 6]=>-4, [8, 7]=>-9, [8, 8]=>0}
+=> {[0, 0]=>0, [0, 1]=>-14, [0, 2]=>-11, [0, 3]=>-8, [0, 4]=>-2, [0, 5]=>-9, [0, 6]=>-11, [0, 7]=>-16, [0, 8]=>-7, [1, 0]=>14, [1, 1]=>0, [1, 2]=>3, [1, 3]=>6, [1, 4]=>12, [1, 5]=>5, [1, 6]=>3, [1, 7]=>-2, [1, 8]=>7, [2, 0]=>11, [2, 1]=>-3, [2, 2]=>0, [2, 3]=>3, [2, 4]=>9, [2, 5]=>2, [2, 6]=>0, [2, 7]=>-5, [2, 8]=>4, [3, 0]=>8, [3, 1]=>-6, [3, 2]=>-3, [3, 3]=>0, [3, 4]=>6, [3, 5]=>-1, [3, 6]=>-3, [3, 7]=>-8, [3, 8]=>1, [4, 0]=>2, [4, 1]=>-12, [4, 2]=>-9, [4, 3]=>-6, [4, 4]=>0, [4, 5]=>-7, [4, 6]=>-9, [4, 7]=>-14, [4, 8]=>-5, [5, 0]=>9, [5, 1]=>-5, [5, 2]=>-2, [5, 3]=>1, [5, 4]=>7, [5, 5]=>0, [5, 6]=>-2, [5, 7]=>-7, [5, 8]=>2, [6, 0]=>11, [6, 1]=>-3, [6, 2]=>0, [6, 3]=>3, [6, 4]=>9, [6, 5]=>2, [6, 6]=>0, [6, 7]=>-5, [6, 8]=>4, [7, 0]=>16, [7, 1]=>2, [7, 2]=>5, [7, 3]=>8, [7, 4]=>14, [7, 5]=>7, [7, 6]=>5, [7, 7]=>0, [7, 8]=>9, [8, 0]=>7, [8, 1]=>-7, [8, 2]=>-4, [8, 3]=>-1, [8, 4]=>5, [8, 5]=>-2, [8, 6]=>-4, [8, 7]=>-9, [8, 8]=>0}
+irb(main):064:0> exit
+14:13:34|ruby-training_l $ irb
+irb(main):001:0> array_1=Array.new([5,6])
+=> [5, 6]
+irb(main):002:0> array_2=Array.new([7,8])
+=> [7, 8]
+irb(main):003:0> array_3=Array.new([9,10])
+=> [9, 10]
+irb(main):004:0> parent_array=Array.new([array_1,array_2,array_3])
+=> [[5, 6], [7, 8], [9, 10]]
+irb(main):005:0> (parent_array[0])[0]
+=> 5
+irb(main):006:0> exit
+14:23:13|ruby-training_l $ irb
+irb(main):001:0> load "09_Stock-Picker.rb"
+=> true
+irb(main):002:0> stock_picker([17,3,6,9,15,8,6,1,10])
+0
+7
+=> nil
+irb(main):003:0> sorted_profit_array[0]
+NameError: undefined local variable or method `sorted_profit_array' for main:Object
+	from (irb):3
+	from /usr/bin/irb:12:in `<main>'
+irb(main):004:0> price_array_buying=Array.new([17,3,6,9,15,8,6,1,10])
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):005:0>     profit_array=Array.new
+=> []
+irb(main):006:0>     profit_hash = Hash.new
+=> {}
+irb(main):007:0>     price_array_selling=Array.new(price_array_buying)
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):008:0>     price_array_buying.each_with_index do |buy_value, buy_index|
+irb(main):009:1*         price_array_selling.each_with_index do |sell_value,sell_index|
+irb(main):010:2*             day_combo_array = Array.new
+irb(main):011:2>             day_combo_array[0]=buy_index
+irb(main):012:2>             day_combo_array[1]=sell_index
+irb(main):013:2>             
+irb(main):014:2*             profit_value=sell_value-buy_value
+irb(main):015:2> #            profit_array << day_combo_array profit_value
+irb(main):016:2* #            Would be so much easier with a hash
+irb(main):017:2*             profit_hash[day_combo_array]=profit_value
+irb(main):018:2>             end
+irb(main):019:1>         end
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):020:0>     sorted_profit_array = Array.new(profit_hash.sort_by {|_key,value| value})
+=> [[[0, 7], -16], [[0, 1], -14], [[4, 7], -14], [[4, 1], -12], [[0, 6], -11], [[0, 2], -11], [[0, 5], -9], [[4, 6], -9], [[4, 2], -9], [[8, 7], -9], [[0, 3], -8], [[3, 7], -8], [[5, 7], -7], [[8, 1], -7], [[0, 8], -7], [[4, 5], -7], [[3, 1], -6], [[4, 3], -6], [[6, 7], -5], [[2, 7], -5], [[5, 1], -5], [[4, 8], -5], [[8, 6], -4], [[8, 2], -4], [[3, 2], -3], [[2, 1], -3], [[3, 6], -3], [[6, 1], -3], [[5, 2], -2], [[1, 7], -2], [[5, 6], -2], [[0, 4], -2], [[8, 5], -2], [[8, 3], -1], [[3, 5], -1], [[6, 6], 0], [[8, 8], 0], [[0, 0], 0], [[3, 3], 0], [[1, 1], 0], [[4, 4], 0], [[7, 7], 0], [[2, 6], 0], [[5, 5], 0], [[2, 2], 0], [[6, 2], 0], [[3, 8], 1], [[5, 3], 1], [[5, 8], 2], [[6, 5], 2], [[2, 5], 2], [[7, 1], 2], [[4, 0], 2], [[1, 2], 3], [[2, 3], 3], [[1, 6], 3], [[6, 3], 3], [[2, 8], 4], [[6, 8], 4], [[7, 6], 5], [[7, 2], 5], [[1, 5], 5], [[8, 4], 5], [[1, 3], 6], [[3, 4], 6], [[5, 4], 7], [[8, 0], 7], [[1, 8], 7], [[7, 5], 7], [[3, 0], 8], [[7, 3], 8], [[7, 8], 9], [[2, 4], 9], [[5, 0], 9], [[6, 4], 9], [[2, 0], 11], [[6, 0], 11], [[1, 4], 12], [[1, 0], 14], [[7, 4], 14], [[7, 0], 16]]
+irb(main):021:0>     puts (sorted_profit_array[0])[0]
+0
+7
+=> nil
+irb(main):022:0> exit
+14:34:41|ruby-training_l $ irb
+irb(main):001:0>     price_array_buying=Array.new([17,3,6,9,15,8,6,1,10])
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):002:0>     profit_array=Array.new
+=> []
+irb(main):003:0>     profit_hash = Hash.new
+=> {}
+irb(main):004:0>     price_array_selling=Array.new(price_array_buying)
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):005:0>     price_array_buying.each_with_index do |buy_value, buy_index|
+irb(main):006:1*         price_array_selling.each_with_index do |sell_value,sell_index| unless sell_index > buy_index
+irb(main):007:3>             day_combo_array = Array.new
+irb(main):008:3>             day_combo_array[0]=buy_index
+irb(main):009:3>             day_combo_array[1]=sell_index
+irb(main):010:3>             
+irb(main):011:3*             profit_value=sell_value-buy_value
+irb(main):012:3>             profit_hash[day_combo_array]=profit_value
+irb(main):013:3>             end
+irb(main):014:2>         end
+irb(main):015:1>     sorted_profit_array = Array.new(profit_hash.sort_by {|_key,value| value})
+irb(main):016:1>     puts (sorted_profit_array[-1])[0]
+irb(main):017:1> end
+0
+0
+1
+0
+1
+0
+1
+0
+1
+0
+1
+0
+1
+0
+7
+0
+7
+0
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):018:0>     puts (sorted_profit_array[-1])[0]
+NameError: undefined local variable or method `sorted_profit_array' for main:Object
+	from (irb):18
+	from /usr/bin/irb:12:in `<main>'
+irb(main):019:0> exit; irb
+14:37:33|ruby-training_l $ irb
+irb(main):001:0> price_array_buying=Array.new([17,3,6,9,15,8,6,1,10])
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):002:0>     profit_array=Array.new
+=> []
+irb(main):003:0>     profit_hash = Hash.new
+=> {}
+irb(main):004:0>     price_array_selling=Array.new(price_array_buying)
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):005:0>     price_array_buying.each_with_index do |buy_value, buy_index|
+irb(main):006:1*         unless sell_index > buy_index
+irb(main):007:2>             price_array_selling.each_with_index do |sell_value,sell_index| 
+irb(main):008:3*                 day_combo_array = Array.new
+irb(main):009:3>                 day_combo_array[0]=buy_index
+irb(main):010:3>                 day_combo_array[1]=sell_index
+irb(main):011:3>                 profit_value=sell_value-buy_value
+irb(main):012:3>                 profit_hash[day_combo_array]=profit_value
+irb(main):013:3>                 end
+irb(main):014:2>             end
+irb(main):015:1>         end
+NameError: undefined local variable or method `sell_index' for main:Object
+	from (irb):6:in `block in irb_binding'
+	from (irb):5:in `each'
+	from (irb):5:in `each_with_index'
+	from (irb):5
+	from /usr/bin/irb:12:in `<main>'
+irb(main):016:0>     sorted_profit_array = Array.new(profit_hash.sort_by {|_key,value| value})
+=> []
+irb(main):017:0>     puts (sorted_profit_array[-1])[0]
+NoMethodError: undefined method `[]' for nil:NilClass
+	from (irb):17
+	from /usr/bin/irb:12:in `<main>'
+irb(main):018:0> exit
+14:39:29|ruby-training_l $ ir
+-bash: ir: command not found
+14:39:30|ruby-training_l $ irb
+irb(main):001:0>     price_array_buying=Array.new([17,3,6,9,15,8,6,1,10])
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):002:0>     profit_array=Array.new
+=> []
+irb(main):003:0>     profit_hash = Hash.new
+=> {}
+irb(main):004:0>     price_array_selling=Array.new(price_array_buying)
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):005:0>     price_array_buying.each_with_index do |buy_value, buy_index|
+irb(main):006:1*         price_array_selling.each_with_index do |sell_value,sell_index| 
+irb(main):007:2*             unless sell_index > buy_index
+irb(main):008:3>                 day_combo_array = Array.new
+irb(main):009:3>                 day_combo_array[0]=buy_index
+irb(main):010:3>                 day_combo_array[1]=sell_index
+irb(main):011:3>                 profit_value=sell_value-buy_value
+irb(main):012:3>                 profit_hash[day_combo_array]=profit_value
+irb(main):013:3>                 end
+irb(main):014:2>             end
+irb(main):015:1>         end
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):016:0>     sorted_profit_array = Array.new(profit_hash.sort_by {|_key,value| value})
+=> [[[4, 1], -12], [[8, 7], -9], [[4, 2], -9], [[8, 1], -7], [[4, 3], -6], [[3, 1], -6], [[5, 1], -5], [[8, 2], -4], [[8, 6], -4], [[2, 1], -3], [[6, 1], -3], [[3, 2], -3], [[8, 5], -2], [[5, 2], -2], [[8, 3], -1], [[0, 0], 0], [[4, 4], 0], [[1, 1], 0], [[2, 2], 0], [[3, 3], 0], [[5, 5], 0], [[7, 7], 0], [[6, 6], 0], [[6, 2], 0], [[8, 8], 0], [[5, 3], 1], [[6, 5], 2], [[4, 0], 2], [[7, 1], 2], [[6, 3], 3], [[7, 2], 5], [[7, 6], 5], [[8, 4], 5], [[7, 5], 7], [[5, 4], 7], [[8, 0], 7], [[3, 0], 8], [[7, 3], 8], [[5, 0], 9], [[6, 4], 9], [[6, 0], 11], [[2, 0], 11], [[1, 0], 14], [[7, 4], 14], [[7, 0], 16]]
+irb(main):017:0>     puts (sorted_profit_array[-1])[0]
+7
+0
+=> nil
+irb(main):018:0> exit
+14:40:05|ruby-training_l $ irb
+irb(main):001:0>     price_array_buying=Array.new([17,3,6,9,15,8,6,1,10])
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):002:0>     profit_array=Array.new
+=> []
+irb(main):003:0>     profit_hash = Hash.new
+=> {}
+irb(main):004:0>     price_array_selling=Array.new(price_array_buying)
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):005:0>     price_array_buying.each_with_index do |buy_value, buy_index|
+irb(main):006:1*         price_array_selling.each_with_index do |sell_value,sell_index| 
+irb(main):007:2*             unless sell_index < buy_index
+irb(main):008:3>                 day_combo_array = Array.new
+irb(main):009:3>                 day_combo_array[0]=buy_index
+irb(main):010:3>                 day_combo_array[1]=sell_index
+irb(main):011:3>                 profit_value=sell_value-buy_value
+irb(main):012:3>                 profit_hash[day_combo_array]=profit_value
+irb(main):013:3>                 end
+irb(main):014:2>             end
+irb(main):015:1>         end
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):016:0>     sorted_profit_array = Array.new(profit_hash.sort_by {|_key,value| value})
+=> [[[0, 7], -16], [[0, 1], -14], [[4, 7], -14], [[0, 2], -11], [[0, 6], -11], [[0, 5], -9], [[4, 6], -9], [[3, 7], -8], [[0, 3], -8], [[0, 8], -7], [[4, 5], -7], [[5, 7], -7], [[2, 7], -5], [[6, 7], -5], [[4, 8], -5], [[3, 6], -3], [[5, 6], -2], [[0, 4], -2], [[1, 7], -2], [[3, 5], -1], [[0, 0], 0], [[2, 6], 0], [[7, 7], 0], [[1, 1], 0], [[3, 3], 0], [[6, 6], 0], [[5, 5], 0], [[4, 4], 0], [[2, 2], 0], [[8, 8], 0], [[3, 8], 1], [[2, 5], 2], [[5, 8], 2], [[2, 3], 3], [[1, 6], 3], [[1, 2], 3], [[2, 8], 4], [[6, 8], 4], [[1, 5], 5], [[3, 4], 6], [[1, 3], 6], [[1, 8], 7], [[7, 8], 9], [[2, 4], 9], [[1, 4], 12]]
+irb(main):017:0>     puts (sorted_profit_array[-1])[0]
+1
+4
+=> nil
+irb(main):018:0> exit
+14:42:04|ruby-training_l $ irb
+irb(main):001:0> load "09_stock-picker.rb"
+=> true
+irb(main):002:0> stock_picker([17,3,6,9,15,8,6,1,10])
+1
+4
+=> nil
+irb(main):003:0>     price_array_buying=Array.new([17,3,6,9,15,8,6,1,10])
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):004:0>     profit_array=Array.new
+=> []
+irb(main):005:0>     profit_hash = Hash.new
+=> {}
+irb(main):006:0>     price_array_selling=Array.new(price_array_buying)
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):007:0>     price_array_buying.each_with_index do |buy_value, buy_index|
+irb(main):008:1*         price_array_selling.each_with_index do |sell_value,sell_index| 
+irb(main):009:2*             unless sell_index < buy_index
+irb(main):010:3>                 day_combo_array = Array.new
+irb(main):011:3>                 day_combo_array[0]=buy_index
+irb(main):012:3>                 day_combo_array[1]=sell_index
+irb(main):013:3>                 profit_value=sell_value-buy_value
+irb(main):014:3>                 profit_hash[day_combo_array]=profit_value
+irb(main):015:3>                 end
+irb(main):016:2>             end
+irb(main):017:1>         end
+=> [17, 3, 6, 9, 15, 8, 6, 1, 10]
+irb(main):018:0>     sorted_profit_array = Array.new(profit_hash.sort_by {|_key,value| value})
+=> [[[0, 7], -16], [[0, 1], -14], [[4, 7], -14], [[0, 2], -11], [[0, 6], -11], [[0, 5], -9], [[4, 6], -9], [[3, 7], -8], [[0, 3], -8], [[0, 8], -7], [[4, 5], -7], [[5, 7], -7], [[2, 7], -5], [[6, 7], -5], [[4, 8], -5], [[3, 6], -3], [[5, 6], -2], [[0, 4], -2], [[1, 7], -2], [[3, 5], -1], [[0, 0], 0], [[2, 6], 0], [[7, 7], 0], [[1, 1], 0], [[3, 3], 0], [[6, 6], 0], [[5, 5], 0], [[4, 4], 0], [[2, 2], 0], [[8, 8], 0], [[3, 8], 1], [[2, 5], 2], [[5, 8], 2], [[2, 3], 3], [[1, 6], 3], [[1, 2], 3], [[2, 8], 4], [[6, 8], 4], [[1, 5], 5], [[3, 4], 6], [[1, 3], 6], [[1, 8], 7], [[7, 8], 9], [[2, 4], 9], [[1, 4], 12]]
+irb(main):019:0>     puts (sorted_profit_array[-1])[0]
+1
+4
+=> nil
+irb(main):020:0> (sorted_profit_array[-1])[0]
+=> [1, 4]
+irb(main):021:0> print (sorted_profit_array[-1])[0]
+[1, 4]=> nil
+irb(main):022:0> print (sorted_profit_array[-1])[0].chomp
+NoMethodError: undefined method `chomp' for [1, 4]:Array
+	from (irb):22
+	from /usr/bin/irb:12:in `<main>'
+irb(main):023:0> p (sorted_profit_array[-1])[0].chomp
+NoMethodError: undefined method `chomp' for [1, 4]:Array
+	from (irb):23
+	from /usr/bin/irb:12:in `<main>'
+irb(main):024:0> p (sorted_profit_array[-1])[0]
+[1, 4]
+=> [1, 4]
+irb(main):025:0> exit
+14:46:47|ruby-training_l $ irb
+irb(main):001:0> load "    price_array_buying=Array.new([17,3,6,9,15,8,6,1,10])
+irb(main):002:0"     profit_array=Array.new
+irb(main):003:0"     profit_hash = Hash.new
+irb(main):004:0"     price_array_selling=Array.new(price_array_buying)
+irb(main):005:0"     price_array_buying.each_with_index do |buy_value, buy_index|
+irb(main):006:0"         price_array_selling.each_with_index do |sell_value,sell_index| 
+irb(main):007:0"             unless sell_index < buy_index
+irb(main):008:0"                 day_combo_array = Array.new
+irb(main):009:0"                 day_combo_array[0]=buy_index
+irb(main):010:0"                 day_combo_array[1]=sell_index
+irb(main):011:0"                 profit_value=sell_value-buy_value
+irb(main):012:0"                 profit_hash[day_combo_array]=profit_value
+irb(main):013:0"                 end
+irb(main):014:0"             end
+irb(main):015:0"         end
+irb(main):016:0"     sorted_profit_array = Array.new(profit_hash.sort_by {|_key,value| value})
+irb(main):017:0"     puts (sorted_profit_array[-1])[0]
+irb(main):018:0" end
+irb(main):019:0" end
+irb(main):020:0" exit
+irb(main):021:0" "
+LoadError: cannot load such file --     price_array_buying=Array.new([17,3,6,9,15,8,6,1,10])
+    profit_array=Array.new
+    profit_hash = Hash.new
+    price_array_selling=Array.new(price_array_buying)
+    price_array_buying.each_with_index do |buy_value, buy_index|
+        price_array_selling.each_with_index do |sell_value,sell_index| 
+            unless sell_index < buy_index
+                day_combo_array = Array.new
+                day_combo_array[0]=buy_index
+                day_combo_array[1]=sell_index
+                profit_value=sell_value-buy_value
+                profit_hash[day_combo_array]=profit_value
+                end
+            end
+        end
+    sorted_profit_array = Array.new(profit_hash.sort_by {|_key,value| value})
+    puts (sorted_profit_array[-1])[0]
+end
+end
+exit
+
+	from (irb):1:in `load'
+	from (irb):1
+	from /usr/bin/irb:12:in `<main>'
+irb(main):022:0> exit
+14:47:16|ruby-training_l $ irb
+irb(main):001:0> load "09_stock-picker.rb"
+=> true
+irb(main):002:0> load "09_stock-picker.rb"
+=> true
+irb(main):003:0> stock_picker([17,3,6,9,15,8,6,1,10])
+=> [1, 4]
+irb(main):004:0> exit
+15:13:06|ruby-training_l $ irb
+irb(main):001:0> user_dictionary="wicked, cool, i, you, is, am, are, to, with, on, about, for, so, because, loser, sexy, person, later"
+=> "wicked, cool, i, you, is, am, are, to, with, on, about, for, so, because, loser, sexy, person, later"
+irb(main):002:0> user_dictionary=Array.new(user_dictionary.split(', ')
+irb(main):003:1> user_dictionary
+irb(main):004:1> end
+SyntaxError: (irb):3: syntax error, unexpected tIDENTIFIER, expecting ')'
+	from /usr/bin/irb:12:in `<main>'
+irb(main):005:0> user_dictionary=Array.new(user_dictionary.split(', '))
+=> ["wicked", "cool", "i", "you", "is", "am", "are", "to", "with", "on", "about", "for", "so", "because", "loser", "sexy", "person", "later"]
+irb(main):006:0> blah=gets("\w.").chomp
+blah dah
+.
+exit
+^CIRB::Abort: abort then interrupt!
+	from (irb):6:in `call'
+	from (irb):6:in `gets'
+	from (irb):6:in `gets'
+	from (irb):6
+	from /usr/bin/irb:12:in `<main>'
+irb(main):007:0> blah=gets("\w.")
+yah dude
+
+
+^[c   
+^[C
+^CIRB::Abort: abort then interrupt!
+	from (irb):7:in `call'
+	from (irb):7:in `gets'
+	from (irb):7:in `gets'
+	from (irb):7
+	from /usr/bin/irb:12:in `<main>'
+irb(main):008:0> john=gets
+fe
+=> "fe\n"
+irb(main):009:0> john=gets.chomp
+efe
+=> "efe"
+irb(main):010:0> blah
+=> nil
+irb(main):011:0> blah=gets[a-z].chomp
+yar
+NameError: undefined local variable or method `a' for main:Object
+	from (irb):11
+	from /usr/bin/irb:12:in `<main>'
+irb(main):012:0> blah=gets([a-z]).chomp
+NameError: undefined local variable or method `a' for main:Object
+	from (irb):12
+	from /usr/bin/irb:12:in `<main>'
+irb(main):013:0> blah="Why did you do that?!"
+=> "Why did you do that?!"
+irb(main):014:0> blah.downcase!
+=> "why did you do that?!"
+irb(main):015:0> yeab=get(\d{2})
+SyntaxError: (irb):15: syntax error, unexpected $undefined, expecting ')'
+yeab=get(\d{2})
+          ^
+(irb):15: syntax error, unexpected ')', expecting end-of-input
+	from /usr/bin/irb:12:in `<main>'
+irb(main):016:0> exit
+15:33:51|ruby-training_l $ irb
+irb(main):001:0> user_words=gets.chomp
+i like bananas and ice cream but i dont like when i drop it gosh i hate that
+=> "i like bananas and ice cream but i dont like when i drop it gosh i hate that"
+irb(main):002:0> /\w{1,10}/.match(user_words)
+=> #<MatchData "i">
+irb(main):003:0> /\w{10}/.match(user_words)
+=> nil
+irb(main):004:0> /\w*(\s\w*){0,10}/.match(user_words)
+=> #<MatchData "i like bananas and ice cream but i dont like when" 1:" when">
+irb(main):005:0> bunny=/\w*(\s\w*){0,10}/.match(user_words)
+=> #<MatchData "i like bananas and ice cream but i dont like when" 1:" when">
+irb(main):006:0> bunny
+=> #<MatchData "i like bananas and ice cream but i dont like when" 1:" when">
+irb(main):007:0> bunny=%r{\w*(\s\w*){0,10}}.match(user_words)
+=> #<MatchData "i like bananas and ice cream but i dont like when" 1:" when">
+irb(main):008:0> exit
+16:15:34|ruby-training_l $ irb
+irb(main):001:0> word_count=Hash.new
+=> {}
+irb(main):002:0> word_count{"a"=>1, "b"=>2, "c"=>3}
+SyntaxError: (irb):2: syntax error, unexpected =>, expecting '}'
+word_count{"a"=>1, "b"=>2, "c"=>3}
+                ^
+(irb):2: syntax error, unexpected =>, expecting '}'
+word_count{"a"=>1, "b"=>2, "c"=>3}
+                        ^
+(irb):2: syntax error, unexpected =>, expecting '}'
+word_count{"a"=>1, "b"=>2, "c"=>3}
+                                ^
+	from /usr/bin/irb:12:in `<main>'
+irb(main):003:0> word_count{"a" => 1, "b" => 2, "c" => 3}
+SyntaxError: (irb):3: syntax error, unexpected =>, expecting '}'
+word_count{"a" => 1, "b" => 2, "c" => 3}
+                 ^
+(irb):3: syntax error, unexpected =>, expecting '}'
+word_count{"a" => 1, "b" => 2, "c" => 3}
+                           ^
+(irb):3: syntax error, unexpected =>, expecting '}'
+word_count{"a" => 1, "b" => 2, "c" => 3}
+                                     ^
+	from /usr/bin/irb:12:in `<main>'
+irb(main):004:0> word_count={"a" => 1, "b" => 2, "c" => 3}
+=> {"a"=>1, "b"=>2, "c"=>3}
+irb(main):005:0> word_count["a"]=+1
+=> 1
+irb(main):006:0> word_count["a"]+=1
+=> 2
+irb(main):007:0> word_count
+=> {"a"=>2, "b"=>2, "c"=>3}
+irb(main):008:0> exit
+16:21:40|ruby-training_l $ ruby 09_Substrings.rb
+Say some stuff. No more than 10 words.
+I don't give a shit if you tell me it can't be more than 10 words because if I want it to be more then I will make it more.
+I need a 10-20 word dictionary from you with each word separated by a comma and then space (, ). Or, if you like, you can use this dictionary I've provided. If you'd like to use this dictionary, just type 'Y'.
+The dictionary I'm offering is...
+wicked, cool, i, you, is, am, are, to, with, on, about, for, so, because, loser, sexy, person, later
+Okay, what do you say?
+y
+09_Substrings.rb:30:in `<main>': undefined method `down_case!' for "I don":String (NoMethodError)
+16:22:37|ruby-training_l $ ruby 09_Substrings.rb
+Say some stuff. No more than 10 words.
+I don't give a shit what you tell me because I am going to do whatever I want and you are honestly a big loser and I hate you.
+I need a 10-20 word dictionary from you with each word separated by a comma and then space (, ). Or, if you like, you can use this dictionary I've provided. If you'd like to use this dictionary, just type 'Y'.
+The dictionary I'm offering is...
+wicked, cool, i, you, is, am, are, to, with, on, about, for, so, because, loser, sexy, person, later
+Okay, what do you say?
+y
+09_Substrings.rb:8:in `block in substrings': undefined method `+' for nil:NilClass (NoMethodError)
+	from 09_Substrings.rb:5:in `each'
+	from 09_Substrings.rb:5:in `substrings'
+	from 09_Substrings.rb:32:in `<main>'
+16:25:13|ruby-training_l $ irb
+irb(main):001:0> user_word="five"
+=> "five"
+irb(main):002:0> word_count=Hash.new
+=> {}
+irb(main):003:0> word_count={user_word => 2}
+=> {"five"=>2}
+irb(main):004:0> word_count[user_word]=+1
+=> 1
+irb(main):005:0> word_count={user_word => 2}
+=> {"five"=>2}
+irb(main):006:0> word_count[user_word]+=1
+=> 3
+irb(main):007:0> word_count
+=> {"five"=>3}
+irb(main):008:0> puts ("We have a match! It is " user_word)
+SyntaxError: (irb):8: syntax error, unexpected tIDENTIFIER, expecting ')'
+puts ("We have a match! It is " user_word)
+                                         ^
+	from /usr/bin/irb:12:in `<main>'
+irb(main):009:0> puts ("We have a match! It is ", user_word)
+SyntaxError: (irb):9: syntax error, unexpected ',', expecting ')'
+puts ("We have a match! It is ", user_word)
+                                ^
+	from /usr/bin/irb:12:in `<main>'
+irb(main):010:0> puts ("We have a match! It is %s", user_word)
+SyntaxError: (irb):10: syntax error, unexpected ',', expecting ')'
+puts ("We have a match! It is %s", user_word)
+                                  ^
+	from /usr/bin/irb:12:in `<main>'
+irb(main):011:0> puts "We have a match! It is #{user_word}"
+We have a match! It is five
+=> nil
+irb(main):012:0> puts "We have a match! It is #{user_word}. Now, let's try adding! Currently, the count is #{word_count[user_word]}."
+We have a match! It is five. Now, let's try adding! Currently, the count is 3.
+=> nil
+irb(main):013:0> exit
+16:33:40|ruby-training_l $ ruby 09_Substrings.rb
+Say some stuff. No more than 10 words.
+puts "We have a match! It is #{each_user_word}. Now, let's try adding! Currently, the count is #{word_count[each_user_word]}."^[[D^[[ 
+I need a 10-20 word dictionary from you with each word separated by a comma and then space (, ). Or, if you like, you can use this dictionary I've provided. If you'd like to use this dictionary, just type 'Y'.
+The dictionary I'm offering is...
+wicked, cool, i, you, is, am, are, to, with, on, about, for, so, because, loser, sexy, person, later
+Okay, what do you say?
+
+09_Substrings.rb:24:in `<main>': undefined method `[]' for nil:NilClass (NoMethodError)
+16:33:55|ruby-training_l $ ruby 09_Substrings.rb
+Say some stuff. No more than 10 words.
+I hate doing this part if I'm being totally honest with you.    
+I need a 10-20 word dictionary from you with each word separated by a comma and then space (, ). Or, if you like, you can use this dictionary I've provided. If you'd like to use this dictionary, just type 'Y'.
+The dictionary I'm offering is...
+wicked, cool, i, you, is, am, are, to, with, on, about, for, so, because, loser, sexy, person, later
+Okay, what do you say?
+y
+We have a match! It is i. Now, let's try adding! Currently, the count is .
+09_Substrings.rb:9:in `block in substrings': undefined method `+' for nil:NilClass (NoMethodError)
+	from 09_Substrings.rb:5:in `each'
+	from 09_Substrings.rb:5:in `substrings'
+	from 09_Substrings.rb:33:in `<main>'
+16:34:17|ruby-training_l $ irb
+irb(main):001:0> willie=Hash.new{4,0}
+SyntaxError: (irb):1: syntax error, unexpected ',', expecting '}'
+willie=Hash.new{4,0}
+                  ^
+	from /usr/bin/irb:12:in `<main>'
+irb(main):002:0> willie=Hash.new{4}
+=> {}
+irb(main):003:0> willie=Hash.new{0}
+=> {}
+irb(main):004:0> willie=Hash.new{0,0}
+SyntaxError: (irb):4: syntax error, unexpected ',', expecting '}'
+willie=Hash.new{0,0}
+                  ^
+	from /usr/bin/irb:12:in `<main>'
+irb(main):005:0> willie=Hash.new{,0}
+SyntaxError: (irb):5: syntax error, unexpected ','
+willie=Hash.new{,0}
+                 ^
+	from /usr/bin/irb:12:in `<main>'
+irb(main):006:0> willie=Hash.new{0}
+=> {}
+irb(main):007:0> willie["big"]
+=> 0
+irb(main):008:0> exit
+16:39:19|ruby-training_l $ ruby 09_Substrings.rb
+Say some stuff. No more than 10 words.
+I really really hate this whole part because it is so stupid and the dictionary isn't even any good
+I need a 10-20 word dictionary from you with each word separated by a comma and then space (, ). Or, if you like, you can use this dictionary I've provided. If you'd like to use this dictionary, just type 'Y'.
+The dictionary I'm offering is...
+wicked, cool, i, you, is, am, are, to, with, on, about, for, so, because, loser, sexy, person, later
+Okay, what do you say?
+y
+We have a match! It is i. Now, let's try adding! Currently, the count is 0.
+16:39:42|ruby-training_l $ ruby 09_Substrings.rb
+Say some stuff. No more than 16 words.
+I very much hate this part because I think it is so stupid.
+I need a 10-20 word dictionary from you with each word separated by a comma and then space (, ). Or, if you like, you can use this dictionary I've provided. If you'd like to use this dictionary, just type 'Y'.
+The dictionary I'm offering is...
+it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think
+Okay, what do you say?
+y
+We have a match! It is i. Now, let's try adding! Currently, the count is 0.
+16:43:24|ruby-training_l $ ruby 09_Substrings.rb
+Say some stuff. No more than 16 words.
+I very much hate this part because I think it is so stupid.                 
+I need a 10-20 word dictionary from you with each word separated by a comma and then space (, ). Or, if you like, you can use this dictionary I've provided. If you'd like to use this dictionary, just type 'Y'.
+The dictionary I'm offering is...
+it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think
+Okay, what do you say?
+y
+The dictionary we'll be using is:
+["it", "the", "i", "you", "is", "am", "are", "to", "with", "on", "a,"]
+ and the words we'll be using are...
+["i"]We have a match! It is i. Now, let's try adding! Currently, the count is 0.16:48:48|ruby-training_l $ ruby 09_Substrings.rb
+Say some stuff. No more than 16 words.
+I very much hate this part because I think it is so stupid.
+I need a 10-20 word dictionary from you with each word separated by a comma and then space (, ). Or, if you like, you can use this dictionary I've provided. If you'd like to use this dictionary, just type 'Y'.
+The dictionary I'm offering is...
+it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think
+Okay, what do you say?
+y
+The dictionary we'll be using is:
+["it", "the", "i", "you", "is", "am", "are", "to", "with", "on", "a,"]
+ and the words we'll be using are...
+["i"]
+We have a match! It is i. Now, let's try adding! Currently, the count is 0.
+16:58:08|ruby-training_l $ ruby 09_Substrings.rb
+Say some stuff. No more than 16 words.
+I very much hate this part because I think it is so stupid.
+I need a 10-20 word dictionary from you with each word separated by a comma and then space (, ). Or, if you like, you can use this dictionary I've provided. If you'd like to use this dictionary, just type 'Y'.
+The dictionary I'm offering is...
+it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think
+Okay, what do you say?
+y
+The dictionary we'll be using is:
+["it", "the", "i", "you", "is", "am", "are", "to", "with", "on", "a,"]
+ and the words we'll be using are...
+["i"]
+We have a match! It is i. Now, let's try adding! Currently, the count is 0.
+17:01:23|ruby-training_l $ ruby 09_Substrings.rb
+Say some stuff. No more than 16 words.
+I very much hate this part because I think it is so stupid.
+I need a 10-20 word dictionary from you with each word separated by a comma and then space (, ). Or, if you like, you can use this dictionary I've provided. If you'd like to use this dictionary, just type 'Y'.
+The dictionary I'm offering is...
+it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think
+Okay, what do you say?
+y
+09_Substrings.rb:26:in `<main>': undefined method `[]' for nil:NilClass (NoMethodError)
+20:56:53|ruby-training_l $ ruby 09_Substrings.rb
+Say some stuff. No more than 16 words.
+I very much hate this part because I think it is so stupid.
+I need a 10-20 word dictionary from you with each word separated by a comma and then space (, ). Or, if you like, you can use this dictionary I've provided. If you'd like to use this dictionary, just type 'Y'.
+The dictionary I'm offering is...
+it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think
+Okay, what do you say?
+y
+
+The user_dictionary is now .
+09_Substrings.rb:27:in `<main>': undefined method `[]' for nil:NilClass (NoMethodError)
+20:59:07|ruby-training_l $ ruby 09_Substrings.rb
+Say some stuff. No more than 16 words.
+I very much hate this part because I think it is so stupid.
+I need a 10-20 word dictionary from you with each word separated by a comma and then space (, ). Or, if you like, you can use this dictionary I've provided. If you'd like to use this dictionary, just type 'Y'.
+The dictionary I'm offering is...
+it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think
+Okay, what do you say?
+y
+
+The user_dictionary is now .
+09_Substrings.rb:27:in `<main>': undefined method `[]' for nil:NilClass (NoMethodError)
+21:00:34|ruby-training_l $ irb
+irb(main):001:0> user_dictionary="it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+=> "it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+irb(main):002:0> user_dictionary= /(\S*(,\s\S){10,20})/.match(user_dictionary)
+=> nil
+irb(main):003:0> user_dictionary="it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+=> "it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+irb(main):004:0> user_dictionary= /\S+/.match(user_dictionary)
+=> #<MatchData "it,">
+irb(main):005:0> user_dictionary="it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+=> "it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+irb(main):006:0> user_dictionary= /\S+(,\s\S)/.match(user_dictionary)
+=> #<MatchData "it, t" 1:", t">
+irb(main):007:0> user_dictionary="it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+=> "it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+irb(main):008:0> user_dictionary= /\S+(,\s\S)*/.match(user_dictionary)
+=> #<MatchData "it," 1:nil>
+irb(main):009:0> user_dictionary="it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+=> "it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+irb(main):010:0> user_dictionary= /\S+(,\s\S*)/.match(user_dictionary)
+=> #<MatchData "it, the," 1:", the,">
+irb(main):011:0> user_dictionary="it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+=> "it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+irb(main):012:0> user_dictionary= /\S+(,\s\S*)*/.match(user_dictionary)
+=> #<MatchData "it," 1:nil>
+irb(main):013:0> user_dictionary="it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+=> "it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+irb(main):014:0> user_dictionary= /\S+(,\s\S*){5}/.match(user_dictionary)
+=> #<MatchData "it, the, i, you, is, am," 1:", am,">
+irb(main):015:0> user_dictionary="it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+=> "it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+irb(main):016:0> user_dictionary= /\S+(,\s\S*){5}/.match(user_dictionary)
+=> #<MatchData "it, the, i, you, is, am," 1:", am,">
+irb(main):017:0> user_dictionary="it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+=> "it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+irb(main):018:0> user_dictionary= /\S+(,\s\S*){5..10}/.match(user_dictionary)
+=> nil
+irb(main):019:0> user_dictionary= /\S+(,\s\S*){5..10}/.match(user_dictionary)
+=> nil
+irb(main):020:0> user_dictionary="it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+=> "it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+irb(main):021:0> user_dictionary= /\S+(,\s\S*){10}/.match(user_dictionary)
+=> #<MatchData "it, the, i, you, is, am, are, to, with, on, a," 1:", a,">
+irb(main):022:0> user_dictionary="it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+=> "it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+irb(main):023:0> user_dictionary= /\S+(,\s\S*){20}/.match(user_dictionary)
+=> nil
+irb(main):024:0> user_dictionary="it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+=> "it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think"
+irb(main):025:0> user_dictionary= /\S+(,\s\S*){10,}/.match(user_dictionary)
+=> #<MatchData "it, the, i, you, is, am, are, to, with, on, a," 1:", a,">
+irb(main):026:0> 
