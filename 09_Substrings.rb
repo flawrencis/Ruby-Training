@@ -8,7 +8,7 @@ def substrings(final_words,final_dictionary)
             word_count[each_final_sentence_word]+=1
 			the_count=word_count[each_final_sentence_word]
             puts "Match! #{each_final_sentence_word}. Now we have #{the_count}."
-			#It had something to do with calling a hash.
+			#It had something to do with calling a hash variable in the string.
             end
         end
 	puts word_count
@@ -29,7 +29,7 @@ final_dictionary= /\S+(,\s\S*){20}[^,\s]/.match(user_dictionary)
 puts "\nThe final_dictionary is now '#{final_dictionary}'.\n"
 final_dictionary= final_dictionary[0]
 final_dictionary.downcase!
-final_dictionary=final_dictionary.split(', ')
+final_dictionary.split!(', ')
 
 puts "\nRight now, user_words is...\n'#{user_words}'\nBut now, let's cut that down to 10 words, if it isn't already."
 puts user_words.class.name
