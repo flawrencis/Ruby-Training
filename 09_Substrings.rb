@@ -1,39 +1,42 @@
-def substrings(user_words,user_dictionary)
+def substrings(final_words,final_dictionary)
     word_count=Hash.new{0}
-    user_words=user_words.split(' ')
-    puts "The dictionary we'll be using is:\n#{user_dictionary}\n and the words we'll be using are...\n#{user_words}\n"
-    user_words.each do |each_user_word|
-        does_it_include= user_dictionary.include? each_user_word
+    final_words=final_words.split(' ')
+    puts "The dictionary we'll be using is:\n#{final_dictionary}\nand the words we'll be using are...\n#{final_words}\n"
+    final_words.each do |each_final_sentence_word|
+        does_it_include= final_dictionary.include? each_final_sentence_word
         if does_it_include == true
-            puts "We have a match! It is #{each_user_word}. Now, let's try adding! Currently, the count is #{word_count[each_user_word]}."
-            word_count[each_user_word]+=1
+            word_count[each_final_sentence_word]+=1
+            puts "Match! #{each_final_sentence_word}. Now we have #{word_count[each_final_sentence_word]}."
+		#WHY THE FUCK DID HITTING ENTER FROM THE END OF THE PREVIOUS LINE BRING ME NOT TO THE SAME INDENTED SPACE!
             end
         end
     end
 
-puts "Say some stuff. We need 10 words."
+puts "Give me a sentence. We need it to be at least 10 words. No punctuation inside."
 user_words = gets.chomp
 sample_dictionary="it, the, i, you, is, am, are, to, with, on, a, too, so, because, very, will, not, think, be, want, like, and, go"
-puts "I need a 20-word dictionary from you with each word separated by a comma and then space (, ). Or, if you like, you can use this dictionary I've provided. If you'd like to use this dictionary, just type 'Y'.\nThe dictionary I'm offering is...\n#{sample_dictionary}\nOkay, what do you say?"
+puts "\n-------------\nThank you.\nNow, I need a 20-word dictionary from you with each word separated by a comma \nand then space (, ). Or, if you like, you can use this dictionary I've \nprovided. If you'd like to use this dictionary, just type 'Y'.\n\nThe dictionary I'm offering is...\n#{sample_dictionary}\n\nOkay, what do you say?"
 user_dictionary=gets.chomp
 
 if user_dictionary=="y" || user_dictionary=="Y"
     user_dictionary=sample_dictionary
     end
-user_dictionary= user_dictionary.split(", ")
-#user_dictionary= /\S*(,\s\S*){10,20}/.match(user_dictionary) #min,max repetitions doesn't seem to work. Only does 10 of the 17 words. .....Oh, the asterisk's placement is the problem! ..Actually, don't use an asterisk! So redundant! ....Wait, nope because I need to say "lots of non-space characters."
-#user_dictionary= /(\S*(,\s\S){10,20})/.match(user_dictionary)
-final_dictionary= /\S+(,\s\S*){20}[^,]/.match(user_dictionary)
-puts "\nThe user_dictionary is now '#{final_dictionary}'.\n"
-
-user_dictionary=user_dictionary[0]
-user_dictionary.downcase!
-user_dictionary=Array.new(user_dictionary.split(', '))
 
 
-#user_words= /\S+(\.?\s\S*^\.){0,15}/.match(user_words) #min,max repetitions doesn't seem to work. Only does first word and 0 of other thing. .....Oh, the asterisk's placement is the problem! ..Actually, don't use an asterisk! So redundant!
-user_words= /\S+(\.?\s\S^\.){10}/.match(user_words)
-user_words=user_words[0]
+final_dictionary= /\S+(,\s\S*){20}[^,\s]/.match(user_dictionary)
+puts "\nThe final_dictionary is now '#{final_dictionary}'.\n"
+final_dictionary= final_dictionary[0]
+final_dictionary.downcase!
+final_dictionary=final_dictionary.split(', ')
+
+puts "\nRight now, user_words is...\n'#{user_words}'\nBut now, let's cut that down to 10 words, if it isn't already."
+puts user_words.class.name
+final_words= /\S*(\s\S*){10}[^.]/.match(user_words)
+#final_words= /\S+(\s\S*^\.){10}/.match(user_words)
+puts final_words
+final_words= final_words[0]
+puts "\nThe sentence we will be using, from what you provided, is '#{final_words}'.\n"
+
 user_words.downcase!
 
 substrings(user_words,user_dictionary)
@@ -44,5 +47,7 @@ substrings(user_words,user_dictionary)
 #http://stackoverflow.com/questions/6756558/regex-to-match-comma-followed-by-whitespace
 #http://stackoverflow.com/questions/554666/ruby-merging-variables-in-to-a-string
 #http://stackoverflow.com/questions/16159370/ruby-hash-default-value-behavior
+#http://stackoverflow.com/questions/826210/how-do-i-get-the-name-of-a-ruby-class
 
 #Use this text: I very much hate this part because I think it is so stupid.
+#Actually, use this text: I don't know what to say because you haven't given me enough instructions for this.
