@@ -26,3 +26,5 @@ def bubble_sort_by(array)
 		end until checker==endpoint
 	puts "Your array is now...\n#{array}."
 	end
+
+#Use: my_array=["aborigination","dinosaur","cut","booboo", "sweetmuffin", "honey", "bear"]
