@@ -5,7 +5,7 @@ def bubble_sort_by(array)
 		array.each_with_index do |element,num|
 			
 			block_result= yield(array[num],array[num+1])
-			case comparison
+			case block_result
 				
 				when -1 || 0
 				checker+=1
