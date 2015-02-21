@@ -6,10 +6,12 @@ def substrings(final_words,final_dictionary)
         does_it_include= final_dictionary.include? each_final_sentence_word
         if does_it_include == true
             word_count[each_final_sentence_word]+=1
-            puts "Match! #{each_final_sentence_word}. Now we have #{word_count[each_final_sentence_word]}."
-		#WHY THE FUCK DID HITTING ENTER FROM THE END OF THE PREVIOUS LINE BRING ME NOT TO THE SAME INDENTED SPACE!
+			the_count=word_count[each_final_sentence_word]
+            puts "Match! #{each_final_sentence_word}. Now we have #{the_count}."
+			#It had something to do with calling a hash.
             end
         end
+	puts word_count
     end
 
 puts "Give me a sentence. We need it to be at least 10 words. No punctuation inside."
@@ -37,9 +39,9 @@ puts final_words
 final_words= final_words[0]
 puts "\nThe sentence we will be using, from what you provided, is '#{final_words}'.\n"
 
-user_words.downcase!
+final_words.downcase!
 
-substrings(user_words,user_dictionary)
+substrings(final_words,final_dictionary)
 #http://ruby-doc.org//core-1.9.3/MatchData.html
 #http://ruby-doc.org//core-2.2.0/Regexp.html
 #http://regexone.com/lesson/9
@@ -50,4 +52,4 @@ substrings(user_words,user_dictionary)
 #http://stackoverflow.com/questions/826210/how-do-i-get-the-name-of-a-ruby-class
 
 #Use this text: I very much hate this part because I think it is so stupid.
-#Actually, use this text: I don't know what to say because you haven't given me enough instructions for this.
+#Actually, use this text: I do not know what to say because you have not given me enough instructions for the task.
