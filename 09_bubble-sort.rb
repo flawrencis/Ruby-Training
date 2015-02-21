@@ -1,6 +1,7 @@
 def bubble_sort(array)
 	endpoint= array.length - 1
 	puts "The endpoint is #{endpoint}.\n"
+	puts "This time, I am using ||."
 	checker = 0
 	begin
 #		puts "We're not there yet! The checker value is only #{checker}.\n"
@@ -9,7 +10,7 @@ def bubble_sort(array)
 			comparison= element <=> array[num+1]
 			case comparison
 				
-				when -1,0
+				when -1 || 0
 				checker+=1
 #				puts "The checker value after evaluating the #{num+1}th pair is: #{checker}.\n"
 				next
