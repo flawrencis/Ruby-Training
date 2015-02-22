@@ -13,7 +13,7 @@ class TicTacToe
 	#Actually, I want to keep track of every player and score...
 	
 	def game_intro(games)
-		puts "Welcome to Game ##{games_played-1} of Francis's TicTacToe adventure!\n"
+		puts "Welcome to Game ##{games+1} of Francis's TicTacToe adventure!\n"
 		puts "\nWhat shall I engrave on your crown, you great contender?"
 #		@name = Array.new
 #		@name[0] = gets.scan(/\w{6}/i).join
