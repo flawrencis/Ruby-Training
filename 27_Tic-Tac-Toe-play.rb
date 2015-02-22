@@ -21,3 +21,7 @@ b=Player.new("John")
 #Have a hash with two keys- :row and :column. The corresponding values are two arrays. [1, 2, 3] so if :row[0] != (:row[1] || :row[2]) then game_over(player_number)
 
 #original name typed should also be saved. And username. So that you can find yourself and play as yourself. There could be a Player.get function that takes name and returns player #.
+
+#gameboard.new could be saved as current_gameboard as long as each past game_board was saved in Records hash.
+
+#Should be able to get the time at which a game was played.
