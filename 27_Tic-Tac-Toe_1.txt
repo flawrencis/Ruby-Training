@@ -1,0 +1,351 @@
+Last login: Sun Feb 22 09:03:06 on ttys000
+If you need to create a platform specific folder using Phonegap, please do the following:
+1) First, run the 'echo PATH=$PATH:/Users/francislawrence/Programming/phonegap-2.9.1/lib/<specific_platform>/bin' command.
+2) Then, you need to change your working directory to the bin of that platform in that same phonegap folder.
+3) Then, run the 'create name com.example.name Name' command.
+
+Also, if you need to change any of these settings, go to your home directory (~) and type ‘nano .bash_profile’.
+
+Also, if you need to do the EMULATE command, you have to go to the app folder and then run ‘ripple emulate’.
+09:04:33|~ $ cd Programming/Ruby-Training_l
+09:04:50|Ruby-Training_l $ irb
+irb(main):001:0> require './27_Tic-Tac-Toe.rb'
+LoadError: cannot load such file -- GameBoard
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:21:in `<class:TicTacToe>'
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:20:in `<top (required)>'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from (irb):1
+	from /usr/bin/irb:12:in `<main>'
+irb(main):002:0> load './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):003:0> first_game = TicTacToe.new
+NameError: undefined local variable or method `games_played' for #<TicTacToe:0x007ff3d9050a08>
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:36:in `initialize'
+	from (irb):3:in `new'
+	from (irb):3
+	from /usr/bin/irb:12:in `<main>'
+irb(main):004:0> load './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):005:0> first_game = TicTacToe.new
+NameError: undefined local variable or method `games_played' for #<TicTacToe:0x007ff3da845e60>
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:37:in `initialize'
+	from (irb):5:in `new'
+	from (irb):5
+	from /usr/bin/irb:12:in `<main>'
+irb(main):006:0> load './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):007:0> first_game = TicTacToe.new
+NameError: undefined local variable or method `games' for #<TicTacToe:0x007ff3d905b318>
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:122:in `game_intro'
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:37:in `initialize'
+	from (irb):7:in `new'
+	from (irb):7
+	from /usr/bin/irb:12:in `<main>'
+irb(main):008:0> TicTacToe.games_played
+2
+=> nil
+irb(main):009:0> load './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):010:0> TicTacToe.games_played
+2
+=> nil
+irb(main):011:0> load './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):012:0> TicTacToe.games_played
+2
+=> nil
+irb(main):013:0> TicTacToe.games_played = 0
+NoMethodError: undefined method `games_played=' for TicTacToe:Class
+	from (irb):13
+	from /usr/bin/irb:12:in `<main>'
+irb(main):014:0> TicTacToe.games_played(0)
+ArgumentError: wrong number of arguments (1 for 0)
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:46:in `games_played'
+	from (irb):14
+	from /usr/bin/irb:12:in `<main>'
+irb(main):015:0> TicTacToe.on_duty("yo")
+NoMethodError: undefined method `on_duty' for TicTacToe:Class
+	from (irb):15
+	from /usr/bin/irb:12:in `<main>'
+irb(main):016:0> TicTacToe.on_duty
+NoMethodError: undefined method `on_duty' for TicTacToe:Class
+	from (irb):16
+	from /usr/bin/irb:12:in `<main>'
+irb(main):017:0> TicTacToe.games_played
+2
+=> nil
+irb(main):018:0> load './27_Tic-Tac-Toe.rb'
+NoMethodError: undefined method `attr_accessor' for main:Object
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:21:in `<top (required)>'
+	from (irb):18:in `load'
+	from (irb):18
+	from /usr/bin/irb:12:in `<main>'
+irb(main):019:0> load './27_Tic-Tac-Toe.rb'
+NameError: uninitialized class variable @@on_duty in TicTacToe
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:27:in `<class:TicTacToe>'
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:22:in `<top (required)>'
+	from (irb):19:in `load'
+	from (irb):19
+	from /usr/bin/irb:12:in `<main>'
+irb(main):020:0> load './27_Tic-Tac-Toe.rb'
+NameError: uninitialized class variable @@on_duty in TicTacToe
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:43:in `<class:TicTacToe>'
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:22:in `<top (required)>'
+	from (irb):20:in `load'
+	from (irb):20
+	from /usr/bin/irb:12:in `<main>'
+irb(main):021:0> TicTacToe.new
+Welcome to Game #3 of Francis's TicTacToe adventure!
+Today, we have  vying against !
+Soon, a board will appear. Each empty square is numbered.
+Simply, type the number of the square whenever you are ready.
+NoMethodError: undefined method `[]=' for nil:NilClass
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:133:in `start_of_game'
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:40:in `initialize'
+	from (irb):21:in `new'
+	from (irb):21
+	from /usr/bin/irb:12:in `<main>'
+irb(main):022:0> TicTacToe.games_played
+2
+=> nil
+irb(main):023:0> TicTacToe.on_duty
+NoMethodError: undefined method `on_duty' for TicTacToe:Class
+	from (irb):23
+	from /usr/bin/irb:12:in `<main>'
+irb(main):024:0> TicTacToe.on_duty = "yo"
+NoMethodError: undefined method `on_duty=' for TicTacToe:Class
+	from (irb):24
+	from /usr/bin/irb:12:in `<main>'
+irb(main):025:0> TicTacToe.on_duty("yo")
+NoMethodError: undefined method `on_duty' for TicTacToe:Class
+	from (irb):25
+	from /usr/bin/irb:12:in `<main>'
+irb(main):026:0> load './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):027:0> TicTacToe.on_duty
+NoMethodError: undefined method `on_duty' for TicTacToe:Class
+	from (irb):27
+	from /usr/bin/irb:12:in `<main>'
+irb(main):028:0> TicTacToe.games_played
+2
+=> nil
+irb(main):029:0> TicTacToe.new
+Welcome to Game #3 of Francis's TicTacToe adventure!
+Today, we have  vying against !
+Soon, a board will appear. Each empty square is numbered.
+Simply, type the number of the square whenever you are ready.
+NoMethodError: undefined method `[]=' for nil:NilClass
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:134:in `start_of_game'
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:40:in `initialize'
+	from (irb):29:in `new'
+	from (irb):29
+	from /usr/bin/irb:12:in `<main>'
+irb(main):030:0> TicTacToe.on_duty
+NoMethodError: undefined method `on_duty' for TicTacToe:Class
+	from (irb):30
+	from /usr/bin/irb:12:in `<main>'
+irb(main):031:0> load './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):032:0> TicTacToe.on_duty
+NoMethodError: undefined method `on_duty' for TicTacToe:Class
+	from (irb):32
+	from /usr/bin/irb:12:in `<main>'
+irb(main):033:0> TicTacToe.games_played
+2
+=> nil
+irb(main):034:0> load './27_Tic-Tac-Toe.rb'
+SyntaxError: /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:50: class definition in method body
+/Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:202: syntax error, unexpected end-of-input, expecting keyword_end
+	from (irb):34:in `load'
+	from (irb):34
+	from /usr/bin/irb:12:in `<main>'
+irb(main):035:0> load './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):036:0> TicTacToe.on_duty
+NoMethodError: undefined method `on_duty' for TicTacToe:Class
+	from (irb):36
+	from /usr/bin/irb:12:in `<main>'
+irb(main):037:0> load './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):038:0> TicTacToe.games_played
+2
+=> nil
+irb(main):039:0> load './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):040:0> TicTacToe.games_played
+2
+=> nil
+irb(main):041:0> TicTacToe.on_duty
+NoMethodError: undefined method `on_duty' for TicTacToe:Class
+	from (irb):41
+	from /usr/bin/irb:12:in `<main>'
+irb(main):042:0> exit
+09:31:45|Ruby-Training_l $ irb
+irb(main):001:0> require './27_Ruby-Training_l'
+LoadError: cannot load such file -- ./27_Ruby-Training_l
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from (irb):1
+	from /usr/bin/irb:12:in `<main>'
+irb(main):002:0> require './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):003:0> TicTacToe.games_played
+NoMethodError: undefined method `games_played' for TicTacToe:Class
+	from (irb):3
+	from /usr/bin/irb:12:in `<main>'
+irb(main):004:0> TicTacToe.new
+Welcome to Game #1 of Francis's TicTacToe adventure!
+Today, we have  vying against !
+Soon, a board will appear. Each empty square is numbered.
+Simply, type the number of the square whenever you are ready.
+NoMethodError: undefined method `[]=' for nil:NilClass
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:138:in `start_of_game'
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:44:in `initialize'
+	from (irb):4:in `new'
+	from (irb):4
+	from /usr/bin/irb:12:in `<main>'
+irb(main):005:0> TicTacToe.on_duty
+NoMethodError: undefined method `on_duty' for TicTacToe:Class
+	from (irb):5
+	from /usr/bin/irb:12:in `<main>'
+irb(main):006:0> joe = TicTacToe.new
+Welcome to Game #1 of Francis's TicTacToe adventure!
+Today, we have  vying against !
+Soon, a board will appear. Each empty square is numbered.
+Simply, type the number of the square whenever you are ready.
+NoMethodError: undefined method `[]=' for nil:NilClass
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:138:in `start_of_game'
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:44:in `initialize'
+	from (irb):6:in `new'
+	from (irb):6
+	from /usr/bin/irb:12:in `<main>'
+irb(main):007:0> joe.on_duty
+NoMethodError: undefined method `on_duty' for nil:NilClass
+	from (irb):7
+	from /usr/bin/irb:12:in `<main>'
+irb(main):008:0> load './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):009:0> joe = TicTacToe.new
+Welcome to Game #1 of Francis's TicTacToe adventure!
+Today, we have  vying against !
+Soon, a board will appear. Each empty square is numbered.
+Simply, type the number of the square whenever you are ready.
+=> #<TicTacToe:0x007ffe729ef390 @current_players=[], @sign_hash={}, @victory=false, @moves=0>
+irb(main):010:0> load './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):011:0> joe = TicTacToe.new
+
+Welcome to Game #1 of Francis's TicTacToe adventure!
+=> #<TicTacToe:0x007ffe7306d9d8 @current_players=[], @sign_hash={}, @victory=false, @moves=0>
+irb(main):012:0> Player.new("Francis Lawrence")
+NameError: uninitialized constant Player
+	from (irb):12
+	from /usr/bin/irb:12:in `<main>'
+irb(main):013:0> francis=Player.new
+NameError: uninitialized constant Player
+	from (irb):13
+	from /usr/bin/irb:12:in `<main>'
+irb(main):014:0> exit
+09:41:49|Ruby-Training_l $ irb
+irb(main):001:0> require './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):002:0> my_game = TicTacToe.new
+
+Welcome to Game #1 of Francis's TicTacToe adventure!
+=> #<TicTacToe:0x007ff138a3f008 @current_players=[], @sign_hash={}, @victory=false, @moves=0>
+irb(main):003:0> fran=Player.new("Francis Lawrence")
+NameError: uninitialized constant Player
+	from (irb):3
+	from /usr/bin/irb:12:in `<main>'
+irb(main):004:0> fran= Player.new("Francis Lawrence")
+NameError: uninitialized constant Player
+	from (irb):4
+	from /usr/bin/irb:12:in `<main>'
+irb(main):005:0> fran= Player.new ("Francis Lawrence")
+NameError: uninitialized constant Player
+	from (irb):5
+	from /usr/bin/irb:12:in `<main>'
+irb(main):006:0> fran = Player.new ("Francis Lawrence")
+NameError: uninitialized constant Player
+	from (irb):6
+	from /usr/bin/irb:12:in `<main>'
+irb(main):007:0> fran = my_game.Player.new ("Francis Lawrence")
+NoMethodError: undefined method `Player' for #<TicTacToe:0x007ff138a3f008>
+	from (irb):7
+	from /usr/bin/irb:12:in `<main>'
+irb(main):008:0> fran = my_game::Player.new ("Francis Lawrence")
+TypeError: #<TicTacToe:0x007ff138a3f008 @current_players=[], @sign_hash={}, @victory=false, @moves=0> is not a class/module
+	from (irb):8
+	from /usr/bin/irb:12:in `<main>'
+irb(main):009:0> fran = TicTacToe::Player.new ("Francis Lawrence")
+NameError: undefined local variable or method `new_name_2' for #<TicTacToe::Player:0x007ff13a88e428>
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:60:in `add_player'
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:54:in `initialize'
+	from (irb):9:in `new'
+	from (irb):9
+	from /usr/bin/irb:12:in `<main>'
+irb(main):010:0> load './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):011:0> my_gam = TicTacToe.new
+
+Welcome to Game #1 of Francis's TicTacToe adventure!
+=> #<TicTacToe:0x007ff13a8a70e0 @current_players=[], @sign_hash={}, @victory=false, @moves=0>
+irb(main):012:0> fran = TicTacToe::Player.new("Francis Lawrence")
+NoMethodError: undefined method `>' for nil:NilClass
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:65:in `add_player'
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:57:in `initialize'
+	from (irb):12:in `new'
+	from (irb):12
+	from /usr/bin/irb:12:in `<main>'
+irb(main):013:0> load './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):014:0> my_ga = TicTacToe.new
+
+Welcome to Game #1 of Francis's TicTacToe adventure!
+=> #<TicTacToe:0x007ff13a884928 @current_players=[], @sign_hash={}, @victory=false, @moves=0>
+irb(main):015:0> fran = TicTacToe::Player.new("Francis Lawrence")
+NoMethodError: undefined method `length' for nil:NilClass
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:65:in `add_player'
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:57:in `initialize'
+	from (irb):15:in `new'
+	from (irb):15
+	from /usr/bin/irb:12:in `<main>'
+irb(main):016:0> current_players
+NameError: undefined local variable or method `current_players' for main:Object
+	from (irb):16
+	from /usr/bin/irb:12:in `<main>'
+irb(main):017:0> @current_players
+=> nil
+irb(main):018:0> y = Array.new
+=> []
+irb(main):019:0> y
+=> []
+irb(main):020:0> y.length
+=> 0
+irb(main):021:0> load './27_Tic-Tac-Toe.rb'
+TypeError: superclass mismatch for class Player
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:53:in `<class:TicTacToe>'
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:26:in `<top (required)>'
+	from (irb):21:in `load'
+	from (irb):21
+	from /usr/bin/irb:12:in `<main>'
+irb(main):022:0> load './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):023:0> my_ga = TicTacToe.new
+
+Welcome to Game #1 of Francis's TicTacToe adventure!
+=> #<TicTacToe:0x007ff139832e30>
+irb(main):024:0> fran = TicTacToe::Player.new("Francis Lawrence")
+NoMethodError: undefined method `length' for nil:NilClass
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:66:in `add_player'
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:58:in `initialize'
+	from (irb):24:in `new'
+	from (irb):24
+	from /usr/bin/irb:12:in `<main>'
+irb(main):025:0> $current_players
+=> []
+irb(main):026:0> exit
+12:56:07|Ruby-Training_l $ 
