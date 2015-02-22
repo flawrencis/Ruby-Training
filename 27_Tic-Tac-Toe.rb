@@ -1,3 +1,14 @@
+#First, had to delete @ signs in front of arguments in two functions. "Formal arguments cannot be instance variables.
+#Had to rename a couple variables that weren't consistent.
+#Bad syntax on module requirement
+#Should have actually used include
+
+#How come I can access "games_played" but not "on_duty"?
+
+#Why does it keep telling me that I have an unitialized constant Player?
+
+#When can @ be passed around??
+
 module GameBoard
 	board = "a  b  c\nd  e  f\ng  h  i"
 	a = board[0]
@@ -13,40 +24,48 @@ module GameBoard
 	i = board[22]
 	end
 
+
 class TicTacToe
-	require GameBoard
+	include GameBoard
+#	attr_reader :on_duty
+	attr_reader :games_played
+	
 	def initialize
 		unless defined?(@@games_record)
-			@@games_record = Hash.new
+			$games_record = Hash.new
+			@@games_record = $games_record
 			end
-		unless defined?(@@games_played)
-			@@games_played=0
-			else
-			@@games_played+=1
+		unless defined?($games_played)
+			$games_played=0
 			end
-		@current_players= Array.new
-		@sign_hash = Hash.new
-		@victory==false
-		@moves=0
-		game_intro(games_played)
-		start_of_game()
+		$current_players= Array.new
+		$sign_hash = Hash.new
+		$victory=false
+		$moves=0
+#		unless defined?(@@on_duty)
+#			@@on_duty = 0
+#			end
+		game_intro(@@games_played)
+		
 		end
 	
-	def self.games_played
-		puts @@games_played
-		end
+#	if @@on_duty == "yo"
+#		attr_accessor :games_played
+#		end
 	
 	class Player
+		
 		def initialize(name_input)
 			@name_input = name_input
 			add_player(name_input)
-		end
+			end
+		
 		
 		def add_player(name)
 			@name=name.split.map {|i| i.capitalize}.join(" ")
 			new_name = @name.strip.downcase.scan(/\w*/)
-			@user_name= new_name[0][(0..3)]+new_name_2[2][(0..3)]
-			unless @players>2
+			@user_name= new_name[0][(0..3)]+new_name[2][(0..3)]
+			unless $current_players.length > 2
 				if defined?(@user_name)
 					puts "Welcome back, #{@name}!"
 					@player_id = @@games_record[@name][:player_id]
@@ -62,14 +81,14 @@ class TicTacToe
 				end
 			end
 		
-		def add_new_player_to_record(@name)
-			@@games_record[@name] = {:player_id => @player_id, :user_name => @user_name, :total_score => 0}
+		def add_new_player_to_record(name)
+			@@games_record[name] = {:player_id => @player_id, :user_name => @user_name, :total_score => 0}
 			end
 		
 		def self.get(input) #find yourself if you are already a saved user
 			stop = false #Keep offering search opportunity until player stops.
 			while stop == false
-				if @@record.include?(input)
+				if @@games_record.include?(input)
 					@player_id = @@games_record[input][:player_id]
 					@user_name = @@games_record[input][:user_name]
 					@total_score = @@games_record[input][:total_score]
@@ -78,10 +97,10 @@ class TicTacToe
 				puts "What would you like to search instead? Or tell me to stop."
 				stop=gets.chomp.strip.scan(/\S*\s*stop.*/i)
 				end
-			puts "Okay, then. That is player ##{player_number} aka #{user_name}."
+			puts "Okay, then. That is player ##{@player_id} aka #{@user_name}."
 			end
 		
-		def take_turn(moves,@board)
+		def take_turn(moves,board)
 			p "#{@current_player}, #{moves+1}:"
 			@sign = @sign_hash[@current_player]
 			@last_move= gets.chomp.scan(/\W(\w)\W/)
@@ -113,20 +132,25 @@ class TicTacToe
 	
 	
 	def game_intro(game_number)
-		puts "Welcome to Game ##{games+1} of Francis's TicTacToe adventure!\n"
-		puts "Today, we have #{PLAYER_1} vying against #{PLAYER_@}!\n"
-		puts "Soon, a board will appear. Each empty square is numbered."
-		puts "Simply, type the number of the square whenever you are ready."
+		puts "\nWelcome to Game ##{game_number+1} of Francis's TicTacToe adventure!\n"
 		end
 	
-	def start_of_game
+	def start
+		player_1 = @current_players[0]
+		player_2 = @current_players[1]
+		puts "It looks like we have #{player_1} vying against #{player_2}!\n"
+		start_game
+		end
+	
+	def start_game
 		start_time = Time.new
 		@@games_record["Game Data"]["Game #{@@games_played+1}"]={:start_time => start_time.strftime("%H:%M")}
 		the_game
 		end
 	
 	def end_of_game(loser_id,victor_id)
-		@@games_record["Game Data"]["Game #{@@games_played+1}"]={:end_time => Time.now.strftime("%H:%M"), :total_time => "#{Time.now - start_time} secs", :loser => loser_id, :victor => victor_id}
+		@@games_played+=1
+		@@games_record["Game Data"]["Game #{@@games_played}"]={:end_time => Time.now.strftime("%H:%M"), :total_time => "#{Time.now - start_time} secs", :loser => loser_id, :victor => victor_id}
 		end
 	
 	end
