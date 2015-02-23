@@ -17,12 +17,104 @@ module GameBoard
 	
 	sign_options = ["X", "O", "Z", "&", "#"]
 	which = rand(1..5)
-	first_sign = sign_options[which-1].pop
+	first_sign = sign_options.pop(which-1)
 	which = rand(1..4)
 	second_sign = sign_options[which-1]
 	@signs_array = [first_sign,second_sign]
 	
 	end
+
+class Player
+	include GameBoard
+	attr_reader :get, :signs
+
+	def initialize(name_input,sign)
+		@name_input = name_input
+		@sign = sign
+		add_player(@name_input,@sign)
+		unless defined?(@signs_array)
+			Player.signs
+			end
+		unless defined?(@order_array)
+			Player.order
+			end
+		end
+
+	def add_player(name,sign)
+		@name=name.split.map {|i| i.capitalize}.join(" ")
+		new_name = @name.strip.downcase.scan(/\w*/)
+		user_name= new_name[0][(0..3)]+new_name[2][(0..3)]
+		unless $current_players.length > 2
+			if defined?(@user_name)
+				puts "Welcome back, #{@name}!"
+				@player_id = $games_record[@name][:player_id]
+				@user_name = $games_record[@name][:user_name]
+				@total_score = $games_record[@name][:total_score]
+				$current_players << {un: @user_name,id: @player_id,s: sign}
+				else
+				puts "I see you're a brand new addition! Welcome, #{@name}."
+				@user_name = user_name
+				@player_id = $current_players.length
+				$current_players << {un: @user_name,id: @player_id,s: sign}
+				add_new_player_to_record(@name)
+				end
+			end
+		end
+
+	def add_new_player_to_record(name)
+		$games_record[name] = {:player_id => @player_id, :user_name => @user_name, :total_score => 0}
+		end
+
+	def self.get(input) #find yourself if you are already a saved user
+		stop = false #Keep offering search opportunity until player stops.
+		while stop == false
+			if $games_record.include?(input)
+				@player_id = $games_record[input][:player_id]
+				@user_name = $games_record[input][:user_name]
+				@total_score = $games_record[input][:total_score]
+				puts "That is player ##{@player_id} aka #{@user_name}. Look out for when it's your turn."
+				return
+				end
+			puts "What would you like to search instead? Or tell me to stop."
+			stop=gets.chomp.strip.scan(/\S*\s*stop.*/i)
+			end
+		puts "Okay, then. Sorry!" 
+		end
+	
+	def self.signs
+		sign_options = ["X", "O", "Z", "&", "#"]
+		which = rand(1..5)
+		first_sign = sign_options[which-1].pop
+		which = rand(1..4)
+		second_sign = sign_options[which-1]
+		@signs_array = [first_sign,second_sign]
+		end
+	
+	def self.order
+		ord = rand(1..2)
+		ord -= 1
+		orde = ord - 1
+		@order = [ord, orde.abs]
+		end
+
+#												REALLY NEED THIS. GOTTA FIGURE THIS OUT.
+#	def sign
+#		@sign = $current_players[
+#		end
+		
+
+	def take_turn(moves,num,board)
+		player = $current_players[num][:un]
+		p "#{player}, #{moves+1}:"
+		sign = $current_players[num][:sign]
+		@last_move= gets.chomp.scan(/\W(\w)\W/)
+		puts "You chose #{@last_move}..."
+		@board.gsub!(@last_move,sign)
+		num+=1
+		current_player = $current_players[num%2][:un]
+		end
+	
+	end #Player end
 
 
 class TicTacToe < Player
@@ -91,8 +183,8 @@ class TicTacToe < Player
 		
 	
 	def start
-		a = $current_players[0][un:]
-		b = $current_players[1][un:]
+		a = $current_players[0][:un]
+		b = $current_players[1][:un]
 #		player_1 = @current_players[0]
 #		player_2 = @current_players[1]
 		puts "It looks like we have #{@player_1} vying against #{@player_a}!\n"
@@ -184,12 +276,12 @@ class Player
 				@player_id = $games_record[@name][:player_id]
 				@user_name = $games_record[@name][:user_name]
 				@total_score = $games_record[@name][:total_score]
-				$current_players << {un: @user_name,id: @player_id,s: sign]
+				$current_players << {un: @user_name,id: @player_id,s: sign}
 				else
 				puts "I see you're a brand new addition! Welcome, #{@name}."
 				@user_name = user_name
 				@player_id = $current_players.length
-				$current_players << {un: @user_name,id: @player_id,s: sign]
+				$current_players << {un: @user_name,id: @player_id,s: sign}
 				add_new_player_to_record(@name)
 				end
 			end
@@ -230,10 +322,11 @@ class Player
 		orde = ord - 1
 		@order = [ord, orde.abs]
 		end
-	
-	def sign
-		@sign = $current_players[}
-		end
+
+#												REALLY NEED THIS. GOTTA FIGURE THIS OUT.
+#	def sign
+#		@sign = $current_players[
+#		end
 		
 
 	def take_turn(moves,num,board)
