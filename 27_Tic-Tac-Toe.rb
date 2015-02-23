@@ -1,26 +1,29 @@
-#Revision 2(?)
-#	Separated classes. #Now need to figure out how class variables work.
+#Revision 3
+#	Why did I keep getting that my class variable hadn't been initialized?
 
 module GameBoard
-	board = "a  b  c\nd  e  f\ng  h  i"
-	a = board[0]
-	b = board[3]
-	c = board[6]
-	
-	d = board[8]
-	e = board[11]
-	f = board[14]
-	
-	g = board[16]
-	h = board[19]
-	i = board[22]
-	
-	sign_options = ["X", "O", "Z", "&", "#"]
-	which = rand(1..5)
-	first_sign = sign_options.pop(which-1)
-	which = rand(1..4)
-	second_sign = sign_options[which-1]
-	@signs_array = [first_sign,second_sign]
+	def board_maker
+		@board = "a  b  c\nd  e  f\ng  h  i"
+		@a = @board[0]
+		@b = @board[3]
+		@c = @board[6]
+
+		@d = @board[8]
+		@e = @board[11]
+		@f = @board[14]
+
+		@g = @board[16]
+		@h = @board[19]
+		@i = @board[22]
+		end
+	def sign_options
+		sign_options = ["X", "O", "Z", "&", "#"]
+		which = rand(1..5)
+		first_sign = sign_options.pop(which-1)
+		which = rand(1..4)
+		second_sign = sign_options[which-1]
+		@signs_array = [first_sign,second_sign]
+		end
 	
 	end
 
@@ -32,12 +35,12 @@ class Player
 		@name_input = name_input
 		@sign = sign
 		add_player(@name_input,@sign)
-		unless defined?(@signs_array)
-			Player.signs
-			end
-		unless defined?(@order_array)
-			Player.order
-			end
+#		unless defined?(@signs_array)
+#			Player.signs
+#			end
+#		unless defined?(@order_array)
+#			Player.order
+#			end
 		end
 
 	def add_player(name,sign)
@@ -81,25 +84,28 @@ class Player
 		puts "Okay, then. Sorry!" 
 		end
 	
-	def self.signs
-		sign_options = ["X", "O", "Z", "&", "#"]
-		which = rand(1..5)
-		first_sign = sign_options[which-1].pop
-		which = rand(1..4)
-		second_sign = sign_options[which-1]
-		@signs_array = [first_sign,second_sign]
-		end
+#	def self.signs
+#		sign_options = ["X", "O", "Z", "&", "#"]
+#		which = rand(1..5)
+#		first_sign = sign_options[which-1].pop
+#		which = rand(1..4)
+#		second_sign = sign_options[which-1]
+#		@signs_array = [first_sign,second_sign]
+#		end
 	
-	def self.order
-		ord = rand(1..2)
-		ord -= 1
-		orde = ord - 1
-		@order = [ord, orde.abs]
-		end
-
-#												REALLY NEED THIS. GOTTA FIGURE THIS OUT.
+#	def self.order
+#		ord = rand(1..2)
+#		ord -= 1
+#		orde = ord - 1
+#		@order = [ord, orde.abs]
+#		end
+#
+##												REALLY NEED THIS. GOTTA FIGURE THIS OUT.
 #	def sign
-#		@sign = $current_players[
+#		sign_options
+#		
+#	
+#	
 #		end
 		
 
@@ -117,6 +123,21 @@ class Player
 	end #Player end
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class TicTacToe < Player
 	include GameBoard
 	attr_reader :games_played, :games_record, :current_players, :sign_hash, :start
@@ -127,15 +148,16 @@ class TicTacToe < Player
 #			$games_record = Hash.new
 #			$games_record = $games_record
 #			end
-#		unless defined?($games_played)
-#			$games_played=0
-#			end
+		unless defined?(@@games_played)
+			@@games_played=0
+			end
+		@this_game = @@games_played+1
 		$current_players= Array.new
 #		@sign_hash = Hash.new
 		@victory=false
 		@moves=0
 		game_intro(@@games_played)
-		@board = board
+		@board = board_maker
 		end
 	
 #	Needs to be called by user.
@@ -248,99 +270,99 @@ class TicTacToe < Player
 		end
 	end #class TicTacToe end
 
-
-
-class Player
-	include GameBoard
-	attr_reader :get, :signs
-
-	def initialize(name_input,sign)
-		@name_input = name_input
-		@sign = sign
-		add_player(@name_input,@sign)
-		unless defined?(@signs_array)
-			Player.signs
-			end
-		unless defined?(@order_array)
-			Player.order
-			end
-		end
-
-	def add_player(name,sign)
-		@name=name.split.map {|i| i.capitalize}.join(" ")
-		new_name = @name.strip.downcase.scan(/\w*/)
-		user_name= new_name[0][(0..3)]+new_name[2][(0..3)]
-		unless $current_players.length > 2
-			if defined?(@user_name)
-				puts "Welcome back, #{@name}!"
-				@player_id = $games_record[@name][:player_id]
-				@user_name = $games_record[@name][:user_name]
-				@total_score = $games_record[@name][:total_score]
-				$current_players << {un: @user_name,id: @player_id,s: sign}
-				else
-				puts "I see you're a brand new addition! Welcome, #{@name}."
-				@user_name = user_name
-				@player_id = $current_players.length
-				$current_players << {un: @user_name,id: @player_id,s: sign}
-				add_new_player_to_record(@name)
-				end
-			end
-		end
-
-	def add_new_player_to_record(name)
-		$games_record[name] = {:player_id => @player_id, :user_name => @user_name, :total_score => 0}
-		end
-
-	def self.get(input) #find yourself if you are already a saved user
-		stop = false #Keep offering search opportunity until player stops.
-		while stop == false
-			if $games_record.include?(input)
-				@player_id = $games_record[input][:player_id]
-				@user_name = $games_record[input][:user_name]
-				@total_score = $games_record[input][:total_score]
-				puts "That is player ##{@player_id} aka #{@user_name}. Look out for when it's your turn."
-				return
-				end
-			puts "What would you like to search instead? Or tell me to stop."
-			stop=gets.chomp.strip.scan(/\S*\s*stop.*/i)
-			end
-		puts "Okay, then. Sorry!" 
-		end
-	
-	def self.signs
-		sign_options = ["X", "O", "Z", "&", "#"]
-		which = rand(1..5)
-		first_sign = sign_options[which-1].pop
-		which = rand(1..4)
-		second_sign = sign_options[which-1]
-		@signs_array = [first_sign,second_sign]
-		end
-	
-	def self.order
-		ord = rand(1..2)
-		ord -= 1
-		orde = ord - 1
-		@order = [ord, orde.abs]
-		end
-
-#												REALLY NEED THIS. GOTTA FIGURE THIS OUT.
-#	def sign
-#		@sign = $current_players[
+#
+#
+#class Player
+#	include GameBoard
+#	attr_reader :get, :signs
+#
+#	def initialize(name_input,sign)
+#		@name_input = name_input
+#		@sign = sign
+#		add_player(@name_input,@sign)
+#		unless defined?(@signs_array)
+#			Player.signs
+#			end
+#		unless defined?(@order_array)
+#			Player.order
+#			end
 #		end
-		
-
-	def take_turn(moves,num,board)
-		player = $current_players[num][:un]
-		p "#{player}, #{moves+1}:"
-		sign = $current_players[num][:sign]
-		@last_move= gets.chomp.scan(/\W(\w)\W/)
-		puts "You chose #{@last_move}..."
-		@board.gsub!(@last_move,sign)
-		num+=1
-		current_player = $current_players[num%2][:un]
-		end
-	
-	end #Player end
+#
+#	def add_player(name,sign)
+#		@name=name.split.map {|i| i.capitalize}.join(" ")
+#		new_name = @name.strip.downcase.scan(/\w*/)
+#		user_name= new_name[0][(0..3)]+new_name[2][(0..3)]
+#		unless $current_players.length > 2
+#			if defined?(@user_name)
+#				puts "Welcome back, #{@name}!"
+#				@player_id = $games_record[@name][:player_id]
+#				@user_name = $games_record[@name][:user_name]
+#				@total_score = $games_record[@name][:total_score]
+#				$current_players << {un: @user_name,id: @player_id,s: sign}
+#				else
+#				puts "I see you're a brand new addition! Welcome, #{@name}."
+#				@user_name = user_name
+#				@player_id = $current_players.length
+#				$current_players << {un: @user_name,id: @player_id,s: sign}
+#				add_new_player_to_record(@name)
+#				end
+#			end
+#		end
+#
+#	def add_new_player_to_record(name)
+#		$games_record[name] = {:player_id => @player_id, :user_name => @user_name, :total_score => 0}
+#		end
+#
+#	def self.get(input) #find yourself if you are already a saved user
+#		stop = false #Keep offering search opportunity until player stops.
+#		while stop == false
+#			if $games_record.include?(input)
+#				@player_id = $games_record[input][:player_id]
+#				@user_name = $games_record[input][:user_name]
+#				@total_score = $games_record[input][:total_score]
+#				puts "That is player ##{@player_id} aka #{@user_name}. Look out for when it's your turn."
+#				return
+#				end
+#			puts "What would you like to search instead? Or tell me to stop."
+#			stop=gets.chomp.strip.scan(/\S*\s*stop.*/i)
+#			end
+#		puts "Okay, then. Sorry!" 
+#		end
+#	
+#	def self.signs
+#		sign_options = ["X", "O", "Z", "&", "#"]
+#		which = rand(1..5)
+#		first_sign = sign_options[which-1].pop
+#		which = rand(1..4)
+#		second_sign = sign_options[which-1]
+#		@signs_array = [first_sign,second_sign]
+#		end
+#	
+#	def self.order
+#		ord = rand(1..2)
+#		ord -= 1
+#		orde = ord - 1
+#		@order = [ord, orde.abs]
+#		end
+#
+##												REALLY NEED THIS. GOTTA FIGURE THIS OUT.
+##	def sign
+##		@sign = $current_players[
+##		end
+#		
+#
+#	def take_turn(moves,num,board)
+#		player = $current_players[num][:un]
+#		p "#{player}, #{moves+1}:"
+#		sign = $current_players[num][:sign]
+#		@last_move= gets.chomp.scan(/\W(\w)\W/)
+#		puts "You chose #{@last_move}..."
+#		@board.gsub!(@last_move,sign)
+#		num+=1
+#		current_player = $current_players[num%2][:un]
+#		end
+#	
+#	end #Player end
 
 
 

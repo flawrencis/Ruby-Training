@@ -1,0 +1,189 @@
+Last login: Sun Feb 22 14:46:59 on ttys001
+If you need to create a platform specific folder using Phonegap, please do the following:
+1) First, run the 'echo PATH=$PATH:/Users/francislawrence/Programming/phonegap-2.9.1/lib/<specific_platform>/bin' command.
+2) Then, you need to change your working directory to the bin of that platform in that same phonegap folder.
+3) Then, run the 'create name com.example.name Name' command.
+
+Also, if you need to change any of these settings, go to your home directory (~) and type ‘nano .bash_profile’.
+
+Also, if you need to do the EMULATE command, you have to go to the app folder and then run ‘ripple emulate’.
+
+To edit the tab control thing, go to nano .inputrc from your root directory.
+To substitute something in the previous line, type something like this... ^toreplace^touse
+To search previous lines, use Ctrl-R.
+To leave that screen you can get stuck in, use q when the END is highlighted.
+To learn the escape characters of buttons, first type ^V
+Jump to start of line ^A
+Jump to end of line ^E
+Clear text onward ^K
+Bring last line back ^Y
+Search previous lines ^R
+! preceding starting character, Enter invokes last command
+To modify the last command, type !<firstfewcharacters>:s/<toreplace>/<desired>
+Keep Mac awake: $ caffeinate -u -t 600 (add options to set timer)
+19:11:27|~ $ cd Programming/Ruby-Training_l
+19:11:37|Ruby-Training_l $ require '27_Tic-Tac-Toe.rb' 
+-bash: require: command not found
+19:11:51|Ruby-Training_l $ irb
+irb(main):001:0> require '27_Tic-Tac-Toe.rb'
+LoadError: cannot load such file -- 27_Tic-Tac-Toe.rb
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from (irb):1
+	from /usr/bin/irb:12:in `<main>'
+irb(main):002:0> require './27_Tic-Tac-Toe.rb'
+SyntaxError: /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:94: syntax error, unexpected ']'
+/Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:95: syntax error, unexpected ']'
+/Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:187: syntax error, unexpected ']', expecting '}'
+/Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:192: syntax error, unexpected ']', expecting '}'
+/Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:235: syntax error, unexpected '}', expecting ']'
+/Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:261: syntax error, unexpected end-of-input, expecting keyword_end
+#2	http://www.codequizzes.com/ruby/practical-object-oriented-design
+  	                                                                ^
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from (irb):2
+	from /usr/bin/irb:12:in `<main>'
+irb(main):003:0> load './27_Tic-Tac-Toe.rb'
+SyntaxError: /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:187: syntax error, unexpected ']', expecting '}'
+/Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:192: syntax error, unexpected ']', expecting '}'
+/Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:235: syntax error, unexpected '}', expecting ']'
+/Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:261: syntax error, unexpected end-of-input, expecting keyword_end
+#2	http://www.codequizzes.com/ruby/practical-object-oriented-design
+  	                                                                ^
+	from (irb):3:in `load'
+	from (irb):3
+	from /usr/bin/irb:12:in `<main>'
+irb(main):004:0> load './27_Tic-Tac-Toe.rb'
+SyntaxError: /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:192: syntax error, unexpected ']', expecting '}'
+/Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:235: syntax error, unexpected '}', expecting ']'
+/Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:261: syntax error, unexpected end-of-input, expecting keyword_end
+#2	http://www.codequizzes.com/ruby/practical-object-oriented-design
+  	                                                                ^
+	from (irb):4:in `load'
+	from (irb):4
+	from /usr/bin/irb:12:in `<main>'
+irb(main):005:0> load './27_Tic-Tac-Toe.rb'
+SyntaxError: /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:235: syntax error, unexpected tSTRING_DEND, expecting ']'
+/Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:261: syntax error, unexpected end-of-input, expecting keyword_end
+#2	http://www.codequizzes.com/ruby/practical-object-oriented-design
+  	                                                                ^
+	from (irb):5:in `load'
+	from (irb):5
+	from /usr/bin/irb:12:in `<main>'
+irb(main):006:0> load './27_Tic-Tac-Toe.rb'
+NoMethodError: undefined method `pop' for "X":String
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:20:in `<module:GameBoard>'
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:4:in `<top (required)>'
+	from (irb):6:in `load'
+	from (irb):6
+	from /usr/bin/irb:12:in `<main>'
+irb(main):007:0> sign_options[0]
+NameError: undefined local variable or method `sign_options' for main:Object
+	from (irb):7
+	from /usr/bin/irb:12:in `<main>'
+irb(main):008:0> sign_options = ["X", "O", "Z", "&", "#"]
+=> ["X", "O", "Z", "&", "#"]
+irb(main):009:0> which = rand(1..5)
+=> 4
+irb(main):010:0> sign_options[1].pop
+NoMethodError: undefined method `pop' for "O":String
+	from (irb):10
+	from /usr/bin/irb:12:in `<main>'
+irb(main):011:0> sign_options.pop(1)
+=> ["#"]
+irb(main):012:0> load './27_Tic-Tac-Toe.rb'
+NameError: uninitialized constant Player
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:28:in `<top (required)>'
+	from (irb):12:in `load'
+	from (irb):12
+	from /usr/bin/irb:12:in `<main>'
+irb(main):013:0> load './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):014:0> TicTacToe.new
+NameError: uninitialized class variable @@games_played in TicTacToe
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:137:in `initialize'
+	from (irb):14:in `new'
+	from (irb):14
+	from /usr/bin/irb:12:in `<main>'
+irb(main):015:0> load './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):016:0> TicTacToe.new
+NameError: uninitialized class variable @@games_played in TicTacToe
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:133:in `initialize'
+	from (irb):16:in `new'
+	from (irb):16
+	from /usr/bin/irb:12:in `<main>'
+irb(main):017:0> load './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):018:0> TicTacToe.new
+
+Welcome to Game #1 of Francis's TicTacToe adventure!
+Now, you can decide to make_player or try to find yourself using 'Player.get(<Your Name>)'?
+NameError: undefined local variable or method `board' for #<TicTacToe:0x007f9cc312e528>
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:139:in `initialize'
+	from (irb):18:in `new'
+	from (irb):18
+	from /usr/bin/irb:12:in `<main>'
+irb(main):019:0> load './27_Tic-Tac-Toe.rb'
+NameError: undefined local variable or method `sign_options' for GameBoard:Module
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:20:in `<module:GameBoard>'
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:4:in `<top (required)>'
+	from (irb):19:in `load'
+	from (irb):19
+	from /usr/bin/irb:12:in `<main>'
+irb(main):020:0> load './27_Tic-Tac-Toe.rb'
+NameError: undefined local variable or method `sign_options' for GameBoard:Module
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:21:in `<module:GameBoard>'
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:4:in `<top (required)>'
+	from (irb):20:in `load'
+	from (irb):20
+	from /usr/bin/irb:12:in `<main>'
+irb(main):021:0> load './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):022:0> TicTacToe.new
+
+Welcome to Game #1 of Francis's TicTacToe adventure!
+Now, you can decide to make_player or try to find yourself using 'Player.get(<Your Name>)'?
+NameError: undefined local variable or method `board' for #<TicTacToe:0x007f9cc385cd90>
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:139:in `initialize'
+	from (irb):22:in `new'
+	from (irb):22
+	from /usr/bin/irb:12:in `<main>'
+irb(main):023:0> load './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):024:0> TicTacToe.new
+
+Welcome to Game #1 of Francis's TicTacToe adventure!
+Now, you can decide to make_player or try to find yourself using 'Player.get(<Your Name>)'?
+=> #<TicTacToe:0x007f9cc38e7198 @victory=false, @moves=0, @this_game=1, @board="i">
+irb(main):025:0> load './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):026:0> TicTacToe.new
+
+Welcome to Game #1 of Francis's TicTacToe adventure!
+Now, you can decide to make_player or try to find yourself using 'Player.get(<Your Name>)'?
+NoMethodError: undefined method `[]' for nil:NilClass
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:6:in `board'
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Tic-Tac-Toe.rb:146:in `initialize'
+	from (irb):26:in `new'
+	from (irb):26
+	from /usr/bin/irb:12:in `<main>'
+irb(main):027:0> @sign_options
+=> nil
+irb(main):028:0> @signs_array
+=> nil
+irb(main):029:0> load './27_Tic-Tac-Toe.rb'
+=> true
+irb(main):030:0> TicTacToe.new
+
+Welcome to Game #1 of Francis's TicTacToe adventure!
+Now, you can decide to make_player or try to find yourself using 'Player.get(<Your Name>)'?
+=> #<TicTacToe:0x007f9cc39319a0 @victory=false, @moves=0, @this_game=1, @board="i", @a="a", @b="b", @c="c", @d="d", @e="e", @f="f", @g="g", @h="h", @i="i">
+irb(main):031:0> @board
+=> nil
+irb(main):032:0> board
+NameError: undefined local variable or method `board' for main:Object
+	from (irb):32
+	from /usr/bin/irb:12:in `<main>'
+irb(main):033:0> 
