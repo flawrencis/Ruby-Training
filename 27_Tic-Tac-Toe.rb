@@ -1,5 +1,5 @@
 #Revision 3
-#	Why did I keep getting that my class variable hadn't been initialized?
+#	Do not know how to do this with these classes. Having many variable problems.
 
 module GameBoard
 	def board_maker
