@@ -1,0 +1,1357 @@
+Last login: Thu Feb 26 07:32:12 on ttys000
+
+-------------------------------------------------
+If you need to create a platform specific folder using Phonegap, please do the following:
+1) First, run the 'echo PATH=$PATH:/Users/francislawrence/Programming/phonegap-2.9.1/lib/<specific_platform>/bin' command.
+2) Then, you need to change your working directory to the bin of that platform in that same phonegap folder.
+3) Then, run the 'create name com.example.name Name' command.
+
+Also, if you need to change any of these settings, go to your home directory (~) and type ‘nano .bash_profile’.
+
+Also, if you need to do the EMULATE command, you have to go to the app folder and then run ‘ripple emulate’.
+
+To edit the tab control thing, go to nano .inputrc from your root directory.
+To substitute something in the previous line, type something like this... ^toreplace^touse
+To search previous lines, use Ctrl-R.
+To leave that screen you can get stuck in, use q when the END is highlighted.
+To learn the escape characters of buttons, first type ^V
+Jump to start of line ^A
+Jump to end of line ^E
+Clear text onward ^K
+Bring last line back ^Y
+Search previous lines ^R
+! preceding starting character, Enter invokes last command
+To modify the last command, type !<firstfewcharacters>:s/<toreplace>/<desired>
+Keep Mac awake: $ caffeinate -u -t 600 (add options to set timer)
+------------------------------------------------------
+09:07:32|~ $ cd Programming/Ruby-Training_l/Tic_Tac_Toe/TicTacToe
+-bash: cd: Programming/Ruby-Training_l/Tic_Tac_Toe/TicTacToe: No such file or directory
+09:09:15|~ $ cd Programming/Ruby-Training_l/Tic_Tac_Toe/
+09:09:18|Tic_Tac_Toe $ ls
+Gemfile			README.md		Tic_Tac_Toe.gemspec	lib
+Gemfile.lock		Rakefile		bin			spec
+09:09:21|Tic_Tac_Toe $ cd ~/Programming/Ruby-Training_l/Tic_Tac_Toe/lib/TicTacToe
+-bash: cd: /Users/francislawrence/Programming/Ruby-Training_l/Tic_Tac_Toe/lib/TicTacToe: No such file or directory
+09:10:10|Tic_Tac_Toe $ cd ~/Programming/Ruby-Training_l/Tic_Tac_Toe/lib/
+09:10:16|lib $ ls
+Tic_Tac_Toe	Tic_Tac_Toe.rb
+09:10:19|lib $ cd ~/Programming/Ruby-Training_l/Tic_Tac_Toe/lib/Tic_Tac_Toe
+09:10:34|Tic_Tac_Toe $ ls
+cell.rb		player.rb	version.rb
+09:10:36|Tic_Tac_Toe $ irb
+irb(main):001:0> require 'player.rb'
+LoadError: cannot load such file -- player.rb
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from (irb):1
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):002:0> require './player.rb'
+=> true
+irb(main):003:0> francis = Player.new
+NameError: uninitialized constant Player
+	from (irb):3
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):004:0> bash pwd
+NameError: undefined local variable or method `pwd' for main:Object
+	from (irb):4
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):005:0> require '../Tic_Tac_Toe.rb'
+LoadError: cannot load such file -- Tic_Tac_Toe/version
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /Users/francislawrence/Programming/Ruby-Training_l/Tic_Tac_Toe/lib/Tic_Tac_Toe.rb:1:in `<top (required)>'
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from (irb):5
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):006:0> require help
+
+Enter the method name you want to look up.
+You can use tab to autocomplete.
+Enter a blank line to exit.
+
+>> require
+>> 
+TypeError: no implicit conversion of nil into String
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from (irb):6
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):007:0> francis = Player.new()
+NameError: uninitialized constant Player
+	from (irb):7
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):008:0> francis = Player.new({})
+NameError: uninitialized constant Player
+	from (irb):8
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):009:0> francis = Player.new({color: "X", name: "Francis"})
+NameError: uninitialized constant Player
+	from (irb):9
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):010:0> Array.new(3) {"five"}
+=> ["five", "five", "five"]
+irb(main):011:0> Array.new(3) {Array.new(4) {""}}
+=> [["", "", "", ""], ["", "", "", ""], ["", "", "", ""]]
+irb(main):012:0> exit
+10:12:01|Tic_Tac_Toe $ pwd
+/Users/francislawrence/Programming/Ruby-Training_l/Tic_Tac_Toe/lib/Tic_Tac_Toe
+10:12:20|Tic_Tac_Toe $ git clone https://github.com/MrPowers/tic_tac_toe.git ../../../Tic_Tac_Toe_Answers
+Cloning into '../../../Tic_Tac_Toe_Answers'...
+remote: Counting objects: 60, done.
+remote: Total 60 (delta 0), reused 0 (delta 0), pack-reused 60
+Unpacking objects: 100% (60/60), done.
+Checking connectivity... done.
+10:12:53|Tic_Tac_Toe $ cd ../../../Tic_Tac_Toe_Answers/
+10:13:19|Tic_Tac_Toe_Answers $ ls
+Gemfile			README.md		example			spec			wordpress_blog_post.txt
+LICENSE.txt		Rakefile		lib			tic_tac_toe.gemspec
+10:13:21|Tic_Tac_Toe_Answers $ cd lib; ls
+tic_tac_toe	tic_tac_toe.rb
+10:13:33|lib $ cd tic_tac_toe; ls
+board.rb		cell.rb			core_extensions.rb	game.rb			player.rb		version.rb
+10:14:18|tic_tac_toe $ mv game.rb ../../../Tic_Tac_Toe/lib/Tic_Tac_Toe/
+10:16:19|tic_tac_toe $ cd ../../../Tic_Tac_Toe/lib/Tic_Tac_Toe
+10:16:38|Tic_Tac_Toe $ ls
+board.rb		cell.rb			core_extensions.rb	game.rb			player.rb		version.rb
+10:16:40|Tic_Tac_Toe $ cd ../../../Tic_Tac_Toe_Answers/
+10:16:53|Tic_Tac_Toe_Answers $ ls
+Gemfile			README.md		example			spec			wordpress_blog_post.txt
+LICENSE.txt		Rakefile		lib			tic_tac_toe.gemspec
+10:16:55|Tic_Tac_Toe_Answers $ cd lib
+10:16:58|lib $ cd tic_tac_toe
+10:17:20|tic_tac_toe $ ls
+board.rb		cell.rb			core_extensions.rb	player.rb		version.rb
+10:17:21|tic_tac_toe $ cd ../../../Tic_Tac_Toe/lib/Tic_Tac_Toe
+10:18:28|Tic_Tac_Toe $ cp game.rb ../../../Tic_Tac_Toe_Answers/lib/Tic_Tac_Toe/
+10:18:55|Tic_Tac_Toe $ cd ../../../Tic_Tac_Toe_Answers/lib/tic_tac_toe
+10:19:13|tic_tac_toe $ ls
+board.rb		cell.rb			core_extensions.rb	game.rb			player.rb		version.rb
+10:19:14|tic_tac_toe $ cp core_extensions ../../../Tic_Tac_Toe/lib/Tic_Tac_Toe
+cp: core_extensions: No such file or directory
+10:20:07|tic_tac_toe $ cp core_extensions.rb ../../../Tic_Tac_Toe/lib/Tic_Tac_Toe
+10:20:16|tic_tac_toe $ cd ..
+10:24:28|lib $ cd ..
+10:24:32|Tic_Tac_Toe_Answers $ cd ..
+10:28:48|Ruby-Training_l $ ruby ./27_tic_tac_toe_2.rb
+ruby: No such file or directory -- ./27_tic_tac_toe_2.rb (LoadError)
+10:29:12|Ruby-Training_l $ ruby 27_tic_tac_toe_2.rb
+ruby: No such file or directory -- 27_tic_tac_toe_2.rb (LoadError)
+10:29:17|Ruby-Training_l $ ruby 27_tic-tac-toe_2.rb"
+> 
+> end
+> 
+10:29:44|Ruby-Training_l $ ruby 27_tic-tac-toe_2.rb
+27_tic-tac-toe_2.rb:1:in `require_relative': cannot load such file -- /Users/francislawrence/Programming/lib/tic_tac_toe.rb (LoadError)
+	from 27_tic-tac-toe_2.rb:1:in `<main>'
+10:29:50|Ruby-Training_l $ ruby 27_tic-tac-toe_2.rb
+Welcome to tic tac toe
+frank has randomly been selected as the first player
+_ _ _
+_ _ _
+_ _ _
+
+frank: Enter a number between 1 and 9 to make your move
+7
+_ _ _
+_ _ _
+O _ _
+
+bob: Enter a number between 1 and 9 to make your move
+^C/Users/francislawrence/Programming/Ruby-Training_l/Tic_Tac_Toe_Answers/lib/tic_tac_toe/game.rb:19:in `gets': Interrupt
+	from /Users/francislawrence/Programming/Ruby-Training_l/Tic_Tac_Toe_Answers/lib/tic_tac_toe/game.rb:19:in `gets'
+	from /Users/francislawrence/Programming/Ruby-Training_l/Tic_Tac_Toe_Answers/lib/tic_tac_toe/game.rb:19:in `get_move'
+	from /Users/francislawrence/Programming/Ruby-Training_l/Tic_Tac_Toe_Answers/lib/tic_tac_toe/game.rb:34:in `play'
+	from 27_tic-tac-toe_2.rb:7:in `<main>'
+
+10:31:21|Ruby-Training_l $ __FILE__
+-bash: __FILE__: command not found
+10:38:52|Ruby-Training_l $ irb
+irb(main):001:0> __FILE__
+=> "(irb)"
+irb(main):002:0> File.dirname(__FILE__)
+=> "."
+irb(main):003:0> File.expand_path(File.dirname(__FILE__))
+=> "/Users/francislawrence/Programming/Ruby-Training_l"
+irb(main):004:0> require "./.."
+LoadError: cannot load such file -- ./..
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from (irb):4
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):005:0> require "./.."
+LoadError: cannot load such file -- ./..
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from (irb):5
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):006:0> exit
+11:13:20|Ruby-Training_l $ sudo gem install colorize
+Password:
+Fetching: colorize-0.7.5.gem (100%)
+Successfully installed colorize-0.7.5
+Parsing documentation for colorize-0.7.5
+Installing ri documentation for colorize-0.7.5
+Done installing documentation for colorize after 0 seconds
+1 gem installed
+11:13:35|Ruby-Training_l $ irb
+irb(main):001:0> "cool".green
+NoMethodError: undefined method `green' for "cool":String
+	from (irb):1
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):002:0> gems
+NameError: undefined local variable or method `gems' for main:Object
+	from (irb):2
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):003:0> gem
+ArgumentError: wrong number of arguments (0 for 1+)
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_gem.rb:43:in `gem'
+	from (irb):3
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):004:0> exit
+11:18:55|Ruby-Training_l $ echo $PATH
+/Users/francislawrence/.rbenv/shims:/Users/francislawrence/.rbenv/shims:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/francislawrence/Library/Android/sdk/platform-tools:/Users/francislawrence/Library/Android/sdk/tools:/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home:/Users/francislawrence/apache-ant-1.9.4/bin
+11:21:11|Ruby-Training_l $ gem
+RubyGems is a sophisticated package manager for Ruby.  This is a
+basic help message containing pointers to more information.
+
+  Usage:
+    gem -h/--help
+    gem -v/--version
+    gem command [arguments...] [options...]
+
+  Examples:
+    gem install rake
+    gem list --local
+    gem build package.gemspec
+    gem help install
+
+  Further help:
+    gem help commands            list all 'gem' commands
+    gem help examples            show some examples of usage
+    gem help gem_dependencies    gem dependencies file guide
+    gem help platforms           gem platforms guide
+    gem help <COMMAND>           show help on COMMAND
+                                   (e.g. 'gem help install')
+    gem server                   present a web page at
+                                 http://localhost:8808/
+                                 with info about installed gems
+  Further information:
+    http://guides.rubygems.org
+11:22:02|Ruby-Training_l $ gem -v
+2.4.5
+11:22:14|Ruby-Training_l $ gem list
+
+*** LOCAL GEMS ***
+
+bigdecimal (1.2.6)
+bundler (1.8.3)
+colorize (0.7.5)
+diff-lcs (1.2.5)
+io-console (0.4.3)
+json (1.8.1)
+minitest (5.4.3)
+power_assert (0.2.2)
+psych (2.0.8)
+rake (10.4.2)
+rdoc (4.2.0)
+rspec (3.2.0)
+rspec-core (3.2.1)
+rspec-expectations (3.2.0)
+rspec-mocks (3.2.1)
+rspec-support (3.2.2)
+test-unit (3.0.8)
+11:22:23|Ruby-Training_l $ ruby "yes".colorize
+ruby: No such file or directory -- yes.colorize (LoadError)
+11:22:41|Ruby-Training_l $ ruby "'yes'.colorize"
+ruby: No such file or directory -- 'yes'.colorize (LoadError)
+11:22:55|Ruby-Training_l $ irb
+irb(main):001:0> gem "yes".colorize
+NoMethodError: undefined method `colorize' for "yes":String
+	from (irb):1
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):002:0> exit
+11:24:05|Ruby-Training_l $ gem install colorize
+ERROR:  While executing gem ... (Errno::EACCES)
+    Permission denied @ rb_sysopen - /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/colorize-0.7.5/CHANGELOG
+11:24:10|Ruby-Training_l $ irb
+irb(main):001:0> require 'colorize'
+LoadError: cannot load such file -- colorize
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from (irb):1
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):002:0> exit
+11:25:07|Ruby-Training_l $ gem install colorize
+ERROR:  While executing gem ... (Errno::EACCES)
+    Permission denied @ rb_sysopen - /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/colorize-0.7.5/CHANGELOG
+11:25:13|Ruby-Training_l $ cd /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/colorize-0.7.5/
+11:25:32|colorize-0.7.5 $ ls -a
+.			CHANGELOG		README.md		colorize.gemspec	test
+..			LICENSE			Rakefile		lib
+11:25:34|colorize-0.7.5 $ ls lib -a
+ls: -a: No such file or directory
+lib:
+colorize	colorize.rb
+11:25:41|colorize-0.7.5 $ lib
+-bash: lib: command not found
+11:25:50|colorize-0.7.5 $ ls lib
+colorize	colorize.rb
+11:25:56|colorize-0.7.5 $ cd ~
+11:26:18|~ $ irb
+irb(main):001:0> require '*/colorize.rb'
+LoadError: cannot load such file -- */colorize.rb
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from (irb):1
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):002:0> require '**/colorize.rb'
+LoadError: cannot load such file -- **/colorize.rb
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from (irb):2
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):003:0> require '**/*/colorize.rb'
+LoadError: cannot load such file -- **/*/colorize.rb
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from (irb):3
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):004:0> Dir.chdir /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/colorize-0.7.5/
+irb(main):005:0* ^C
+irb(main):005:0> ]
+SyntaxError: (irb):5: syntax error, unexpected ']'
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):006:0> Dir.chdir "/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/colorize-0.7.5/"
+=> 0
+irb(main):007:0> Dir.pwd
+=> "/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/colorize-0.7.5"
+irb(main):008:0> require 'lib/colorize.rb'
+LoadError: cannot load such file -- lib/colorize.rb
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from (irb):8
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):009:0> Dir.inspect
+=> "Dir"
+irb(main):010:0> Dir.chdir "**"
+Errno::ENOENT: No such file or directory @ dir_chdir - **
+	from (irb):10:in `chdir'
+	from (irb):10
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):011:0> Dir.chdir **
+irb(main):012:0* pwd
+NameError: undefined local variable or method `pwd' for main:Object
+	from (irb):12
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):013:0> Dir.chdir **/**
+irb(main):014:0/ 
+irb(main):015:0/ end
+irb(main):016:0/ ]
+irb(main):017:0/ /
+SyntaxError: (irb):17: target of repeat operator is not specified: /**
+
+end
+]
+/
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):018:0> Dir.glob("**")
+=> ["apache-ant-1.9.4", "Applications", "clubside", "Desktop", "Documents", "Downloads", "Dropbox", "Google Drive", "Library", "Movies", "Music", "Pictures", "Programming", "Public"]
+irb(main):019:0> Dir.pwd
+=> "/Users/francislawrence"
+irb(main):020:0> Dir.glob("*")
+=> ["apache-ant-1.9.4", "Applications", "clubside", "Desktop", "Documents", "Downloads", "Dropbox", "Google Drive", "Library", "Movies", "Music", "Pictures", "Programming", "Public"]
+irb(main):021:0> Dir.chdir /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/colorize-0.7.5/
+irb(main):022:0* /
+irb(main):023:0/ \
+irb(main):024:0/ ]
+irb(main):025:0/ end
+irb(main):026:0/ "
+irb(main):027:0/ "
+irb(main):028:0/ /
+SyntaxError: (irb):21: unknown regexp options - fraclawrc
+(irb):21: syntax error, unexpected '.'
+....chdir /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby...
+...                               ^
+(irb):21: unexpected fraction part after numeric literal
+...cislawrence/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/c...
+...                               ^
+(irb):21: syntax error, unexpected tIDENTIFIER, expecting end-of-input
+...rence/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/coloriz...
+...                               ^
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):029:0> Dir.chdir "/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/colorize-0.7.5/"
+=> 0
+irb(main):030:0> Dir.pwd
+=> "/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/colorize-0.7.5"
+irb(main):031:0> Dir.glob("*")
+=> ["CHANGELOG", "colorize.gemspec", "lib", "LICENSE", "Rakefile", "README.md", "test"]
+irb(main):032:0> Dir.chdir("lib")
+=> 0
+irb(main):033:0> Dir.glob("*")
+=> ["colorize", "colorize.rb"]
+irb(main):034:0> require 'colorize.rb'
+LoadError: cannot load such file -- colorize.rb
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from (irb):34
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):035:0> Dir.pwd
+=> "/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/colorize-0.7.5/lib"
+irb(main):036:0> require './colorize.rb'
+=> true
+irb(main):037:0> "hello".yellow
+=> "\e[0;33;49mhello\e[0m"
+irb(main):038:0> puts "hello".yellow
+hello
+=> nil
+irb(main):039:0> blank = Array.new(5) {rand(0..1000)}
+=> [277, 855, 959, 58, 594]
+irb(main):040:0> Dir.chdir ~
+irb(main):041:0* /
+irb(main):042:0/ /
+TypeError: no implicit conversion of nil into String
+	from (irb):40:in `chdir'
+	from (irb):40
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):043:0> Dir.chdir "*"
+Errno::ENOENT: No such file or directory @ dir_chdir - *
+	from (irb):43:in `chdir'
+	from (irb):43
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):044:0> Dir.chdir("~")
+Errno::ENOENT: No such file or directory @ dir_chdir - ~
+	from (irb):44:in `chdir'
+	from (irb):44
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):045:0> Dir.home()
+=> "/Users/francislawrence"
+irb(main):046:0> Dir.pwd
+=> "/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/colorize-0.7.5/lib"
+irb(main):047:0> Dir.chdir(home)
+NameError: undefined local variable or method `home' for main:Object
+	from (irb):47
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):048:0> Dir.chdir(/)
+irb(main):049:1/ /
+irb(main):050:1> /
+irb(main):051:1/ \
+irb(main):052:1/ \
+irb(main):053:1/ //
+irb(main):054:1* ^C
+irb(main):054:0> Dir.chdir("/")
+=> 0
+irb(main):055:0> Dir.pwd
+=> "/"
+irb(main):056:0> Dir.glob("*")
+=> ["Applications", "bin", "cores", "dev", "etc", "home", "installer.failurerequests", "Library", "net", "Network", "private", "sbin", "System", "tmp", "User Information", "Users", "usr", "var", "Volumes"]
+irb(main):057:0> Dir.chdir("Users")
+=> 0
+irb(main):058:0> Dir.pwd
+=> "/Users"
+irb(main):059:0> Dir.glob("**")
+=> ["francislawrence", "inelllawrence", "Shared"]
+irb(main):060:0> Dir.pwd
+=> "/Users"
+irb(main):061:0> Dir.glob("*")
+=> ["francislawrence", "inelllawrence", "Shared"]
+irb(main):062:0> folder = Dir.glob("*")[0]
+=> "francislawrence"
+irb(main):063:0> Dir.chdir(folder)
+=> 0
+irb(main):064:0> Dir.glob("*")
+=> ["apache-ant-1.9.4", "Applications", "clubside", "Desktop", "Documents", "Downloads", "Dropbox", "Google Drive", "Library", "Movies", "Music", "Pictures", "Programming", "Public"]
+irb(main):065:0> Dir.chdir("Programming")
+=> 0
+irb(main):066:0> Dir.pwd
+=> "/Users/francislawrence/Programming"
+irb(main):067:0> Dir.glob("*")
+=> ["AndroidStudioProjects", "Education", "GoogleMaps-iOS-1.9.1", "Java_workspace", "Others' Code", "phonegap-2.9.1", "Ruby-Training_l", "webshim-1.15.6"]
+irb(main):068:0> folder = Dir.glob("*")
+=> ["AndroidStudioProjects", "Education", "GoogleMaps-iOS-1.9.1", "Java_workspace", "Others' Code", "phonegap-2.9.1", "Ruby-Training_l", "webshim-1.15.6"]
+irb(main):069:0> Dir.chdir(folder[-2])
+=> 0
+irb(main):070:0> folder = Dir.glob("*")
+=> ["09_Caesar-Cipher.rb", "09_Stock-Picker.rb", "09_Substrings.rb", "09_Substrings_trying_regex_repetitions.txt", "18_Bubble-Sort-By.rb", "18_Bubble-Sort.rb", "18_Enumerable.rb", "27.txt", "27_Mastermind", "27_Tic-Tac-Toe-play.rb", "27_Tic-Tac-Toe.rb", "27_Tic-Tac-Toe_1.txt", "27_Tic-Tac-Toe_2.rb", "27_Tic-Tac-Toe_2.txt", "README.md", "test_1", "test_1.rb", "Tic_Tac_Toe", "Tic_Tac_Toe_Answers"]
+irb(main):071:0> Dir.chdir(folder[8])
+=> 0
+irb(main):072:0> folder = Dir.glob("*")
+=> ["lib"]
+irb(main):073:0> Dir.chdir(folder[0])
+=> 0
+irb(main):074:0> folder = Dir.glob("*")
+=> ["mastermind", "mastermind.rb"]
+irb(main):075:0> folder = Dir.glob("*")
+=> ["mastermind", "mastermind.rb"]
+irb(main):076:0> Dir.chdir(folder[0])
+=> 0
+irb(main):077:0> folder = Dir.glob("*")
+=> ["code.rb", "codebreaker.rb", "codemaker.rb", "game.rb", "guess.rb"]
+irb(main):078:0> code.rb
+NameError: undefined local variable or method `code' for main:Object
+	from (irb):78
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):079:0> run 'code.rb'
+NoMethodError: undefined method `run' for main:Object
+	from (irb):79
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):080:0> load 'code.rb'
+SyntaxError: code.rb:18: syntax error, unexpected tSTRING_BEG, expecting ']'
+				"Y".yellow
+				 ^
+code.rb:21: syntax error, unexpected ']', expecting keyword_end
+	from (irb):80:in `load'
+	from (irb):80
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):081:0> load 'code.rb'
+NoMethodError: undefined method `attr_reader' for main:Object
+	from code.rb:4:in `<top (required)>'
+	from (irb):81:in `load'
+	from (irb):81
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):082:0> load 'code.rb'
+NoMethodError: undefined method `attr_reader' for main:Object
+	from code.rb:4:in `<top (required)>'
+	from (irb):82:in `load'
+	from (irb):82
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):083:0> load 'code.rb'
+=> true
+irb(main):084:0> Code.new
+NoMethodError: undefined method `purple' for "P":String
+	from code.rb:20:in `choose_code'
+	from code.rb:10:in `initialize'
+	from (irb):84:in `new'
+	from (irb):84
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):085:0> Dir.pwd
+=> "/Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/lib/mastermind"
+irb(main):086:0> Dir.chdir("/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/colorize-0.7.5/lib")
+=> 0
+irb(main):087:0> String.colors
+=> [:black, :light_black, :red, :light_red, :green, :light_green, :yellow, :light_yellow, :blue, :light_blue, :magenta, :light_magenta, :cyan, :light_cyan, :white, :light_white, :default]
+irb(main):088:0> Dir.chdir(""/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/colorize-0.7.5/lib"
+[1]+  Stopped                 irb
+12:09:56|~ $ irb
+irb(main):001:0> Dir.chdir("/Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/lib/mastermind")
+=> 0
+irb(main):002:0> load 'code.rb'
+=> true
+irb(main):003:0> Code.new
+NameError: undefined local variable or method `options' for #<Code:0x007fe2898b3238>
+	from code.rb:32:in `choose_code_by_index'
+	from code.rb:23:in `choose_code'
+	from code.rb:10:in `initialize'
+	from (irb):3:in `new'
+	from (irb):3
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):004:0> load 'code.rb'
+=> true
+irb(main):005:0> Code.new
+ArgumentError: wrong number of arguments (1 for 0)
+	from code.rb:31:in `choose_code_by_index'
+	from code.rb:23:in `choose_code'
+	from code.rb:10:in `initialize'
+	from (irb):5:in `new'
+	from (irb):5
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):006:0> load 'code.rb'
+=> true
+irb(main):007:0> load 'code.rb'
+=> true
+irb(main):008:0> Code.new
+NoMethodError: undefined method `each' for 7:Fixnum
+	from code.rb:25:in `choose_code'
+	from code.rb:10:in `initialize'
+	from (irb):8:in `new'
+	from (irb):8
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):009:0> load 'code.rb'
+=> true
+irb(main):010:0> Code.new
+NameError: undefined local variable or method `the_code' for #<Code:0x007fe289838588 @code_length=4>
+	from code.rb:26:in `block in choose_code'
+	from code.rb:25:in `each'
+	from code.rb:25:in `choose_code'
+	from code.rb:10:in `initialize'
+	from (irb):10:in `new'
+	from (irb):10
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):011:0> load 'code.rb'
+=> true
+irb(main):012:0> Code.new
+NoMethodError: undefined method `i' for #<Array:0x007fe28981a808>
+	from code.rb:26:in `block in choose_code'
+	from code.rb:25:in `each'
+	from code.rb:25:in `choose_code'
+	from code.rb:10:in `initialize'
+	from (irb):12:in `new'
+	from (irb):12
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):013:0> load 'code.rb'
+=> true
+irb(main):014:0> Code.new
+NameError: undefined local variable or method `b' for #<Code:0x007fe289059380 @code_length=4>
+	from code.rb:26:in `block (2 levels) in choose_code'
+	from code.rb:26:in `each'
+	from code.rb:26:in `each_with_index'
+	from code.rb:26:in `block in choose_code'
+	from code.rb:25:in `each'
+	from code.rb:25:in `choose_code'
+	from code.rb:10:in `initialize'
+	from (irb):14:in `new'
+	from (irb):14
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):015:0> load 'code.rb'
+=> true
+irb(main):016:0> Code.new
+=> #<Code:0x007fe289031b00 @code_length=4, @the_code=[1, 4, 3, 7]>
+irb(main):017:0> choice_index
+NameError: undefined local variable or method `choice_index' for main:Object
+	from (irb):17
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):018:0> load 'code.rb'
+=> true
+irb(main):019:0> choice_index
+NameError: undefined local variable or method `choice_index' for main:Object
+	from (irb):19
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):020:0> Code.new
+=> #<Code:0x007fe288980568 @code_length=4, @the_code=[2, 4, 5, 6]>
+irb(main):021:0> choice_index
+NameError: undefined local variable or method `choice_index' for main:Object
+	from (irb):21
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):022:0> load 'code.rb'
+SyntaxError: code.rb:7: syntax error, unexpected ':', expecting keyword_end
+		attr_reader :code_length :choice_index
+		                          ^
+	from (irb):22:in `load'
+	from (irb):22
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):023:0> load 'code.rb'
+=> true
+irb(main):024:0> Code.new
+=> #<Code:0x007fe288948f28 @code_length=4, @the_code=[7, 7, 5, 1]>
+irb(main):025:0> choice_index
+NameError: undefined local variable or method `choice_index' for main:Object
+	from (irb):25
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):026:0> load 'code.rb'
+=> true
+irb(main):027:0> Code.new
+=> #<Code:0x007fe28891b438 @code_length=4, @the_code=[7, 2, 3, 1], @choice_index=[7, 2, 3, 1]>
+irb(main):028:0> choice_index
+NameError: undefined local variable or method `choice_index' for main:Object
+	from (irb):28
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):029:0> Code.choice_index
+NoMethodError: undefined method `choice_index' for Code:Class
+	from (irb):29
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):030:0> Code(:choice_index)
+NoMethodError: undefined method `Code' for main:Object
+	from (irb):30
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):031:0> Code.code_length
+NoMethodError: undefined method `code_length' for Code:Class
+	from (irb):31
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):032:0> Code
+=> Code
+irb(main):033:0> Code.choice_index
+NoMethodError: undefined method `choice_index' for Code:Class
+	from (irb):33
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):034:0> buzz = Code.new
+=> #<Code:0x007fe28887bc58 @code_length=4, @the_code=[3, 4, 3, 3], @choice_index=[3, 4, 3, 3]>
+irb(main):035:0> buzz.choice_index
+=> [3, 4, 3, 3]
+irb(main):036:0> load 'code.rb'
+=> true
+irb(main):037:0> buzz = Code.new
+=> #<Code:0x007fe288853000 @code_length=4, @the_code=[3, 2, 0, 3], @choice_index=[3, 2, 0, 3]>
+irb(main):038:0> "B".blue
+=> "\e[0;34;49mB\e[0m"
+irb(main):039:0> puts "b".blue
+b
+=> nil
+irb(main):040:0> r = [puts "c".yellow, puts "b".green]
+SyntaxError: (irb):40: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+r = [puts "c".yellow, puts "b".green]
+           ^
+(irb):40: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+r = [puts "c".yellow, puts "b".green]
+                            ^
+(irb):40: syntax error, unexpected ']', expecting end-of-input
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):041:0> r = ["puts 'c'.yellow", "puts 'b'.green"]
+=> ["puts 'c'.yellow", "puts 'b'.green"]
+irb(main):042:0> r[0]
+=> "puts 'c'.yellow"
+irb(main):043:0> load 'code.rb'
+=> true
+irb(main):044:0> buzz = Code.new
+R
+B
+=> #<Code:0x007fe28988adb0 @code_length=4, @the_code=[0, 1, 6, 4], @choice_index=[0, 1, 6, 4]>
+irb(main):045:0> a = puts "work".black
+work
+=> nil
+irb(main):046:0> Dir.chir( = [(puts"R".red),
+irb(main):047:2* 
+code.rb        codebreaker.rb codemaker.rb   game.rb        guess.rb      
+irb(main):047:2* 
+code.rb        codebreaker.rb codemaker.rb   game.rb        guess.rb      
+irb(main):047:2* 
+code.rb        codebreaker.rb codemaker.rb   game.rb        guess.rb      
+irb(main):047:2* (puts "B".blue),
+irb(main):048:2* 
+code.rb        codebreaker.rb codemaker.rb   game.rb        guess.rb      
+irb(main):048:2* 
+code.rb        codebreaker.rb codemaker.rb   game.rb        guess.rb      
+irb(main):048:2* 
+code.rb        codebreaker.rb codemaker.rb   game.rb        guess.rb      
+irb(main):048:2* "Y".yellow,
+irb(main):049:2* 
+code.rb        codebreaker.rb codemaker.rb   game.rb        guess.rb      
+irb(main):049:2* 
+code.rb        codebreaker.rb codemaker.rb   game.rb        guess.rb      
+irb(main):049:2* 
+code.rb        codebreaker.rb codemaker.rb   game.rb        guess.rb      
+irb(main):049:2* "G".green,
+irb(main):050:2* 
+code.rb        codebreaker.rb codemaker.rb   game.rb        guess.rb      
+irb(main):050:2* 
+code.rb        codebreaker.rb codemaker.rb   game.rb        guess.rb      
+irb(main):050:2* 
+code.rb        codebreaker.rb codemaker.rb   game.rb        guess.rb      
+irb(main):050:2* "P".magenta,
+irb(main):051:2* 
+code.rb        codebreaker.rb codemaker.rb   game.rb        guess.rb      
+irb(main):051:2* 
+code.rb        codebreaker.rb codemaker.rb   game.rb        guess.rb      
+irb(main):051:2* 
+code.rb        codebreaker.rb codemaker.rb   game.rb        guess.rb      
+irb(main):051:2* "W".white,
+irb(main):052:2* 
+code.rb        codebreaker.rb codemaker.rb   game.rb        guess.rb      
+irb(main):052:2* 
+code.rb        codebreaker.rb codemaker.rb   game.rb        guess.rb      
+irb(main):052:2* 
+code.rb        codebreaker.rb codemaker.rb   game.rb        guess.rb      
+irb(main):052:2* "C".cy^C
+irb(main):052:0> Dir.chir("/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/colorize-0.7.5/lib")
+NoMethodError: undefined method `chir' for Dir:Class
+	from (irb):52
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):053:0> Dir.chdir("/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/colorize-0.7.5/lib")
+=> 0
+irb(main):054:0> String.modes
+=> [:default, :bold, :underline, :blink, :swap, :hide]
+irb(main):055:0> a = puts "work".black;
+irb(main):056:0* 
+irb(main):057:0* ]
+SyntaxError: (irb):57: syntax error, unexpected ']', expecting end-of-input
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):058:0> "[31mred[0m"
+=> "[31mred[0m"
+irb(main):059:0> puts "[31mred[0m"
+[31mred[0m
+=> nil
+irb(main):060:0> exit
+12:39:45|~ $ sudo gem install color
+Password:
+Fetching: color-1.7.1.gem (100%)
+Successfully installed color-1.7.1
+Parsing documentation for color-1.7.1
+Installing ri documentation for color-1.7.1
+Done installing documentation for color after 0 seconds
+1 gem installed
+12:40:30|~ $ irb
+irb(main):001:0> Dir.chir("/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/")
+NoMethodError: undefined method `chir' for Dir:Class
+	from (irb):1
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):002:0> Dir.chdir("/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/")
+=> 0
+irb(main):003:0> folder = Dir.glob("*")
+=> ["bundler-1.8.3", "color-1.7.1", "colorize-0.7.5", "diff-lcs-1.2.5", "minitest-5.4.3", "power_assert-0.2.2", "rake-10.4.2", "rdoc-4.2.0", "rspec-3.2.0", "rspec-core-3.2.1", "rspec-expectations-3.2.0", "rspec-mocks-3.2.1", "rspec-support-3.2.2", "test-unit-3.0.8"]
+irb(main):004:0> Dir.chdir(folder[1])
+=> 0
+irb(main):005:0> folder = Dir.glob("*")
+=> ["Contributing.rdoc", "Gemfile", "History.rdoc", "lib", "Licence.rdoc", "Manifest.txt", "Rakefile", "README.rdoc", "test"]
+irb(main):006:0> Dir.chdir(folder[3])
+=> 0
+irb(main):007:0> folder = Dir.glob("*")
+=> ["color", "color.rb"]
+irb(main):008:0> load "color.rb"
+=> true
+irb(main):009:0> "yes".blue
+NoMethodError: undefined method `blue' for "yes":String
+	from (irb):9
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):010:0> "yes".rebeccapurple
+NoMethodError: undefined method `rebeccapurple' for "yes":String
+	from (irb):10
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):011:0> rebeccapurple
+NameError: undefined local variable or method `rebeccapurple' for main:Object
+	from (irb):11
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):012:0> puts "yes".rebeccapurple
+NoMethodError: undefined method `rebeccapurple' for "yes":String
+	from (irb):12
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):013:0> Dir.pwd
+=> "/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/color-1.7.1/lib"
+irb(main):014:0> folder = Dir.glob("*")
+=> ["color", "color.rb"]
+irb(main):015:0> Dir.chdir(folder[0])
+=> 0
+irb(main):016:0> folder = Dir.glob("*")
+=> ["cmyk.rb", "css.rb", "grayscale.rb", "hsl.rb", "palette", "palette.rb", "rgb", "rgb.rb", "yiq.rb"]
+irb(main):017:0> load "rgb.rb"
+rgb.rb:8: warning: already initialized constant Color::RGB::PDF_FORMAT_STR
+/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/color-1.7.1/lib/color/rgb.rb:8: warning: previous definition of PDF_FORMAT_STR was here
+=> true
+irb(main):018:0> exit
+12:45:23|~ $ irb
+irb(main):001:0> Dir.chdir("/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/color-1.7.1/lib")
+=> 0
+irb(main):002:0> Color::RGB.by_hex('ff0000')
+NameError: uninitialized constant Color
+	from (irb):2
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):003:0> RGB.by_hex('ff0000')
+NameError: uninitialized constant RGB
+	from (irb):3
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):004:0> "yar".by_hex('ff0000')
+NoMethodError: undefined method `by_hex' for "yar":String
+	from (irb):4
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):005:0> .by_css("red")
+SyntaxError: (irb):5: syntax error, unexpected '.'
+.by_css("red")
+ ^
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):006:0> jay = Color.new
+NameError: uninitialized constant Color
+	from (irb):6
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):007:0> Dir.pwd
+=> "/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/color-1.7.1/lib"
+irb(main):008:0> exit
+12:57:14|~ $ irb
+irb(main):001:0> Dir.chdir("/Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/lib/mastermind")
+=> 0
+irb(main):002:0> load 'code.rb'
+=> true
+irb(main):003:0> Code.new
+=> #<Code:0x007faacb877ad0 @code_length=4, @choice_index=[1, 0, 5, 4], @the_code=[1, 0, 5, 4]>
+irb(main):004:0> buzz = Code.new
+=> #<Code:0x007faacb86e408 @code_length=4, @choice_index=[4, 1, 4, 1], @the_code=[4, 1, 4, 1]>
+irb(main):005:0> buzz.the_code
+NoMethodError: undefined method `the_code' for #<Code:0x007faacb86e408>
+	from (irb):5
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):006:0> buzz.code.length
+NoMethodError: undefined method `code' for #<Code:0x007faacb86e408>
+	from (irb):6
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):007:0> buzz.code_length
+=> 4
+irb(main):008:0> load 'code.rb'
+=> true
+irb(main):009:0> Code.new
+=> #<Code:0x007faacb81e598 @code_length=4, @choice_index=[2, 2, 5, 0], @the_code=[2, 2, 5, 0], @options={:r=>#<Proc:0x007faacb81e548@code.rb:17 (lambda)>, :b=>#<Proc:0x007faacb81e520@code.rb:18 (lambda)>, :c=>#<Proc:0x007faacb81e2c8@code.rb:19 (lambda)>, :g=>#<Proc:0x007faacb81e278@code.rb:20 (lambda)>, :m=>#<Proc:0x007faacb81e250@code.rb:21 (lambda)>, :w=>#<Proc:0x007faacb81e228@code.rb:22 (lambda)>, :y=>#<Proc:0x007faacb81e1d8@code.rb:23 (lambda)>}>
+irb(main):010:0> buzz = Code.new
+=> #<Code:0x007faacb815268 @code_length=4, @choice_index=[4, 0, 1, 7], @the_code=[4, 0, 1, 7], @options={:r=>#<Proc:0x007faacb8150d8@code.rb:17 (lambda)>, :b=>#<Proc:0x007faacb8150b0@code.rb:18 (lambda)>, :c=>#<Proc:0x007faacb815088@code.rb:19 (lambda)>, :g=>#<Proc:0x007faacb815060@code.rb:20 (lambda)>, :m=>#<Proc:0x007faacb815038@code.rb:21 (lambda)>, :w=>#<Proc:0x007faacb815010@code.rb:22 (lambda)>, :y=>#<Proc:0x007faacb814fe8@code.rb:23 (lambda)>}>
+irb(main):011:0> buzz.options
+=> {:r=>#<Proc:0x007faacb8150d8@code.rb:17 (lambda)>, :b=>#<Proc:0x007faacb8150b0@code.rb:18 (lambda)>, :c=>#<Proc:0x007faacb815088@code.rb:19 (lambda)>, :g=>#<Proc:0x007faacb815060@code.rb:20 (lambda)>, :m=>#<Proc:0x007faacb815038@code.rb:21 (lambda)>, :w=>#<Proc:0x007faacb815010@code.rb:22 (lambda)>, :y=>#<Proc:0x007faacb814fe8@code.rb:23 (lambda)>}
+irb(main):012:0> buzz.options[0]
+=> nil
+irb(main):013:0> buzz.options[:r]
+=> #<Proc:0x007faacb8150d8@code.rb:17 (lambda)>
+irb(main):014:0> buzz.options[:r].call
+R
+=> nil
+irb(main):015:0> load 'code.rb'
+=> true
+irb(main):016:0> buzz = Code.new
+NoMethodError: undefined method `call' for nil:NilClass
+	from code.rb:28:in `block (2 levels) in choose_code'
+	from code.rb:27:in `each'
+	from code.rb:27:in `each_with_index'
+	from code.rb:27:in `block in choose_code'
+	from code.rb:26:in `each'
+	from code.rb:26:in `choose_code'
+	from code.rb:10:in `initialize'
+	from (irb):16:in `new'
+	from (irb):16
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):017:0> buzz.options[1]
+=> nil
+irb(main):018:0> buzz.options[:g]
+=> #<Proc:0x007faacb815060@code.rb:20 (lambda)>
+irb(main):019:0> #<Proc:0x007faacb815060@code.rb:20 (lambda)>.call
+irb(main):020:0* 
+irb(main):021:0* /
+irb(main):022:0/ ]
+irb(main):023:0/ ]
+irb(main):024:0/ ]
+irb(main):025:0/ //
+irb(main):026:0* //
+(irb):25: warning: regular expression has ']' without escape: /
+]
+]
+]
+/
+(irb):25: warning: regular expression has ']' without escape: /
+]
+]
+]
+/
+(irb):25: warning: regular expression has ']' without escape: /
+]
+]
+]
+/
+NoMethodError: undefined method `/' for /
+]
+]
+]
+/:Regexp
+	from (irb):26
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):027:0> options.call
+NameError: undefined local variable or method `options' for main:Object
+	from (irb):27
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):028:0> buzz.options.call
+NoMethodError: undefined method `call' for #<Hash:0x007faacb814f70>
+	from (irb):28
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):029:0> y = buzz.options[:r].call
+R
+=> nil
+irb(main):030:0> y
+=> nil
+irb(main):031:0> y.call
+NoMethodError: undefined method `call' for nil:NilClass
+	from (irb):31
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):032:0> y = buzz.options[:r]
+=> #<Proc:0x007faacb8150d8@code.rb:17 (lambda)>
+irb(main):033:0> y.call
+R
+=> nil
+irb(main):034:0>  0xff0000
+=> 16711680
+irb(main):035:0>  0xff0000
+=> 16711680
+irb(main):036:0>  0xff0000.color
+NoMethodError: undefined method `color' for 16711680:Fixnum
+	from (irb):36
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):037:0> :#{y}
+irb(main):038:0* //
+irb(main):039:0/ ////
+SyntaxError: (irb):39: unterminated regexp meets end of file
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):040:0> load 'code.rb'
+=> true
+irb(main):041:0> buzz = Code.new
+ArgumentError: wrong number of arguments (6 for 0..1)
+	from code.rb:36:in `rand'
+	from code.rb:36:in `block in choose_code_by_index'
+	from code.rb:36:in `initialize'
+	from code.rb:36:in `new'
+	from code.rb:36:in `choose_code_by_index'
+	from code.rb:25:in `choose_code'
+	from code.rb:10:in `initialize'
+	from (irb):41:in `new'
+	from (irb):41
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):042:0> rand(a..d)
+NameError: undefined local variable or method `a' for main:Object
+	from (irb):42
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):043:0> rand([a..d])
+NameError: undefined local variable or method `a' for main:Object
+	from (irb):43
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):044:0> rand(["a".."d"])
+TypeError: no implicit conversion of Array into Integer
+	from (irb):44:in `rand'
+	from (irb):44
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):045:0> 65+rand(25).chr
+TypeError: String can't be coerced into Fixnum
+	from (irb):45:in `+'
+	from (irb):45
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):046:0> 65 + rand(25).chr
+TypeError: String can't be coerced into Fixnum
+	from (irb):46:in `+'
+	from (irb):46
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):047:0> (65 + rand(25)).chr
+=> "U"
+irb(main):048:0> let = (65 + rand(25)).chr
+=> "W"
+irb(main):049:0> let.to_sym
+=> :W
+irb(main):050:0> rand(1,4,5)
+ArgumentError: wrong number of arguments (3 for 0..1)
+	from (irb):50:in `rand'
+	from (irb):50
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):051:0> 90.chr
+=> "Z"
+irb(main):052:0> 96.chr
+=> "`"
+irb(main):053:0> 97.chr
+=> "a"
+irb(main):054:0> g.ord
+NameError: undefined local variable or method `g' for main:Object
+	from (irb):54
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):055:0> "g".ord
+=> 103
+irb(main):056:0> Array.new(a..z)
+NameError: undefined local variable or method `a' for main:Object
+	from (irb):56
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):057:0> Array.new("a".."z")
+TypeError: no implicit conversion of Range into Integer
+	from (irb):57:in `initialize'
+	from (irb):57:in `new'
+	from (irb):57
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):058:0> Array.new(["a".."z"])
+=> ["a".."z"]
+irb(main):059:0> Array.new(26) {"a
+irb(main):060:1" ".."z"}
+=> ["a\n".."z", "a\n".."z", "a\n".."z", "a\n".."z", "a\n".."z", "a\n".."z", "a\n".."z", "a\n".."z", "a\n".."z", "a\n".."z", "a\n".."z", "a\n".."z", "a\n".."z", "a\n".."z", "a\n".."z", "a\n".."z", "a\n".."z", "a\n".."z", "a\n".."z", "a\n".."z", "a\n".."z", "a\n".."z", "a\n".."z", "a\n".."z", "a\n".."z", "a\n".."z"]
+irb(main):061:0> 26.to_s
+=> "26"
+irb(main):062:0> ('a'..'g').to_a
+=> ["a", "b", "c", "d", "e", "f", "g"]
+irb(main):063:0> load 'code.rb'
+=> true
+irb(main):064:0> buzz = Code.new
+NoMethodError: undefined method `to_sym' for 98:Fixnum
+	from code.rb:30:in `block (2 levels) in choose_code'
+	from code.rb:28:in `each'
+	from code.rb:28:in `each_with_index'
+	from code.rb:28:in `block in choose_code'
+	from code.rb:27:in `each'
+	from code.rb:27:in `choose_code'
+	from code.rb:10:in `initialize'
+	from (irb):64:in `new'
+	from (irb):64
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):065:0> load 'code.rb'
+=> true
+irb(main):066:0> buzz = Code.new
+=> #<Code:0x007faacb1f4118 @code_length=4, @choice_index=["g", "g", "g", "g"], @the_code=["g", "g", "g", "g"], @options={:a=>#<Proc:0x007faacb1f40c8@code.rb:17 (lambda)>, :b=>#<Proc:0x007faacb1f40a0@code.rb:18 (lambda)>, :c=>#<Proc:0x007faacb1f4078@code.rb:19 (lambda)>, :d=>#<Proc:0x007faacb1f4050@code.rb:20 (lambda)>, :e=>#<Proc:0x007faacb1effa0@code.rb:21 (lambda)>, :f=>#<Proc:0x007faacb1eff78@code.rb:22 (lambda)>, :g=>#<Proc:0x007faacb1eff50@code.rb:23 (lambda)>}>
+irb(main):067:0> buzz = Code.new
+=> #<Code:0x007faacb1e4b78 @code_length=4, @choice_index=["f", "f", "f", "f"], @the_code=["f", "f", "f", "f"], @options={:a=>#<Proc:0x007faacb1e4b28@code.rb:17 (lambda)>, :b=>#<Proc:0x007faacb1e4ab0@code.rb:18 (lambda)>, :c=>#<Proc:0x007faacb1e4a88@code.rb:19 (lambda)>, :d=>#<Proc:0x007faacb1e49e8@code.rb:20 (lambda)>, :e=>#<Proc:0x007faacb1e4970@code.rb:21 (lambda)>, :f=>#<Proc:0x007faacb1e48d0@code.rb:22 (lambda)>, :g=>#<Proc:0x007faacb1e48a8@code.rb:23 (lambda)>}>
+irb(main):068:0> buzz = Code.new
+=> #<Code:0x007faacb1d7388 @code_length=4, @choice_index=["c", "c", "c", "c"], @the_code=["c", "c", "c", "c"], @options={:a=>#<Proc:0x007faacb1d7298@code.rb:17 (lambda)>, :b=>#<Proc:0x007faacb1d7270@code.rb:18 (lambda)>, :c=>#<Proc:0x007faacb1d7248@code.rb:19 (lambda)>, :d=>#<Proc:0x007faacb1d7220@code.rb:20 (lambda)>, :e=>#<Proc:0x007faacb1d7180@code.rb:21 (lambda)>, :f=>#<Proc:0x007faacb1d7130@code.rb:22 (lambda)>, :g=>#<Proc:0x007faacb1d7040@code.rb:23 (lambda)>}>
+irb(main):069:0> load 'code.rb'
+=> true
+irb(main):070:0> buzz = Code.new
+=> #<Code:0x007faacb1af6f8 @code_length=4, @choice_index=["c", "c", "c", "c"], @the_code=["c", "c", "c", "c"], @options={:a=>#<Proc:0x007faacb1af6a8@code.rb:17 (lambda)>, :b=>#<Proc:0x007faacb1af680@code.rb:18 (lambda)>, :c=>#<Proc:0x007faacb1af630@code.rb:19 (lambda)>, :d=>#<Proc:0x007faacb1af590@code.rb:20 (lambda)>, :e=>#<Proc:0x007faacb1af568@code.rb:21 (lambda)>, :f=>#<Proc:0x007faacb1af540@code.rb:22 (lambda)>, :g=>#<Proc:0x007faacb1af518@code.rb:23 (lambda)>}>
+irb(main):071:0> something = Array.new(3) {rand(97..103)}
+=> [101, 99, 98]
+irb(main):072:0> something.map {|ark| ark.chr}
+=> ["e", "c", "b"]
+irb(main):073:0> something
+=> [101, 99, 98]
+irb(main):074:0> load 'code.rb'
+=> true
+irb(main):075:0> buzz = Code.new
+=> #<Code:0x007faacb161110 @code_length=4, @choice_index=["e", "d", "e", "e"], @the_code=["e", "d", "e", "e"], @options={:a=>#<Proc:0x007faacb1610c0@code.rb:17 (lambda)>, :b=>#<Proc:0x007faacb161070@code.rb:18 (lambda)>, :c=>#<Proc:0x007faacb161048@code.rb:19 (lambda)>, :d=>#<Proc:0x007faacb160ff8@code.rb:20 (lambda)>, :e=>#<Proc:0x007faacb160fa8@code.rb:21 (lambda)>, :f=>#<Proc:0x007faacb160f80@code.rb:22 (lambda)>, :g=>#<Proc:0x007faacb160f30@code.rb:23 (lambda)>}>
+irb(main):076:0> buzz = Code.new
+=> #<Code:0x007faacb153510 @code_length=4, @choice_index=["e", "g", "b", "e"], @the_code=["e", "g", "b", "e"], @options={:a=>#<Proc:0x007faacb1534c0@code.rb:17 (lambda)>, :b=>#<Proc:0x007faacb153498@code.rb:18 (lambda)>, :c=>#<Proc:0x007faacb153470@code.rb:19 (lambda)>, :d=>#<Proc:0x007faacb153448@code.rb:20 (lambda)>, :e=>#<Proc:0x007faacb153420@code.rb:21 (lambda)>, :f=>#<Proc:0x007faacb1533f8@code.rb:22 (lambda)>, :g=>#<Proc:0x007faacb1533d0@code.rb:23 (lambda)>}>
+irb(main):077:0> i
+NameError: undefined local variable or method `i' for main:Object
+	from (irb):77
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):078:0> load 'code.rb'
+=> true
+irb(main):079:0> buzz = Code.new
+=> #<Code:0x007faacb12a138 @code_length=4, @choice_index=["f", "d", "f", "d"], @the_code=[#<Proc:0x007faacb12a020@code.rb:20 (lambda)>, #<Proc:0x007faacb12a020@code.rb:20 (lambda)>, #<Proc:0x007faacb12a020@code.rb:20 (lambda)>, #<Proc:0x007faacb12a020@code.rb:20 (lambda)>], @options={:a=>#<Proc:0x007faacb12a0e8@code.rb:17 (lambda)>, :b=>#<Proc:0x007faacb12a070@code.rb:18 (lambda)>, :c=>#<Proc:0x007faacb12a048@code.rb:19 (lambda)>, :d=>#<Proc:0x007faacb12a020@code.rb:20 (lambda)>, :e=>#<Proc:0x007faacb129f80@code.rb:21 (lambda)>, :f=>#<Proc:0x007faacb129f30@code.rb:22 (lambda)>, :g=>#<Proc:0x007faacb129f08@code.rb:23 (lambda)>}>
+irb(main):080:0> the_code[0]
+NameError: undefined local variable or method `the_code' for main:Object
+	from (irb):80
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):081:0> buzz.the_code[0]
+NoMethodError: undefined method `the_code' for #<Code:0x007faacb12a138>
+	from (irb):81
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):082:0> buzz.the_code
+NoMethodError: undefined method `the_code' for #<Code:0x007faacb12a138>
+	from (irb):82
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):083:0> buzz.choice_index
+=> ["f", "d", "f", "d"]
+irb(main):084:0> buzz.the_code
+NoMethodError: undefined method `the_code' for #<Code:0x007faacb12a138>
+	from (irb):84
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):085:0> buzz.options
+=> {:a=>#<Proc:0x007faacb12a0e8@code.rb:17 (lambda)>, :b=>#<Proc:0x007faacb12a070@code.rb:18 (lambda)>, :c=>#<Proc:0x007faacb12a048@code.rb:19 (lambda)>, :d=>#<Proc:0x007faacb12a020@code.rb:20 (lambda)>, :e=>#<Proc:0x007faacb129f80@code.rb:21 (lambda)>, :f=>#<Proc:0x007faacb129f30@code.rb:22 (lambda)>, :g=>#<Proc:0x007faacb129f08@code.rb:23 (lambda)>}
+irb(main):086:0> the_code
+NameError: undefined local variable or method `the_code' for main:Object
+	from (irb):86
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):087:0> Code.the_code
+NoMethodError: undefined method `the_code' for Code:Class
+	from (irb):87
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):088:0> load 'code.rb'
+=> true
+irb(main):089:0> buzz = Code.new
+=> #<Code:0x007faacb062278 @code_length=4, @choice_index=["g", "f", "f", "b"], @the_code=[#<Proc:0x007faacb062200@code.rb:18 (lambda)>, #<Proc:0x007faacb062200@code.rb:18 (lambda)>, #<Proc:0x007faacb062200@code.rb:18 (lambda)>, #<Proc:0x007faacb062200@code.rb:18 (lambda)>], @options={:a=>#<Proc:0x007faacb062228@code.rb:17 (lambda)>, :b=>#<Proc:0x007faacb062200@code.rb:18 (lambda)>, :c=>#<Proc:0x007faacb062188@code.rb:19 (lambda)>, :d=>#<Proc:0x007faacb062160@code.rb:20 (lambda)>, :e=>#<Proc:0x007faacb062110@code.rb:21 (lambda)>, :f=>#<Proc:0x007faacb062098@code.rb:22 (lambda)>, :g=>#<Proc:0x007faacb062070@code.rb:23 (lambda)>}>
+irb(main):090:0> buzz.the_code
+=> [#<Proc:0x007faacb062200@code.rb:18 (lambda)>, #<Proc:0x007faacb062200@code.rb:18 (lambda)>, #<Proc:0x007faacb062200@code.rb:18 (lambda)>, #<Proc:0x007faacb062200@code.rb:18 (lambda)>]
+irb(main):091:0> load 'code.rb'
+=> true
+irb(main):092:0> buzz = Code.new
+Y
+Y
+Y
+Y
+W
+W
+W
+W
+R
+R
+R
+R
+M
+M
+M
+M
+=> #<Code:0x007faacb033068 @code_length=4, @choice_index=["g", "f", "a", "e"], @the_code=[nil, nil, nil, nil], @options={:a=>#<Proc:0x007faacb032f78@code.rb:17 (lambda)>, :b=>#<Proc:0x007faacb032f50@code.rb:18 (lambda)>, :c=>#<Proc:0x007faacb032f28@code.rb:19 (lambda)>, :d=>#<Proc:0x007faacb032e88@code.rb:20 (lambda)>, :e=>#<Proc:0x007faacb032e60@code.rb:21 (lambda)>, :f=>#<Proc:0x007faacb032de8@code.rb:22 (lambda)>, :g=>#<Proc:0x007faacb032d98@code.rb:23 (lambda)>}>
+irb(main):093:0> p "blue".blue
+"\e[0;34;49mblue\e[0m"
+=> "\e[0;34;49mblue\e[0m"
+irb(main):094:0> print "blue".blue
+blue=> nil
+irb(main):095:0> load 'code.rb'
+=> true
+irb(main):096:0> buzz = Code.new
+NameError: undefined local variable or method `j' for #<Code:0x007faacb86e2c8>
+	from code.rb:31:in `choose_code'
+	from code.rb:10:in `initialize'
+	from (irb):96:in `new'
+	from (irb):96
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):097:0> load 'code.rb'
+=> true
+irb(main):098:0> buzz = Code.new
+NameError: undefined local variable or method `something' for #<Code:0x007faacb8447c0>
+	from code.rb:32:in `choose_code'
+	from code.rb:10:in `initialize'
+	from (irb):98:in `new'
+	from (irb):98
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):099:0> load 'code.rb'
+=> true
+irb(main):100:0> buzz = Code.new
+YWGR=> #<Code:0x007faacb814b60 @code_length=4, @the_code=[nil, nil, nil, nil], @options={:a=>#<Proc:0x007faacb814b10@code.rb:17 (lambda)>, :b=>#<Proc:0x007faacb814a70@code.rb:18 (lambda)>, :c=>#<Proc:0x007faacb8149f8@code.rb:19 (lambda)>, :d=>#<Proc:0x007faacb8149d0@code.rb:20 (lambda)>, :e=>#<Proc:0x007faacb8149a8@code.rb:21 (lambda)>, :f=>#<Proc:0x007faacb814980@code.rb:22 (lambda)>, :g=>#<Proc:0x007faacb814958@code.rb:23 (lambda)>}>
+irb(main):101:0> load 'code.rb'
+=> true
+irb(main):102:0> buzz = Code.new
+YBRCOkay, I have my code.
+=> #<Code:0x007faacb1f7b38 @code_length=4, @the_code=[nil, nil, nil, nil], @options={:a=>#<Proc:0x007faacb1f7ac0@code.rb:18 (lambda)>, :b=>#<Proc:0x007faacb1f7a98@code.rb:19 (lambda)>, :c=>#<Proc:0x007faacb1f7a70@code.rb:20 (lambda)>, :d=>#<Proc:0x007faacb1f7a48@code.rb:21 (lambda)>, :e=>#<Proc:0x007faacb1f7a20@code.rb:22 (lambda)>, :f=>#<Proc:0x007faacb1f79d0@code.rb:23 (lambda)>, :g=>#<Proc:0x007faacb1f79a8@code.rb:24 (lambda)>}>
+irb(main):103:0> y = 3
+=> 3
+irb(main):104:0> y.3?
+irb(main):105:0* esc
+SyntaxError: (irb):104: no .<digit> floating literal anymore; put 0 before dot
+(irb):104: syntax error, unexpected tINTEGER, expecting '('
+(irb):105: syntax error, unexpected end-of-input, expecting ':'
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):106:0> y.is? 3
+NoMethodError: undefined method `is?' for 3:Fixnum
+	from (irb):106
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):107:0> y.equal? 3
+=> true
+irb(main):108:0> role = gets.chomp([a..z])
+kl
+NameError: undefined local variable or method `a' for main:Object
+	from (irb):108
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):109:0> role = gets.chomp(/[a..z]/)
+klj
+TypeError: no implicit conversion of Regexp into String
+	from (irb):109:in `chomp'
+	from (irb):109
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):110:0> 
+code.rb        codebreaker.rb codemaker.rb   game.rb        guess.rb      
+irb(main):110:0> 
+code.rb        codebreaker.rb codemaker.rb   game.rb        guess.rb      
+irb(main):110:0> role = gets.chomp("b" || "m")
+hbji
+=> "hbji\n"
+irb(main):111:0> role = gets.chomp("b")
+daffdf
+=> "daffdf\n"
+irb(main):112:0> gets.methods
+d
+=> [:<=>, :==, :===, :eql?, :hash, :casecmp, :+, :*, :%, :[], :[]=, :insert, :length, :size, :bytesize, :empty?, :=~, :match, :succ, :succ!, :next, :next!, :upto, :index, :rindex, :replace, :clear, :chr, :getbyte, :setbyte, :byteslice, :scrub, :scrub!, :freeze, :to_i, :to_f, :to_s, :to_str, :inspect, :dump, :upcase, :downcase, :capitalize, :swapcase, :upcase!, :downcase!, :capitalize!, :swapcase!, :hex, :oct, :split, :lines, :bytes, :chars, :codepoints, :reverse, :reverse!, :concat, :<<, :prepend, :crypt, :intern, :to_sym, :ord, :include?, :start_with?, :end_with?, :scan, :ljust, :rjust, :center, :sub, :gsub, :chop, :chomp, :strip, :lstrip, :rstrip, :sub!, :gsub!, :chop!, :chomp!, :strip!, :lstrip!, :rstrip!, :tr, :tr_s, :delete, :squeeze, :count, :tr!, :tr_s!, :delete!, :squeeze!, :each_line, :each_byte, :each_char, :each_codepoint, :sum, :slice, :slice!, :partition, :rpartition, :encoding, :force_encoding, :b, :valid_encoding?, :ascii_only?, :unpack, :encode, :encode!, :to_r, :to_c, :unicode_normalize, :unicode_normalize!, :unicode_normalized?, :black, :on_black, :light_black, :on_light_black, :red, :on_red, :light_red, :on_light_red, :green, :on_green, :light_green, :on_light_green, :yellow, :on_yellow, :light_yellow, :on_light_yellow, :blue, :on_blue, :light_blue, :on_light_blue, :magenta, :on_magenta, :light_magenta, :on_light_magenta, :cyan, :on_cyan, :light_cyan, :on_light_cyan, :white, :on_white, :light_white, :on_light_white, :bold, :underline, :blink, :swap, :hide, :colorize, :uncolorize, :colorized?, :>, :>=, :<, :<=, :between?, :nil?, :!~, :class, :singleton_class, :clone, :dup, :itself, :taint, :tainted?, :untaint, :untrust, :untrusted?, :trust, :frozen?, :methods, :singleton_methods, :protected_methods, :private_methods, :public_methods, :instance_variables, :instance_variable_get, :instance_variable_set, :instance_variable_defined?, :remove_instance_variable, :instance_of?, :kind_of?, :is_a?, :tap, :send, :public_send, :respond_to?, :extend, :display, :method, :public_method, :singleton_method, :define_singleton_method, :object_id, :to_enum, :enum_for, :equal?, :!, :!=, :instance_eval, :instance_exec, :__send__, :__id__]
+irb(main):113:0> gets.objects
+
+NoMethodError: undefined method `objects' for "\n":String
+	from (irb):113
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):114:0> role = gets.scan(/$[b,m]^/)
+aefaewawefmgew
+=> []
+irb(main):115:0> role = gets.scan(/[b,m]/)
+fadfaofibfaeioaewfjaw
+=> ["b"]
+irb(main):116:0> role = gets.scan(/[b,m]/).chomp
+faewofibaewofaewfyahowfemfaefaeojp
+NoMethodError: undefined method `chomp' for ["b", "m"]:Array
+	from (irb):116
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):117:0> role = gets.scan(/[b,m]/).to_s.chomp
+faefoiajeofijabefioaejaowefm faefaeob
+=> "[\"b\", \"m\", \"b\"]"
+irb(main):118:0> start = "joe is crazy"
+=> "joe is crazy"
+irb(main):119:0> start = "joe is a crazy guy"
+=> "joe is a crazy guy"
+irb(main):120:0> start.scan(/[a,c]/)
+=> ["a", "c", "a"]
+irb(main):121:0> start.scan(/[a,c]/)
+=> ["a", "c", "a"]
+irb(main):122:0> p start.scan(/[a,c]/)
+["a", "c", "a"]
+=> ["a", "c", "a"]
+irb(main):123:0> p start.scan(/[a,c]/)
+["a", "c", "a"]
+=> ["a", "c", "a"]
+irb(main):124:0> start.scan(/[a,c]/) {|x,*| puts x}
+a
+c
+a
+=> "joe is a crazy guy"
+irb(main):125:0> start.scan(/[a,c].*/) {|x,b| puts x}
+a crazy guy
+=> "joe is a crazy guy"
+irb(main):126:0> start.scan(/([a,c])(.*)/) {|x,b| puts x}
+a
+=> "joe is a crazy guy"
+irb(main):127:0> start.scan(/([a,c])(.*)/) {|x,b| x}
+=> "joe is a crazy guy"
+irb(main):128:0> blah = start.scan(/([a,c])(.*)/) {|x,b| x}
+=> "joe is a crazy guy"
+irb(main):129:0> blah
+=> "joe is a crazy guy"
+irb(main):130:0> blah = start.scan(/([a,c])(.*)/) {|x,b| return x}
+LocalJumpError: unexpected return
+	from (irb):130:in `block in irb_binding'
+	from (irb):130:in `scan'
+	from (irb):130
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):131:0> blah
+=> "joe is a crazy guy"
+irb(main):132:0> blah = start.scan(/([a,c])(.*)/) {|x,b| blah = x}^C
+irb(main):132:0> start.scan(/([a,c])(.*)/) {|x,b| joe = x}
+=> "joe is a crazy guy"
+irb(main):133:0> joe
+NameError: undefined local variable or method `joe' for main:Object
+	from (irb):133
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):134:0> puts joe
+NameError: undefined local variable or method `joe' for main:Object
+	from (irb):134
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):135:0> start.scan(/([a,c])(.*)/) {|x,b| puts x}
+a
+=> "joe is a crazy guy"
+irb(main):136:0> joe = String.new
+=> ""
+irb(main):137:0> start.scan(/([a,c])(.*)/) {|x,b| joe = x.to_s}
+=> "joe is a crazy guy"
+irb(main):138:0> joe
+=> "a"
+irb(main):139:0> start.scan(/([a,c])(.*)/) {|x,b| joe = x}
+=> "joe is a crazy guy"
+irb(main):140:0> x
+NameError: undefined local variable or method `x' for main:Object
+	from (irb):140
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):141:0> joe
+=> "a"
+irb(main):142:0> start.scan(/([a,c])(.*)/) {|x,b| billy = x}
+=> "joe is a crazy guy"
+irb(main):143:0> billy
+NameError: undefined local variable or method `billy' for main:Object
+	from (irb):143
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):144:0> billy.to_S
+NameError: undefined local variable or method `billy' for main:Object
+	from (irb):144
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):145:0> billy.to_s
+NameError: undefined local variable or method `billy' for main:Object
+	from (irb):145
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):146:0> "John do good".scan(/([a,c])(.*)/) {|x,b| billy = x}
+=> "John do good"
+irb(main):147:0> billy
+NameError: undefined local variable or method `billy' for main:Object
+	from (irb):147
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):148:0> "John do good".scan(/([a,c])(.*)/) {|x,b| illy = x.to_s}
+=> "John do good"
+irb(main):149:0> illy
+NameError: undefined local variable or method `illy' for main:Object
+	from (irb):149
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):150:0> pick = Array.new(50) {rand(1..1000)}
+=> [897, 279, 944, 900, 930, 910, 443, 50, 731, 476, 645, 529, 212, 561, 417, 882, 785, 402, 891, 638, 465, 209, 158, 976, 760, 947, 997, 105, 867, 658, 361, 424, 25, 433, 442, 676, 990, 673, 674, 228, 173, 846, 976, 342, 904, 109, 512, 241, 726, 110]
+irb(main):151:0> hash ={a: 5, b: 6, c: 7}
+=> {:a=>5, :b=>6, :c=>7}
+irb(main):152:0> hash[:a] ||= 2
+=> 5
+irb(main):153:0> hash ={a ||=> 12, b => 20, c => 9}
+SyntaxError: (irb):153: syntax error, unexpected '>'
+hash ={a ||=> 12, b => 20, c => 9}
+             ^
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):154:0> Dir.pwd
+=> "/Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/lib/mastermind"
+irb(main):155:0> load 'game.rb'
+SyntaxError: game.rb:4: syntax error, unexpected ':', expecting keyword_end
+		attr_reader :round_num :current_player :player_one
+		                        ^
+game.rb:139: syntax error, unexpected end-of-input, expecting keyword_end
+			end
+			   ^
+	from (irb):155:in `load'
+	from (irb):155
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):156:0> load 'game.rb'
+SyntaxError: game.rb:139: syntax error, unexpected end-of-input, expecting keyword_end
+			end
+			   ^
+	from (irb):156:in `load'
+	from (irb):156
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):157:0> exit
+16:25:19|~ $ save
+-bash: save: command not found
+16:25:24|~ $ 
