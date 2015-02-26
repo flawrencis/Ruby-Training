@@ -65,12 +65,13 @@ module Mastermind
 		def already_decided(first_hash,player_two)
 			if first_hash[:role]== "BREAKER"
 				player_two[:role]== "MAKER"
-				puts "I've just changed player two's hash to MAKER. See for yourself : #{@player_two}.\n"
+				puts "I've just changed player two's hash to MAKER. See for yourself : #{player_two}.\n"
 				else
 				player_two[:role]= "BREAKER"
-				puts "I've just changed player two's hash to BREAKER. See for yourself : #{@player_two}.\n"
+				puts "I've just changed player two's hash to BREAKER. See for yourself : #{player_two}.\n"
 				end
-			@player_two = player_two
+			@player_two = player_two			
+#			@player_two = player_two
 #			player_hash = the_hash
 #			return player_hash
 			end

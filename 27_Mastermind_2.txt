@@ -1,0 +1,580 @@
+Last login: Thu Feb 26 16:26:27 on ttys000
+
+-------------------------------------------------
+If you need to create a platform specific folder using Phonegap, please do the following:
+1) First, run the 'echo PATH=$PATH:/Users/francislawrence/Programming/phonegap-2.9.1/lib/<specific_platform>/bin' command.
+2) Then, you need to change your working directory to the bin of that platform in that same phonegap folder.
+3) Then, run the 'create name com.example.name Name' command.
+
+Also, if you need to change any of these settings, go to your home directory (~) and type ‘nano .bash_profile’.
+
+Also, if you need to do the EMULATE command, you have to go to the app folder and then run ‘ripple emulate’.
+
+To edit the tab control thing, go to nano .inputrc from your root directory.
+To substitute something in the previous line, type something like this... ^toreplace^touse
+To search previous lines, use Ctrl-R.
+To leave that screen you can get stuck in, use q when the END is highlighted.
+To learn the escape characters of buttons, first type ^V
+Jump to start of line ^A
+Jump to end of line ^E
+Clear text onward ^K
+Clear backward by word ^W
+Toggle between current cursor position and start of line ^XX
+Clear whole line ^U
+Bring last line back ^Y
+Search previous lines ^R
+! preceding starting character, Enter invokes last command
+To modify the last command, type !<firstfewcharacters>:s/<toreplace>/<desired>
+Keep Mac awake: $ caffeinate -u -t 600 (add options to set timer)
+------------------------------------------------------
+16:28:17|~ $ login
+login: Francis Lawrence
+Password:
+Last login: Thu Feb 26 05:08:03 on ttys000
+
+-------------------------------------------------
+If you need to create a platform specific folder using Phonegap, please do the following:
+1) First, run the 'echo PATH=$PATH:/Users/francislawrence/Programming/phonegap-2.9.1/lib/<specific_platform>/bin' command.
+2) Then, you need to change your working directory to the bin of that platform in that same phonegap folder.
+3) Then, run the 'create name com.example.name Name' command.
+
+Also, if you need to change any of these settings, go to your home directory (~) and type ‘nano .bash_profile’.
+
+Also, if you need to do the EMULATE command, you have to go to the app folder and then run ‘ripple emulate’.
+
+To edit the tab control thing, go to nano .inputrc from your root directory.
+To substitute something in the previous line, type something like this... ^toreplace^touse
+To search previous lines, use Ctrl-R.
+To leave that screen you can get stuck in, use q when the END is highlighted.
+To learn the escape characters of buttons, first type ^V
+Jump to start of line ^A
+Jump to end of line ^E
+Clear text onward ^K
+Clear backward by word ^W
+Toggle between current cursor position and start of line ^XX
+Clear whole line ^U
+Bring last line back ^Y
+Search previous lines ^R
+! preceding starting character, Enter invokes last command
+To modify the last command, type !<firstfewcharacters>:s/<toreplace>/<desired>
+Keep Mac awake: $ caffeinate -u -t 600 (add options to set timer)
+------------------------------------------------------
+16:28:33|~ $ cd francislawrence/programming/ruby-training_l/mastermind/lib/mastermind
+-bash: cd: francislawrence/programming/ruby-training_l/mastermind/lib/mastermind: No such file or directory
+16:29:18|~ $ cd /programming/ruby-training_l/mastermind/lib/mastermind
+-bash: cd: /programming/ruby-training_l/mastermind/lib/mastermind: No such file or directory
+16:29:50|~ $ cd programming/ruby-training_l/mastermind/lib/mastermind
+-bash: cd: programming/ruby-training_l/mastermind/lib/mastermind: No such file or directory
+16:29:57|~ $ ls
+Applications		Documents		Dropbox			Library			Music			Programming		apache-ant-1.9.4
+Desktop			Downloads		Google Drive		Movies			Pictures		Public			clubside
+16:30:00|~ $ cd programming
+16:30:03|programming $ ls
+AndroidStudioProjects	GoogleMaps-iOS-1.9.1	Others' Code		phonegap-2.9.1
+Education		Java_workspace		Ruby-Training_l		webshim-1.15.6
+16:30:10|programming $ cd ~/programming/ruby-training_l/27_mastermind/lib/mastermind
+16:30:48|mastermind $ irb
+irb(main):001:0> load 'game.rb'
+=> true
+irb(main):002:0> Game.new
+NameError: uninitialized constant Game
+	from (irb):2
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):003:0> Mastermind::Game.new
+Welcome to your new game of Mastermind.
+This is a two player game. Will the computer be your oponent? [y/n]
+n
+Are you here to crack the code or make the code? [b/m]
+b
+NameError: undefined local variable or method `role_response' for #<Mastermind::Game:0x007f8492065770>
+	from game.rb:96:in `get_role_including_name_call'
+	from game.rb:27:in `who_is_playing'
+	from game.rb:8:in `initialize'
+	from (irb):3:in `new'
+	from (irb):3
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):004:0> gets.chomp.scan(/([b,m])(.*)/) {|x,b| role_response = x.to_s}
+b
+=> "b"
+irb(main):005:0> role_response
+NameError: undefined local variable or method `role_response' for main:Object
+	from (irb):5
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):006:0> x
+NameError: undefined local variable or method `x' for main:Object
+	from (irb):6
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):007:0> gets.chomp.scan(/([b,m])(.*)/) {|x,b| role_response = x.to_s}
+abc
+=> "abc"
+irb(main):008:0> role_response
+NameError: undefined local variable or method `role_response' for main:Object
+	from (irb):8
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):009:0> blah
+NameError: undefined local variable or method `blah' for main:Object
+	from (irb):9
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):010:0> "gross".chomp
+=> "gross"
+irb(main):011:0> "gross".chomp.scan("o")
+=> ["o"]
+irb(main):012:0> "gross".chomp.scan(/([c,m])(.*)/) {|x,rest| role_response = x.to_s}
+=> "gross"
+irb(main):013:0> "gross".chomp.scan(/([c,s])(.*)/) {|x,rest| role_response = x.to_s}
+=> "gross"
+irb(main):014:0> "gross".scan(/([c,s])(.*)/) {|x,rest| role_response = x.to_s}
+=> "gross"
+irb(main):015:0> role_response
+NameError: undefined local variable or method `role_response' for main:Object
+	from (irb):15
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):016:0> "gross".scan(/([c,s])(.*)/) {|x,rest| joe = x.to_s}
+=> "gross"
+irb(main):017:0> joe
+NameError: undefined local variable or method `joe' for main:Object
+	from (irb):17
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):018:0> "gross".scan(/([c,s])(.*)/) {|x,rest| joe = String.new(x.to_s)}
+=> "gross"
+irb(main):019:0> joe
+NameError: undefined local variable or method `joe' for main:Object
+	from (irb):19
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):020:0> joe = String.new
+=> ""
+irb(main):021:0> "gross".scan(/([c,s])(.*)/) {|x,rest| joe = x.to_s}
+=> "gross"
+irb(main):022:0> joe
+=> "s"
+irb(main):023:0> load 'game.rb'
+=> true
+irb(main):024:0> Game.new
+NameError: uninitialized constant Game
+	from (irb):24
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):025:0> Mastermind::Game.new
+Welcome to your new game of Mastermind.
+This is a two player game. Will the computer be your oponent? [y/n]
+n
+Are you here to crack the code or make the code? [c/m]
+c
+NameError: undefined local variable or method `breaker' for #<Mastermind::Game:0x007f8491888d18 @breaker="c", @maker="m">
+	from game.rb:99:in `get_role_including_name_call'
+	from game.rb:29:in `who_is_playing'
+	from game.rb:10:in `initialize'
+	from (irb):25:in `new'
+	from (irb):25
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):026:0> :breaker
+=> :breaker
+irb(main):027:0> b
+NameError: undefined local variable or method `b' for main:Object
+	from (irb):27
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):028:0> @breaker
+=> nil
+irb(main):029:0> breaker
+NameError: undefined local variable or method `breaker' for main:Object
+	from (irb):29
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):030:0> load 'game.rb'
+SyntaxError: game.rb:4: syntax error, unexpected tSYMBEG, expecting '('
+		attr_reader :player_two, :player_one. :breaker
+		                                       ^
+	from (irb):30:in `load'
+	from (irb):30
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):031:0> load 'game.rb'
+=> true
+irb(main):032:0> Mastermind::Game.new
+Welcome to your new game of Mastermind.
+This is a two player game. Will the computer be your oponent? [y/n]
+n
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+Francis Lawrence
+NoMethodError: undefined method `join' for "Francis":String
+	from game.rb:128:in `block in get_name'
+	from game.rb:127:in `map'
+	from game.rb:127:in `get_name'
+	from game.rb:107:in `get_role_including_name_call'
+	from game.rb:29:in `who_is_playing'
+	from game.rb:10:in `initialize'
+	from (irb):32:in `new'
+	from (irb):32
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):033:0> "bo ho".join
+NoMethodError: undefined method `join' for "bo ho":String
+	from (irb):33
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):034:0> "bo ho".join(" ")
+NoMethodError: undefined method `join' for "bo ho":String
+	from (irb):34
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):035:0> String.methods
+=> [:try_convert, :allocate, :new, :superclass, :freeze, :===, :==, :<=>, :<, :<=, :>, :>=, :to_s, :inspect, :included_modules, :include?, :name, :ancestors, :instance_methods, :public_instance_methods, :protected_instance_methods, :private_instance_methods, :constants, :const_get, :const_set, :const_defined?, :const_missing, :class_variables, :remove_class_variable, :class_variable_get, :class_variable_set, :class_variable_defined?, :public_constant, :private_constant, :singleton_class?, :include, :prepend, :module_exec, :class_exec, :module_eval, :class_eval, :method_defined?, :public_method_defined?, :private_method_defined?, :protected_method_defined?, :public_class_method, :private_class_method, :autoload, :autoload?, :instance_method, :public_instance_method, :nil?, :=~, :!~, :eql?, :hash, :class, :singleton_class, :clone, :dup, :itself, :taint, :tainted?, :untaint, :untrust, :untrusted?, :trust, :frozen?, :methods, :singleton_methods, :protected_methods, :private_methods, :public_methods, :instance_variables, :instance_variable_get, :instance_variable_set, :instance_variable_defined?, :remove_instance_variable, :instance_of?, :kind_of?, :is_a?, :tap, :send, :public_send, :respond_to?, :extend, :display, :method, :public_method, :singleton_method, :define_singleton_method, :object_id, :to_enum, :enum_for, :equal?, :!, :!=, :instance_eval, :instance_exec, :__send__, :__id__]
+irb(main):036:0> real_name = "Francis Lawrence".split.map {|i| i.capitalize.join(" ")}
+NoMethodError: undefined method `join' for "Francis":String
+	from (irb):36:in `block in irb_binding'
+	from (irb):36:in `map'
+	from (irb):36
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):037:0> real_name = "Francis Lawrence".split.map {|i| i.capitalize}.join(" ")
+=> "Francis Lawrence"
+irb(main):038:0> load 'game.rb'
+=> true
+irb(main):039:0> yo = Mastermind::Game.new
+Welcome to your new game of Mastermind.
+This is a two player game. Will the computer be your oponent? [y/n]
+n
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+Francis Lawrence
+NameError: undefined local variable or method `people' for #<Mastermind::Game:0x007f8492046550 @breaker="c", @maker="m">
+	from game.rb:112:in `get_role_including_name_call'
+	from game.rb:28:in `who_is_playing'
+	from game.rb:9:in `initialize'
+	from (irb):39:in `new'
+	from (irb):39
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):040:0> load 'game.rb'
+=> true
+irb(main):041:0> yo = Mastermind::Game.new
+Welcome to your new game of Mastermind.
+This is a two player game. Will the computer be your oponent? [y/n]
+n
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+Francis Lawrence
+You didn't break it! Fail!
+NameError: undefined local variable or method `who_response' for #<Mastermind::Game:0x007f8492016288>
+	from game.rb:30:in `who_is_playing'
+	from game.rb:9:in `initialize'
+	from (irb):41:in `new'
+	from (irb):41
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):042:0> load 'game.rb'
+=> true
+irb(main):043:0> yo = Mastermind::Game.new
+Welcome to your new game of Mastermind.
+This is a two player game. Will the computer be your oponent? [y/n]
+n
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+Francis Lawrence
+You didn't break it! Fail!
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+Flipping Loser
+NameError: undefined local variable or method `player_hash' for #<Mastermind::Game:0x007f84918ec2c8>
+	from game.rb:67:in `already_decided'
+	from game.rb:33:in `who_is_playing'
+	from game.rb:9:in `initialize'
+	from (irb):43:in `new'
+	from (irb):43
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):044:0> load 'game.rb'
+=> true
+irb(main):045:0> yo = Mastermind::Game.new
+Welcome to your new game of Mastermind.
+This is a two player game. Will the computer be your oponent? [y/n]
+n
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+Francis Lawrence
+You didn't break it! Fail!
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+Richard Flipper
+ArgumentError: wrong number of arguments (2 for 1)
+	from game.rb:50:in `player_initiation'
+	from game.rb:35:in `who_is_playing'
+	from game.rb:9:in `initialize'
+	from (irb):45:in `new'
+	from (irb):45
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):046:0> load 'game.rb'
+=> true
+irb(main):047:0> yo = Mastermind::Game.new
+Welcome to your new game of Mastermind.
+This is a two player game. Will the computer be your oponent? [y/n]
+n
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+Francis Lawrence
+You didn't break it! Fail!
+Are you here to crack the code or make the code? [c/m]
+c    
+What's your name? Example: John Butt
+Richard Homie  
+=> #<Mastermind::Game:0x007f849215c2c8 @breaker="c", @maker="m", @player_one={:user_name=>"lawrfran", :real_name=>"Francis Lawrence", :role=>"BREAKER"}, @player_two={:user_name=>"homirich", :real_name=>"Richard Homie", :role=>"c"}, @player_2={:user_name=>"homirich", :real_name=>"Richard Homie", :role=>"c"}>
+irb(main):048:0> load 'game.rb'
+=> true
+irb(main):049:0> yo = Mastermind::Game.new
+Welcome to your new game of Mastermind.
+This is a two player game. Will the computer be your oponent? [y/n]
+n
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+Francis Lawrence
+You didn't break it! Fail!
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+Richard Doop
+You didn't break it! Fail!
+=> #<Mastermind::Game:0x007f84921475d0 @breaker="c", @maker="m", @player_one={:user_name=>"lawrfran", :real_name=>"Francis Lawrence", :role=>"BREAKER"}, @player_two={:user_name=>"dooprich", :real_name=>"Richard Doop", :role=>"BREAKER"}, @player_2={:user_name=>"dooprich", :real_name=>"Richard Doop", :role=>"BREAKER"}>
+irb(main):050:0> load 'game.rb'
+=> true
+irb(main):051:0> yo = Mastermind::Game.new
+Welcome to your new game of Mastermind.
+This is a two player game. Will the computer be your oponent? [y/n]
+n
+Are you here to crack the code or make the code? [c/m]
+c     
+What's your name? Example: John Butt
+Fra La
+You didn't break it! Fail!
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+Ric Ez
+You didn't break it! Fail!
+=> #<Mastermind::Game:0x007f849211dde8 @breaker="c", @maker="m", @player_one={:user_name=>"lafra", :real_name=>"Fra La", :role=>"BREAKER"}, @player_two={:user_name=>"ezric", :real_name=>"Ric Ez", :role=>"BREAKER"}>
+irb(main):052:0> yo.player_Two
+NoMethodError: undefined method `player_Two' for #<Mastermind::Game:0x007f849211dde8>
+	from (irb):52
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):053:0> yo.player_two
+=> {:user_name=>"ezric", :real_name=>"Ric Ez", :role=>"BREAKER"}
+irb(main):054:0> load 'game.rb'
+=> true
+irb(main):055:0> yo = Mastermind::Game.new
+Welcome to your new game of Mastermind.
+This is a two player game. Will the computer be your oponent? [y/n]
+n
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+Fr L
+You didn't break it! Fail!
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+R E
+You didn't break it! Fail!
+=> #<Mastermind::Game:0x007f84918887f0 @breaker="c", @maker="m", @player_one={:user_name=>"lfr", :real_name=>"Fr L", :role=>"BREAKER"}, @player_two={:user_name=>"er", :real_name=>"R E", :role=>"BREAKER"}>
+irb(main):056:0> yo.player_hash
+=> nil
+irb(main):057:0> load 'game.rb'
+=> true
+irb(main):058:0> yo = Mastermind::Game.new
+Welcome to your new game of Mastermind.
+This is a two player game. Will the computer be your oponent? [y/n]
+n
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+F L
+You didn't break it! Fail!
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+R E
+Right now, the player_hash is {:user_name=>"er", :real_name=>"R E", :role=>"BREAKER"}. Let's call already_decided.
+Now that we've finished a_d, the player_hash is {:user_name=>"er", :real_name=>"R E", :role=>"BREAKER"}.
+You didn't break it! Fail!
+=> #<Mastermind::Game:0x007f849185a9e0 @breaker="c", @maker="m", @player_one={:user_name=>"lf", :real_name=>"F L", :role=>"BREAKER"}, @player_two={:user_name=>"er", :real_name=>"R E", :role=>"BREAKER"}>
+irb(main):059:0> load 'game.rb'
+=> true
+irb(main):060:0> yo = Mastermind::Game.new
+Welcome to your new game of Mastermind.
+This is a two player game. Will the computer be your oponent? [y/n]
+n
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+Ine Jo
+You didn't break it! Fail!
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+Cai Lawrence
+Right now, the player_hash is {:user_name=>"lawrcai", :real_name=>"Cai Lawrence", :role=>"BREAKER"}. Let's call already_decided.
+Now that we've finished a_d, the player_hash is {:user_name=>"lawrcai", :real_name=>"Cai Lawrence", :role=>"BREAKER"}.
+You didn't break it! Fail!
+=> #<Mastermind::Game:0x007f84918413a0 @breaker="c", @maker="m", @player_one={:user_name=>"joine", :real_name=>"Ine Jo", :role=>"BREAKER"}, @player_two={:user_name=>"lawrcai", :real_name=>"Cai Lawrence", :role=>"BREAKER"}>
+irb(main):061:0> load 'game.rb'
+=> true
+irb(main):062:0> yo = Mastermind::Game.new
+Welcome to your new game of Mastermind.
+This is a two player game. Will the computer be your oponent? [y/n]
+n
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+Abe Linc
+You didn't break it! Fail!
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+Joh Kenn
+Right now, the player_hash is {:user_name=>"kennjoh", :real_name=>"Joh Kenn", :role=>"BREAKER"}. Let's call already_decided.
+Now that we've finished a_d, the player_hash is false.
+You didn't break it! Fail!
+=> #<Mastermind::Game:0x007f84920de1e8 @breaker="c", @maker="m", @player_one={:user_name=>"lincabe", :real_name=>"Abe Linc", :role=>"BREAKER"}, @player_two={:user_name=>"kennjoh", :real_name=>"Joh Kenn", :role=>"BREAKER"}>
+irb(main):063:0> load 'game.rb'
+=> true
+irb(main):064:0> yo = Mastermind::Game.new
+Welcome to your new game of Mastermind.
+This is a two player game. Will the computer be your oponent? [y/n]
+n
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+Frankie Lorenzo
+You didn't break it! Fail!
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+Jonny Bushtits
+Right now, the player_hash is {:user_name=>"bushjonn", :real_name=>"Jonny Bushtits", :role=>"BREAKER"}. Let's call already_decided.
+Now that we've finished a_d, the player_hash is false.
+NoMethodError: undefined method `[]' for false:FalseClass
+	from game.rb:53:in `player_initiation'
+	from game.rb:37:in `who_is_playing'
+	from game.rb:9:in `initialize'
+	from (irb):64:in `new'
+	from (irb):64
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):065:0> load 'game.rb'
+=> true
+irb(main):066:0> yo = Mastermind::Game.new
+Welcome to your new game of Mastermind.
+This is a two player game. Will the computer be your oponent? [y/n]
+n
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+Callie Juice
+You didn't break it! Fail!
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+Karate Kid
+Right now, the player_hash is {:user_name=>"kidkara", :real_name=>"Karate Kid", :role=>"BREAKER"}. Let's call already_decided.
+I've just changed player two's hash to MAKER. See for yourself : {:user_name=>"kidkara", :real_name=>"Karate Kid", :role=>"BREAKER"}.
+Now that we've finished a_d, the player_hash is .
+NoMethodError: undefined method `[]' for nil:NilClass
+	from game.rb:53:in `player_initiation'
+	from game.rb:37:in `who_is_playing'
+	from game.rb:9:in `initialize'
+	from (irb):66:in `new'
+	from (irb):66
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):067:0> load 'game.rb'
+SyntaxError: game.rb:52: formal argument cannot be an instance variable
+		def player_initiation(@player_hash)
+		                                  ^
+	from (irb):67:in `load'
+	from (irb):67
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):068:0> load 'game.rb'
+=> true
+irb(main):069:0> yo = Mastermind::Game.new
+Welcome to your new game of Mastermind.
+This is a two player game. Will the computer be your oponent? [y/n]
+n
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+Jere Johnanan
+NoMethodError: undefined method `[]' for nil:NilClass
+	from game.rb:53:in `player_initiation'
+	from game.rb:30:in `who_is_playing'
+	from game.rb:9:in `initialize'
+	from (irb):69:in `new'
+	from (irb):69
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):070:0> load 'game.rb'
+=> true
+irb(main):071:0> yo = Mastermind::Game.new
+Welcome to your new game of Mastermind.
+This is a two player game. Will the computer be your oponent? [y/n]
+n
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+blah blah
+You didn't break it! Fail!
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+gob bob
+Right now, the player_hash is {:user_name=>"bobgob", :real_name=>"Gob Bob", :role=>"BREAKER"}. Let's call already_decided.
+I've just changed player two's hash to MAKER. See for yourself : {:user_name=>"bobgob", :real_name=>"Gob Bob", :role=>"BREAKER"}.
+Now that we've finished a_d, the player_hash is .
+NoMethodError: undefined method `[]' for nil:NilClass
+	from game.rb:53:in `player_initiation'
+	from game.rb:37:in `who_is_playing'
+	from game.rb:9:in `initialize'
+	from (irb):71:in `new'
+	from (irb):71
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):072:0> load 'game.rb'
+=> true
+irb(main):073:0> yo = Mastermind::Game.new
+Welcome to your new game of Mastermind.
+This is a two player game. Will the computer be your oponent? [y/n]
+n
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+a b
+You didn't break it! Fail!
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+c d
+Right now, the player_hash is {:user_name=>"dc", :real_name=>"C D", :role=>"BREAKER"}. Let's call already_decided.
+I've just changed player two's hash to MAKER. See for yourself : {:user_name=>"dc", :real_name=>"C D", :role=>"BREAKER"}.
+Now that we've finished a_d, the player_hash is {:user_name=>"dc", :real_name=>"C D", :role=>"BREAKER"}.
+You didn't break it! Fail!
+=> #<Mastermind::Game:0x007f84918ac628 @breaker="c", @maker="m", @player_one={:user_name=>"ba", :real_name=>"A B", :role=>"BREAKER"}, @player_two={:user_name=>"dc", :real_name=>"C D", :role=>"BREAKER"}>
+irb(main):074:0> load 'game.rb'
+=> true
+irb(main):075:0> yo = Mastermind::Game.new
+Welcome to your new game of Mastermind.
+This is a two player game. Will the computer be your oponent? [y/n]
+n
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+francis laugh
+You didn't break it! Fail!
+Are you here to crack the code or make the code? [c/m]
+c
+What's your name? Example: John Butt
+go on
+Right now, the player_hash is {:user_name=>"ongo", :real_name=>"Go On", :role=>"BREAKER"}. Let's call already_decided.
+I've just changed player two's hash to MAKER. See for yourself : {:user_name=>"ongo", :real_name=>"Go On", :role=>"BREAKER"}.
+Now that we've finished a_d, the player_hash is {:user_name=>"ongo", :real_name=>"Go On", :role=>"BREAKER"}.
+You didn't break it! Fail!
+=> #<Mastermind::Game:0x007f84918615b0 @breaker="c", @maker="m", @player_one={:user_name=>"laugfran", :real_name=>"Francis Laugh", :role=>"BREAKER"}, @player_two={:user_name=>"ongo", :real_name=>"Go On", :role=>"BREAKER"}>
+irb(main):076:0> ruby -debug game.rb
+SyntaxError: (irb):76: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+ruby -debug game.rb
+                ^
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):077:0> exit
+17:21:51|mastermind $ 
