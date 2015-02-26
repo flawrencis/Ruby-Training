@@ -31,7 +31,7 @@ module Mastermind
 			if who_response == "n"
 				player_hash = get_role_including_name_call(2)
 				puts "Right now, the player_hash is #{@player_two}. Let's call already_decided.\n"
-				@player_two = already_decided(player_hash,@player_two)
+				already_decided(@player_one,@player_two)
 				puts "Now that we've finished a_d, the player_hash is #{@player_two}.\n"
 #				@player_two = player_hash
 				player_initiation(@player_two) 
@@ -63,14 +63,16 @@ module Mastermind
 			end
 		
 		def already_decided(first_hash,player_two)
+			puts "I just brought player_two into my method. It is #{@player_two}.\n"
+			puts "\nMeanwhile, first_hash is #{first_hash}.\n"
 			if first_hash[:role]== "BREAKER"
-				player_two[:role]== "MAKER"
-				puts "I've just changed player two's hash to MAKER. See for yourself : #{player_two}.\n"
+				@player_two[:role]= "MAKER"
+				puts "I've just changed player two's hash to MAKER. See for yourself : #{@player_two}.\n"
 				else
-				player_two[:role]= "BREAKER"
-				puts "I've just changed player two's hash to BREAKER. See for yourself : #{player_two}.\n"
+				@player_two[:role]= "BREAKER"
+				puts "I've just changed player two's hash to BREAKER. See for yourself : #{@player_two}.\n"
 				end
-			@player_two = player_two			
+#			@player_two = player_two			
 #			@player_two = player_two
 #			player_hash = the_hash
 #			return player_hash
@@ -103,10 +105,10 @@ module Mastermind
 			puts "Are you here to crack the code or make the code? [c/m]"
 			role_response = String.new
 			gets.chomp.scan(/([c,m])(.*)/) {|x,rest| role_response = x.to_s}
-			if role_response == breaker
+			if role_response == @breaker
 				role = "BREAKER"
 #				user_name = get_name(role)
-				elsif role_response == maker
+				elsif role_response == @maker
 				role = "MAKER"
 				end
 				
