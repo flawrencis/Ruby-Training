@@ -1,0 +1,75 @@
+Last login: Fri Feb 27 04:10:09 on ttys000
+
+-------------------------------------------------
+If you need to create a platform specific folder using Phonegap, please do the following:
+1) First, run the 'echo PATH=$PATH:/Users/francislawrence/Programming/phonegap-2.9.1/lib/<specific_platform>/bin' command.
+2) Then, you need to change your working directory to the bin of that platform in that same phonegap folder.
+3) Then, run the 'create name com.example.name Name' command.
+
+Also, if you need to change any of these settings, go to your home directory (~) and type ‘nano .bash_profile’.
+
+Also, if you need to do the EMULATE command, you have to go to the app folder and then run ‘ripple emulate’.
+
+To edit the tab control thing, go to nano .inputrc from your root directory.
+To substitute something in the previous line, type something like this... ^toreplace^touse
+To search previous lines, use Ctrl-R.
+To leave that screen you can get stuck in, use q when the END is highlighted.
+To learn the escape characters of buttons, first type ^V
+Jump to start of line ^A
+Jump to end of line ^E
+Clear text onward ^K
+Clear backward by word ^W
+Toggle between current cursor position and start of line ^XX
+Clear whole line ^U
+Bring last line back ^Y
+Search previous lines ^R
+! preceding starting character, Enter invokes last command
+To modify the last command, type !<firstfewcharacters>:s/<toreplace>/<desired>
+Keep Mac awake: $ caffeinate -u -t 600 (add options to set timer)
+------------------------------------------------------
+15:43:49|~ $ irb
+irb(main):001:0> exit
+17:00:28|~ $ cd Programming/Ruby-Training_l/classtest
+17:00:44|classtest $ irb
+irb(main):001:0> load 'classtest.rb'
+LoadError: cannot load such file -- classtest.rb
+	from (irb):1:in `load'
+	from (irb):1
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):002:0> load 'class_One.rb'
+=> true
+irb(main):003:0> One.new
+NameError: uninitialized constant One
+	from (irb):3
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):004:0> Classtest::One.new
+=> #<Classtest::One:0x007fa83c95e048 @one=1>
+irb(main):005:0> Classtest::One.print_from_class_Two
+NoMethodError: undefined method `print_from_class_Two' for Classtest::One:Class
+	from (irb):5
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):006:0> One.print_from_class_Two
+NameError: uninitialized constant One
+	from (irb):6
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):007:0> jay = Classtest::One.new
+=> #<Classtest::One:0x007fa83c934c98 @one=1>
+irb(main):008:0> jon = Classtest::Two.new
+NameError: uninitialized constant Classtest::Two
+	from (irb):8
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):009:0> load 'class_Two.rb'
+=> true
+irb(main):010:0> jon = Classtest::Two.new
+=> #<Classtest::Two:0x007fa83b9162a8>
+irb(main):011:0> One.print_from_class_Two
+NameError: uninitialized constant One
+	from (irb):11
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):012:0> jay.print_from_class_Two
+NoMethodError: undefined method `second_test' for Classtest:Module
+	from class_One.rb:13:in `print_from_class_Two'
+	from (irb):12
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'
+irb(main):013:0> exit
+17:30:47|classtest $ 
