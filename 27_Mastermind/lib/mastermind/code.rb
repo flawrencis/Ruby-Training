@@ -11,8 +11,6 @@ module Mastermind
 			puts "Okay, I have my code.\n"
 			end
 		
-#		private
-		
 		def choose_code
 
 			@options = {a: "\e[1;31mR\e[0m",
@@ -40,18 +38,13 @@ module Mastermind
 		
 		def print_code(the_code)
 			puts the_code.join
-			end
-				
-				
+			end			
 		end #class end
-	
-	
 	end #module end
 
 #Sources
 #http://stackoverflow.com/questions/7023951/ruby-how-to-map-a-function-to-a-hash
 #http://stackoverflow.com/questions/1489183/colorized-ruby-output
-
-#YAY - great help!!
+#	YAY - great help!!
 #http://kpumuk.info/ruby-on-rails/colorizing-console-ruby-script-output/
 #http://en.wikipedia.org/wiki/ANSI_escape_code
