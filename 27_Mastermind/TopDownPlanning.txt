@@ -1,0 +1,39 @@
+Top Down planning
+
+Instantiate the game class
+	From this object, you can get
+	- round number
+	- a record of guesses and responses
+	Methods of this object
+
+Instantiate the Player class
+	From this object, you can get
+	- hash with user_name, real_name
+	
+	Instantiate the Codemaker class
+		includes Role
+		Data of this object
+			-new hash with inherited details plus role
+			-instructions
+		Methods of this object
+			-make_code
+			-check_guess
+	
+	Instantiate the Codebreaker class
+		includes Role
+		Data of this object
+			-new hash with inherited details plus role
+			-instructions
+		Methods of this object
+			-guess_code
+			-see_options	????????
+			
+Module Role
+	Methods
+	- Adding role to an object's hash
+	- Announcing an object's role
+
+#Sources
+	http://stackoverflow.com/questions/14739640/ruby-classes-within-classes-or-modules-within-modules
+	
+	
