@@ -1,14 +1,21 @@
 Top Down planning
 
 Instantiate the game class
+	include DeterminePlayers
 	From this object, you can get
 	- round number
 	- a record of guesses and responses
+	- whose turn
 	Methods of this object
+		instantiate_player
 
 Instantiate the Player class
 	From this object, you can get
 	- hash with user_name, real_name
+	#Could do, player_a = Codemaker.new(player_a)
+	
+	Methods of this object
+		take_turn
 	
 	Instantiate the Codemaker class
 		includes Role
@@ -16,22 +23,46 @@ Instantiate the Player class
 			-new hash with inherited details plus role
 			-instructions
 		Methods of this object
-			-make_code
-			-check_guess
+			-set_up [make code]
+			-take_turn [check guess]
+		BUT WHAT DOES IT RETURN?
 	
 	Instantiate the Codebreaker class
-		includes Role
+		class variable for number of codebreakers in history?
+		includes ArrangePlayerRoles
 		Data of this object
 			-new hash with inherited details plus role
 			-instructions
 		Methods of this object
-			-guess_code
+			-set_up [give instructions]
+			-take_turn [make guess]
 			-see_options	????????
 			
-Module Role
+Module ArrangePlayerRoles
 	Methods
-	- Adding role to an object's hash
-	- Announcing an object's role
+		add_role
+			takes role,Player object.hash
+			returns Player object.hash
+		appoint_player
+			takes role,Player object.hash
+			puts welcome string
+		who_is_playing
+			takes nothing
+			returns number_of_players
+		already_decided
+			takes player_a_hash,player_b_hash
+			returns player_b_hash
+
+module PlayGame
+	Methods
+		switch_players
+			takes round_number,player_order = [player_a,player_b]
+			returns player_order
+		take_turns
+			takes round_number,player_order
+			runs player_order[0].take_turn
+			runs player_order[1].take_turn
+			returns round_number
 
 #Sources
 	http://stackoverflow.com/questions/14739640/ruby-classes-within-classes-or-modules-within-modules

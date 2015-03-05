@@ -1,0 +1,18 @@
+Top Down planning
+
+Instantiate the Codemaker class
+	include Player
+	takes "computer" or "human"
+	
+	Methods
+		
+
+Instantiate the Game class
+
+module Player
+
+	Methods
+		take_turn
+			takes Player object
+			puts "Okay, go for it, #{name from object}
+		quit_game

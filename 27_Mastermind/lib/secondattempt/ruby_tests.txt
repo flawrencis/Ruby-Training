@@ -1,0 +1,44 @@
+class Game
+attr_reader :player_a
+def instantiate_player
+@player_a = Player.new
+end
+def take_turns
+@player_a.take_turn
+end
+end
+
+class Player
+def take_turn
+puts "Okay, taking my turn!"
+end
+end
+
+module HisMod
+def laughs
+puts "hahahahaha"
+end
+def offends
+puts "You stupid FUCKER!"
+end
+end
+
+module HerMod
+def laughs
+puts "hehehehehe"
+end
+def offends
+puts "If you don't mind being seen as trash, good for oyu!"
+end
+end
+
+class Person
+def initialize gender
+extend HisMod if gender == "male"
+extend HerMod if gender == "female"
+self.laughs
+end
+def piss
+self.offends
+end
+end
