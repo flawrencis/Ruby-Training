@@ -4,8 +4,8 @@ module Mastermind
 #		:breaker, :player_hash
 		
 		def initialize
-			@breaker = "c"
-			@maker = "m"
+#			@breaker = "c"
+#			@maker = "m"
 			puts "Welcome to your new game of Mastermind."
 			who_is_playing
 			@round_num = 0

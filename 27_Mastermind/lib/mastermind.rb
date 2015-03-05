@@ -1,6 +1,7 @@
 module Mastermind
 	end
 
+my_game = Game.new
 #class Mastermind
 #	def initialize
 #		module Mastermind

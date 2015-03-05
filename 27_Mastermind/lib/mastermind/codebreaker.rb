@@ -12,7 +12,7 @@ module Mastermind
 			@award = 6
 			end
 		
-		def intro_(two_names)
+		def intro_breaker(two_names)
 			first_name = two_names[1].split(" ")[0]
 			puts "Welcome master sleuth General #{first_name}!"
 			puts "Try to guess #{Codemaker.user_name}'s #{Code.code_length}-letter code in #{Game.max_rounds} rounds or fewer!"
