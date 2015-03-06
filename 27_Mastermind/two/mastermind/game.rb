@@ -2,14 +2,14 @@ class Game
 	attr_reader :game_name
 	def initialize name
 		@game_name = name
-		start_method = "start"
+		start_method = "player_setup"
 		puts "Welcome to this game of Mastermind, #{name}! When you're ready to run the game, simply type '#{name}.#{start_method}'!"
 		end
 	
-	def start
+	def player_setup
 		@game_type = how_many_players
-		Player.new(@game_type)
-		self.class.send(:include, Codemaker)
+		player_uno = Player.new(@game_type)
+		player_dos = Player.new(@game_type) if need_partner? game_type
 		end
 	
 	def how_many_players
@@ -18,7 +18,13 @@ class Game
 		return "hh" if x == "y"
 		return "hc" if x == "n"
 		end
-		@player_a = Player.new
+	
+	def need_partner? game_type
+		return false if game_type.includes? "c"
+		true
+		end
+		
+		
 	end
 
 

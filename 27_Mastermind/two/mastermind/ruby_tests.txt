@@ -1,3 +1,6 @@
+Sources
+http://www.techotopia.com/index.php/Ruby_Variable_Scope
+
 class Game
 attr_reader :player_a
 def instantiate_player
@@ -12,6 +15,13 @@ class Player
 def take_turn
 puts "Okay, taking my turn!"
 end
+end
+
+#FOR CONSTANTS. IF CONSTANT IS LOOSE IN HIGH MODULE, JUST REFER TO IT WITH A CAPS G
+module Total
+
+module Constants
+Gender = "male" #needed capital G
 end
 
 module HisMod
@@ -33,12 +43,19 @@ end
 end
 
 class Person
-def initialize gender
+def initialize
+gender = Constants::Gender
+puts "Gender is #{gender}. Understood?"
+puts "No, it's #{gender}!"
 extend HisMod if gender == "male"
 extend HerMod if gender == "female"
+puts "Turns out, gender is #{gender}. I already extended the appropriate module and am ready to make you laugh."
 self.laughs
 end
 def piss
 self.offends
 end
 end
+
+end
+
