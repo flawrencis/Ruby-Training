@@ -4,7 +4,20 @@ module Mastermind
 		Breakans = "c"
 		Makeans = "m"
 		#the role label
-		Breaker_title = "The Breaker"
-		Maker_title = "The Maker"
+		Breaker_title = "breaker"
+		Maker_title = "maker"
+		#code-length
+		CodeLength = 4
+		#max-rounds
+		MaxRounds = 12
+		
+		Options = {a: "\e[1;31mR\e[0m",
+		b: "\e[1;34mB\e[0m",
+		c: "\e[1;36mC\e[0m",
+		d: "\e[1;33mY\e[0m",
+		e: "\e[1;35mM\e[0m",
+		f: "\e[1;37mW\e[0m",
+		g: "\e[1;32mG\e[0m"}
+
 		end
 	end

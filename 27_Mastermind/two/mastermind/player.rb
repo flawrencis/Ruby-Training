@@ -1,12 +1,16 @@
 module Mastermind
 	class Player
-		attr_reader :my_hash
+		attr_reader :my_hash :role :user_name
+		@@victory = false
 		@@get_options = [GenCons::Breaker_title,GenCons::Maker_title]
 		
 		def initialize(gam_type,role*)
+			@code_length = GensCons::CodeLength
+			@max_rounds = GenCons::MaxRounds
 			@my_name_array = get_name
+			@user_name = @my_name_array[0]
 			@game_type = gam_type
-			role = differentiate(@@get_options)
+			@role = differentiate(@@get_options)
 			self.pull_module(role)
 			self.build_hash(@my_name_array<<role)
 			end
@@ -44,14 +48,19 @@ module Mastermind
 			end
 		
 		def pull_module(info)
-			extend Codemaker if info == GenCons:Maker_title
-			extend Codebreaker if info == GenCons:Breaker_title
+			extend Codemaker if info == GenCons::Maker_title
+			extend Codebreaker if info == GenCons::Breaker_title
 			end
 		
 		def build_hash(info)
 			@my_hash = {user_name: info[0], real_name: info[1], role: info[2]}
-		end
+			end
+				
+#		def set_up
+#			puts instructions
+#			end
 		
-		def set_up
-			puts instructions
+#		def victory?
+#			true if 
+			
 	end
