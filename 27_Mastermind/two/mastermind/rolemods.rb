@@ -40,9 +40,10 @@ module Mastermind
 			return @turn_result
 			end
 		
-		def response
-			@turn_result
-			end
+#		def response
+#			@turn_result
+#			end
+#Above was removed after I got humans working and began working on computer
 		
 		def print_record(record)
 #			puts "DEBUG: Just entered print_record function."

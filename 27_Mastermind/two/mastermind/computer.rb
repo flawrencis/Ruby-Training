@@ -10,8 +10,8 @@ module Mastermind
 #			p "DEBUG: I'm in the computer.rb file and in the pull_module function and will extend the following because info is #{info}"
 #			p "Codemaker" if info == GenCons::MakerTitle
 #			p "Codebreaker" if info == GenCons::BreakerTitle
-			extend Codemaker if info == GenCons::MakerTitle
-			extend Codebreaker if info == GenCons::BreakerTitle
+			extend Ccodemaker if info == GenCons::MakerTitle
+			extend Ccodebreaker if info == GenCons::BreakerTitle
 			end
 		
 		def take_turn
@@ -46,4 +46,5 @@ module Mastermind
 			puts the_code.join
 			end			
 		end
+	
 	end

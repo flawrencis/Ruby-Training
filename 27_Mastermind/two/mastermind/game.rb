@@ -64,7 +64,8 @@ module Mastermind
 		def game_play(code_length, max_rounds, player_one, player_two, *other_players)
 			player_one.intro(code_length,max_rounds)
 			the_code = player_two.intro(code_length,max_rounds)
-			response = "Just decided code."
+			puts "DEBUG: The code is #{the_code}"
+			response = "Just decided code"
 			@round_num+=1
 			while @round_num < @max_rounds+1
 				guess = player_one.take_turn(@round_num,response)
