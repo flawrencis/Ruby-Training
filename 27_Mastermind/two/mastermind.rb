@@ -20,9 +20,18 @@ module Mastermind
 		g: "\e[1;32mG\e[0m"}
 
 		end
+	
+	def self.put_break
+		puts "\e[1,33m----------------------------------------------------------------------------------\e[0m"
+		end
 	end
 
 lib_path = File.expand_path(File.dirname(__FILE__))
 Dir[lib_path + "/mastermind/*.rb"].each { |file| require file }
 
-puts "Hey, first, say 'Game.new' followed by whatever you want to call it."
+puts "Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'."
+
+#Fail
+#puts "What do you want to call this game? No spaces."
+#gamename = gets.chomp
+#gamename = Mastermind::Game.new
