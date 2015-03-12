@@ -36,8 +36,8 @@ class Game
 		player_dos = Player.new(@game_type) if need_partner? game_type
 		player_dos ||= Computer.new(Player.get_options)
 		Game.new_entry(player_dos.user_name,player_dos.role)
-#		if player_uno[:role]== GenCons::Breaker_title
-		if player_uno.role == GenCons::Breaker_title
+#		if player_uno[:role]== GenCons::BreakerTitle
+		if player_uno.role == GenCons::BreakerTitle
 			codebreaker = player_uno
 			codemaker = player_dos
 			else
@@ -49,7 +49,7 @@ class Game
 		game_play(@code_length,@max_rounds,codebreaker,codemaker)
 		end	
 	
-	def game_play(code_length, max_rounds, player_one, player_two, other_players*)
+	def game_play(code_length, max_rounds, player_one, player_two, *other_players)
 		player_one.intro(code_length,max_rounds)
 		the_code = player_two.intro(code_length,max_rounds)
 		while @round_num < @max_rounds+1

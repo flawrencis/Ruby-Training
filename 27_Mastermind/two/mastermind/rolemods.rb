@@ -16,7 +16,7 @@ module Mastermind
 			@guess_grid[round-1][1]=feedback if defined? guess_grid
 			@guess_grid ||= Array.new
 			your_turn = "\nOkay, we're on round #{round} and it's your turn, #{name}"
-			name = "Great #{GenCons::Breaker_title.capitalize}."
+			name = "Great #{GenCons::BreakerTitle.capitalize}."
 			the_question = "What do you say? #{follow_up_question}"
 			follow_up_question = "What is your next guess for the code? So far, your guesses and their responses have been...."
 			puts your_turn
@@ -48,7 +48,8 @@ module Mastermind
 	
 	
 	
-	module Codemaker < Codebreaker
+	module Codemaker
+		extend Codebreaker
 		@@instructions = "Now we gotta make a code.\nYour opponent wins if they guess the code before the maximum number of rounds.\nThe length of the code has been pre-determined.\nUse the upcoming list to know what your options are."
 		@@feedback_explanation = "They will guess the code.\n\tFor every element that is correct and in the right place, give a 2.\n\tFor every additional element that is correct, give a 1.\n\tFor every additional element, give a 0.\nType this digit code without any additional punctuation or characters, followed by the return key."
 		def intro(length,rounds)
@@ -68,7 +69,7 @@ module Mastermind
 			
 		def take_turn (round,feedback)
 			dabreaker = false
-			name = "Great #{GenCons::Maker_title.capitalize}."
+			name = "Great #{GenCons::MakerTitle.capitalize}."
 			follow_up_question = "How'd they do? Give me that digit response."
 			answer = resp.scan(/([0,1,2]).*([0,1,2]).*([0,1,2]).*([0,1,2])/)[0].join
 			end

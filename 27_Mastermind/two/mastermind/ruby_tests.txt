@@ -17,6 +17,10 @@ puts "Okay, taking my turn!"
 end
 end
 
+-------
+
+#this works
+
 #FOR CONSTANTS. IF CONSTANT IS LOOSE IN HIGH MODULE, JUST REFER TO IT WITH A CAPS G
 module Total
 
@@ -59,3 +63,111 @@ end
 
 end
 
+----------------
+
+module Total
+
+module Constants
+#attr_reader(:gender)
+@@gender = "male" #needed capital G
+
+#def self.gender
+#@@gender
+#end
+
+end
+
+module HisMod
+def laughs
+puts "hahahahaha"
+end
+def offends
+puts "You stupid FUCKER!"
+end
+end
+
+module HerMod
+def laughs
+puts "hehehehehe"
+end
+def offends
+puts "If you don't mind being seen as trash, good for oyu!"
+end
+end
+
+class Person
+include Total::Constants
+def initialize
+gender = @@gender
+#gender = Total::Constants.gender
+puts "Gender is #{gender}. Understood?"
+puts "No, it's #{gender}!"
+extend HisMod if gender == "male"
+extend HerMod if gender == "female"
+puts "Turns out, gender is #{gender}. I already extended the appropriate module and am ready to make you laugh."
+self.laughs
+end
+def piss
+self.offends
+end
+end
+
+end
+
+tom = Total::Person.new
+
+----------------
+#works
+module Total
+
+module Constants
+@@gender = "male" #needed capital G
+
+#def self.gender
+#@@gender
+#end
+
+end
+
+module HisMod
+def laughs
+puts "hahahahaha"
+end
+def offends
+puts "You stupid FUCKER!"
+end
+end
+
+module HerMod
+def laughs
+puts "hehehehehe"
+end
+def offends
+puts "If you don't mind being seen as trash, good for oyu!"
+end
+end
+
+class Person
+include Total::Constants
+def initialize
+gender = @@gender
+puts "Gender is #{gender}. Understood?"
+puts "No, it's #{gender}!"
+extend HisMod if gender == "male"
+extend HerMod if gender == "female"
+puts "Turns out, gender is #{gender}. I already extended the appropriate module and am ready to make you laugh."
+self.laughs
+end
+def piss
+self.offends
+end
+end
+
+end
+
+tom = Total::Person.new
+
+
+
+#Source
+#http://stackoverflow.com/questions/10158730/making-a-module-inherit-from-another-module-in-ruby

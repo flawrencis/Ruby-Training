@@ -4,8 +4,8 @@ module Mastermind
 		Breakans = "c"
 		Makeans = "m"
 		#the role label
-		Breaker_title = "breaker"
-		Maker_title = "maker"
+		BreakerTitle = "breaker"
+		MakerTitle = "maker"
 		#code-length
 		CodeLength = 4
 		#max-rounds
@@ -24,3 +24,5 @@ module Mastermind
 
 lib_path = File.expand_path(File.dirname(__FILE__))
 Dir[lib_path + "/mastermind/*.rb"].each { |file| require file }
+
+puts "Hey, first, say 'Game.new' followed by whatever you want to call it."
