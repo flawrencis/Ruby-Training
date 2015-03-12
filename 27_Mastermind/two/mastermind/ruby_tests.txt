@@ -218,6 +218,10 @@ end
 
 tom = Total::Person.new
 
+----------
+
+code = "green magenta cyan yellow".scan(/([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*/)[0].join if length == 4
+
 
 #Source
 #http://stackoverflow.com/questions/10158730/making-a-module-inherit-from-another-module-in-ruby

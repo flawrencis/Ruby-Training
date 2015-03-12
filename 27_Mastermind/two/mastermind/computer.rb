@@ -6,6 +6,14 @@ module Mastermind
 			puts "Your opponent is the computer!"
 			end		
 		
+		def pull_module(info)
+#			p "DEBUG: I'm in the computer.rb file and in the pull_module function and will extend the following because info is #{info}"
+#			p "Codemaker" if info == GenCons::MakerTitle
+#			p "Codebreaker" if info == GenCons::BreakerTitle
+			extend Codemaker if info == GenCons::MakerTitle
+			extend Codebreaker if info == GenCons::BreakerTitle
+			end
+		
 		def take_turn
 			
 			end

@@ -65,6 +65,7 @@ module Mastermind
 			player_one.intro(code_length,max_rounds)
 			the_code = player_two.intro(code_length,max_rounds)
 			response = "Just decided code."
+			@round_num+=1
 			while @round_num < @max_rounds+1
 				guess = player_one.take_turn(@round_num,response)
 				response = player_two.take_turn(@round_num, guess)
@@ -76,9 +77,9 @@ module Mastermind
 
 		def game_over(victor)
 			@@game_record[victor.user_name.to_sym][:wins]+=1
-			@@game_record[victor.user_name.to_sym]["wins_as_#{victor.role}".intern]
-			puts "\n--------------------\n\e[32mThe game is finished!! That's right, #{@game_name} is all over!\e[0m"
-			puts "\e[1;33Our winner is #{victor}!!\e[0m]"
+			@@game_record[victor.user_name.to_sym]["wins_as_#{victor.role}".intern]+=1
+			puts "\n--------------------\n\e[32mThe game is finished!! That's right, it's all over!\e[0m"
+			puts "\e[1;33mOur winner is #{victor.user_name}!!\e[0m]"
 			puts "Congratulations!"
 			puts @@game_record[victor.user_name.to_sym]
 			puts "There are your stats! Good bye!"

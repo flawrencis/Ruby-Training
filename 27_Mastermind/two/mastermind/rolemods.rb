@@ -19,22 +19,25 @@ module Mastermind
 			end
 		
 		def take_turn(round,feedback)
-			@guess_grid[round-1][1]=feedback if defined? guess_grid
+#			puts "DEBUG: Right now, guess_grid is #{@guess_grid}. Let's change that by going to the #{round-2}th element of guess_grid and replacing the 2nd element of that with the actual feedback, which is #{feedback}." if defined? @guess_grid
+			@guess_grid[round-2][2] = feedback if defined? @guess_grid
+#			puts "DEBUG: Great, so I should have just changed the 'xxxx' to #{feedback}!" if defined? @guess_grid
+#			puts "DEBUG: Apparently guess_grid is not defined!" unless defined? @guess_grid
 			@guess_grid ||= Array.new
-			your_turn = "\nOkay, we're on round #{round} and it's your turn, #{name}"
+			your_turn = "Okay, we're on round #{round} and it's your turn, #{@user_name}"
 			name = "Great #{GenCons::BreakerTitle.capitalize}."
-			the_question = "What do you say? #{follow_up_question}"
 			follow_up_question = "What is your next guess for the code? So far, your guesses and their responses have been...."
+			the_question = "What do you say? #{follow_up_question}"
 			puts your_turn
-			puts "Your opponent said #{feedback}."
+			puts "Your opponent said \e[33m#{feedback}\e[0m."
 			puts the_question
-			print_record(@guess_grid) if dabreaker==true
-#			puts turn_grid
+			print_record(@guess_grid)
 			resp = gets.chomp.downcase
 			Mastermind.put_break
 			print_options if resp == "o"
-			@turn_result = resp.upcase.scan(/([a..g]).*([a..g]).*([a..g]).*([a..g])/)[0].join if dabreaker==true
-			guess_grid << [turn_result,"xxxx"] if dabreaker == true
+			@turn_result = resp.scan(/([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*/)[0].join 
+			@guess_grid << [round,@turn_result,"xxxx"]
+			return @turn_result
 			end
 		
 		def response
@@ -42,7 +45,9 @@ module Mastermind
 			end
 		
 		def print_record(record)
-			record.each {|k,v| puts "Round #{k} : #{v}"}
+#			puts "DEBUG: Just entered print_record function."
+			record.each {|k,v,y| puts "Round #{k} | #{v} : #{y}"}
+			puts "...oh well this is the first round" if record == []
 			end
 		
 		def print_options
@@ -78,27 +83,22 @@ module Mastermind
 			puts "Check out the options and then give me a #{length}-letter code."
 			resp = gets.chomp.downcase
 			Mastermind.put_break
-			code = resp.scan(/([b,c,g,r,w,y,m]).*([b,c,g,r,w,y,m]).*([b,c,g,r,w,y,m]).*([b,c,g,r,w,y,m])/)[0].join if length == 4
-#			sub_code = resp.scan(/([b,c,g,r,w,y,m]).*([b,c,g,r,w,y,m]).*([b,c,g,r,w,y,m]).*([b,c,g,r,w,y,m])/)[0].join if length == 4
-#			puts "DEBUG: The sub_code, without the join function, is #{sub_code}, which is of class #{sub_code.class}.\nIf it's not a string, we know what the problem is!"
-#			sub_code.join if length == 4
+			code = resp.scan(/([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*/)[0].join if length == 4
 			puts "This program can't receive a code longer than 4 letters.\nI know what I told you. I messed up. This may be goodbye." unless length == 4
 			end
 			
 		def take_turn (round,feedback)
-#			@guess_grid[round-1][1]=feedback if defined? guess_grid
-#			@guess_grid ||= Array.new
-			your_turn = "\nOkay, we're on round #{round} and it's your turn, #{name}"
+			your_turn = "\nOkay, we're on round #{round} and it's your turn, #{@user_name}"
 			name = "Great #{GenCons::MakerTitle.capitalize}."
-			the_question = "What do you say? #{follow_up_question}"
 			follow_up_question = "How'd they do? Give me that digit response."
+			the_question = "What do you say? #{follow_up_question}"
 			puts your_turn
-			puts "Your opponent said #{feedback}."
+			puts "Your opponent said \e[33m#{feedback}\e[0m."
 			puts the_question
 			resp = gets.chomp.downcase
 			Mastermind.put_break
 			print_options if resp == "o"
-			answer = resp.scan(/([0,1,2]).*([0,1,2]).*([0,1,2]).*([0,1,2])/)[0].join
+			answer = resp.scan(/([0,1,2])[^012]*([0,1,2])[^012]*([0,1,2])[^012]*([0,1,2])/)[0].join
 			end
 		
 		def print_options
