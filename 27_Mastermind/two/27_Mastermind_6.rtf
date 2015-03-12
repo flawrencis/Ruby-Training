@@ -1,0 +1,938 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red10\green12\blue39;\red191\green44\blue30;\red75\green22\blue231;
+\red51\green180\blue193;\red165\green166\blue33;\red210\green31\blue210;\red196\green196\blue196;\red52\green186\blue34;
+}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs22 \cf1 \cb2 \CocoaLigature0 Last login: Thu Mar 12 12:32:15 on ttys000\
+\
+-------------------------------------------------\
+If you need to create a platform specific folder using Phonegap, please do the following:\
+1) First, run the 'echo PATH=$PATH:/Users/francislawrence/Programming/phonegap-2.9.1/lib/<specific_platform>/bin' command.\
+2) Then, you need to change your working directory to the bin of that platform in that same phonegap folder.\
+3) Then, run the 'create name com.example.name Name' command.\
+\
+Also, if you need to change any of these settings, go to your home directory (~) and type \'91nano .bash_profile\'92.\
+\
+Also, if you need to do the EMULATE command, you have to go to the app folder and then run \'91ripple emulate\'92.\
+\
+To edit the tab control thing, go to nano .inputrc from your root directory.\
+To substitute something in the previous line, type something like this... ^toreplace^touse\
+To search previous lines, use Ctrl-R.\
+To leave that screen you can get stuck in, use q when the END is highlighted.\
+To learn the escape characters of buttons, first type ^V\
+Jump to start of line ^A\
+Jump to end of line ^E\
+Clear text onward ^K\
+Clear backward by word ^W\
+Toggle between current cursor position and start of line ^XX\
+Clear whole line ^U\
+Bring last line back ^Y\
+Search previous lines ^R\
+! preceding starting character, Enter invokes last command\
+To modify the last command, type !<firstfewcharacters>:s/<toreplace>/<desired>\
+Keep Mac awake: $ caffeinate -u -t 600 (add options to set timer)\
+------------------------------------------------------\
+14:31:05|~ $ irb\
+irb(main):001:0> r27\
+Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'.\
+=> true\
+irb(main):002:0> c1 = Mastermind::Game.new\
+Welcome to this game of Mastermind! When you're ready to run the game, simply type whatever you called it, followed by '.player_setup!\
+=> #<Mastermind::Game:0x007fc5c189c590 @round_num=0, @max_rounds=12, @code_length=4>\
+irb(main):003:0> c1.player_setup\
+Yo man, are you playing against the computer? [y/n]\
+y\
+----------------------------------------------------------------------------------\
+What's your name? Example: John Butt\
+Bbbbb aaaaaa\
+----------------------------------------------------------------------------------\
+Thanks, Bbbbb Aaaaaa. Your user_name is aaaabbbb.\
+Hey, are you here to crack the code or make the code? [c/m]\
+m\
+----------------------------------------------------------------------------------\
+Okay, now have your partner slide over.\
+I have a couple more questions.\
+Your opponent is the computer!\
+NoMethodError: undefined method `user_name' for #<Mastermind::Computer:0x007fc5c18946b0 @role="breaker">\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:50:in `player_setup'\
+	from (irb):3\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> Socket.gethostname\
+NameError: uninitialized constant Socket\
+	from (irb):4\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):005:0> ENV["COMPUTERNAME"]\
+=> nil\
+irb(main):006:0> exit\
+14:38:26|~ $ scutil --get ComputerName\
+Francis\'92s MacBook Pro\
+14:38:27|~ $ scutil man\
+> scutil\
+scutil: unknown, type "help" for command info\
+> help\
+\
+Available commands:\
+\
+ help                          : list available commands\
+ f.read file                   : process commands from file\
+ quit                          : quit\
+\
+ d.init                        : initialize (empty) dictionary\
+ d.show                        : show dictionary contents\
+ d.add key [*#?] val [v2 ...]  : add information to dictionary\
+       (*=array, #=number, ?=boolean, %=hex data)\
+ d.remove key                  : remove key from dictionary\
+\
+ list [pattern]                : list keys in data store\
+ add key ["temporary"]         : add key in data store w/current dict\
+ get key                       : get dict from data store w/key\
+ set key                       : set key in data store w/current dict\
+ show key ["pattern"]          : show values in data store w/key\
+ remove key                    : remove key from data store\
+ notify key                    : notify key in data store\
+\
+ n.list ["pattern"]            : list notification keys\
+ n.add key ["pattern"]         : add notification key\
+ n.remove key ["pattern"]      : remove notification key\
+ n.changes                     : list changed keys\
+ n.watch                       : watch for changes\
+ n.cancel                      : cancel notification requests\
+\
+> q\
+14:39:06|~ $ man scutil\
+14:39:41|~ $ hostname\
+Franciss-MBP.hsd1.il.comcast.net\
+14:42:34|~ $ sw_Vers\
+ProductName:	Mac OS X\
+ProductVersion:	10.10.2\
+BuildVersion:	14C109\
+14:43:04|~ $ sw_vers[0]\
+-bash: sw_vers[0]: command not found\
+14:43:11|~ $ man sw_vers\
+14:43:30|~ $ sw_vers --ProductName\
+Usage: sw_vers [-productName|-productVersion|-buildVersion]\
+14:43:48|~ $ sw_vers --productName\
+Usage: sw_vers [-productName|-productVersion|-buildVersion]\
+14:43:55|~ $ sw_vers -productName\
+Mac OS X\
+14:43:59|~ $ sw_vers -productVersion\
+10.10.2\
+14:44:08|~ $ irb\
+irb(main):001:0> exec 'echo sw_vers -productName'\
+sw_vers -productName\
+14:47:25|~ $ irb\
+irb(main):001:0> system 'echo sw_vers -productName'\
+sw_vers -productName\
+=> true\
+irb(main):002:0> system 'sw_vers -productName'\
+Mac OS X\
+=> true\
+irb(main):003:0> orig_os_name = system 'sw_vers -productName'\
+Mac OS X\
+=> true\
+irb(main):004:0> \
+Display all 346 possibilities? (y or n) \
+irb(main):004:0> orig_os_name = system 'sw_vers -productName'\
+Mac OS X\
+=> true\
+irb(main):005:0> tex_os_name = orig_os_name.downcase.scan(/\\w*/)\
+NoMethodError: undefined method `downcase' for true:TrueClass\
+	from (irb):5\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):006:0> orig_os_name = `sw_vers -productName`\
+=> "Mac OS X\\n"\
+irb(main):007:0> orig_os_name = `sw_vers -productName`.chomp\
+=> "Mac OS X"\
+irb(main):008:0> tex_os_name = orig_os_name.downcase.scan(/\\w*/)\
+=> ["mac", "", "os", "", "x", ""]\
+irb(main):009:0> fin_os_name = arr_os_name[0,1,2].join\
+NameError: undefined local variable or method `arr_os_name' for main:Object\
+	from (irb):9\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):010:0> fin_os_name = tex_os_name[0,1,2].join\
+ArgumentError: wrong number of arguments (3 for 1..2)\
+	from (irb):10:in `[]'\
+	from (irb):10\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):011:0> fin_os_name = tex_os_name[0..2].join\
+=> "macos"\
+irb(main):012:0> fin_os_name << tex_os_name[-2]\
+=> "macosx"\
+irb(main):013:0> orig_os_name = `sw_vers -productName`.chomp\
+=> "Mac OS X"\
+irb(main):014:0> tex_os_name = orig_os_name.downcase.scan(/\\S*/)\
+=> ["mac", "", "os", "", "x", ""]\
+irb(main):015:0> tex_os_name = orig_os_name.downcase.scan(/(\\S)*/)\
+=> [["c"], [nil], ["s"], [nil], ["x"], [nil]]\
+irb(main):016:0> tex_os_name = orig_os_name.downcase.scan(/(\\S*)*/)\
+=> [[""], [""], [""], [""], [""], [""]]\
+irb(main):017:0> tex_os_name = orig_os_name.downcase.scan(/(\\S*)/)\
+=> [["mac"], [""], ["os"], [""], ["x"], [""]]\
+irb(main):018:0> tex_os_name = orig_os_name.downcase.scan(/\\S*/)\
+=> ["mac", "", "os", "", "x", ""]\
+irb(main):019:0> tex_os_name = orig_os_name.downcase.scan(/(\\S)/)\
+=> [["m"], ["a"], ["c"], ["o"], ["s"], ["x"]]\
+irb(main):020:0> tex_os_name = orig_os_name.downcase.scan(/\\S/)\
+=> ["m", "a", "c", "o", "s", "x"]\
+irb(main):021:0> fin_os_name = tex_os_name[0..2].join\
+=> "mac"\
+irb(main):022:0> fin_os_name << tex_os_name[-2]\
+=> "macs"\
+irb(main):023:0> fin_os_name << tex_os_name[-1]\
+=> "macsx"\
+irb(main):024:0> clr\
+irb(main):001:0> r27\
+Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'.\
+=> true\
+irb(main):002:0> c2 = Mastermind::Game.new\
+Welcome to this game of Mastermind! When you're ready to run the game, simply type whatever you called it, followed by '.player_setup!\
+=> #<Mastermind::Game:0x007f8dc09274a8 @round_num=0, @max_rounds=12, @code_length=4>\
+irb(main):003:0> c2.player_setup\
+Yo man, are you playing against the computer? [y/n]\
+y\
+----------------------------------------------------------------------------------\
+What's your name? Example: John Butt\
+Francis Lawrence\
+----------------------------------------------------------------------------------\
+Thanks, Francis Lawrence. Your user_name is lawrfran.\
+Hey, are you here to crack the code or make the code? [c/m]\
+m\
+----------------------------------------------------------------------------------\
+Okay, now have your partner slide over.\
+I have a couple more questions.\
+Your opponent is the computer!\
+NoMethodError: undefined method `role' for #<Mastermind::Computer:0x007f8dc091f2a8>\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:50:in `player_setup'\
+	from (irb):3\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> clr\
+irb(main):001:0> r27\
+Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'.\
+=> true\
+irb(main):002:0> c3 = Mastermind::Game.new\
+Welcome to this game of Mastermind! When you're ready to run the game, simply type whatever you called it, followed by '.player_setup!\
+=> #<Mastermind::Game:0x007fdb7c83f270 @round_num=0, @max_rounds=12, @code_length=4>\
+irb(main):003:0> c3.player_setup\
+Yo man, are you playing against the computer? [y/n]\
+y\
+----------------------------------------------------------------------------------\
+What's your name? Example: John Butt\
+Francis Lawrence\
+----------------------------------------------------------------------------------\
+Thanks, Francis Lawrence. Your user_name is lawrfran.\
+Hey, are you here to crack the code or make the code? [c/m]\
+m\
+----------------------------------------------------------------------------------\
+Okay, now have your partner slide over.\
+I have a couple more questions.\
+Your opponent is the computer!\
+NoMethodError: undefined method `intro' for #<Mastermind::Computer:0x007fdb7c836fd0>\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:65:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:61:in `player_setup'\
+	from (irb):3\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> clr\
+irb(main):001:0> r27\
+Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'.\
+=> true\
+irb(main):002:0> c4 = Mastermind::Game.new\
+Welcome to this game of Mastermind! When you're ready to run the game, simply type whatever you called it, followed by '.player_setup!\
+=> #<Mastermind::Game:0x007f8fbc88f740 @round_num=0, @max_rounds=12, @code_length=4>\
+irb(main):003:0> c4.player_setup\
+Yo man, are you playing against the computer? [y/n]\
+y\
+----------------------------------------------------------------------------------\
+What's your name? Example: John Butt\
+francis lawrence\
+----------------------------------------------------------------------------------\
+Thanks, Francis Lawrence. Your user_name is lawrfran.\
+Hey, are you here to crack the code or make the code? [c/m]\
+m\
+----------------------------------------------------------------------------------\
+Okay, now have your partner slide over.\
+I have a couple more questions.\
+Your opponent is the computer!\
+NoMethodError: undefined method `intro' for #<Mastermind::Computer:0x007f8fbc8875e0>\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:65:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:61:in `player_setup'\
+	from (irb):3\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> clr\
+irb(main):001:0> r27\
+Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'.\
+=> true\
+irb(main):002:0> c5 = Mastermind::Game.new\
+Welcome to this game of Mastermind! When you're ready to run the game, simply type whatever you called it, followed by '.player_setup!\
+=> #<Mastermind::Game:0x007fc1b117af00 @round_num=0, @max_rounds=12, @code_length=4>\
+irb(main):003:0> c5.player_setup\
+Yo man, are you playing against the computer? [y/n]\
+y\
+----------------------------------------------------------------------------------\
+What's your name? Example: John Butt\
+francis lawrence\
+----------------------------------------------------------------------------------\
+Thanks, Francis Lawrence. Your user_name is lawrfran.\
+Hey, are you here to crack the code or make the code? [c/m]\
+m\
+----------------------------------------------------------------------------------\
+Okay, now have your partner slide over.\
+I have a couple more questions.\
+"DEBUG: I'm in the computer.rb file and in the pull_module function and will extend the following because info is breaker"\
+"Codebreaker"\
+Your opponent is the computer!\
+NoMethodError: undefined method `intro' for #<Mastermind::Computer:0x007fc1b1172a58>\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:65:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:61:in `player_setup'\
+	from (irb):3\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> clr\
+irb(main):001:0> r27\
+Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'.\
+=> true\
+irb(main):002:0> c6 = Mastermind::Game.new\
+Welcome to this game of Mastermind! When you're ready to run the game, simply type whatever you called it, followed by '.player_setup!\
+=> #<Mastermind::Game:0x007fea1a029d68 @round_num=0, @max_rounds=12, @code_length=4>\
+irb(main):003:0> c6.player_setup\
+Yo man, are you playing against the computer? [y/n]\
+y\
+----------------------------------------------------------------------------------\
+What's your name? Example: John Butt\
+francis lawrence\
+----------------------------------------------------------------------------------\
+Thanks, Francis Lawrence. Your user_name is lawrfran.\
+Hey, are you here to crack the code or make the code? [c/m]\
+m\
+----------------------------------------------------------------------------------\
+Okay, now have your partner slide over.\
+I have a couple more questions.\
+"DEBUG: I'm in the computer.rb file and in the pull_module function and will extend the following because info is breaker"\
+"Codebreaker"\
+Your opponent is the computer!\
+ArgumentError: wrong number of arguments (2 for 0)\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/crolemods.rb:6:in `intro'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:65:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:61:in `player_setup'\
+	from (irb):3\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> clr\
+irb(main):001:0> r27\
+SyntaxError: /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/crolemods.rb:6: syntax error, unexpected '*', expecting ')'\
+		def intro(args*)\
+		               ^\
+/Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/crolemods.rb:51: module definition in method body\
+/Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/crolemods.rb:112: syntax error, unexpected keyword_end, expecting end-of-input\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind.rb:30:in `block in <top (required)>'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind.rb:30:in `each'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind.rb:30:in `<top (required)>'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.irbrc:33:in `r27'\
+	from (irb):1\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):002:0> r27\
+/Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind.rb:4: warning: already initialized constant Mastermind::GenCons::Breakans\
+/Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind.rb:4: warning: previous definition of Breakans was here\
+/Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind.rb:5: warning: already initialized constant Mastermind::GenCons::Makeans\
+/Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind.rb:5: warning: previous definition of Makeans was here\
+/Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind.rb:7: warning: already initialized constant Mastermind::GenCons::BreakerTitle\
+/Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind.rb:7: warning: previous definition of BreakerTitle was here\
+/Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind.rb:8: warning: already initialized constant Mastermind::GenCons::MakerTitle\
+/Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind.rb:8: warning: previous definition of MakerTitle was here\
+/Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind.rb:10: warning: already initialized constant Mastermind::GenCons::CodeLength\
+/Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind.rb:10: warning: previous definition of CodeLength was here\
+/Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind.rb:12: warning: already initialized constant Mastermind::GenCons::MaxRounds\
+/Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind.rb:12: warning: previous definition of MaxRounds was here\
+/Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind.rb:14: warning: already initialized constant Mastermind::GenCons::Options\
+/Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind.rb:14: warning: previous definition of Options was here\
+Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'.\
+=> true\
+irb(main):003:0> clr\
+irb(main):001:0> r27\
+Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'.\
+=> true\
+irb(main):002:0> c7 = Mastermind::Game.new\
+Welcome to this game of Mastermind! When you're ready to run the game, simply type whatever you called it, followed by '.player_setup!\
+=> #<Mastermind::Game:0x007fcff2881de0 @round_num=0, @max_rounds=12, @code_length=4>\
+irb(main):003:0> c7.player_setup\
+Yo man, are you playing against the computer? [y/n]\
+y\
+----------------------------------------------------------------------------------\
+What's your name? Example: John Butt\
+francis lawrence\
+----------------------------------------------------------------------------------\
+Thanks, Francis Lawrence. Your user_name is lawrfran.\
+Hey, are you here to crack the code or make the code? [c/m]\
+m\
+----------------------------------------------------------------------------------\
+Okay, now have your partner slide over.\
+I have a couple more questions.\
+"DEBUG: I'm in the computer.rb file and in the pull_module function and will extend the following because info is breaker"\
+"Codebreaker"\
+Your opponent is the computer!\
+				I'm skipping the intro because I know what I'm doing.\
+----------------------------------------------------------------------------------\
+----------------------------------------------------------------------------------\
+\
+
+\f1\b \cf3 Okay!
+\f0\b0 \cf1  Lemme talk to the codemaker.\
+\
+Codemaker, we gotta make a code.\
+Your opponent wins if they guess the code before the maximum number of rounds.\
+The length of the code has been pre-determined.\
+Use the upcoming list to know what your options are.\
+Maximum rounds: 12.\
+Code length: 4\
+Your options are: 
+\f1\b \cf3 R
+\f0\b0 \cf1 , 
+\f1\b \cf4 B
+\f0\b0 \cf1 , 
+\f1\b \cf5 C
+\f0\b0 \cf1 , 
+\f1\b \cf6 Y
+\f0\b0 \cf1 , 
+\f1\b \cf7 M
+\f0\b0 \cf1 , 
+\f1\b \cf8 W
+\f0\b0 \cf1 , 
+\f1\b \cf9 G
+\f0\b0 \cf1 \
+Do you understand?\
+\
+----------------------------------------------------------------------------------\
+Check out the options and then give me a 4-letter code.\
+ymcb\
+----------------------------------------------------------------------------------\
+DEBUG: The code is \
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 Just decided code\cf1 .\
+NoMethodError: undefined method `print_record' for #<Mastermind::Computer:0x007fcff2879af0>\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/crolemods.rb:19:in `take_turn'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:71:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:61:in `player_setup'\
+	from (irb):3\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> pcya "THERE IS NO CODE, APPARENTLY. FIX THIS WHEN YOU RETURN."\
+\cf5 THERE IS NO CODE, APPARENTLY. FIX THIS WHEN YOU RETURN.\cf1 \
+=> nil\
+irb(main):005:0> `time`\
+=> ""\
+irb(main):006:0> 'date'\
+=> "date"\
+irb(main):007:0> `date`\
+=> "Thu Mar 12 15:12:44 CDT 2015\\n"\
+irb(main):008:0> `date`\
+=> "Thu Mar 12 17:22:30 CDT 2015\\n"\
+irb(main):009:0> clr\
+irb(main):001:0> r27\
+Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'.\
+=> true\
+irb(main):002:0> c8 = Mastermind::Game.new\
+Welcome to this game of Mastermind! When you're ready to run the game, simply type whatever you called it, followed by '.player_setup!\
+=> #<Mastermind::Game:0x007ff55b9327d8 @round_num=0, @max_rounds=12, @code_length=4>\
+irb(main):003:0> c8.player_setup\
+Yo man, are you playing against the computer? [y/n]\
+y\
+----------------------------------------------------------------------------------\
+What's your name? Example: John Butt\
+francis lawrence\
+----------------------------------------------------------------------------------\
+Thanks, Francis Lawrence. Your user_name is lawrfran.\
+Hey, are you here to crack the code or make the code? [c/m]\
+m\
+----------------------------------------------------------------------------------\
+Okay, now have your partner slide over.\
+I have a couple more questions.\
+"DEBUG: I'm in the computer.rb file and in the pull_module function and will extend the following because info is breaker"\
+"Codebreaker"\
+Your opponent is the computer!\
+				I'm skipping the intro because I know what I'm doing.\
+----------------------------------------------------------------------------------\
+----------------------------------------------------------------------------------\
+\
+
+\f1\b \cf3 Okay!
+\f0\b0 \cf1  Lemme talk to the codemaker.\
+\
+Codemaker, we gotta make a code.\
+Your opponent wins if they guess the code before the maximum number of rounds.\
+The length of the code has been pre-determined.\
+Use the upcoming list to know what your options are.\
+Maximum rounds: 12.\
+Code length: 4\
+Your options are: 
+\f1\b \cf3 R
+\f0\b0 \cf1 , 
+\f1\b \cf4 B
+\f0\b0 \cf1 , 
+\f1\b \cf5 C
+\f0\b0 \cf1 , 
+\f1\b \cf6 Y
+\f0\b0 \cf1 , 
+\f1\b \cf7 M
+\f0\b0 \cf1 , 
+\f1\b \cf8 W
+\f0\b0 \cf1 , 
+\f1\b \cf9 G
+\f0\b0 \cf1 \
+Do you understand?\
+ymcb\
+----------------------------------------------------------------------------------\
+Check out the options and then give me a 4-letter code.\
+ymcb\
+----------------------------------------------------------------------------------\
+DEBUG: The code is \
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 Just decided code\cf1 .\
+NoMethodError: undefined method `print_record' for #<Mastermind::Computer:0x007ff55b92a0d8>\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/crolemods.rb:19:in `take_turn'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:71:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:61:in `player_setup'\
+	from (irb):3\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> pcya "OH I SEE WHAT MY PROBLEM WAS. SEE SC_7"\
+\cf5 OH I SEE WHAT MY PROBLEM WAS. SEE SC_7\cf1 \
+=> nil\
+irb(main):005:0> clr\
+irb(main):001:0> r27\
+Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'.\
+=> true\
+irb(main):002:0> c9 = Mastermind::Game.new\
+Welcome to this game of Mastermind! When you're ready to run the game, simply type whatever you called it, followed by '.player_setup!\
+=> #<Mastermind::Game:0x007fde9b88e240 @round_num=0, @max_rounds=12, @code_length=4>\
+irb(main):003:0> c9.player_setup\
+Yo man, are you playing against the computer? [y/n]\
+y\
+----------------------------------------------------------------------------------\
+What's your name? Example: John Butt\
+francis lawrence\
+----------------------------------------------------------------------------------\
+Thanks, Francis Lawrence. Your user_name is lawrfran.\
+Hey, are you here to crack the code or make the code? [c/m]\
+m\
+----------------------------------------------------------------------------------\
+Okay, now have your partner slide over.\
+I have a couple more questions.\
+"DEBUG: I'm in the computer.rb file and in the pull_module function and will extend the following because info is breaker"\
+"Codebreaker"\
+Your opponent is the computer!\
+				I'm skipping the intro because I know what I'm doing.\
+----------------------------------------------------------------------------------\
+\
+
+\f1\b \cf3 Okay!
+\f0\b0 \cf1  Lemme talk to the codemaker.\
+\
+Codemaker, we gotta make a code.\
+Your opponent wins if they guess the code before the maximum number of rounds.\
+The length of the code has been pre-determined.\
+Use the upcoming list to know what your options are.\
+Maximum rounds: 12.\
+Code length: 4\
+Your options are: 
+\f1\b \cf3 R
+\f0\b0 \cf1 , 
+\f1\b \cf4 B
+\f0\b0 \cf1 , 
+\f1\b \cf5 C
+\f0\b0 \cf1 , 
+\f1\b \cf6 Y
+\f0\b0 \cf1 , 
+\f1\b \cf7 M
+\f0\b0 \cf1 , 
+\f1\b \cf8 W
+\f0\b0 \cf1 , 
+\f1\b \cf9 G
+\f0\b0 \cf1 \
+Do you understand?\
+\
+----------------------------------------------------------------------------------\
+Check out the options and then give me a 4-letter code.\
+ymcb\
+----------------------------------------------------------------------------------\
+DEBUG: I'm in the Codemaker's intro.\
+I just got the code from the get_code function.\
+The code is....................ymcb\
+DEBUG: The code is ymcb\
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 Just decided code\cf1 .\
+NoMethodError: undefined method `print_record' for #<Mastermind::Computer:0x007fde9b885a50>\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/crolemods.rb:19:in `take_turn'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:71:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:61:in `player_setup'\
+	from (irb):3\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> clr\
+irb(main):001:0> r27\
+Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'.\
+=> true\
+irb(main):002:0> c10 = Mastermind::Game.new\
+Welcome to this game of Mastermind! When you're ready to run the game, simply type whatever you called it, followed by '.player_setup!\
+=> #<Mastermind::Game:0x007f83430818a8 @round_num=0, @max_rounds=12, @code_length=4>\
+irb(main):003:0> c10.player_setup\
+Yo man, are you playing against the computer? [y/n]\
+y\
+----------------------------------------------------------------------------------\
+What's your name? Example: John Butt\
+francis lawrence\
+----------------------------------------------------------------------------------\
+Thanks, Francis Lawrence. Your user_name is lawrfran.\
+Hey, are you here to crack the code or make the code? [c/m]\
+m\
+----------------------------------------------------------------------------------\
+Okay, now have your partner slide over.\
+I have a couple more questions.\
+"DEBUG: I'm in the computer.rb file and in the pull_module function and will extend the following because info is breaker"\
+"Codebreaker"\
+Your opponent is the computer!\
+				I'm skipping the intro because I know what I'm doing.\
+\
+
+\f1\b \cf3 Okay!
+\f0\b0 \cf1  Lemme talk to the codemaker.\
+\
+Codemaker, we gotta make a code.\
+Your opponent wins if they guess the code before the maximum number of rounds.\
+The length of the code has been pre-determined.\
+Use the upcoming list to know what your options are.\
+Maximum rounds: 12.\
+Code length: 4\
+Your options are: 
+\f1\b \cf3 R
+\f0\b0 \cf1 , 
+\f1\b \cf4 B
+\f0\b0 \cf1 , 
+\f1\b \cf5 C
+\f0\b0 \cf1 , 
+\f1\b \cf6 Y
+\f0\b0 \cf1 , 
+\f1\b \cf7 M
+\f0\b0 \cf1 , 
+\f1\b \cf8 W
+\f0\b0 \cf1 , 
+\f1\b \cf9 G
+\f0\b0 \cf1 \
+Do you understand?\
+\
+----------------------------------------------------------------------------------\
+Check out the options and then give me a 4-letter code.\
+ymcb\
+----------------------------------------------------------------------------------\
+DEBUG: I'm in the Codemaker's intro.\
+I just got the code from the get_code function.\
+The code is....................ymcb\
+DEBUG: The code is ymcb\
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 Just decided code\cf1 .\
+...oh well this is the first round\
+ArgumentError: wrong number of arguments (1 for 0)\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/crolemods.rb:44:in `random_turn'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/crolemods.rb:20:in `take_turn'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:71:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:61:in `player_setup'\
+	from (irb):3\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> clr\
+irb(main):001:0> r27\
+Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'.\
+=> true\
+irb(main):002:0> c11 = Mastermind::Game.new\
+Welcome to this game of Mastermind! When you're ready to run the game, simply type whatever you called it, followed by '.player_setup!\
+=> #<Mastermind::Game:0x007ffef4019870 @round_num=0, @max_rounds=12, @code_length=4>\
+irb(main):003:0> c11.player_setup\
+Yo man, are you playing against the computer? [y/n]\
+y\
+----------------------------------------------------------------------------------\
+What's your name? Example: John Butt\
+francis lawrence\
+----------------------------------------------------------------------------------\
+Thanks, Francis Lawrence. Your user_name is lawrfran.\
+Hey, are you here to crack the code or make the code? [c/m]\
+m\
+----------------------------------------------------------------------------------\
+Okay, now have your partner slide over.\
+I have a couple more questions.\
+"DEBUG: I'm in the computer.rb file and in the pull_module function and will extend the following because info is breaker"\
+"Codebreaker"\
+Your opponent is the computer!\
+				I'm skipping the intro because I know what I'm doing.\
+\
+
+\f1\b \cf3 Okay!
+\f0\b0 \cf1  Lemme talk to the codemaker.\
+\
+Codemaker, we gotta make a code.\
+Your opponent wins if they guess the code before the maximum number of rounds.\
+The length of the code has been pre-determined.\
+Use the upcoming list to know what your options are.\
+Maximum rounds: 12.\
+Code length: 4\
+Your options are: 
+\f1\b \cf3 R
+\f0\b0 \cf1 , 
+\f1\b \cf4 B
+\f0\b0 \cf1 , 
+\f1\b \cf5 C
+\f0\b0 \cf1 , 
+\f1\b \cf6 Y
+\f0\b0 \cf1 , 
+\f1\b \cf7 M
+\f0\b0 \cf1 , 
+\f1\b \cf8 W
+\f0\b0 \cf1 , 
+\f1\b \cf9 G
+\f0\b0 \cf1 \
+Do you understand?\
+\
+----------------------------------------------------------------------------------\
+Check out the options and then give me a 4-letter code.\
+ymcb\
+----------------------------------------------------------------------------------\
+DEBUG: I'm in the Codemaker's intro.\
+I just got the code from the get_code function.\
+The code is....................ymcb\
+DEBUG: The code is ymcb\
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 Just decided code\cf1 .\
+...oh well this is the first round\
+NameError: undefined local variable or method `code_length' for #<Mastermind::Computer:0x007ffef4010b58>\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/computer.rb:54:in `choose_code_by_index'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/crolemods.rb:46:in `random_turn'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/crolemods.rb:20:in `take_turn'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:71:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:61:in `player_setup'\
+	from (irb):3\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> clr\
+irb(main):001:0> r27\
+Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'.\
+=> true\
+irb(main):002:0> c12 = Mastermind::Game.new\
+Welcome to this game of Mastermind! When you're ready to run the game, simply type whatever you called it, followed by '.player_setup!\
+=> #<Mastermind::Game:0x007fa3ca08faf0 @round_num=0, @max_rounds=12, @code_length=4>\
+irb(main):003:0> c12.player_setup\
+Yo man, are you playing against the computer? [y/n]\
+y\
+----------------------------------------------------------------------------------\
+What's your name? Example: John Butt\
+francis lawrence\
+----------------------------------------------------------------------------------\
+Thanks, Francis Lawrence. Your user_name is lawrfran.\
+Hey, are you here to crack the code or make the code? [c/m]\
+m\
+----------------------------------------------------------------------------------\
+Okay, now have your partner slide over.\
+I have a couple more questions.\
+"DEBUG: I'm in the computer.rb file and in the pull_module function and will extend the following because info is breaker"\
+"Codebreaker"\
+Your opponent is the computer!\
+				I'm skipping the intro because I know what I'm doing.\
+\
+
+\f1\b \cf3 Okay!
+\f0\b0 \cf1  Lemme talk to the codemaker.\
+\
+Codemaker, we gotta make a code.\
+Your opponent wins if they guess the code before the maximum number of rounds.\
+The length of the code has been pre-determined.\
+Use the upcoming list to know what your options are.\
+Maximum rounds: 12.\
+Code length: 4\
+Your options are: 
+\f1\b \cf3 R
+\f0\b0 \cf1 , 
+\f1\b \cf4 B
+\f0\b0 \cf1 , 
+\f1\b \cf5 C
+\f0\b0 \cf1 , 
+\f1\b \cf6 Y
+\f0\b0 \cf1 , 
+\f1\b \cf7 M
+\f0\b0 \cf1 , 
+\f1\b \cf8 W
+\f0\b0 \cf1 , 
+\f1\b \cf9 G
+\f0\b0 \cf1 \
+Do you understand?\
+\
+----------------------------------------------------------------------------------\
+Check out the options and then give me a 4-letter code.\
+ymcb\
+----------------------------------------------------------------------------------\
+DEBUG: I'm in the Codemaker's intro.\
+I just got the code from the get_code function.\
+The code is....................ymcb\
+DEBUG: The code is ymcb\
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 Just decided code\cf1 .\
+...oh well this is the first round\
+NoMethodError: undefined method `choose_code_by_index' for #<Mastermind::Computer:0x007fa3ca087a80>\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/crolemods.rb:46:in `random_turn'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/crolemods.rb:20:in `take_turn'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:71:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:61:in `player_setup'\
+	from (irb):3\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> clr\
+irb(main):001:0> r27\
+Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'.\
+=> true\
+irb(main):002:0> c13 = Mastermind::Game.new\
+Welcome to this game of Mastermind! When you're ready to run the game, simply type whatever you called it, followed by '.player_setup!\
+=> #<Mastermind::Game:0x007ff332948ec8 @round_num=0, @max_rounds=12, @code_length=4>\
+irb(main):003:0> c13.player_setup\
+Yo man, are you playing against the computer? [y/n]\
+y\
+----------------------------------------------------------------------------------\
+What's your name? Example: John Butt\
+francis lawrence\
+----------------------------------------------------------------------------------\
+Thanks, Francis Lawrence. Your user_name is lawrfran.\
+Hey, are you here to crack the code or make the code? [c/m]\
+m\
+----------------------------------------------------------------------------------\
+Okay, now have your partner slide over.\
+I have a couple more questions.\
+"DEBUG: I'm in the computer.rb file and in the pull_module function and will extend the following because info is breaker"\
+"Codebreaker"\
+Your opponent is the computer!\
+				I'm skipping the intro because I know what I'm doing.\
+\
+
+\f1\b \cf3 Okay!
+\f0\b0 \cf1  Lemme talk to the codemaker.\
+\
+Codemaker, we gotta make a code.\
+Your opponent wins if they guess the code before the maximum number of rounds.\
+The length of the code has been pre-determined.\
+Use the upcoming list to know what your options are.\
+Maximum rounds: 12.\
+Code length: 4\
+Your options are: 
+\f1\b \cf3 R
+\f0\b0 \cf1 , 
+\f1\b \cf4 B
+\f0\b0 \cf1 , 
+\f1\b \cf5 C
+\f0\b0 \cf1 , 
+\f1\b \cf6 Y
+\f0\b0 \cf1 , 
+\f1\b \cf7 M
+\f0\b0 \cf1 , 
+\f1\b \cf8 W
+\f0\b0 \cf1 , 
+\f1\b \cf9 G
+\f0\b0 \cf1 \
+Do you understand?\
+\
+----------------------------------------------------------------------------------\
+Check out the options and then give me a 4-letter code.\
+ymcb\
+----------------------------------------------------------------------------------\
+DEBUG: I'm in the Codemaker's intro.\
+I just got the code from the get_code function.\
+The code is....................ymcb\
+DEBUG: The code is ymcb\
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 Just decided code\cf1 .\
+...oh well this is the first round\
+c\
+c\
+b\
+e\
+\
+Okay, we're on round 1 and it's your turn, lawrfran\
+Your opponent said \cf6 ["\\e[1;36mC\\e[0m", "\\e[1;36mC\\e[0m", "\\e[1;34mB\\e[0m", "\\e[1;35mM\\e[0m"]\cf1 .\
+What do you say? How'd they do? Give me that digit response.\
+^CIRB::Abort: abort then interrupt!\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/rolemods.rb:100:in `call'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/rolemods.rb:100:in `gets'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/rolemods.rb:100:in `gets'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/rolemods.rb:100:in `take_turn'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:72:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:61:in `player_setup'\
+	from (irb):3\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> clr\
+irb(main):001:0> r27\
+Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'.\
+=> true\
+irb(main):002:0> c14 = Mastermind::Game.new\
+Welcome to this game of Mastermind! When you're ready to run the game, simply type whatever you called it, followed by '.player_setup!\
+=> #<Mastermind::Game:0x007f88710b71f0 @round_num=0, @max_rounds=12, @code_length=4>\
+irb(main):003:0> c14.player_setup\
+Yo man, are you playing against the computer? [y/n]\
+y\
+----------------------------------------------------------------------------------\
+What's your name? Example: John Butt\
+francis lawrence\
+----------------------------------------------------------------------------------\
+Thanks, Francis Lawrence. Your user_name is lawrfran.\
+Hey, are you here to crack the code or make the code? [c/m]\
+m\
+----------------------------------------------------------------------------------\
+Okay, now have your partner slide over.\
+I have a couple more questions.\
+"DEBUG: I'm in the computer.rb file and in the pull_module function and will extend the following because info is breaker"\
+"Codebreaker"\
+Your opponent is the computer!\
+				I'm skipping the intro because I know what I'm doing.\
+\
+
+\f1\b \cf3 Okay!
+\f0\b0 \cf1  Lemme talk to the codemaker.\
+\
+Codemaker, we gotta make a code.\
+Your opponent wins if they guess the code before the maximum number of rounds.\
+The length of the code has been pre-determined.\
+Use the upcoming list to know what your options are.\
+Maximum rounds: 12.\
+Code length: 4\
+Your options are: 
+\f1\b \cf3 R
+\f0\b0 \cf1 , 
+\f1\b \cf4 B
+\f0\b0 \cf1 , 
+\f1\b \cf5 C
+\f0\b0 \cf1 , 
+\f1\b \cf6 Y
+\f0\b0 \cf1 , 
+\f1\b \cf7 M
+\f0\b0 \cf1 , 
+\f1\b \cf8 W
+\f0\b0 \cf1 , 
+\f1\b \cf9 G
+\f0\b0 \cf1 \
+Do you understand?\
+\
+----------------------------------------------------------------------------------\
+Check out the options and then give me a 4-letter code.\
+ymcb\
+----------------------------------------------------------------------------------\
+DEBUG: I'm in the Codemaker's intro.\
+I just got the code from the get_code function.\
+The code is....................ymcb\
+DEBUG: The code is ymcb\
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 Just decided code\cf1 .\
+...oh well this is the first round\
+DEBUG: Right now, after pulling from #choose_code_by_index, chr_array is ["e", "c", "a", "a"].\
+Now, let's join it!\
+NoMethodError: undefined method `join!' for ["e", "c", "a", "a"]:Array\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/crolemods.rb:48:in `random_turn'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/crolemods.rb:20:in `take_turn'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:71:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:61:in `player_setup'\
+	from (irb):3\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> pcya "DAMN IT. WHY WAS I TRYING TO DO THE CODE IN COLOR AT ALL?!?!?!"\
+\cf5 DAMN IT. WHY WAS I TRYING TO DO THE CODE IN COLOR AT ALL?!?!?!\cf1 \
+=> nil\
+irb(main):005:0> \
+}

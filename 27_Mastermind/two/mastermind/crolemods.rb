@@ -3,6 +3,10 @@ module Mastermind
 	
 	module Ccodebreaker
 		
+		def intro(*args)
+			puts "\t\t\t\tI'm skipping the intro because I know what I'm doing."
+			end
+		
 		def take_turn(round,feedback)
 #			puts "DEBUG: Right now, guess_grid is #{@guess_grid}. Let's change that by going to the #{round-2}th element of guess_grid and replacing the 2nd element of that with the actual feedback, which is #{feedback}." if defined? @guess_grid
 			@guess_grid[round-2][2] = feedback if defined? @guess_grid
@@ -13,13 +17,19 @@ module Mastermind
 			puts your_turn
 			puts "Your opponent said \e[33m#{feedback}\e[0m."
 			print_record(@guess_grid)
-			guess = random_turn(@guess_grid)
+			guess = random_turn
 			guesses_only = gue_only_grid
 			while guesses_only.include? guess
 				guess = random_turn
 				end
 			@guess_grid << [round,guess,"xxxx"]
 			return guess
+			end
+		
+		def print_record(record)
+#			puts "DEBUG: Just entered print_record function."
+			record.each {|k,v,y| puts "Round #{k} | #{v} : #{y}"}
+			puts "...oh well this is the first round" if record == []
 			end
 		
 		def gue_only_grid
@@ -33,14 +43,22 @@ module Mastermind
 		
 		def random_turn
 			options = GenCons::Options
-			something = choose_code_by_index(options)
-			guess = Array.new(GenCons::CodeLength)
-			i = 0
-			while i < GenCons::CodeLength
-				guess[i] = options[@rand_ord_array[i].to_sym]
-				i+=1
-				end
-			guess
+			chr_array = choose_code_by_index(options)
+			puts "DEBUG: Right now, after pulling from #choose_code_by_index, chr_array is #{chr_array}.\nNow, let's join it!"
+			chr_array.join!
+#			guess = Array.new(GenCons::CodeLength)
+#			i = 0
+#			while i < GenCons::CodeLength
+#				guess[i] = chr_array[i]
+#				i+=1
+#				end
+			return chr_array
+			end
+		
+		def choose_code_by_index(options)
+			rand_ord_array = Array.new(GenCons::CodeLength) {rand(97..103)} 
+			rand_ord_array.map! {|ord_num| ord_num.chr}
+			return rand_ord_array
 			end
 		end
 	
@@ -60,7 +78,8 @@ module Mastermind
 				code[i] = options[@rand_ord_array[i].to_sym]
 				i+=1
 				end
-			code
+			puts "DEBUG: From aut_cod, code is #{code}."
+			return code
 			end
 
 		def choose_code_by_index(options)

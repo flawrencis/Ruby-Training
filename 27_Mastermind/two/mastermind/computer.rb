@@ -1,50 +1,36 @@
 module Mastermind
 	class Computer
-		
+		attr_reader :user_name, :role
 		def initialize(option)
 			@role = option[0]
+			@user_name = get_name
+			self.pull_module(@role)
 			puts "Your opponent is the computer!"
 			end		
 		
 		def pull_module(info)
-#			p "DEBUG: I'm in the computer.rb file and in the pull_module function and will extend the following because info is #{info}"
-#			p "Codemaker" if info == GenCons::MakerTitle
-#			p "Codebreaker" if info == GenCons::BreakerTitle
+			p "DEBUG: I'm in the computer.rb file and in the pull_module function and will extend the following because info is #{info}"
+			p "Codemaker" if info == GenCons::MakerTitle
+			p "Codebreaker" if info == GenCons::BreakerTitle
 			extend Ccodemaker if info == GenCons::MakerTitle
 			extend Ccodebreaker if info == GenCons::BreakerTitle
 			end
 		
-		def take_turn
+		def get_name
+			orig_os_name = `sw_vers -productName`.chomp
+			orig_ver_name = `sw_vers -productVersion`
 			
+			tex_os_name = orig_os_name.downcase.scan(/\S/)
+#			arr_os_name = tex_os_name.split("")
+#			fin_os_name = arr_os_name[0,1,2].join
+#			fin_os_name << arr_os_name[-2]
+#			fin_os_name << arr_os_name[-1]
+			fin_os_name = tex_os_name[0..2].join
+			fin_os_name << tex_os_name[-2]
+			fin_os_name << tex_os_name[-1]
+			return fin_os_name
 			end
 			
-		def choose_code
-			@options = {a: "\e[1;31mR\e[0m",
-				b: "\e[1;34mB\e[0m",
-				c: "\e[1;36mC\e[0m",
-				d: "\e[1;33mY\e[0m",
-				e: "\e[1;35mM\e[0m",
-				f: "\e[1;37mW\e[0m",
-				g: "\e[1;32mG\e[0m"}
-			something = choose_code_by_index(options)
-			code = Array.new(code_length)
-			i = 0
-			while i < code_length
-				code[i] = options[rand_ord_array[i].to_sym].call
-				i+=1
-				end
-			code
-			end
-		
-		def choose_code_by_index(options)
-			length = options.length
-			rand_ord_array = Array.new(code_length) {rand(97..103)}
-			rand_ord_array.map {|ord_num| ord_num.chr}
-			end
-		
-		def print_code(the_code)
-			puts the_code.join
-			end			
 		end
 	
 	end

@@ -66,8 +66,7 @@ module Mastermind
 		@@m_instructions = "\n\e[1;31mOkay!\e[0m Lemme talk to the codemaker.\n\nCodemaker, we gotta make a code.\nYour opponent wins if they guess the code before the maximum number of rounds.\nThe length of the code has been pre-determined.\nUse the upcoming list to know what your options are."
 		@@m_explanation = "They will guess the code.\n\tFor every element that is correct and in the right place, give a 2.\n\tFor every additional element that is correct, give a 1.\n\tFor every additional element, give a 0.\nType this digit code without any additional punctuation or characters, followed by the return key."
 		def intro(length,rounds)
-			puts "\e[1,33m----------------------------------------------------------------------------------\e[0m"
-			Mastermind.put_break
+#			Mastermind.put_break
 			directions = @@m_instructions
 			puts directions
 			puts "Maximum rounds: #{rounds}.\nCode length: #{length}"
@@ -77,6 +76,7 @@ module Mastermind
 			blahblah = gets
 			Mastermind.put_break
 			the_code = get_code(length)
+			puts "DEBUG: I'm in the Codemaker's intro.\nI just got the code from the get_code function.\nThe code is....................#{the_code}"
 			return the_code
 			end
 		
@@ -86,6 +86,7 @@ module Mastermind
 			Mastermind.put_break
 			code = resp.scan(/([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*/)[0].join if length == 4
 			puts "This program can't receive a code longer than 4 letters.\nI know what I told you. I messed up. This may be goodbye." unless length == 4
+			return code
 			end
 			
 		def take_turn (round,feedback)
