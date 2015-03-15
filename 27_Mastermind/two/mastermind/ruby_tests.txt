@@ -1,0 +1,332 @@
+Sources
+http://www.techotopia.com/index.php/Ruby_Variable_Scope
+
+class Game
+attr_reader :player_a
+def instantiate_player
+@player_a = Player.new
+end
+def take_turns
+@player_a.take_turn
+end
+end
+
+class Player
+def take_turn
+puts "Okay, taking my turn!"
+end
+end
+
+-------
+
+#this works
+
+#FOR CONSTANTS. IF CONSTANT IS LOOSE IN HIGH MODULE, JUST REFER TO IT WITH A CAPS G
+module Total
+
+module Constants
+Gender = "male" #needed capital G
+end
+
+module HisMod
+def laughs
+puts "hahahahaha"
+end
+def offends
+puts "You stupid FUCKER!"
+end
+end
+
+module HerMod
+def laughs
+puts "hehehehehe"
+end
+def offends
+puts "If you don't mind being seen as trash, good for oyu!"
+end
+end
+
+class Person
+def initialize
+gender = Constants::Gender
+puts "Gender is #{gender}. Understood?"
+puts "No, it's #{gender}!"
+extend HisMod if gender == "male"
+extend HerMod if gender == "female"
+puts "Turns out, gender is #{gender}. I already extended the appropriate module and am ready to make you laugh."
+self.laughs
+end
+def piss
+self.offends
+end
+end
+
+end
+
+----------------
+
+module Total
+
+module Constants
+#attr_reader(:gender)
+@@gender = "male" #needed capital G
+
+#def self.gender
+#@@gender
+#end
+
+end
+
+module HisMod
+def laughs
+puts "hahahahaha"
+end
+def offends
+puts "You stupid FUCKER!"
+end
+end
+
+module HerMod
+def laughs
+puts "hehehehehe"
+end
+def offends
+puts "If you don't mind being seen as trash, good for oyu!"
+end
+end
+
+class Person
+include Total::Constants
+def initialize
+gender = @@gender
+#gender = Total::Constants.gender
+puts "Gender is #{gender}. Understood?"
+puts "No, it's #{gender}!"
+extend HisMod if gender == "male"
+extend HerMod if gender == "female"
+puts "Turns out, gender is #{gender}. I already extended the appropriate module and am ready to make you laugh."
+self.laughs
+end
+def piss
+self.offends
+end
+end
+
+end
+
+tom = Total::Person.new
+
+----------------
+#works
+module Total
+
+module Constants
+@@gender = "male" #needed capital G
+
+#def self.gender
+#@@gender
+#end
+
+end
+
+module HisMod
+def laughs
+puts "hahahahaha"
+end
+def offends
+puts "You stupid FUCKER!"
+end
+end
+
+module HerMod
+def laughs
+puts "hehehehehe"
+end
+def offends
+puts "If you don't mind being seen as trash, good for oyu!"
+end
+end
+
+class Person
+include Total::Constants
+def initialize
+gender = @@gender
+puts "Gender is #{gender}. Understood?"
+puts "No, it's #{gender}!"
+extend HisMod if gender == "male"
+extend HerMod if gender == "female"
+puts "Turns out, gender is #{gender}. I already extended the appropriate module and am ready to make you laugh."
+self.laughs
+end
+def piss
+self.offends
+end
+end
+
+end
+
+tom = Total::Person.new
+
+----------------
+#WORKS
+module Total
+
+def self.put_break
+puts "YOSUN"
+end
+
+module Constants
+@@gender = "male" #needed capital G
+end
+
+module HisMod
+def laughs
+puts "hahahahaha"
+end
+def offends
+puts "You stupid FUCKER!"
+end
+end
+
+module HerMod
+def laughs
+puts "hehehehehe"
+end
+def offends
+puts "If you don't mind being seen as trash, good for oyu!"
+end
+end
+
+class Person
+include Total::Constants
+def initialize
+gender = @@gender
+Total.put_break
+puts "Gender is #{gender}. Understood?"
+puts "No, it's #{gender}!"
+extend HisMod if gender == "male"
+extend HerMod if gender == "female"
+puts "Turns out, gender is #{gender}. I already extended the appropriate module and am ready to make you laugh."
+self.laughs
+end
+def piss
+self.offends
+end
+end
+
+end
+
+tom = Total::Person.new
+
+----------
+
+code = "green magenta cyan yellow".scan(/([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*/)[0].join if length == 4
+
+-----------
+#WORKS
+def auto_generate_code
+options = {a: "\e[1;31mR\e[0m",b: "\e[1;34mB\e[0m",c: "\e[1;36mC\e[0m",d: "\e[1;33mY\e[0m",e: "\e[1;35mM\e[0m",f: "\e[1;37mW\e[0m",g: "\e[1;32mG\e[0m"}
+something = choose_code_by_index(options)
+code = Array.new(4) #GensCons::CodeLength
+i = 0
+while i < 4 #GensCons::CodeLength
+#puts options[@rand_ord_array[i].to_sym]
+code[i] = options[@rand_ord_array[i].to_sym]
+i+=1
+end
+puts code
+end
+
+def choose_code_by_index(options)
+@rand_ord_array = Array.new(4) {rand(97..103)} #GensCons::CodeLength
+@rand_ord_array.map! {|ord_num| ord_num.chr}
+puts @rand_ord_array
+#puts options.values
+end
+-----------
+cookie = 0
+while (0..256).to_a.include? cookie
+cookie=2**rand(1..9)
+puts cookie
+end
+-----------
+guesses_only = Array.new
+grid.each do |subarray|
+puts subarray[1]
+guesses_only << subarray[1]
+end
+puts guesses_only
+-------------
+array.each_with_index do |x,i|
+puts "Let's start with x as #{x}"
+for j in 0..from_key.length
+if x == from_key[j]
+puts "x is #{x}"
+x = to_key[j]
+puts "now x is #{x}"
+array[i] = x
+puts "and now array[i] = #{array[i]}"
+end
+end
+end
+---------------
+resp = gets.chomp.downcase
+resp_scanned = resp.scan(/([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*/)[0]
+#=> ["b","c","g","r"] 
+--------------
+module Total
+
+
+module Constants
+@@gender = "female" #needed capital G
+end
+
+module Means
+def self.change(butt)
+hey = butt.upcase
+return hey
+end
+end
+
+module HisMod
+def laughs
+puts "hahahahaha"
+end
+def offends
+puts "You stupid FUCKER!"
+end
+end
+
+module HerMod
+def laughs
+puts "hehehehehe"
+end
+def offends
+say = "If you don't mind being seen as trash, good for oyu!"
+new_say = Means.change (say)
+puts new_say
+end
+end
+
+class Person
+include Total::Constants
+def initialize
+gender = @@gender
+puts "Gender is #{gender}. Understood?"
+puts "No, it's #{gender}!"
+extend HisMod if gender == "male"
+extend HerMod if gender == "female"
+puts "Turns out, gender is #{gender}. I already extended the appropriate module and am ready to make you laugh."
+self.laughs
+end
+def piss
+self.offends
+end
+end
+
+end
+
+tom = Total::Person.new
+-------------
+#Source
+#http://stackoverflow.com/questions/10158730/making-a-module-inherit-from-another-module-in-ruby

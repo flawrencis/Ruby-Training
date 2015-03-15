@@ -1,17 +1,17 @@
 module Mastermind
-	class Game
-		attr_reader :player_two, :player_one, :round_num, :max_rounds, :record
+	class Game #named my_game
+		attr_reader :game_name
+		#:player_two, :player_one, :round_num, :max_rounds, :record
 #		:breaker, :player_hash
 		
 		def initialize
-			@breaker = "c"
-			@maker = "m"
 			puts "Welcome to your new game of Mastermind."
-			who_is_playing
-			@round_num = 0
-			@max_rounds = 12
-			@record = Hash.new
-#			game_play
+#			@game_name = self.name
+##			who_is_playing
+##			@round_num = 0
+##			@max_rounds = 12
+##			@record = Hash.new
+###			game_play
 			end
 		
 		def who_is_playing
@@ -30,7 +30,12 @@ module Mastermind
 				player_initiation(@player_two) 
 				end
 			end
-
+		
+		private
+#		def self.name
+#			puts "What shall we call this game?"
+#			@game_name = gets.chomp
+#			end
 		
 		def player_initiation(hash)
 			case hash[:role]

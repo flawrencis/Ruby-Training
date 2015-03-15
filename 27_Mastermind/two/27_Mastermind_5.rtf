@@ -1,0 +1,674 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red10\green12\blue39;\red51\green180\blue193;\red191\green44\blue30;
+\red75\green22\blue231;\red165\green166\blue33;\red210\green31\blue210;\red196\green196\blue196;\red52\green186\blue34;
+}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs22 \cf1 \cb2 \CocoaLigature0 Last login: Thu Mar 12 05:40:36 on ttys000\
+\
+-------------------------------------------------\
+If you need to create a platform specific folder using Phonegap, please do the following:\
+1) First, run the 'echo PATH=$PATH:/Users/francislawrence/Programming/phonegap-2.9.1/lib/<specific_platform>/bin' command.\
+2) Then, you need to change your working directory to the bin of that platform in that same phonegap folder.\
+3) Then, run the 'create name com.example.name Name' command.\
+\
+Also, if you need to change any of these settings, go to your home directory (~) and type \'91nano .bash_profile\'92.\
+\
+Also, if you need to do the EMULATE command, you have to go to the app folder and then run \'91ripple emulate\'92.\
+\
+To edit the tab control thing, go to nano .inputrc from your root directory.\
+To substitute something in the previous line, type something like this... ^toreplace^touse\
+To search previous lines, use Ctrl-R.\
+To leave that screen you can get stuck in, use q when the END is highlighted.\
+To learn the escape characters of buttons, first type ^V\
+Jump to start of line ^A\
+Jump to end of line ^E\
+Clear text onward ^K\
+Clear backward by word ^W\
+Toggle between current cursor position and start of line ^XX\
+Clear whole line ^U\
+Bring last line back ^Y\
+Search previous lines ^R\
+! preceding starting character, Enter invokes last command\
+To modify the last command, type !<firstfewcharacters>:s/<toreplace>/<desired>\
+Keep Mac awake: $ caffeinate -u -t 600 (add options to set timer)\
+------------------------------------------------------\
+12:32:15|~ $ irb\
+irb(main):001:0> Dir.pwd\
+=> "/Users/francislawrence"\
+irb(main):002:0> r27\
+Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'.\
+=> true\
+irb(main):003:0> clr\
+irb(main):001:0> Dir.pwd\
+=> "/Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two"\
+irb(main):002:0> pcya "TESTING COMPUTER GAME, NOW."\
+\cf3 TESTING COMPUTER GAME, NOW.\cf1 \
+=> nil\
+irb(main):003:0> def random_turn\
+irb(main):004:1> options = \{a: "\\e[1;31mR\\e[0m",b: "\\e[1;34mB\\e[0m",c: "\\e[1;36mC\\e[0m",d: "\\e[1;33mY\\e[0m",e: "\\e[1;35mM\\e[0m",f: "\\e[1;37mW\\e[0m",g: "\\e[1;32mG\\e[0m"\}\
+irb(main):005:1> something = choose_code_by_index(options)\
+irb(main):006:1> code = Array.new(GensCons::CodeLength)\
+irb(main):007:1> i = 0\
+irb(main):008:1> while i < GensCons::CodeLength\
+irb(main):009:2> code[i] = options[rand_ord_array[i].to_sym].call\
+irb(main):010:2> i+=1\
+irb(main):011:2> end\
+irb(main):012:1> puts code\
+irb(main):013:1> end\
+=> :random_turn\
+irb(main):014:0> random_turn\
+NoMethodError: undefined method `choose_code_by_index' for main:Object\
+	from (irb):5:in `random_turn'\
+	from (irb):14\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):015:0> clr\
+irb(main):001:0> def random_turn\
+irb(main):002:1> options = \{a: "\\e[1;31mR\\e[0m",b: "\\e[1;34mB\\e[0m",c: "\\e[1;36mC\\e[0m",d: "\\e[1;33mY\\e[0m",e: "\\e[1;35mM\\e[0m",f: "\\e[1;37mW\\e[0m",g: "\\e[1;32mG\\e[0m"\}\
+irb(main):003:1> something = choose_code_by_index(options)\
+irb(main):004:1> code = Array.new(GensCons::CodeLength)\
+irb(main):005:1> i = 0\
+irb(main):006:1> while i < GensCons::CodeLength\
+irb(main):007:2> code[i] = options[rand_ord_array[i].to_sym].call\
+irb(main):008:2> i+=1\
+irb(main):009:2> end\
+irb(main):010:1> puts code\
+irb(main):011:1> end\
+=> :random_turn\
+irb(main):012:0> \
+irb(main):013:0* def choose_code_by_index(options)\
+irb(main):014:1> length = options.length\
+irb(main):015:1> rand_ord_array = Array.new(code_length) \{rand(97..103)\}\
+irb(main):016:1> rand_ord_array.map \{|ord_num| ord_num.chr\}\
+irb(main):017:1> end\
+=> :choose_code_by_index\
+irb(main):018:0> random_turn\
+NameError: undefined local variable or method `code_length' for main:Object\
+	from (irb):15:in `choose_code_by_index'\
+	from (irb):3:in `random_turn'\
+	from (irb):18\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):019:0> def auto_generate_code\
+irb(main):020:1> options = \{a: "\\e[1;31mR\\e[0m",b: "\\e[1;34mB\\e[0m",c: "\\e[1;36mC\\e[0m",d: "\\e[1;33mY\\e[0m",e: "\\e[1;35mM\\e[0m",f: "\\e[1;37mW\\e[0m",g: "\\e[1;32mG\\e[0m"\}\
+irb(main):021:1> something = choose_code_by_index(options)\
+irb(main):022:1> code = Array.new(4) #GensCons::CodeLength\
+irb(main):023:1> i = 0\
+irb(main):024:1> while i < GensCons::CodeLength\
+irb(main):025:2> code[i] = options[rand_ord_array[i].to_sym].call\
+irb(main):026:2> i+=1\
+irb(main):027:2> end\
+irb(main):028:1> puts code\
+irb(main):029:1> end\
+=> :auto_generate_code\
+irb(main):030:0> \
+irb(main):031:0* def choose_code_by_index(options)\
+irb(main):032:1> length = options.length\
+irb(main):033:1> rand_ord_array = Array.new(4) \{rand(97..103)\} #GensCons::CodeLength\
+irb(main):034:1> rand_ord_array.map \{|ord_num| ord_num.chr\}\
+irb(main):035:1> end\
+=> :choose_code_by_index\
+irb(main):036:0> auto_generate_code\
+NameError: uninitialized constant GensCons\
+	from (irb):24:in `auto_generate_code'\
+	from (irb):36\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):037:0> clr\
+irb(main):001:0> def auto_generate_code\
+irb(main):002:1> options = \{a: "\\e[1;31mR\\e[0m",b: "\\e[1;34mB\\e[0m",c: "\\e[1;36mC\\e[0m",d: "\\e[1;33mY\\e[0m",e: "\\e[1;35mM\\e[0m",f: "\\e[1;37mW\\e[0m",g: "\\e[1;32mG\\e[0m"\}\
+irb(main):003:1> something = choose_code_by_index(options)\
+irb(main):004:1> code = Array.new(4) #GensCons::CodeLength\
+irb(main):005:1> i = 0\
+irb(main):006:1> while i < 4 #GensCons::CodeLength\
+irb(main):007:2> code[i] = options[rand_ord_array[i].to_sym].call\
+irb(main):008:2> i+=1\
+irb(main):009:2> end\
+irb(main):010:1> puts code\
+irb(main):011:1> end\
+=> :auto_generate_code\
+irb(main):012:0> \
+irb(main):013:0* def choose_code_by_index(options)\
+irb(main):014:1> length = options.length\
+irb(main):015:1> rand_ord_array = Array.new(4) \{rand(97..103)\} #GensCons::CodeLength\
+irb(main):016:1> rand_ord_array.map \{|ord_num| ord_num.chr\}\
+irb(main):017:1> end\
+=> :choose_code_by_index\
+irb(main):018:0> auto_generate_code\
+NameError: undefined local variable or method `rand_ord_array' for main:Object\
+	from (irb):7:in `auto_generate_code'\
+	from (irb):18\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):019:0> clr\
+irb(main):001:0> def auto_generate_code\
+irb(main):002:1> options = \{a: "\\e[1;31mR\\e[0m",b: "\\e[1;34mB\\e[0m",c: "\\e[1;36mC\\e[0m",d: "\\e[1;33mY\\e[0m",e: "\\e[1;35mM\\e[0m",f: "\\e[1;37mW\\e[0m",g: "\\e[1;32mG\\e[0m"\}\
+irb(main):003:1> something = choose_code_by_index(options)\
+irb(main):004:1> code = Array.new(4) #GensCons::CodeLength\
+irb(main):005:1> i = 0\
+irb(main):006:1> while i < 4 #GensCons::CodeLength\
+irb(main):007:2> code[i] = options[@rand_ord_array[i].to_sym].call\
+irb(main):008:2> i+=1\
+irb(main):009:2> end\
+irb(main):010:1> puts code\
+irb(main):011:1> end\
+=> :auto_generate_code\
+irb(main):012:0> \
+irb(main):013:0* def choose_code_by_index(options)\
+irb(main):014:1> length = options.length\
+irb(main):015:1> @rand_ord_array = Array.new(4) \{rand(97..103)\} #GensCons::CodeLength\
+irb(main):016:1> @rand_ord_array.map \{|ord_num| ord_num.chr\}\
+irb(main):017:1> end\
+=> :choose_code_by_index\
+irb(main):018:0> auto_generate_code\
+NoMethodError: undefined method `to_sym' for 101:Fixnum\
+	from (irb):7:in `auto_generate_code'\
+	from (irb):18\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):019:0> clr\
+irb(main):001:0> def auto_generate_code\
+irb(main):002:1> options = \{a: "\\e[1;31mR\\e[0m",b: "\\e[1;34mB\\e[0m",c: "\\e[1;36mC\\e[0m",d: "\\e[1;33mY\\e[0m",e: "\\e[1;35mM\\e[0m",f: "\\e[1;37mW\\e[0m",g: "\\e[1;32mG\\e[0m"\}\
+irb(main):003:1> something = choose_code_by_index(options)\
+irb(main):004:1> code = Array.new(4) #GensCons::CodeLength\
+irb(main):005:1> i = 0\
+irb(main):006:1> while i < 4 #GensCons::CodeLength\
+irb(main):007:2> code[i] = options[@rand_ord_array[i].to_sym].call\
+irb(main):008:2> i+=1\
+irb(main):009:2> end\
+irb(main):010:1> puts code\
+irb(main):011:1> end\
+=> :auto_generate_code\
+irb(main):012:0> \
+irb(main):013:0* def choose_code_by_index(options)\
+irb(main):014:1> length = options.length\
+irb(main):015:1> @rand_ord_array = Array.new(4) \{rand(97..103)\} #GensCons::CodeLength\
+irb(main):016:1> @rand_ord_array.map \{|ord_num| ord_num.chr\}\
+irb(main):017:1> puts @rand_ord_array\
+irb(main):018:1> end\
+=> :choose_code_by_index\
+irb(main):019:0> auto_generate_code\
+97\
+98\
+103\
+100\
+NoMethodError: undefined method `to_sym' for 97:Fixnum\
+	from (irb):7:in `auto_generate_code'\
+	from (irb):19\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):020:0> "yes".methods\
+=> [:<=>, :==, :===, :eql?, :hash, :casecmp, :+, :*, :%, :[], :[]=, :insert, :length, :size, :bytesize, :empty?, :=~, :match, :succ, :succ!, :next, :next!, :upto, :index, :rindex, :replace, :clear, :chr, :getbyte, :setbyte, :byteslice, :scrub, :scrub!, :freeze, :to_i, :to_f, :to_s, :to_str, :inspect, :dump, :upcase, :downcase, :capitalize, :swapcase, :upcase!, :downcase!, :capitalize!, :swapcase!, :hex, :oct, :split, :lines, :bytes, :chars, :codepoints, :reverse, :reverse!, :concat, :<<, :prepend, :crypt, :intern, :to_sym, :ord, :include?, :start_with?, :end_with?, :scan, :ljust, :rjust, :center, :sub, :gsub, :chop, :chomp, :strip, :lstrip, :rstrip, :sub!, :gsub!, :chop!, :chomp!, :strip!, :lstrip!, :rstrip!, :tr, :tr_s, :delete, :squeeze, :count, :tr!, :tr_s!, :delete!, :squeeze!, :each_line, :each_byte, :each_char, :each_codepoint, :sum, :slice, :slice!, :partition, :rpartition, :encoding, :force_encoding, :b, :valid_encoding?, :ascii_only?, :unpack, :encode, :encode!, :to_r, :to_c, :unicode_normalize, :unicode_normalize!, :unicode_normalized?, :>, :>=, :<, :<=, :between?, :nil?, :!~, :class, :singleton_class, :clone, :dup, :itself, :taint, :tainted?, :untaint, :untrust, :untrusted?, :trust, :frozen?, :methods, :singleton_methods, :protected_methods, :private_methods, :public_methods, :instance_variables, :instance_variable_get, :instance_variable_set, :instance_variable_defined?, :remove_instance_variable, :instance_of?, :kind_of?, :is_a?, :tap, :send, :public_send, :respond_to?, :extend, :display, :method, :public_method, :singleton_method, :define_singleton_method, :object_id, :to_enum, :enum_for, :equal?, :!, :!=, :instance_eval, :instance_exec, :__send__, :__id__]\
+irb(main):021:0> Array.methods\
+=> [:[], :try_convert, :allocate, :new, :superclass, :freeze, :===, :==, :<=>, :<, :<=, :>, :>=, :to_s, :inspect, :included_modules, :include?, :name, :ancestors, :instance_methods, :public_instance_methods, :protected_instance_methods, :private_instance_methods, :constants, :const_get, :const_set, :const_defined?, :const_missing, :class_variables, :remove_class_variable, :class_variable_get, :class_variable_set, :class_variable_defined?, :public_constant, :private_constant, :singleton_class?, :include, :prepend, :module_exec, :class_exec, :module_eval, :class_eval, :method_defined?, :public_method_defined?, :private_method_defined?, :protected_method_defined?, :public_class_method, :private_class_method, :autoload, :autoload?, :instance_method, :public_instance_method, :nil?, :=~, :!~, :eql?, :hash, :class, :singleton_class, :clone, :dup, :itself, :taint, :tainted?, :untaint, :untrust, :untrusted?, :trust, :frozen?, :methods, :singleton_methods, :protected_methods, :private_methods, :public_methods, :instance_variables, :instance_variable_get, :instance_variable_set, :instance_variable_defined?, :remove_instance_variable, :instance_of?, :kind_of?, :is_a?, :tap, :send, :public_send, :respond_to?, :extend, :display, :method, :public_method, :singleton_method, :define_singleton_method, :object_id, :to_enum, :enum_for, :equal?, :!, :!=, :instance_eval, :instance_exec, :__send__, :__id__]\
+irb(main):022:0> [1,2,3,4,5].methods\
+=> [:inspect, :to_s, :to_a, :to_h, :to_ary, :frozen?, :==, :eql?, :hash, :[], :[]=, :at, :fetch, :first, :last, :concat, :<<, :push, :pop, :shift, :unshift, :insert, :each, :each_index, :reverse_each, :length, :size, :empty?, :find_index, :index, :rindex, :join, :reverse, :reverse!, :rotate, :rotate!, :sort, :sort!, :sort_by!, :collect, :collect!, :map, :map!, :select, :select!, :keep_if, :values_at, :delete, :delete_at, :delete_if, :reject, :reject!, :zip, :transpose, :replace, :clear, :fill, :include?, :<=>, :slice, :slice!, :assoc, :rassoc, :+, :*, :-, :&, :|, :uniq, :uniq!, :compact, :compact!, :flatten, :flatten!, :count, :shuffle!, :shuffle, :sample, :cycle, :permutation, :combination, :repeated_permutation, :repeated_combination, :product, :take, :take_while, :drop, :drop_while, :bsearch, :any?, :pack, :entries, :sort_by, :grep, :find, :detect, :find_all, :flat_map, :collect_concat, :inject, :reduce, :partition, :group_by, :all?, :one?, :none?, :min, :max, :minmax, :min_by, :max_by, :minmax_by, :member?, :each_with_index, :each_entry, :each_slice, :each_cons, :each_with_object, :chunk, :slice_before, :slice_after, :slice_when, :lazy, :nil?, :===, :=~, :!~, :class, :singleton_class, :clone, :dup, :itself, :taint, :tainted?, :untaint, :untrust, :untrusted?, :trust, :freeze, :methods, :singleton_methods, :protected_methods, :private_methods, :public_methods, :instance_variables, :instance_variable_get, :instance_variable_set, :instance_variable_defined?, :remove_instance_variable, :instance_of?, :kind_of?, :is_a?, :tap, :send, :public_send, :respond_to?, :extend, :display, :method, :public_method, :singleton_method, :define_singleton_method, :object_id, :to_enum, :enum_for, :equal?, :!, :!=, :instance_eval, :instance_exec, :__send__, :__id__]\
+irb(main):023:0> \
+irb(main):024:0* \
+irb(main):025:0* \
+irb(main):026:0* \
+irb(main):027:0* [1,2,3,4,5].methods\
+=> [:inspect, :to_s, :to_a, :to_h, :to_ary, :frozen?, :==, :eql?, :hash, :[], :[]=, :at, :fetch, :first, :last, :concat, :<<, :push, :pop, :shift, :unshift, :insert, :each, :each_index, :reverse_each, :length, :size, :empty?, :find_index, :index, :rindex, :join, :reverse, :reverse!, :rotate, :rotate!, :sort, :sort!, :sort_by!, :collect, :collect!, :map, :map!, :select, :select!, :keep_if, :values_at, :delete, :delete_at, :delete_if, :reject, :reject!, :zip, :transpose, :replace, :clear, :fill, :include?, :<=>, :slice, :slice!, :assoc, :rassoc, :+, :*, :-, :&, :|, :uniq, :uniq!, :compact, :compact!, :flatten, :flatten!, :count, :shuffle!, :shuffle, :sample, :cycle, :permutation, :combination, :repeated_permutation, :repeated_combination, :product, :take, :take_while, :drop, :drop_while, :bsearch, :any?, :pack, :entries, :sort_by, :grep, :find, :detect, :find_all, :flat_map, :collect_concat, :inject, :reduce, :partition, :group_by, :all?, :one?, :none?, :min, :max, :minmax, :min_by, :max_by, :minmax_by, :member?, :each_with_index, :each_entry, :each_slice, :each_cons, :each_with_object, :chunk, :slice_before, :slice_after, :slice_when, :lazy, :nil?, :===, :=~, :!~, :class, :singleton_class, :clone, :dup, :itself, :taint, :tainted?, :untaint, :untrust, :untrusted?, :trust, :freeze, :methods, :singleton_methods, :protected_methods, :private_methods, :public_methods, :instance_variables, :instance_variable_get, :instance_variable_set, :instance_variable_defined?, :remove_instance_variable, :instance_of?, :kind_of?, :is_a?, :tap, :send, :public_send, :respond_to?, :extend, :display, :method, :public_method, :singleton_method, :define_singleton_method, :object_id, :to_enum, :enum_for, :equal?, :!, :!=, :instance_eval, :instance_exec, :__send__, :__id__]\
+irb(main):028:0> clr\
+irb(main):001:0> def auto_generate_code\
+irb(main):002:1> options = \{a: "\\e[1;31mR\\e[0m",b: "\\e[1;34mB\\e[0m",c: "\\e[1;36mC\\e[0m",d: "\\e[1;33mY\\e[0m",e: "\\e[1;35mM\\e[0m",f: "\\e[1;37mW\\e[0m",g: "\\e[1;32mG\\e[0m"\}\
+irb(main):003:1> something = choose_code_by_index(options)\
+irb(main):004:1> code = Array.new(4) #GensCons::CodeLength\
+irb(main):005:1> i = 0\
+irb(main):006:1> while i < 4 #GensCons::CodeLength\
+irb(main):007:2> code[i] = options[@rand_ord_array[i].to_sym].call\
+irb(main):008:2> i+=1\
+irb(main):009:2> end\
+irb(main):010:1> puts code\
+irb(main):011:1> end\
+=> :auto_generate_code\
+irb(main):012:0> \
+irb(main):013:0* def choose_code_by_index(options)\
+irb(main):014:1> length = options.length\
+irb(main):015:1> @rand_ord_array = Array.new(4) \{rand(97..103)\} #GensCons::CodeLength\
+irb(main):016:1> @rand_ord_array.map! \{|ord_num| ord_num.chr\}\
+irb(main):017:1> puts @rand_ord_array\
+irb(main):018:1> end\
+=> :choose_code_by_index\
+irb(main):019:0> auto\
+auto_generate_code autoload           autoload?         \
+irb(main):019:0> auto\
+auto_generate_code autoload           autoload?         \
+irb(main):019:0> auto_generate_code\
+b\
+c\
+e\
+d\
+NoMethodError: undefined method `call' for "\\e[1;34mB\\e[0m":String\
+	from (irb):7:in `auto_generate_code'\
+	from (irb):19\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):020:0> "yes".methods\
+=> [:<=>, :==, :===, :eql?, :hash, :casecmp, :+, :*, :%, :[], :[]=, :insert, :length, :size, :bytesize, :empty?, :=~, :match, :succ, :succ!, :next, :next!, :upto, :index, :rindex, :replace, :clear, :chr, :getbyte, :setbyte, :byteslice, :scrub, :scrub!, :freeze, :to_i, :to_f, :to_s, :to_str, :inspect, :dump, :upcase, :downcase, :capitalize, :swapcase, :upcase!, :downcase!, :capitalize!, :swapcase!, :hex, :oct, :split, :lines, :bytes, :chars, :codepoints, :reverse, :reverse!, :concat, :<<, :prepend, :crypt, :intern, :to_sym, :ord, :include?, :start_with?, :end_with?, :scan, :ljust, :rjust, :center, :sub, :gsub, :chop, :chomp, :strip, :lstrip, :rstrip, :sub!, :gsub!, :chop!, :chomp!, :strip!, :lstrip!, :rstrip!, :tr, :tr_s, :delete, :squeeze, :count, :tr!, :tr_s!, :delete!, :squeeze!, :each_line, :each_byte, :each_char, :each_codepoint, :sum, :slice, :slice!, :partition, :rpartition, :encoding, :force_encoding, :b, :valid_encoding?, :ascii_only?, :unpack, :encode, :encode!, :to_r, :to_c, :unicode_normalize, :unicode_normalize!, :unicode_normalized?, :>, :>=, :<, :<=, :between?, :nil?, :!~, :class, :singleton_class, :clone, :dup, :itself, :taint, :tainted?, :untaint, :untrust, :untrusted?, :trust, :frozen?, :methods, :singleton_methods, :protected_methods, :private_methods, :public_methods, :instance_variables, :instance_variable_get, :instance_variable_set, :instance_variable_defined?, :remove_instance_variable, :instance_of?, :kind_of?, :is_a?, :tap, :send, :public_send, :respond_to?, :extend, :display, :method, :public_method, :singleton_method, :define_singleton_method, :object_id, :to_enum, :enum_for, :equal?, :!, :!=, :instance_eval, :instance_exec, :__send__, :__id__]\
+irb(main):021:0> "yes".singleton_method\
+ArgumentError: wrong number of arguments (0 for 1)\
+	from (irb):21:in `singleton_method'\
+	from (irb):21\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):022:0> "yes".strip\
+=> "yes"\
+irb(main):023:0> clr\
+irb(main):001:0> def auto_generate_code\
+irb(main):002:1> options = \{a: "\\e[1;31mR\\e[0m",b: "\\e[1;34mB\\e[0m",c: "\\e[1;36mC\\e[0m",d: "\\e[1;33mY\\e[0m",e: "\\e[1;35mM\\e[0m",f: "\\e[1;37mW\\e[0m",g: "\\e[1;32mG\\e[0m"\}\
+irb(main):003:1> something = choose_code_by_index(options)\
+irb(main):004:1> code = Array.new(4) #GensCons::CodeLength\
+irb(main):005:1> i = 0\
+irb(main):006:1> while i < 4 #GensCons::CodeLength\
+irb(main):007:2> puts options[@rand_ord_array[i].to_sym]\
+irb(main):008:2> code[i] = options[@rand_ord_array[i].to_sym].call\
+irb(main):009:2> i+=1\
+irb(main):010:2> end\
+irb(main):011:1> puts code\
+irb(main):012:1> end\
+=> :auto_generate_code\
+irb(main):013:0> \
+irb(main):014:0* def choose_code_by_index(options)\
+irb(main):015:1> @rand_ord_array = Array.new(4) \{rand(97..103)\} #GensCons::CodeLength\
+irb(main):016:1> @rand_ord_array.map! \{|ord_num| ord_num.chr\}\
+irb(main):017:1> puts @rand_ord_array\
+irb(main):018:1> puts options.values\
+irb(main):019:1> end\
+=> :choose_code_by_index\
+irb(main):020:0> auto_generate_code\
+g\
+b\
+a\
+d\
+
+\f1\b \cf4 R
+\f0\b0 \cf1 \
+
+\f1\b \cf5 B
+\f0\b0 \cf1 \
+
+\f1\b \cf3 C
+\f0\b0 \cf1 \
+
+\f1\b \cf6 Y
+\f0\b0 \cf1 \
+
+\f1\b \cf7 M
+\f0\b0 \cf1 \
+
+\f1\b \cf8 W
+\f0\b0 \cf1 \
+
+\f1\b \cf9 G
+\f0\b0 \cf1 \
+
+\f1\b \cf9 G
+\f0\b0 \cf1 \
+NoMethodError: undefined method `call' for "\\e[1;32mG\\e[0m":String\
+	from (irb):8:in `auto_generate_code'\
+	from (irb):20\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):021:0> clr\
+irb(main):001:0> def auto_generate_code\
+irb(main):002:1> options = \{a: "\\e[1;31mR\\e[0m",b: "\\e[1;34mB\\e[0m",c: "\\e[1;36mC\\e[0m",d: "\\e[1;33mY\\e[0m",e: "\\e[1;35mM\\e[0m",f: "\\e[1;37mW\\e[0m",g: "\\e[1;32mG\\e[0m"\}\
+irb(main):003:1> something = choose_code_by_index(options)\
+irb(main):004:1> code = Array.new(4) #GensCons::CodeLength\
+irb(main):005:1> i = 0\
+irb(main):006:1> while i < 4 #GensCons::CodeLength\
+irb(main):007:2> #puts options[@rand_ord_array[i].to_sym]\
+irb(main):008:2* code[i] = options[@rand_ord_array[i].to_sym]\
+irb(main):009:2> i+=1\
+irb(main):010:2> end\
+irb(main):011:1> puts code\
+irb(main):012:1> end\
+=> :auto_generate_code\
+irb(main):013:0> \
+irb(main):014:0* def choose_code_by_index(options)\
+irb(main):015:1> @rand_ord_array = Array.new(4) \{rand(97..103)\} #GensCons::CodeLength\
+irb(main):016:1> @rand_ord_array.map! \{|ord_num| ord_num.chr\}\
+irb(main):017:1> puts @rand_ord_array\
+irb(main):018:1> puts options.values\
+irb(main):019:1> end\
+=> :choose_code_by_index\
+irb(main):020:0> auto_generate_code\
+g\
+a\
+g\
+e\
+
+\f1\b \cf4 R
+\f0\b0 \cf1 \
+
+\f1\b \cf5 B
+\f0\b0 \cf1 \
+
+\f1\b \cf3 C
+\f0\b0 \cf1 \
+
+\f1\b \cf6 Y
+\f0\b0 \cf1 \
+
+\f1\b \cf7 M
+\f0\b0 \cf1 \
+
+\f1\b \cf8 W
+\f0\b0 \cf1 \
+
+\f1\b \cf9 G
+\f0\b0 \cf1 \
+
+\f1\b \cf9 G
+\f0\b0 \cf1 \
+
+\f1\b \cf4 R
+\f0\b0 \cf1 \
+
+\f1\b \cf9 G
+\f0\b0 \cf1 \
+
+\f1\b \cf7 M
+\f0\b0 \cf1 \
+=> nil\
+irb(main):021:0> clr\
+irb(main):001:0> def auto_generate_code\
+irb(main):002:1> options = \{a: "\\e[1;31mR\\e[0m",b: "\\e[1;34mB\\e[0m",c: "\\e[1;36mC\\e[0m",d: "\\e[1;33mY\\e[0m",e: "\\e[1;35mM\\e[0m",f: "\\e[1;37mW\\e[0m",g: "\\e[1;32mG\\e[0m"\}\
+irb(main):003:1> something = choose_code_by_index(options)\
+irb(main):004:1> code = Array.new(4) #GensCons::CodeLength\
+irb(main):005:1> i = 0\
+irb(main):006:1> while i < 4 #GensCons::CodeLength\
+irb(main):007:2> #puts options[@rand_ord_array[i].to_sym]\
+irb(main):008:2* code[i] = options[@rand_ord_array[i].to_sym]\
+irb(main):009:2> i+=1\
+irb(main):010:2> end\
+irb(main):011:1> puts code\
+irb(main):012:1> end\
+=> :auto_generate_code\
+irb(main):013:0> \
+irb(main):014:0* def choose_code_by_index(options)\
+irb(main):015:1> @rand_ord_array = Array.new(4) \{rand(97..103)\} #GensCons::CodeLength\
+irb(main):016:1> @rand_ord_array.map! \{|ord_num| ord_num.chr\}\
+irb(main):017:1> puts @rand_ord_array\
+irb(main):018:1> #puts options.values\
+irb(main):019:1* end\
+=> :choose_code_by_index\
+irb(main):020:0> auto_generate_code\
+e\
+e\
+a\
+a\
+
+\f1\b \cf7 M
+\f0\b0 \cf1 \
+
+\f1\b \cf7 M
+\f0\b0 \cf1 \
+
+\f1\b \cf4 R
+\f0\b0 \cf1 \
+
+\f1\b \cf4 R
+\f0\b0 \cf1 \
+=> nil\
+irb(main):021:0> auto_generate_code\
+f\
+e\
+a\
+d\
+
+\f1\b \cf8 W
+\f0\b0 \cf1 \
+
+\f1\b \cf7 M
+\f0\b0 \cf1 \
+
+\f1\b \cf4 R
+\f0\b0 \cf1 \
+
+\f1\b \cf6 Y
+\f0\b0 \cf1 \
+=> nil\
+irb(main):022:0> auto_generate_code\
+g\
+e\
+g\
+d\
+
+\f1\b \cf9 G
+\f0\b0 \cf1 \
+
+\f1\b \cf7 M
+\f0\b0 \cf1 \
+
+\f1\b \cf9 G
+\f0\b0 \cf1 \
+
+\f1\b \cf6 Y
+\f0\b0 \cf1 \
+=> nil\
+irb(main):023:0> pcya "AUTO GENERATE CODE WORKS"\
+\cf3 AUTO GENERATE CODE WORKS\cf1 \
+=> nil\
+irb(main):024:0> 2**4\
+=> 16\
+irb(main):025:0> 2**7\
+=> 128\
+irb(main):026:0> clr\
+irb(main):001:0> while [1..256].include? cookie\
+irb(main):002:1> cookie=2**rand(1..10)\
+irb(main):003:1> end\
+NameError: undefined local variable or method `cookie' for main:Object\
+	from (irb):1\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> cookie = 0\
+=> 0\
+irb(main):005:0> while [1..256].include? cookie\
+irb(main):006:1> cookie=2**rand(1..10)\
+irb(main):007:1> end\
+=> nil\
+irb(main):008:0> cookie = 0\
+=> 0\
+irb(main):009:0> while [1..256].include? cookie\
+irb(main):010:1> cookie=2**rand(1..10)\
+irb(main):011:1> puts cookie\
+irb(main):012:1> end\
+=> nil\
+irb(main):013:0> cookie\
+=> 0\
+irb(main):014:0> 2**rand(1..10)\
+=> 32\
+irb(main):015:0> cookie = 0\
+=> 0\
+irb(main):016:0> while [0..256].include? cookie\
+irb(main):017:1> cookie=2**rand(1..10)\
+irb(main):018:1> puts cookie\
+irb(main):019:1> end\
+=> nil\
+irb(main):020:0> [0..256]\
+=> [0..256]\
+irb(main):021:0> "1..10".to_a\
+NoMethodError: undefined method `to_a' for "1..10":String\
+	from (irb):21\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):022:0> (1..10).to_a\
+=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\
+irb(main):023:0> clr\
+irb(main):001:0> cookie = 0\
+=> 0\
+irb(main):002:0> while [(0..256).to_a].include? cookie\
+irb(main):003:1> cookie=2**rand(1..10)\
+irb(main):004:1> puts cookie\
+irb(main):005:1> end\
+=> nil\
+irb(main):006:0> cookie\
+=> 0\
+irb(main):007:0> cookie = 0\
+=> 0\
+irb(main):008:0> while (0..256).to_a.include? cookie\
+irb(main):009:1> cookie=2**rand(1..10)\
+irb(main):010:1> puts cookie\
+irb(main):011:1> end\
+128\
+1024\
+=> nil\
+irb(main):012:0> 2**10\
+=> 1024\
+irb(main):013:0> 2**9\
+=> 512\
+irb(main):014:0> cookie = 0\
+=> 0\
+irb(main):015:0> while (0..256).to_a.include? cookie\
+irb(main):016:1> cookie=2**rand(1..9)\
+irb(main):017:1> puts cookie\
+irb(main):018:1> end\
+8\
+16\
+32\
+2\
+2\
+256\
+256\
+4\
+4\
+32\
+16\
+64\
+4\
+256\
+8\
+256\
+2\
+512\
+=> nil\
+irb(main):019:0> grid = [[1,"ab",00],[2,"bc",00],[3,"cd",00]]\
+=> [[1, "ab", 0], [2, "bc", 0], [3, "cd", 0]]\
+irb(main):020:0> grid.include? "ad"\
+=> false\
+irb(main):021:0> grid.include? "ab"\
+=> false\
+irb(main):022:0> guesses_only = Array.new\
+=> []\
+irb(main):023:0> for grid.each do |subarray|\
+irb(main):024:1* guesses_only << subarray[1]\
+irb(main):025:1> end\
+SyntaxError: (irb):25: syntax error, unexpected '\\n', expecting :: or '[' or '.'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):026:0> puts guesses_only\
+=> nil\
+irb(main):027:0> grid\
+=> [[1, "ab", 0], [2, "bc", 0], [3, "cd", 0]]\
+irb(main):028:0> guesses_only = Array.new\
+=> []\
+irb(main):029:0> for grid.each do |subarray|\
+irb(main):030:1* guesses_only << subarray[1]\
+irb(main):031:1> end\
+SyntaxError: (irb):31: syntax error, unexpected '\\n', expecting :: or '[' or '.'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):032:0> guesses_only\
+=> []\
+irb(main):033:0> for grid.each do |subarray|\
+irb(main):034:1* puts subarray[1]\
+irb(main):035:1> guesses_only << subarray[1]\
+irb(main):036:1> end\
+SyntaxError: (irb):36: syntax error, unexpected '\\n', expecting :: or '[' or '.'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):037:0> guesses_only\
+=> []\
+irb(main):038:0> grid.each do |subarray|\
+irb(main):039:1* puts subarray[1]\
+irb(main):040:1> guesses_only << subarray[1]\
+irb(main):041:1> end\
+ab\
+bc\
+cd\
+=> [[1, "ab", 0], [2, "bc", 0], [3, "cd", 0]]\
+irb(main):042:0> guesses_only\
+=> ["ab", "bc", "cd"]\
+irb(main):043:0> evaluate\
+NameError: undefined local variable or method `evaluate' for main:Object\
+	from (irb):43\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):044:0> puts "joe" if 3+4 == 22 || 5 < 6\
+joe\
+=> nil\
+irb(main):045:0> guesses_only\
+=> ["ab", "bc", "cd"]\
+irb(main):046:0> guesses_only[1,2].include? "ab"\
+=> false\
+irb(main):047:0> k=0\
+=> 0\
+irb(main):048:0> guesses_only[k-1,k-2].include? "ab"\
+NoMethodError: undefined method `include?' for nil:NilClass\
+	from (irb):48\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):049:0> guesses_only[(k-1),(k-2)].include? "ab"\
+NoMethodError: undefined method `include?' for nil:NilClass\
+	from (irb):49\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):050:0> a=k-1\
+=> -1\
+irb(main):051:0> b=k-2\
+=> -2\
+irb(main):052:0> guesses_only[a,b].include? "ab"\
+NoMethodError: undefined method `include?' for nil:NilClass\
+	from (irb):52\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):053:0> guesses_only[a.to_i,b.to_i].include? "ab"\
+NoMethodError: undefined method `include?' for nil:NilClass\
+	from (irb):53\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):054:0> a.class\
+=> Fixnum\
+irb(main):055:0> -1.class\
+=> Fixnum\
+irb(main):056:0> joe \
+NameError: undefined local variable or method `joe' for main:Object\
+	from (irb):56\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):057:0> joe = guesses_only[a,b]\
+=> nil\
+irb(main):058:0> guesses_only[-1,-2]\
+=> nil\
+irb(main):059:0> guesses_only[-1]\
+=> "cd"\
+irb(main):060:0> guesses_only[-2]\
+=> "bc"\
+irb(main):061:0> guesses_only[(-1),(-2)]\
+=> nil\
+irb(main):062:0> guesses_only[(1),(2)]\
+=> ["bc", "cd"]\
+irb(main):063:0> guesses_only[(-1),(-1)]\
+=> nil\
+irb(main):064:0> guesses_only[k+1,k+2]\
+=> ["bc", "cd"]\
+irb(main):065:0> guesses_only[k+1,k+3]\
+=> ["bc", "cd"]\
+irb(main):066:0> guesses_only[k+1,k+4]\
+=> ["bc", "cd"]\
+irb(main):067:0> k=3\
+=> 3\
+irb(main):068:0> guesses_only[k+1,k+4]\
+=> nil\
+irb(main):069:0> guesses_only[k+1,k+2]\
+=> nil\
+irb(main):070:0> k=2\
+=> 2\
+irb(main):071:0> guesses_only[k+1,k+2]\
+=> []\
+irb(main):072:0> guesses_only[k+1,k+2]\
+=> []\
+irb(main):073:0> guesses_only[k+1,k+4]\
+=> []\
+irb(main):074:0> k=1\
+=> 1\
+irb(main):075:0> guesses_only[k+1,k+2]\
+=> ["cd"]\
+irb(main):076:0> guesses_only.delete_at_index(1)\
+NoMethodError: undefined method `delete_at_index' for ["ab", "bc", "cd"]:Array\
+	from (irb):76\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):077:0> guesses_only.delete_at(1)\
+=> "bc"\
+irb(main):078:0> guesses_only\
+=> ["ab", "cd"]\
+irb(main):079:0> guesses_only[1]="bc";guesses_only[2]="cd"\
+=> "cd"\
+irb(main):080:0> guesses_only\
+=> ["ab", "bc", "cd"]\
+irb(main):081:0> \
+}
