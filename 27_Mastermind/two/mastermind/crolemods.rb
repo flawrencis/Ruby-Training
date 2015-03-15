@@ -40,24 +40,27 @@ module Mastermind
 			guesses_only
 			end
 		
+					
+					
+					
+		
 		
 		def random_turn
 			options = GenCons::Options
-			chr_array = choose_code_by_index(options)
-			puts "DEBUG: Right now, after pulling from #choose_code_by_index, chr_array is #{chr_array}.\nNow, let's join it!"
-			chr_array.join!
-#			guess = Array.new(GenCons::CodeLength)
-#			i = 0
-#			while i < GenCons::CodeLength
-#				guess[i] = chr_array[i]
-#				i+=1
-#				end
-			return chr_array
+			chr_array = choose_color_code_by_index
+#			puts "DEBUG: Right now, after pulling from #choose_code_by_index, chr_array is #{chr_array}.\nNow, let's join it!"
+#			chr_array.join!
+			genconsoptionskeys = GenCons::Options.keys.map {|symbo| symbo.to_s} 
+			dull_array = GenMeans.translate_array(chr_array, genconsoptionskeys, GenCons::Options.values)
+			colored_guess = GenMeans.colorize_array (dull_array)
+			puts "DEBUG: random_turn is returning #{colored_guess}! as the colored_guess!"
+			return colored_guess
 			end
 		
-		def choose_code_by_index(options)
+		def choose_color_code_by_index
 			rand_ord_array = Array.new(GenCons::CodeLength) {rand(97..103)} 
 			rand_ord_array.map! {|ord_num| ord_num.chr}
+			puts "DEBUG: choose_color_code_by_index is returning #{rand_ord_array}!"
 			return rand_ord_array
 			end
 		end
@@ -71,21 +74,22 @@ module Mastermind
 		
 		def aut_cod
 			options = GenCons::Options
-			something = choose_code_by_index(options)
+			chr_array = choose_code_by_index(options)
 			code = Array.new(GenCons::CodeLength)
 			i = 0
 			while i < GenCons::CodeLength
-				code[i] = options[@rand_ord_array[i].to_sym]
+				code[i] = options[chr_array[i].to_sym]
 				i+=1
 				end
 			puts "DEBUG: From aut_cod, code is #{code}."
-			return code
+			the_code = code.join
+			return the_code
 			end
 
 		def choose_code_by_index(options)
-			@rand_ord_array = Array.new(GenCons::CodeLength) {rand(97..103)} 
-			@rand_ord_array.map! {|ord_num| ord_num.chr}
-			puts @rand_ord_array
+			rand_ord_array = Array.new(GenCons::CodeLength) {rand(97..103)} 
+			chr_array = rand_ord_array.map {|ord_num| ord_num.chr}
+			return chr_array
 			end
 		
 		

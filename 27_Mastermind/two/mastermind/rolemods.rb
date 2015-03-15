@@ -14,7 +14,7 @@ module Mastermind
 			puts resp_explanation
 			puts "Is everything clear?"
 			blahblah = gets
-			Mastermind.put_break
+			GenMeans.put_break
 			return
 			end
 		
@@ -33,17 +33,16 @@ module Mastermind
 			puts the_question
 			print_record(@guess_grid)
 			resp = gets.chomp.downcase
-			Mastermind.put_break
+			GenMeans.put_break
 			print_options if resp == "o"
-			@turn_result = resp.scan(/([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*/)[0].join 
-			@guess_grid << [round,@turn_result,"xxxx"]
-			return @turn_result
+			resp_scanned = resp.scan(/([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*/)[0]
+			guess_colored = GenMeans.colorize_array(resp_scanned)
+			@guess_grid << [round,guess_colored,"xxxx"]
+			return guess_colored
 			end
 		
-#		def response
-#			@turn_result
-#			end
-#Above was removed after I got humans working and began working on computer
+
+			
 		
 		def print_record(record)
 #			puts "DEBUG: Just entered print_record function."
@@ -55,7 +54,7 @@ module Mastermind
 			puts options
 			puts "What would you like to guess now?"
 			resp = gets.chomp.downcase
-			Mastermind.put_break
+			GenMeans.put_break
 			end
 		end
 	
@@ -66,7 +65,7 @@ module Mastermind
 		@@m_instructions = "\n\e[1;31mOkay!\e[0m Lemme talk to the codemaker.\n\nCodemaker, we gotta make a code.\nYour opponent wins if they guess the code before the maximum number of rounds.\nThe length of the code has been pre-determined.\nUse the upcoming list to know what your options are."
 		@@m_explanation = "They will guess the code.\n\tFor every element that is correct and in the right place, give a 2.\n\tFor every additional element that is correct, give a 1.\n\tFor every additional element, give a 0.\nType this digit code without any additional punctuation or characters, followed by the return key."
 		def intro(length,rounds)
-#			Mastermind.put_break
+#			GenMeans.put_break
 			directions = @@m_instructions
 			puts directions
 			puts "Maximum rounds: #{rounds}.\nCode length: #{length}"
@@ -74,7 +73,7 @@ module Mastermind
 			resp_explanation = @@m_explanation
 			puts "Do you understand?"
 			blahblah = gets
-			Mastermind.put_break
+			GenMeans.put_break
 			the_code = get_code(length)
 			puts "DEBUG: I'm in the Codemaker's intro.\nI just got the code from the get_code function.\nThe code is....................#{the_code}"
 			return the_code
@@ -83,22 +82,22 @@ module Mastermind
 		def get_code(length)
 			puts "Check out the options and then give me a #{length}-letter code."
 			resp = gets.chomp.downcase
-			Mastermind.put_break
-			code = resp.scan(/([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*/)[0].join if length == 4
+			GenMeans.put_break
+			dull_code = resp.scan(/([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*/)[0].join if length == 4
 			puts "This program can't receive a code longer than 4 letters.\nI know what I told you. I messed up. This may be goodbye." unless length == 4
+			code = GenMeans.colorize_array(dull_code)
 			return code
 			end
 			
 		def take_turn (round,feedback)
 			your_turn = "\nOkay, we're on round #{round} and it's your turn, #{@user_name}"
-			name = "Great #{GenCons::MakerTitle.capitalize}."
 			follow_up_question = "How'd they do? Give me that digit response."
 			the_question = "What do you say? #{follow_up_question}"
 			puts your_turn
-			puts "Your opponent said \e[33m#{feedback}\e[0m."
+			puts "Your opponent said #{feedback}."
 			puts the_question
 			resp = gets.chomp.downcase
-			Mastermind.put_break
+			GenMeans.put_break
 			print_options if resp == "o"
 			answer = resp.scan(/([0,1,2])[^012]*([0,1,2])[^012]*([0,1,2])[^012]*([0,1,2])/)[0].join
 			end
@@ -107,7 +106,7 @@ module Mastermind
 			puts options
 			puts "What would you like to guess now?"
 			resp = gets.chomp.downcase
-			Mastermind.put_break
+			GenMeans.put_break
 			end
 		end
 	

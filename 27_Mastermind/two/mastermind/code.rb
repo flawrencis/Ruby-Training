@@ -29,7 +29,24 @@ module Mastermind
 				end
 			code
 			end
-		
+#		Copied from crolemods
+		def aut_cod
+			options = GenCons::Options
+			something = choose_code_by_index(options)
+			code = Array.new(GenCons::CodeLength)
+			i = 0
+			while i < GenCons::CodeLength
+				code[i] = options[@rand_ord_array[i].to_sym]
+				i+=1
+				end
+			puts "DEBUG: From aut_cod, code is #{code}."
+			return code
+			end
+		def choose_code_by_index(options)
+			@rand_ord_array = Array.new(GenCons::CodeLength) {rand(97..103)} 
+			@rand_ord_array.map! {|ord_num| ord_num.chr}
+			puts @rand_ord_array
+			end
 		def choose_code_by_index(options)
 			length = options.length
 			rand_ord_array = Array.new(code_length) {rand(97..103)}

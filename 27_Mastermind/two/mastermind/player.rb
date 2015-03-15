@@ -23,7 +23,7 @@ module Mastermind
 		def get_name
 			puts "What's your name? Example: John Butt"
 			name = gets.chomp
-			Mastermind.put_break
+			GenMeans.put_break
 			real_name = name.split.map {|i| i.capitalize}.join(" ")
 			new_name = real_name.strip.downcase.scan(/\w*/)
 			user_name= new_name[2][(0..3)] + new_name[0][(0..3)]
@@ -40,7 +40,7 @@ module Mastermind
 			puts "Hey, are you here to crack the code or make the code? [c/m]"
 			role_response = String.new
 			gets.chomp.scan(/([c,m])(.*)/) {|x,rest| role_response = x.to_s}
-			Mastermind.put_break
+			GenMeans.put_break
 			if role_response == GenCons::Breakans
 				role ||= GenCons::BreakerTitle
 				elsif role_response == GenCons::Makeans

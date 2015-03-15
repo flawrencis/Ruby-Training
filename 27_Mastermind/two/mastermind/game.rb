@@ -22,7 +22,7 @@ module Mastermind
 			who_response = String.new
 			x = String.new
 			resp = gets.chomp.scan(/([y,n])(.*)/)[0][0]
-			Mastermind.put_break
+			GenMeans.put_break
 #			puts "DEBUG: Right now, resp is set equal to 'gets.chomp.scan(/([y,n])(.*)/)[0][0]', which makes #{resp}."
 #			puts "DEBUG: I'm the end of 'how_many_players' and going to return the string 'hh' because resp is #{resp}" if resp == "n"
 			return "hh" if resp == "n"
@@ -69,6 +69,7 @@ module Mastermind
 			@round_num+=1
 			while @round_num < @max_rounds+1
 				guess = player_one.take_turn(@round_num,response)
+				puts "#{player_one.user_name}, you have guessed #{guess}."
 				response = player_two.take_turn(@round_num, guess)
 				game_over(player_one) if response == "2222" || guess == the_code
 				@round_num+=1
