@@ -328,5 +328,10 @@ end
 
 tom = Total::Person.new
 -------------
+guess = ["\e[1;34mB\e[0m", "\e[1;34mB\e[0m", "\e[1;34mB\e[0m", "\e[1;36mC\e[0m"].join
+guess_array = guess.split("me")
+
+
+-------------
 #Source
 #http://stackoverflow.com/questions/10158730/making-a-module-inherit-from-another-module-in-ruby

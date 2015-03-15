@@ -2,7 +2,6 @@ module Mastermind
 	class Player
 		attr_reader :my_hash, :role, :user_name
 		@@victory = false
-		@@get_options = [GenCons::BreakerTitle,GenCons::MakerTitle]
 		
 		def initialize(gam_type,*role)
 #			puts "DEBUG: I am setting up a new player."
@@ -11,14 +10,12 @@ module Mastermind
 			@my_name_array = get_name
 			@user_name = @my_name_array[0]
 			@game_type = gam_type
-			@role = differentiate(@@get_options)
+			@role = differentiate(GenCons.role_options)
 			self.pull_module(@role)
 			self.build_hash(@my_name_array<<role)
 			end
 		
-		def self.get_options
-			@@get_options
-			end
+
 		
 		def get_name
 			puts "What's your name? Example: John Butt"
@@ -35,6 +32,7 @@ module Mastermind
 			if options[0]==options[-1]
 				role = options[0]
 				puts "I already know what you're going to be! You're going to be this game's code-#{role}!"
+				GenCons.role_options = delete_used(options,role)
 				return role
 				end
 			puts "Hey, are you here to crack the code or make the code? [c/m]"
@@ -46,7 +44,7 @@ module Mastermind
 				elsif role_response == GenCons::Makeans
 				role ||= GenCons::MakerTitle
 				end
-			@@get_options = delete_used(options,role)
+			GenCons.role_options = delete_used(options,role)
 			return role
 			end
 		

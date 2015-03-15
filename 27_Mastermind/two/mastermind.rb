@@ -18,6 +18,12 @@ module Mastermind
 		e: "\e[1;35mM\e[0m",
 		f: "\e[1;37mW\e[0m",
 		g: "\e[1;32mG\e[0m"}
+		
+ 		@role_options = [GenCons::BreakerTitle,GenCons::MakerTitle]
+		
+		class << self
+			attr_accessor :role_options
+			end
 
 		end
 	module GenMeans
@@ -72,6 +78,14 @@ module Mastermind
 			chr_array = rand_ord_array.map {|ord_num| ord_num.chr}
 			puts "DEBUG: arr_rand_ord_to_chr is returning #{chr_array}!"
 			return chr_array
+			end
+		
+		def self.print_options
+			puts GenCons::Options.values
+			puts "What would you like to guess now?"
+			resp = gets.chomp.downcase
+			put_break
+			return resp
 			end
 		end
 		

@@ -23,7 +23,7 @@ module Mastermind
 			puts "DEBUG: We have to compare our guess to the guesses_only, which is #{guesses_only}\n...which is of class #{guesses_only.class}"
 			while guesses_only.include? guess
 				guess_array = random_turn
-				joined_guess = guess_array.join
+				guess = guess_array.join(" ")
 				end
 			@guess_grid << [round,guess,"xxxx"]
 			puts "DEBUG: The decided guess is #{guess} which is of class #{guess.class}."
@@ -81,39 +81,63 @@ module Mastermind
 				i+=1
 				end
 			puts "DEBUG: From aut_cod, code is #{code}."
-			the_code = code.join
+			the_code = code.join(" ")
 			puts "DEBUG: From aut_cod, the_code is #{the_code}."
 			return the_code
 			end
 
 		
-		def take_turn(round,feedback)
+		def take_turn(round,feedback,code)
 			puts "It is now the computer's turn."
-			response = eval_guess(feedback)
+			response = eval_guess(feedback,code)
 			return response
 			end
 		
-		def eval_guess(feedback)
+		def eval_guess(feedback,code)
 			guess = feedback
-			guess_array = guess.split("")
-			code_array = @the_code.split("")
+			guess_array = guess.split(" ")
+			puts "I am now evaluating your guess, #{guess_array}."
+			code_array = code.split(" ")
+			puts "DEBUG: To do this, I am comparing it to #{code_array}."
 			resp_array = Array.new
 			i = 0
-			while i<4
+			long = guess_array.length
+			puts "DEBUG: guess_array has #{long} elements!"
+			while i < long
+				puts "DEBUG: I am in the #{i}th iteration of the i-while loop."
 				if guess_array[i] == code_array[i]
-					guess_array.delete_at(i)
-					code_array.delete_at(i)
+					a = guess_array[i]
+					b = code_array[i]
+					guess_array[i] = "deleted guess element"
+					code_array[i] = "deleted code element"
+					resp_array << 2
+					puts "DEBUG: Element #{i} of the guess_array (#{a}) = the same element of the code_array (#{b}), so I am adding a 2 to resp_array.\nNow, resp_array is #{resp_array}!"
+#					puts "DEBUG: The guess_array is now #{guess_array} and the code_array is now #{code_array}."
 					end
 				i+=1
 				end
 			k = 0
-			long = guess_array.length
 			while k < long
+				puts "DEBUG: I am in the #{i}th iteration of the k-while loop."
+				
 				if code_array.include? guess_array[k]
+					g = guess_array[k]
+					puts "DEBUG: Oh, look! code_array has #{g} so let's add a 1 to resp_array!" 
 					resp_array<<1
+					puts "DEBUG: Now, resp_array is #{resp_array}."
 					end
+				
+				k += 1
 				end
-			return resp_array
+			
+			
+			until resp_array.length == GenCons::CodeLength do
+				resp_array << 0
+				
+				end
+			response = resp_array.join
+		
+			return response
 			
 			end
 		end
