@@ -1,0 +1,1036 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red10\green12\blue39;\red191\green44\blue30;\red75\green22\blue231;
+\red51\green180\blue193;\red165\green166\blue33;\red210\green31\blue210;\red196\green196\blue196;\red52\green186\blue34;
+}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs22 \cf1 \cb2 \CocoaLigature0 Last login: Sun Mar 15 13:13:15 on ttys000\
+\
+-------------------------------------------------\
+If you need to create a platform specific folder using Phonegap, please do the following:\
+1) First, run the 'echo PATH=$PATH:/Users/francislawrence/Programming/phonegap-2.9.1/lib/<specific_platform>/bin' command.\
+2) Then, you need to change your working directory to the bin of that platform in that same phonegap folder.\
+3) Then, run the 'create name com.example.name Name' command.\
+\
+Also, if you need to change any of these settings, go to your home directory (~) and type \'91nano .bash_profile\'92.\
+\
+Also, if you need to do the EMULATE command, you have to go to the app folder and then run \'91ripple emulate\'92.\
+\
+To edit the tab control thing, go to nano .inputrc from your root directory.\
+To substitute something in the previous line, type something like this... ^toreplace^touse\
+To search previous lines, use Ctrl-R.\
+To leave that screen you can get stuck in, use q when the END is highlighted.\
+To learn the escape characters of buttons, first type ^V\
+Jump to start of line ^A\
+Jump to end of line ^E\
+Clear text onward ^K\
+Clear backward by word ^W\
+Toggle between current cursor position and start of line ^XX\
+Clear whole line ^U\
+Bring last line back ^Y\
+Search previous lines ^R\
+! preceding starting character, Enter invokes last command\
+To modify the last command, type !<firstfewcharacters>:s/<toreplace>/<desired>\
+Keep Mac awake: $ caffeinate -u -t 600 (add options to set timer)\
+------------------------------------------------------\
+14:35:00|~ $ irb\
+irb(main):001:0> r27\
+Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'.\
+=> true\
+irb(main):002:0> c15 = Mastermind::Game.new\
+Welcome to this game of Mastermind! When you're ready to run the game, simply type whatever you called it, followed by '.player_setup!\
+=> #<Mastermind::Game:0x007f9ea2970a70 @round_num=0, @max_rounds=12, @code_length=4>\
+irb(main):003:0> c15.player_setup\
+Yo man, are you playing against the computer? [y/n]\
+y\
+----------------------------------------------------------------------------------\
+What's your name? Example: John Butt\
+francis lawrence\
+----------------------------------------------------------------------------------\
+Thanks, Francis Lawrence. Your user_name is lawrfran.\
+Hey, are you here to crack the code or make the code? [c/m]\
+m\
+----------------------------------------------------------------------------------\
+Okay, now have your partner slide over.\
+I have a couple more questions.\
+"DEBUG: I'm in the computer.rb file and in the pull_module function and will extend the following because info is breaker"\
+"Codebreaker"\
+Your opponent is the computer!\
+				I'm skipping the intro because I know what I'm doing.\
+\
+
+\f1\b \cf3 Okay!
+\f0\b0 \cf1  Lemme talk to the codemaker.\
+\
+Codemaker, we gotta make a code.\
+Your opponent wins if they guess the code before the maximum number of rounds.\
+The length of the code has been pre-determined.\
+Use the upcoming list to know what your options are.\
+Maximum rounds: 12.\
+Code length: 4\
+Your options are: 
+\f1\b \cf3 R
+\f0\b0 \cf1 , 
+\f1\b \cf4 B
+\f0\b0 \cf1 , 
+\f1\b \cf5 C
+\f0\b0 \cf1 , 
+\f1\b \cf6 Y
+\f0\b0 \cf1 , 
+\f1\b \cf7 M
+\f0\b0 \cf1 , 
+\f1\b \cf8 W
+\f0\b0 \cf1 , 
+\f1\b \cf9 G
+\f0\b0 \cf1 \
+Do you understand?\
+\
+----------------------------------------------------------------------------------\
+Check out the options and then give me a 4-letter code.\
+ymcb\
+----------------------------------------------------------------------------------\
+NoMethodError: undefined method `each_with_index' for "ymcb":String\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind.rb:46:in `colorize_array'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/rolemods.rb:88:in `get_code'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/rolemods.rb:77:in `intro'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:66:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:61:in `player_setup'\
+	from (irb):3\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> pcya "JUST HAD TO TAKE OUT A JOIN METHOD."\
+\cf5 JUST HAD TO TAKE OUT A JOIN METHOD.\cf1 \
+=> nil\
+irb(main):005:0> clr\
+irb(main):001:0> r27\
+Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'.\
+=> true\
+irb(main):002:0> c16 = Mastermind::Game.new\
+Welcome to this game of Mastermind! When you're ready to run the game, simply type whatever you called it, followed by '.player_setup!\
+=> #<Mastermind::Game:0x007f9a71968aa8 @round_num=0, @max_rounds=12, @code_length=4>\
+irb(main):003:0> c16.player_setup\
+Yo man, are you playing against the computer? [y/n]\
+y\
+----------------------------------------------------------------------------------\
+What's your name? Example: John Butt\
+francis lawrence\
+----------------------------------------------------------------------------------\
+Thanks, Francis Lawrence. Your user_name is lawrfran.\
+Hey, are you here to crack the code or make the code? [c/m]\
+m\
+----------------------------------------------------------------------------------\
+Okay, now have your partner slide over.\
+I have a couple more questions.\
+"DEBUG: I'm in the computer.rb file and in the pull_module function and will extend the following because info is breaker"\
+"Codebreaker"\
+Your opponent is the computer!\
+				I'm skipping the intro because I know what I'm doing.\
+\
+
+\f1\b \cf3 Okay!
+\f0\b0 \cf1  Lemme talk to the codemaker.\
+\
+Codemaker, we gotta make a code.\
+Your opponent wins if they guess the code before the maximum number of rounds.\
+The length of the code has been pre-determined.\
+Use the upcoming list to know what your options are.\
+Maximum rounds: 12.\
+Code length: 4\
+Your options are: 
+\f1\b \cf3 R
+\f0\b0 \cf1 , 
+\f1\b \cf4 B
+\f0\b0 \cf1 , 
+\f1\b \cf5 C
+\f0\b0 \cf1 , 
+\f1\b \cf6 Y
+\f0\b0 \cf1 , 
+\f1\b \cf7 M
+\f0\b0 \cf1 , 
+\f1\b \cf8 W
+\f0\b0 \cf1 , 
+\f1\b \cf9 G
+\f0\b0 \cf1 \
+Do you understand?\
+\
+----------------------------------------------------------------------------------\
+Check out the options and then give me a 4-letter code.\
+ymcb\
+----------------------------------------------------------------------------------\
+DEBUG: I'm in the Codemaker's intro.\
+I just got the code from the get_code function.\
+The code is....................["\\e[1;33mY\\e[0m", "\\e[1;35mM\\e[0m", "\\e[1;36mC\\e[0m", "\\e[1;34mB\\e[0m"]\
+DEBUG: The code is ["\\e[1;33mY\\e[0m", "\\e[1;35mM\\e[0m", "\\e[1;36mC\\e[0m", "\\e[1;34mB\\e[0m"]\
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 Just decided code\cf1 .\
+...oh well this is the first round\
+DEBUG: choose_color_code_by_index is returning ["g", "e", "a", "g"]!\
+DEBUG: random_turn is returning []! as the colored_guess!\
+macsx, you have guessed [].\
+\
+Okay, we're on round 1 and it's your turn, lawrfran\
+Your opponent said [].\
+What do you say? How'd they do? Give me that digit response.\
+^CIRB::Abort: abort then interrupt!\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/rolemods.rb:99:in `call'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/rolemods.rb:99:in `gets'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/rolemods.rb:99:in `gets'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/rolemods.rb:99:in `take_turn'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:73:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:61:in `player_setup'\
+	from (irb):3\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> pcya "PROBLEMS 1) CODE IS NOT JOINED. 2) RANDOM_TURN IS NOT RETURNING PROPER GUESS"\
+\cf5 PROBLEMS 1) CODE IS NOT JOINED. 2) RANDOM_TURN IS NOT RETURNING PROPER GUESS\cf1 \
+=> nil\
+irb(main):005:0> ["\\e[1;33mY\\e[0m", "\\e[1;35mM\\e[0m", "\\e[1;36mC\\e[0m", "\\e[1;34mB\\e[0m"].join\
+=> "\\e[1;33mY\\e[0m\\e[1;35mM\\e[0m\\e[1;36mC\\e[0m\\e[1;34mB\\e[0m"\
+irb(main):006:0> puts ["\\e[1;33mY\\e[0m", "\\e[1;35mM\\e[0m", "\\e[1;36mC\\e[0m", "\\e[1;34mB\\e[0m"].join\
+
+\f1\b \cf6 Y\cf7 M\cf5 C\cf4 B
+\f0\b0 \cf1 \
+=> nil\
+irb(main):007:0> pcya "DIDN'T REALLY FIX ANYTHING. PUT IN SOME DEBUG COMMENTS.\
+irb(main):008:0" "\
+\cf5 DIDN'T REALLY FIX ANYTHING. PUT IN SOME DEBUG COMMENTS.\cf1 \
+\
+=> nil\
+irb(main):009:0> clr\
+irb(main):001:0> r27\
+SyntaxError: /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind.rb:78: syntax error, unexpected keyword_end, expecting end-of-input\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.irbrc:33:in `r27'\
+	from (irb):1\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):002:0> r27\
+SyntaxError: /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/crolemods.rb:120: syntax error, unexpected end-of-input, expecting keyword_end\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind.rb:80:in `block in <top (required)>'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind.rb:80:in `each'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind.rb:80:in `<top (required)>'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.irbrc:33:in `r27'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+irb(main):001:0> r27\
+Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'.\
+=> true\
+irb(main):002:0> c17 = Mastermind::Game.new\
+Welcome to this game of Mastermind! When you're ready to run the game, simply type whatever you called it, followed by '.player_setup!\
+=> #<Mastermind::Game:0x007f96f408d008 @round_num=0, @max_rounds=12, @code_length=4>\
+irb(main):003:0> c17.player_setup\
+Yo man, are you playing against the computer? [y/n]\
+y\
+----------------------------------------------------------------------------------\
+What's your name? Example: John Butt\
+francis lawrence\
+----------------------------------------------------------------------------------\
+Thanks, Francis Lawrence. Your user_name is lawrfran.\
+Hey, are you here to crack the code or make the code? [c/m]\
+m\
+----------------------------------------------------------------------------------\
+Okay, now have your partner slide over.\
+I have a couple more questions.\
+"DEBUG: I'm in the computer.rb file and in the pull_module function and will extend the following because info is breaker"\
+"Codebreaker"\
+Your opponent is the computer!\
+				I'm skipping the intro because I know what I'm doing.\
+\
+
+\f1\b \cf3 Okay!
+\f0\b0 \cf1  Lemme talk to the codemaker.\
+\
+Codemaker, we gotta make a code.\
+Your opponent wins if they guess the code before the maximum number of rounds.\
+The length of the code has been pre-determined.\
+Use the upcoming list to know what your options are.\
+Maximum rounds: 12.\
+Code length: 4\
+Your options are: 
+\f1\b \cf3 R
+\f0\b0 \cf1 , 
+\f1\b \cf4 B
+\f0\b0 \cf1 , 
+\f1\b \cf5 C
+\f0\b0 \cf1 , 
+\f1\b \cf6 Y
+\f0\b0 \cf1 , 
+\f1\b \cf7 M
+\f0\b0 \cf1 , 
+\f1\b \cf8 W
+\f0\b0 \cf1 , 
+\f1\b \cf9 G
+\f0\b0 \cf1 \
+Do you understand?\
+\
+----------------------------------------------------------------------------------\
+Check out the options and then give me a 4-letter code.\
+ymcb\
+----------------------------------------------------------------------------------\
+DEBUG: I'm in the Codemaker's intro.\
+I just got the code from the get_code function.\
+The code is....................
+\f1\b \cf6 Y\cf7 M\cf5 C\cf4 B
+\f0\b0 \cf1 \
+DEBUG: The code is 
+\f1\b \cf6 Y\cf7 M\cf5 C\cf4 B
+\f0\b0 \cf1 \
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 Just decided code\cf1 .\
+...oh well this is the first round\
+DEBUG: arr_rand_ord_to_chr is returning ["g", "d", "a", "e"]!\
+DEBUG: We are at the beginning of translate_array.\
+The array is starting as ["g", "d", "a", "e"].\
+DEBUG: The new array is ["\\e[1;32mG\\e[0m", "\\e[1;33mY\\e[0m", "\\e[1;31mR\\e[0m", "\\e[1;35mM\\e[0m"].\
+NoMethodError: undefined method `each_with_index' for nil:NilClass\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind.rb:48:in `colorize_array'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/crolemods.rb:55:in `random_turn'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/crolemods.rb:20:in `take_turn'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:71:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:61:in `player_setup'\
+	from (irb):3\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> pcya "OH I HAD COLORIZE_ARRAY AFTER TRANSLATE_ARRAY BUT TRANSLATE_ARRAY TAKES CARE OF IT."\
+\cf5 OH I HAD COLORIZE_ARRAY AFTER TRANSLATE_ARRAY BUT TRANSLATE_ARRAY TAKES CARE OF IT.\cf1 \
+=> nil\
+irb(main):005:0> clr\
+irb(main):001:0> r27\
+Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'.\
+=> true\
+irb(main):002:0> c18 = Mastermind::Game.new\
+Welcome to this game of Mastermind! When you're ready to run the game, simply type whatever you called it, followed by '.player_setup!\
+=> #<Mastermind::Game:0x007fcfdc0345b8 @round_num=0, @max_rounds=12, @code_length=4>\
+irb(main):003:0> c18.player_setup\
+Yo man, are you playing against the computer? [y/n]\
+y\
+----------------------------------------------------------------------------------\
+What's your name? Example: John Butt\
+francis lawrence\
+----------------------------------------------------------------------------------\
+Thanks, Francis Lawrence. Your user_name is lawrfran.\
+Hey, are you here to crack the code or make the code? [c/m]\
+m\
+----------------------------------------------------------------------------------\
+Okay, now have your partner slide over.\
+I have a couple more questions.\
+"DEBUG: I'm in the computer.rb file and in the pull_module function and will extend the following because info is breaker"\
+"Codebreaker"\
+Your opponent is the computer!\
+				I'm skipping the intro because I know what I'm doing.\
+\
+
+\f1\b \cf3 Okay!
+\f0\b0 \cf1  Lemme talk to the codemaker.\
+\
+Codemaker, we gotta make a code.\
+Your opponent wins if they guess the code before the maximum number of rounds.\
+The length of the code has been pre-determined.\
+Use the upcoming list to know what your options are.\
+Maximum rounds: 12.\
+Code length: 4\
+Your options are: 
+\f1\b \cf3 R
+\f0\b0 \cf1 , 
+\f1\b \cf4 B
+\f0\b0 \cf1 , 
+\f1\b \cf5 C
+\f0\b0 \cf1 , 
+\f1\b \cf6 Y
+\f0\b0 \cf1 , 
+\f1\b \cf7 M
+\f0\b0 \cf1 , 
+\f1\b \cf8 W
+\f0\b0 \cf1 , 
+\f1\b \cf9 G
+\f0\b0 \cf1 \
+Do you understand?\
+\
+----------------------------------------------------------------------------------\
+Check out the options and then give me a 4-letter code.\
+ymcb\
+----------------------------------------------------------------------------------\
+DEBUG: I'm in the Codemaker's intro.\
+I just got the code from the get_code function.\
+The code is....................
+\f1\b \cf6 Y\cf7 M\cf5 C\cf4 B
+\f0\b0 \cf1 \
+DEBUG: The code is 
+\f1\b \cf6 Y\cf7 M\cf5 C\cf4 B
+\f0\b0 \cf1 \
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 Just decided code\cf1 .\
+...oh well this is the first round\
+DEBUG: arr_rand_ord_to_chr is returning ["e", "a", "d", "g"]!\
+DEBUG: We are at the beginning of translate_array.\
+The array is starting as ["e", "a", "d", "g"].\
+DEBUG: The new array is ["\\e[1;35mM\\e[0m", "\\e[1;31mR\\e[0m", "\\e[1;33mY\\e[0m", "\\e[1;32mG\\e[0m"].\
+DEBUG: random_turn is returning ! as the colored_guess!\
+DEBUG: The decided guess is  which is of class NilClass.\
+macsx, you have guessed .\
+\
+Okay, we're on round 1 and it's your turn, lawrfran\
+Your opponent said .\
+What do you say? How'd they do? Give me that digit response.\
+^CIRB::Abort: abort then interrupt!\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/rolemods.rb:100:in `call'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/rolemods.rb:100:in `gets'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/rolemods.rb:100:in `gets'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/rolemods.rb:100:in `take_turn'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:73:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:61:in `player_setup'\
+	from (irb):3\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> pcya "HAD TO ADD 'RETURN ARRAY' TO THE TRANSLATE METHOD IN GENMEANS"\
+\cf5 HAD TO ADD 'RETURN ARRAY' TO THE TRANSLATE METHOD IN GENMEANS\cf1 \
+=> nil\
+irb(main):005:0> ^C\
+irb(main):005:0> \
+irb(main):006:0* \
+irb(main):007:0* r27\
+=> false\
+irb(main):008:0> clr\
+irb(main):001:0> r27\
+Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'.\
+=> true\
+irb(main):002:0> c19 = Mastermind::Game.new\
+Welcome to this game of Mastermind! When you're ready to run the game, simply type whatever you called it, followed by '.player_setup!\
+=> #<Mastermind::Game:0x007fc0e3973730 @round_num=0, @max_rounds=12, @code_length=4>\
+irb(main):003:0> c19.player_setup\
+Yo man, are you playing against the computer? [y/n]\
+y\
+----------------------------------------------------------------------------------\
+What's your name? Example: John Butt\
+francis lawrence\
+----------------------------------------------------------------------------------\
+Thanks, Francis Lawrence. Your user_name is lawrfran.\
+Hey, are you here to crack the code or make the code? [c/m]\
+m\
+----------------------------------------------------------------------------------\
+Okay, now have your partner slide over.\
+I have a couple more questions.\
+"DEBUG: I'm in the computer.rb file and in the pull_module function and will extend the following because info is breaker"\
+"Codebreaker"\
+Your opponent is the computer!\
+				I'm skipping the intro because I know what I'm doing.\
+\
+
+\f1\b \cf3 Okay!
+\f0\b0 \cf1  Lemme talk to the codemaker.\
+\
+Codemaker, we gotta make a code.\
+Your opponent wins if they guess the code before the maximum number of rounds.\
+The length of the code has been pre-determined.\
+Use the upcoming list to know what your options are.\
+Maximum rounds: 12.\
+Code length: 4\
+Your options are: 
+\f1\b \cf3 R
+\f0\b0 \cf1 , 
+\f1\b \cf4 B
+\f0\b0 \cf1 , 
+\f1\b \cf5 C
+\f0\b0 \cf1 , 
+\f1\b \cf6 Y
+\f0\b0 \cf1 , 
+\f1\b \cf7 M
+\f0\b0 \cf1 , 
+\f1\b \cf8 W
+\f0\b0 \cf1 , 
+\f1\b \cf9 G
+\f0\b0 \cf1 \
+Do you understand?\
+\
+----------------------------------------------------------------------------------\
+Check out the options and then give me a 4-letter code.\
+ymcb\
+----------------------------------------------------------------------------------\
+DEBUG: I'm in the Codemaker's intro.\
+I just got the code from the get_code function.\
+The code is....................
+\f1\b \cf6 Y\cf7 M\cf5 C\cf4 B
+\f0\b0 \cf1 \
+DEBUG: The code is 
+\f1\b \cf6 Y\cf7 M\cf5 C\cf4 B
+\f0\b0 \cf1 \
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 Just decided code\cf1 .\
+...oh well this is the first round\
+DEBUG: arr_rand_ord_to_chr is returning ["f", "g", "a", "d"]!\
+DEBUG: We are at the beginning of translate_array.\
+The array is starting as ["f", "g", "a", "d"].\
+DEBUG: The new array is ["\\e[1;37mW\\e[0m", "\\e[1;32mG\\e[0m", "\\e[1;31mR\\e[0m", "\\e[1;33mY\\e[0m"].\
+DEBUG: random_turn is returning ["\\e[1;37mW\\e[0m", "\\e[1;32mG\\e[0m", "\\e[1;31mR\\e[0m", "\\e[1;33mY\\e[0m"]! as the colored_guess!\
+DEBUG: The decided guess is ["\\e[1;37mW\\e[0m", "\\e[1;32mG\\e[0m", "\\e[1;31mR\\e[0m", "\\e[1;33mY\\e[0m"] which is of class Array.\
+macsx, you have guessed ["\\e[1;37mW\\e[0m", "\\e[1;32mG\\e[0m", "\\e[1;31mR\\e[0m", "\\e[1;33mY\\e[0m"].\
+\
+Okay, we're on round 1 and it's your turn, lawrfran\
+Your opponent said ["\\e[1;37mW\\e[0m", "\\e[1;32mG\\e[0m", "\\e[1;31mR\\e[0m", "\\e[1;33mY\\e[0m"].\
+What do you say? How'd they do? Give me that digit response.\
+^CIRB::Abort: abort then interrupt!\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/rolemods.rb:100:in `call'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/rolemods.rb:100:in `gets'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/rolemods.rb:100:in `gets'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/rolemods.rb:100:in `take_turn'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:73:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/27_Mastermind/two/mastermind/game.rb:61:in `player_setup'\
+	from (irb):3\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> clr\
+irb(main):001:0> r27\
+Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'.\
+=> true\
+irb(main):002:0> c20 = Mastermind::Game.new\
+Welcome to this game of Mastermind! When you're ready to run the game, simply type whatever you called it, followed by '.player_setup!\
+=> #<Mastermind::Game:0x007fc21b140020 @round_num=0, @max_rounds=12, @code_length=4>\
+irb(main):003:0> c20.player_setup\
+Yo man, are you playing against the computer? [y/n]\
+y\
+----------------------------------------------------------------------------------\
+What's your name? Example: John Butt\
+francis lawrence\
+----------------------------------------------------------------------------------\
+Thanks, Francis Lawrence. Your user_name is lawrfran.\
+Hey, are you here to crack the code or make the code? [c/m]\
+m\
+----------------------------------------------------------------------------------\
+Okay, now have your partner slide over.\
+I have a couple more questions.\
+"DEBUG: I'm in the computer.rb file and in the pull_module function and will extend the following because info is breaker"\
+"Codebreaker"\
+Your opponent is the computer!\
+				I'm skipping the intro because I know what I'm doing.\
+\
+
+\f1\b \cf3 Okay!
+\f0\b0 \cf1  Lemme talk to the codemaker.\
+\
+Codemaker, we gotta make a code.\
+Your opponent wins if they guess the code before the maximum number of rounds.\
+The length of the code has been pre-determined.\
+Use the upcoming list to know what your options are.\
+Maximum rounds: 12.\
+Code length: 4\
+Your options are: 
+\f1\b \cf3 R
+\f0\b0 \cf1 , 
+\f1\b \cf4 B
+\f0\b0 \cf1 , 
+\f1\b \cf5 C
+\f0\b0 \cf1 , 
+\f1\b \cf6 Y
+\f0\b0 \cf1 , 
+\f1\b \cf7 M
+\f0\b0 \cf1 , 
+\f1\b \cf8 W
+\f0\b0 \cf1 , 
+\f1\b \cf9 G
+\f0\b0 \cf1 \
+Do you understand?\
+\
+----------------------------------------------------------------------------------\
+Check out the options and then give me a 4-letter code.\
+ymcb\
+----------------------------------------------------------------------------------\
+DEBUG: I'm in the Codemaker's intro.\
+I just got the code from the get_code function.\
+The code is....................
+\f1\b \cf6 Y\cf7 M\cf5 C\cf4 B
+\f0\b0 \cf1 \
+DEBUG: The code is 
+\f1\b \cf6 Y\cf7 M\cf5 C\cf4 B
+\f0\b0 \cf1 \
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 Just decided code\cf1 .\
+...oh well this is the first round\
+DEBUG: arr_rand_ord_to_chr is returning ["f", "d", "a", "f"]!\
+DEBUG: We are at the beginning of translate_array.\
+The array is starting as ["f", "d", "a", "f"].\
+DEBUG: The new array is ["\\e[1;37mW\\e[0m", "\\e[1;33mY\\e[0m", "\\e[1;31mR\\e[0m", "\\e[1;37mW\\e[0m"].\
+DEBUG: random_turn is returning ["\\e[1;37mW\\e[0m", "\\e[1;33mY\\e[0m", "\\e[1;31mR\\e[0m", "\\e[1;37mW\\e[0m"]! as the colored_guess!\
+DEBUG: We have to compare our guess to the gue_only_grid, which is []\
+...which is of class Array\
+DEBUG: The decided guess is 
+\f1\b \cf8 W\cf6 Y\cf3 R\cf8 W
+\f0\b0 \cf1  which is of class String.\
+macsx, you have guessed 
+\f1\b \cf8 W\cf6 Y\cf3 R\cf8 W
+\f0\b0 \cf1 .\
+\
+Okay, we're on round 1 and it's your turn, lawrfran\
+Your opponent said 
+\f1\b \cf8 W\cf6 Y\cf3 R\cf8 W
+\f0\b0 \cf1 .\
+What do you say? How'd they do? Give me that digit response.\
+1000\
+----------------------------------------------------------------------------------\
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 1000\cf1 .\
+Round 1 | 
+\f1\b \cf8 W\cf6 Y\cf3 R\cf8 W
+\f0\b0 \cf1  : 1000\
+DEBUG: arr_rand_ord_to_chr is returning ["a", "c", "a", "g"]!\
+DEBUG: We are at the beginning of translate_array.\
+The array is starting as ["a", "c", "a", "g"].\
+DEBUG: The new array is ["\\e[1;31mR\\e[0m", "\\e[1;36mC\\e[0m", "\\e[1;31mR\\e[0m", "\\e[1;32mG\\e[0m"].\
+DEBUG: random_turn is returning ["\\e[1;31mR\\e[0m", "\\e[1;36mC\\e[0m", "\\e[1;31mR\\e[0m", "\\e[1;32mG\\e[0m"]! as the colored_guess!\
+DEBUG: We have to compare our guess to the gue_only_grid, which is ["\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m\\e[1;31mR\\e[0m\\e[1;37mW\\e[0m"]\
+...which is of class Array\
+DEBUG: The decided guess is 
+\f1\b \cf3 R\cf5 C\cf3 R\cf9 G
+\f0\b0 \cf1  which is of class String.\
+macsx, you have guessed 
+\f1\b \cf3 R\cf5 C\cf3 R\cf9 G
+\f0\b0 \cf1 .\
+\
+Okay, we're on round 2 and it's your turn, lawrfran\
+Your opponent said 
+\f1\b \cf3 R\cf5 C\cf3 R\cf9 G
+\f0\b0 \cf1 .\
+What do you say? How'd they do? Give me that digit response.\
+1000\
+----------------------------------------------------------------------------------\
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 1000\cf1 .\
+Round 1 | 
+\f1\b \cf8 W\cf6 Y\cf3 R\cf8 W
+\f0\b0 \cf1  : 1000\
+Round 2 | 
+\f1\b \cf3 R\cf5 C\cf3 R\cf9 G
+\f0\b0 \cf1  : 1000\
+DEBUG: arr_rand_ord_to_chr is returning ["g", "c", "b", "g"]!\
+DEBUG: We are at the beginning of translate_array.\
+The array is starting as ["g", "c", "b", "g"].\
+DEBUG: The new array is ["\\e[1;32mG\\e[0m", "\\e[1;36mC\\e[0m", "\\e[1;34mB\\e[0m", "\\e[1;32mG\\e[0m"].\
+DEBUG: random_turn is returning ["\\e[1;32mG\\e[0m", "\\e[1;36mC\\e[0m", "\\e[1;34mB\\e[0m", "\\e[1;32mG\\e[0m"]! as the colored_guess!\
+DEBUG: We have to compare our guess to the gue_only_grid, which is ["\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m\\e[1;31mR\\e[0m\\e[1;37mW\\e[0m", "\\e[1;31mR\\e[0m\\e[1;36mC\\e[0m\\e[1;31mR\\e[0m\\e[1;32mG\\e[0m"]\
+...which is of class Array\
+DEBUG: The decided guess is 
+\f1\b \cf9 G\cf5 C\cf4 B\cf9 G
+\f0\b0 \cf1  which is of class String.\
+macsx, you have guessed 
+\f1\b \cf9 G\cf5 C\cf4 B\cf9 G
+\f0\b0 \cf1 .\
+\
+Okay, we're on round 3 and it's your turn, lawrfran\
+Your opponent said 
+\f1\b \cf9 G\cf5 C\cf4 B\cf9 G
+\f0\b0 \cf1 .\
+What do you say? How'd they do? Give me that digit response.\
+1100\
+----------------------------------------------------------------------------------\
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 1100\cf1 .\
+Round 1 | 
+\f1\b \cf8 W\cf6 Y\cf3 R\cf8 W
+\f0\b0 \cf1  : 1000\
+Round 2 | 
+\f1\b \cf3 R\cf5 C\cf3 R\cf9 G
+\f0\b0 \cf1  : 1000\
+Round 3 | 
+\f1\b \cf9 G\cf5 C\cf4 B\cf9 G
+\f0\b0 \cf1  : 1100\
+DEBUG: arr_rand_ord_to_chr is returning ["f", "d", "e", "e"]!\
+DEBUG: We are at the beginning of translate_array.\
+The array is starting as ["f", "d", "e", "e"].\
+DEBUG: The new array is ["\\e[1;37mW\\e[0m", "\\e[1;33mY\\e[0m", "\\e[1;35mM\\e[0m", "\\e[1;35mM\\e[0m"].\
+DEBUG: random_turn is returning ["\\e[1;37mW\\e[0m", "\\e[1;33mY\\e[0m", "\\e[1;35mM\\e[0m", "\\e[1;35mM\\e[0m"]! as the colored_guess!\
+DEBUG: We have to compare our guess to the gue_only_grid, which is ["\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m\\e[1;31mR\\e[0m\\e[1;37mW\\e[0m", "\\e[1;31mR\\e[0m\\e[1;36mC\\e[0m\\e[1;31mR\\e[0m\\e[1;32mG\\e[0m", "\\e[1;32mG\\e[0m\\e[1;36mC\\e[0m\\e[1;34mB\\e[0m\\e[1;32mG\\e[0m"]\
+...which is of class Array\
+DEBUG: The decided guess is 
+\f1\b \cf8 W\cf6 Y\cf7 MM
+\f0\b0 \cf1  which is of class String.\
+macsx, you have guessed 
+\f1\b \cf8 W\cf6 Y\cf7 MM
+\f0\b0 \cf1 .\
+\
+Okay, we're on round 4 and it's your turn, lawrfran\
+Your opponent said 
+\f1\b \cf8 W\cf6 Y\cf7 MM
+\f0\b0 \cf1 .\
+What do you say? How'd they do? Give me that digit response.\
+1100\
+----------------------------------------------------------------------------------\
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 1100\cf1 .\
+Round 1 | 
+\f1\b \cf8 W\cf6 Y\cf3 R\cf8 W
+\f0\b0 \cf1  : 1000\
+Round 2 | 
+\f1\b \cf3 R\cf5 C\cf3 R\cf9 G
+\f0\b0 \cf1  : 1000\
+Round 3 | 
+\f1\b \cf9 G\cf5 C\cf4 B\cf9 G
+\f0\b0 \cf1  : 1100\
+Round 4 | 
+\f1\b \cf8 W\cf6 Y\cf7 MM
+\f0\b0 \cf1  : 1100\
+DEBUG: arr_rand_ord_to_chr is returning ["a", "b", "b", "a"]!\
+DEBUG: We are at the beginning of translate_array.\
+The array is starting as ["a", "b", "b", "a"].\
+DEBUG: The new array is ["\\e[1;31mR\\e[0m", "\\e[1;34mB\\e[0m", "\\e[1;34mB\\e[0m", "\\e[1;31mR\\e[0m"].\
+DEBUG: random_turn is returning ["\\e[1;31mR\\e[0m", "\\e[1;34mB\\e[0m", "\\e[1;34mB\\e[0m", "\\e[1;31mR\\e[0m"]! as the colored_guess!\
+DEBUG: We have to compare our guess to the gue_only_grid, which is ["\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m\\e[1;31mR\\e[0m\\e[1;37mW\\e[0m", "\\e[1;31mR\\e[0m\\e[1;36mC\\e[0m\\e[1;31mR\\e[0m\\e[1;32mG\\e[0m", "\\e[1;32mG\\e[0m\\e[1;36mC\\e[0m\\e[1;34mB\\e[0m\\e[1;32mG\\e[0m", "\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m\\e[1;35mM\\e[0m\\e[1;35mM\\e[0m"]\
+...which is of class Array\
+DEBUG: The decided guess is 
+\f1\b \cf3 R\cf4 BB\cf3 R
+\f0\b0 \cf1  which is of class String.\
+macsx, you have guessed 
+\f1\b \cf3 R\cf4 BB\cf3 R
+\f0\b0 \cf1 .\
+\
+Okay, we're on round 5 and it's your turn, lawrfran\
+Your opponent said 
+\f1\b \cf3 R\cf4 BB\cf3 R
+\f0\b0 \cf1 .\
+What do you say? How'd they do? Give me that digit response.\
+1000\
+----------------------------------------------------------------------------------\
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 1000\cf1 .\
+Round 1 | 
+\f1\b \cf8 W\cf6 Y\cf3 R\cf8 W
+\f0\b0 \cf1  : 1000\
+Round 2 | 
+\f1\b \cf3 R\cf5 C\cf3 R\cf9 G
+\f0\b0 \cf1  : 1000\
+Round 3 | 
+\f1\b \cf9 G\cf5 C\cf4 B\cf9 G
+\f0\b0 \cf1  : 1100\
+Round 4 | 
+\f1\b \cf8 W\cf6 Y\cf7 MM
+\f0\b0 \cf1  : 1100\
+Round 5 | 
+\f1\b \cf3 R\cf4 BB\cf3 R
+\f0\b0 \cf1  : 1000\
+DEBUG: arr_rand_ord_to_chr is returning ["b", "e", "f", "d"]!\
+DEBUG: We are at the beginning of translate_array.\
+The array is starting as ["b", "e", "f", "d"].\
+DEBUG: The new array is ["\\e[1;34mB\\e[0m", "\\e[1;35mM\\e[0m", "\\e[1;37mW\\e[0m", "\\e[1;33mY\\e[0m"].\
+DEBUG: random_turn is returning ["\\e[1;34mB\\e[0m", "\\e[1;35mM\\e[0m", "\\e[1;37mW\\e[0m", "\\e[1;33mY\\e[0m"]! as the colored_guess!\
+DEBUG: We have to compare our guess to the gue_only_grid, which is ["\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m\\e[1;31mR\\e[0m\\e[1;37mW\\e[0m", "\\e[1;31mR\\e[0m\\e[1;36mC\\e[0m\\e[1;31mR\\e[0m\\e[1;32mG\\e[0m", "\\e[1;32mG\\e[0m\\e[1;36mC\\e[0m\\e[1;34mB\\e[0m\\e[1;32mG\\e[0m", "\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m\\e[1;35mM\\e[0m\\e[1;35mM\\e[0m", "\\e[1;31mR\\e[0m\\e[1;34mB\\e[0m\\e[1;34mB\\e[0m\\e[1;31mR\\e[0m"]\
+...which is of class Array\
+DEBUG: The decided guess is 
+\f1\b \cf4 B\cf7 M\cf8 W\cf6 Y
+\f0\b0 \cf1  which is of class String.\
+macsx, you have guessed 
+\f1\b \cf4 B\cf7 M\cf8 W\cf6 Y
+\f0\b0 \cf1 .\
+\
+Okay, we're on round 6 and it's your turn, lawrfran\
+Your opponent said 
+\f1\b \cf4 B\cf7 M\cf8 W\cf6 Y
+\f0\b0 \cf1 .\
+What do you say? How'd they do? Give me that digit response.\
+2110\
+----------------------------------------------------------------------------------\
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 2110\cf1 .\
+Round 1 | 
+\f1\b \cf8 W\cf6 Y\cf3 R\cf8 W
+\f0\b0 \cf1  : 1000\
+Round 2 | 
+\f1\b \cf3 R\cf5 C\cf3 R\cf9 G
+\f0\b0 \cf1  : 1000\
+Round 3 | 
+\f1\b \cf9 G\cf5 C\cf4 B\cf9 G
+\f0\b0 \cf1  : 1100\
+Round 4 | 
+\f1\b \cf8 W\cf6 Y\cf7 MM
+\f0\b0 \cf1  : 1100\
+Round 5 | 
+\f1\b \cf3 R\cf4 BB\cf3 R
+\f0\b0 \cf1  : 1000\
+Round 6 | 
+\f1\b \cf4 B\cf7 M\cf8 W\cf6 Y
+\f0\b0 \cf1  : 2110\
+DEBUG: arr_rand_ord_to_chr is returning ["d", "b", "a", "g"]!\
+DEBUG: We are at the beginning of translate_array.\
+The array is starting as ["d", "b", "a", "g"].\
+DEBUG: The new array is ["\\e[1;33mY\\e[0m", "\\e[1;34mB\\e[0m", "\\e[1;31mR\\e[0m", "\\e[1;32mG\\e[0m"].\
+DEBUG: random_turn is returning ["\\e[1;33mY\\e[0m", "\\e[1;34mB\\e[0m", "\\e[1;31mR\\e[0m", "\\e[1;32mG\\e[0m"]! as the colored_guess!\
+DEBUG: We have to compare our guess to the gue_only_grid, which is ["\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m\\e[1;31mR\\e[0m\\e[1;37mW\\e[0m", "\\e[1;31mR\\e[0m\\e[1;36mC\\e[0m\\e[1;31mR\\e[0m\\e[1;32mG\\e[0m", "\\e[1;32mG\\e[0m\\e[1;36mC\\e[0m\\e[1;34mB\\e[0m\\e[1;32mG\\e[0m", "\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m\\e[1;35mM\\e[0m\\e[1;35mM\\e[0m", "\\e[1;31mR\\e[0m\\e[1;34mB\\e[0m\\e[1;34mB\\e[0m\\e[1;31mR\\e[0m", "\\e[1;34mB\\e[0m\\e[1;35mM\\e[0m\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m"]\
+...which is of class Array\
+DEBUG: The decided guess is 
+\f1\b \cf6 Y\cf4 B\cf3 R\cf9 G
+\f0\b0 \cf1  which is of class String.\
+macsx, you have guessed 
+\f1\b \cf6 Y\cf4 B\cf3 R\cf9 G
+\f0\b0 \cf1 .\
+\
+Okay, we're on round 7 and it's your turn, lawrfran\
+Your opponent said 
+\f1\b \cf6 Y\cf4 B\cf3 R\cf9 G
+\f0\b0 \cf1 .\
+What do you say? How'd they do? Give me that digit response.\
+2100\
+----------------------------------------------------------------------------------\
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 2100\cf1 .\
+Round 1 | 
+\f1\b \cf8 W\cf6 Y\cf3 R\cf8 W
+\f0\b0 \cf1  : 1000\
+Round 2 | 
+\f1\b \cf3 R\cf5 C\cf3 R\cf9 G
+\f0\b0 \cf1  : 1000\
+Round 3 | 
+\f1\b \cf9 G\cf5 C\cf4 B\cf9 G
+\f0\b0 \cf1  : 1100\
+Round 4 | 
+\f1\b \cf8 W\cf6 Y\cf7 MM
+\f0\b0 \cf1  : 1100\
+Round 5 | 
+\f1\b \cf3 R\cf4 BB\cf3 R
+\f0\b0 \cf1  : 1000\
+Round 6 | 
+\f1\b \cf4 B\cf7 M\cf8 W\cf6 Y
+\f0\b0 \cf1  : 2110\
+Round 7 | 
+\f1\b \cf6 Y\cf4 B\cf3 R\cf9 G
+\f0\b0 \cf1  : 2100\
+DEBUG: arr_rand_ord_to_chr is returning ["e", "e", "d", "a"]!\
+DEBUG: We are at the beginning of translate_array.\
+The array is starting as ["e", "e", "d", "a"].\
+DEBUG: The new array is ["\\e[1;35mM\\e[0m", "\\e[1;35mM\\e[0m", "\\e[1;33mY\\e[0m", "\\e[1;31mR\\e[0m"].\
+DEBUG: random_turn is returning ["\\e[1;35mM\\e[0m", "\\e[1;35mM\\e[0m", "\\e[1;33mY\\e[0m", "\\e[1;31mR\\e[0m"]! as the colored_guess!\
+DEBUG: We have to compare our guess to the gue_only_grid, which is ["\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m\\e[1;31mR\\e[0m\\e[1;37mW\\e[0m", "\\e[1;31mR\\e[0m\\e[1;36mC\\e[0m\\e[1;31mR\\e[0m\\e[1;32mG\\e[0m", "\\e[1;32mG\\e[0m\\e[1;36mC\\e[0m\\e[1;34mB\\e[0m\\e[1;32mG\\e[0m", "\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m\\e[1;35mM\\e[0m\\e[1;35mM\\e[0m", "\\e[1;31mR\\e[0m\\e[1;34mB\\e[0m\\e[1;34mB\\e[0m\\e[1;31mR\\e[0m", "\\e[1;34mB\\e[0m\\e[1;35mM\\e[0m\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m", "\\e[1;33mY\\e[0m\\e[1;34mB\\e[0m\\e[1;31mR\\e[0m\\e[1;32mG\\e[0m"]\
+...which is of class Array\
+DEBUG: The decided guess is 
+\f1\b \cf7 MM\cf6 Y\cf3 R
+\f0\b0 \cf1  which is of class String.\
+macsx, you have guessed 
+\f1\b \cf7 MM\cf6 Y\cf3 R
+\f0\b0 \cf1 .\
+\
+Okay, we're on round 8 and it's your turn, lawrfran\
+Your opponent said 
+\f1\b \cf7 MM\cf6 Y\cf3 R
+\f0\b0 \cf1 .\
+What do you say? How'd they do? Give me that digit response.\
+2100\
+----------------------------------------------------------------------------------\
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 2100\cf1 .\
+Round 1 | 
+\f1\b \cf8 W\cf6 Y\cf3 R\cf8 W
+\f0\b0 \cf1  : 1000\
+Round 2 | 
+\f1\b \cf3 R\cf5 C\cf3 R\cf9 G
+\f0\b0 \cf1  : 1000\
+Round 3 | 
+\f1\b \cf9 G\cf5 C\cf4 B\cf9 G
+\f0\b0 \cf1  : 1100\
+Round 4 | 
+\f1\b \cf8 W\cf6 Y\cf7 MM
+\f0\b0 \cf1  : 1100\
+Round 5 | 
+\f1\b \cf3 R\cf4 BB\cf3 R
+\f0\b0 \cf1  : 1000\
+Round 6 | 
+\f1\b \cf4 B\cf7 M\cf8 W\cf6 Y
+\f0\b0 \cf1  : 2110\
+Round 7 | 
+\f1\b \cf6 Y\cf4 B\cf3 R\cf9 G
+\f0\b0 \cf1  : 2100\
+Round 8 | 
+\f1\b \cf7 MM\cf6 Y\cf3 R
+\f0\b0 \cf1  : 2100\
+DEBUG: arr_rand_ord_to_chr is returning ["b", "a", "f", "b"]!\
+DEBUG: We are at the beginning of translate_array.\
+The array is starting as ["b", "a", "f", "b"].\
+DEBUG: The new array is ["\\e[1;34mB\\e[0m", "\\e[1;31mR\\e[0m", "\\e[1;37mW\\e[0m", "\\e[1;34mB\\e[0m"].\
+DEBUG: random_turn is returning ["\\e[1;34mB\\e[0m", "\\e[1;31mR\\e[0m", "\\e[1;37mW\\e[0m", "\\e[1;34mB\\e[0m"]! as the colored_guess!\
+DEBUG: We have to compare our guess to the gue_only_grid, which is ["\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m\\e[1;31mR\\e[0m\\e[1;37mW\\e[0m", "\\e[1;31mR\\e[0m\\e[1;36mC\\e[0m\\e[1;31mR\\e[0m\\e[1;32mG\\e[0m", "\\e[1;32mG\\e[0m\\e[1;36mC\\e[0m\\e[1;34mB\\e[0m\\e[1;32mG\\e[0m", "\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m\\e[1;35mM\\e[0m\\e[1;35mM\\e[0m", "\\e[1;31mR\\e[0m\\e[1;34mB\\e[0m\\e[1;34mB\\e[0m\\e[1;31mR\\e[0m", "\\e[1;34mB\\e[0m\\e[1;35mM\\e[0m\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m", "\\e[1;33mY\\e[0m\\e[1;34mB\\e[0m\\e[1;31mR\\e[0m\\e[1;32mG\\e[0m", "\\e[1;35mM\\e[0m\\e[1;35mM\\e[0m\\e[1;33mY\\e[0m\\e[1;31mR\\e[0m"]\
+...which is of class Array\
+DEBUG: The decided guess is 
+\f1\b \cf4 B\cf3 R\cf8 W\cf4 B
+\f0\b0 \cf1  which is of class String.\
+macsx, you have guessed 
+\f1\b \cf4 B\cf3 R\cf8 W\cf4 B
+\f0\b0 \cf1 .\
+\
+Okay, we're on round 9 and it's your turn, lawrfran\
+Your opponent said 
+\f1\b \cf4 B\cf3 R\cf8 W\cf4 B
+\f0\b0 \cf1 .\
+What do you say? How'd they do? Give me that digit response.\
+2000\
+----------------------------------------------------------------------------------\
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 2000\cf1 .\
+Round 1 | 
+\f1\b \cf8 W\cf6 Y\cf3 R\cf8 W
+\f0\b0 \cf1  : 1000\
+Round 2 | 
+\f1\b \cf3 R\cf5 C\cf3 R\cf9 G
+\f0\b0 \cf1  : 1000\
+Round 3 | 
+\f1\b \cf9 G\cf5 C\cf4 B\cf9 G
+\f0\b0 \cf1  : 1100\
+Round 4 | 
+\f1\b \cf8 W\cf6 Y\cf7 MM
+\f0\b0 \cf1  : 1100\
+Round 5 | 
+\f1\b \cf3 R\cf4 BB\cf3 R
+\f0\b0 \cf1  : 1000\
+Round 6 | 
+\f1\b \cf4 B\cf7 M\cf8 W\cf6 Y
+\f0\b0 \cf1  : 2110\
+Round 7 | 
+\f1\b \cf6 Y\cf4 B\cf3 R\cf9 G
+\f0\b0 \cf1  : 2100\
+Round 8 | 
+\f1\b \cf7 MM\cf6 Y\cf3 R
+\f0\b0 \cf1  : 2100\
+Round 9 | 
+\f1\b \cf4 B\cf3 R\cf8 W\cf4 B
+\f0\b0 \cf1  : 2000\
+DEBUG: arr_rand_ord_to_chr is returning ["f", "c", "b", "c"]!\
+DEBUG: We are at the beginning of translate_array.\
+The array is starting as ["f", "c", "b", "c"].\
+DEBUG: The new array is ["\\e[1;37mW\\e[0m", "\\e[1;36mC\\e[0m", "\\e[1;34mB\\e[0m", "\\e[1;36mC\\e[0m"].\
+DEBUG: random_turn is returning ["\\e[1;37mW\\e[0m", "\\e[1;36mC\\e[0m", "\\e[1;34mB\\e[0m", "\\e[1;36mC\\e[0m"]! as the colored_guess!\
+DEBUG: We have to compare our guess to the gue_only_grid, which is ["\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m\\e[1;31mR\\e[0m\\e[1;37mW\\e[0m", "\\e[1;31mR\\e[0m\\e[1;36mC\\e[0m\\e[1;31mR\\e[0m\\e[1;32mG\\e[0m", "\\e[1;32mG\\e[0m\\e[1;36mC\\e[0m\\e[1;34mB\\e[0m\\e[1;32mG\\e[0m", "\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m\\e[1;35mM\\e[0m\\e[1;35mM\\e[0m", "\\e[1;31mR\\e[0m\\e[1;34mB\\e[0m\\e[1;34mB\\e[0m\\e[1;31mR\\e[0m", "\\e[1;34mB\\e[0m\\e[1;35mM\\e[0m\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m", "\\e[1;33mY\\e[0m\\e[1;34mB\\e[0m\\e[1;31mR\\e[0m\\e[1;32mG\\e[0m", "\\e[1;35mM\\e[0m\\e[1;35mM\\e[0m\\e[1;33mY\\e[0m\\e[1;31mR\\e[0m", "\\e[1;34mB\\e[0m\\e[1;31mR\\e[0m\\e[1;37mW\\e[0m\\e[1;34mB\\e[0m"]\
+...which is of class Array\
+DEBUG: The decided guess is 
+\f1\b \cf8 W\cf5 C\cf4 B\cf5 C
+\f0\b0 \cf1  which is of class String.\
+macsx, you have guessed 
+\f1\b \cf8 W\cf5 C\cf4 B\cf5 C
+\f0\b0 \cf1 .\
+\
+Okay, we're on round 10 and it's your turn, lawrfran\
+Your opponent said 
+\f1\b \cf8 W\cf5 C\cf4 B\cf5 C
+\f0\b0 \cf1 .\
+What do you say? How'd they do? Give me that digit response.\
+1100\
+----------------------------------------------------------------------------------\
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 1100\cf1 .\
+Round 1 | 
+\f1\b \cf8 W\cf6 Y\cf3 R\cf8 W
+\f0\b0 \cf1  : 1000\
+Round 2 | 
+\f1\b \cf3 R\cf5 C\cf3 R\cf9 G
+\f0\b0 \cf1  : 1000\
+Round 3 | 
+\f1\b \cf9 G\cf5 C\cf4 B\cf9 G
+\f0\b0 \cf1  : 1100\
+Round 4 | 
+\f1\b \cf8 W\cf6 Y\cf7 MM
+\f0\b0 \cf1  : 1100\
+Round 5 | 
+\f1\b \cf3 R\cf4 BB\cf3 R
+\f0\b0 \cf1  : 1000\
+Round 6 | 
+\f1\b \cf4 B\cf7 M\cf8 W\cf6 Y
+\f0\b0 \cf1  : 2110\
+Round 7 | 
+\f1\b \cf6 Y\cf4 B\cf3 R\cf9 G
+\f0\b0 \cf1  : 2100\
+Round 8 | 
+\f1\b \cf7 MM\cf6 Y\cf3 R
+\f0\b0 \cf1  : 2100\
+Round 9 | 
+\f1\b \cf4 B\cf3 R\cf8 W\cf4 B
+\f0\b0 \cf1  : 2000\
+Round 10 | 
+\f1\b \cf8 W\cf5 C\cf4 B\cf5 C
+\f0\b0 \cf1  : 1100\
+DEBUG: arr_rand_ord_to_chr is returning ["e", "a", "e", "g"]!\
+DEBUG: We are at the beginning of translate_array.\
+The array is starting as ["e", "a", "e", "g"].\
+DEBUG: The new array is ["\\e[1;35mM\\e[0m", "\\e[1;31mR\\e[0m", "\\e[1;35mM\\e[0m", "\\e[1;32mG\\e[0m"].\
+DEBUG: random_turn is returning ["\\e[1;35mM\\e[0m", "\\e[1;31mR\\e[0m", "\\e[1;35mM\\e[0m", "\\e[1;32mG\\e[0m"]! as the colored_guess!\
+DEBUG: We have to compare our guess to the gue_only_grid, which is ["\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m\\e[1;31mR\\e[0m\\e[1;37mW\\e[0m", "\\e[1;31mR\\e[0m\\e[1;36mC\\e[0m\\e[1;31mR\\e[0m\\e[1;32mG\\e[0m", "\\e[1;32mG\\e[0m\\e[1;36mC\\e[0m\\e[1;34mB\\e[0m\\e[1;32mG\\e[0m", "\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m\\e[1;35mM\\e[0m\\e[1;35mM\\e[0m", "\\e[1;31mR\\e[0m\\e[1;34mB\\e[0m\\e[1;34mB\\e[0m\\e[1;31mR\\e[0m", "\\e[1;34mB\\e[0m\\e[1;35mM\\e[0m\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m", "\\e[1;33mY\\e[0m\\e[1;34mB\\e[0m\\e[1;31mR\\e[0m\\e[1;32mG\\e[0m", "\\e[1;35mM\\e[0m\\e[1;35mM\\e[0m\\e[1;33mY\\e[0m\\e[1;31mR\\e[0m", "\\e[1;34mB\\e[0m\\e[1;31mR\\e[0m\\e[1;37mW\\e[0m\\e[1;34mB\\e[0m", "\\e[1;37mW\\e[0m\\e[1;36mC\\e[0m\\e[1;34mB\\e[0m\\e[1;36mC\\e[0m"]\
+...which is of class Array\
+DEBUG: The decided guess is 
+\f1\b \cf7 M\cf3 R\cf7 M\cf9 G
+\f0\b0 \cf1  which is of class String.\
+macsx, you have guessed 
+\f1\b \cf7 M\cf3 R\cf7 M\cf9 G
+\f0\b0 \cf1 .\
+\
+Okay, we're on round 11 and it's your turn, lawrfran\
+Your opponent said 
+\f1\b \cf7 M\cf3 R\cf7 M\cf9 G
+\f0\b0 \cf1 .\
+What do you say? How'd they do? Give me that digit response.\
+1000\
+----------------------------------------------------------------------------------\
+Okay, the computer is taking its turn...\
+Your opponent said \cf6 1000\cf1 .\
+Round 1 | 
+\f1\b \cf8 W\cf6 Y\cf3 R\cf8 W
+\f0\b0 \cf1  : 1000\
+Round 2 | 
+\f1\b \cf3 R\cf5 C\cf3 R\cf9 G
+\f0\b0 \cf1  : 1000\
+Round 3 | 
+\f1\b \cf9 G\cf5 C\cf4 B\cf9 G
+\f0\b0 \cf1  : 1100\
+Round 4 | 
+\f1\b \cf8 W\cf6 Y\cf7 MM
+\f0\b0 \cf1  : 1100\
+Round 5 | 
+\f1\b \cf3 R\cf4 BB\cf3 R
+\f0\b0 \cf1  : 1000\
+Round 6 | 
+\f1\b \cf4 B\cf7 M\cf8 W\cf6 Y
+\f0\b0 \cf1  : 2110\
+Round 7 | 
+\f1\b \cf6 Y\cf4 B\cf3 R\cf9 G
+\f0\b0 \cf1  : 2100\
+Round 8 | 
+\f1\b \cf7 MM\cf6 Y\cf3 R
+\f0\b0 \cf1  : 2100\
+Round 9 | 
+\f1\b \cf4 B\cf3 R\cf8 W\cf4 B
+\f0\b0 \cf1  : 2000\
+Round 10 | 
+\f1\b \cf8 W\cf5 C\cf4 B\cf5 C
+\f0\b0 \cf1  : 1100\
+Round 11 | 
+\f1\b \cf7 M\cf3 R\cf7 M\cf9 G
+\f0\b0 \cf1  : 1000\
+DEBUG: arr_rand_ord_to_chr is returning ["a", "a", "a", "g"]!\
+DEBUG: We are at the beginning of translate_array.\
+The array is starting as ["a", "a", "a", "g"].\
+DEBUG: The new array is ["\\e[1;31mR\\e[0m", "\\e[1;31mR\\e[0m", "\\e[1;31mR\\e[0m", "\\e[1;32mG\\e[0m"].\
+DEBUG: random_turn is returning ["\\e[1;31mR\\e[0m", "\\e[1;31mR\\e[0m", "\\e[1;31mR\\e[0m", "\\e[1;32mG\\e[0m"]! as the colored_guess!\
+DEBUG: We have to compare our guess to the gue_only_grid, which is ["\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m\\e[1;31mR\\e[0m\\e[1;37mW\\e[0m", "\\e[1;31mR\\e[0m\\e[1;36mC\\e[0m\\e[1;31mR\\e[0m\\e[1;32mG\\e[0m", "\\e[1;32mG\\e[0m\\e[1;36mC\\e[0m\\e[1;34mB\\e[0m\\e[1;32mG\\e[0m", "\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m\\e[1;35mM\\e[0m\\e[1;35mM\\e[0m", "\\e[1;31mR\\e[0m\\e[1;34mB\\e[0m\\e[1;34mB\\e[0m\\e[1;31mR\\e[0m", "\\e[1;34mB\\e[0m\\e[1;35mM\\e[0m\\e[1;37mW\\e[0m\\e[1;33mY\\e[0m", "\\e[1;33mY\\e[0m\\e[1;34mB\\e[0m\\e[1;31mR\\e[0m\\e[1;32mG\\e[0m", "\\e[1;35mM\\e[0m\\e[1;35mM\\e[0m\\e[1;33mY\\e[0m\\e[1;31mR\\e[0m", "\\e[1;34mB\\e[0m\\e[1;31mR\\e[0m\\e[1;37mW\\e[0m\\e[1;34mB\\e[0m", "\\e[1;37mW\\e[0m\\e[1;36mC\\e[0m\\e[1;34mB\\e[0m\\e[1;36mC\\e[0m", "\\e[1;35mM\\e[0m\\e[1;31mR\\e[0m\\e[1;35mM\\e[0m\\e[1;32mG\\e[0m"]\
+...which is of class Array\
+DEBUG: The decided guess is 
+\f1\b \cf3 RRR\cf9 G
+\f0\b0 \cf1  which is of class String.\
+macsx, you have guessed 
+\f1\b \cf3 RRR\cf9 G
+\f0\b0 \cf1 .\
+\
+Okay, we're on round 12 and it's your turn, lawrfran\
+Your opponent said 
+\f1\b \cf3 RRR\cf9 G
+\f0\b0 \cf1 .\
+What do you say? How'd they do? Give me that digit response.\
+0000\
+----------------------------------------------------------------------------------\
+\
+--------------------\
+\cf9 The game is finished!! That's right, it's all over!\cf1 \
+
+\f1\b \cf6 Our winner is lawrfran!!
+\f0\b0 \cf1 ]\
+Congratulations!\
+\{:total=>1, :wins=>1, :total_as_breaker=>0, :wins_as_breaker=>0, :total_as_maker=>1, :wins_as_maker=>1\}\
+There are your stats! Good bye!\
+15:14:44|~ $ irb\
+irb(main):001:0> r27\
+Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'.\
+=> true\
+irb(main):002:0> \
+}

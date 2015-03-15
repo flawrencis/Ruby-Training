@@ -81,7 +81,7 @@ module Mastermind
 			@@game_record[victor.user_name.to_sym][:wins]+=1
 			@@game_record[victor.user_name.to_sym]["wins_as_#{victor.role}".intern]+=1
 			puts "\n--------------------\n\e[32mThe game is finished!! That's right, it's all over!\e[0m"
-			puts "\e[1;33mOur winner is #{victor.user_name}!!\e[0m]"
+			puts "\e[1;33mOur winner is #{victor.user_name}!!\e[0m"
 			puts "Congratulations!"
 			puts @@game_record[victor.user_name.to_sym]
 			puts "There are your stats! Good bye!"

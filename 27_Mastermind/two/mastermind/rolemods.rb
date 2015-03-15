@@ -74,7 +74,8 @@ module Mastermind
 			puts "Do you understand?"
 			blahblah = gets
 			GenMeans.put_break
-			the_code = get_code(length)
+			code = get_code(length)
+			the_code = code.join
 			puts "DEBUG: I'm in the Codemaker's intro.\nI just got the code from the get_code function.\nThe code is....................#{the_code}"
 			return the_code
 			end
@@ -83,7 +84,7 @@ module Mastermind
 			puts "Check out the options and then give me a #{length}-letter code."
 			resp = gets.chomp.downcase
 			GenMeans.put_break
-			dull_code = resp.scan(/([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*/)[0].join if length == 4
+			dull_code = resp.scan(/([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*/)[0] if length == 4
 			puts "This program can't receive a code longer than 4 letters.\nI know what I told you. I messed up. This may be goodbye." unless length == 4
 			code = GenMeans.colorize_array(dull_code)
 			return code

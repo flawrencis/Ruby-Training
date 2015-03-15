@@ -27,6 +27,7 @@ module Mastermind
 		
 		def self.translate_array(array,from_key,to_key)
 			puts "ERROR: Arrays not equal" if from_key.length != to_key.length
+			puts "DEBUG: We are at the beginning of translate_array.\nThe array is starting as #{array}."
 			array.each_with_index do |x,i|
 #				puts "Let's start with x as #{x}"
 				for j in 0..from_key.length
@@ -39,6 +40,8 @@ module Mastermind
 						end
 					end
 				end
+			puts "DEBUG: The new array is #{array}."
+			return array
 			end
 		
 		def self.colorize_array(dull_array)
@@ -64,7 +67,14 @@ module Mastermind
 			return new
 			end
 		
+		def self.arr_rand_ord_to_chr
+			rand_ord_array = Array.new(GenCons::CodeLength) {rand(97..103)} 
+			chr_array = rand_ord_array.map {|ord_num| ord_num.chr}
+			puts "DEBUG: arr_rand_ord_to_chr is returning #{chr_array}!"
+			return chr_array
+			end
 		end
+		
 	end
 
 lib_path = File.expand_path(File.dirname(__FILE__))
