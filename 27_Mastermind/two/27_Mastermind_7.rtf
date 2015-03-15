@@ -1,0 +1,503 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red10\green12\blue39;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs22 \cf1 \cb2 \CocoaLigature0 Last login: Thu Mar 12 18:32:27 on ttys000\
+\
+-------------------------------------------------\
+If you need to create a platform specific folder using Phonegap, please do the following:\
+1) First, run the 'echo PATH=$PATH:/Users/francislawrence/Programming/phonegap-2.9.1/lib/<specific_platform>/bin' command.\
+2) Then, you need to change your working directory to the bin of that platform in that same phonegap folder.\
+3) Then, run the 'create name com.example.name Name' command.\
+\
+Also, if you need to change any of these settings, go to your home directory (~) and type \'91nano .bash_profile\'92.\
+\
+Also, if you need to do the EMULATE command, you have to go to the app folder and then run \'91ripple emulate\'92.\
+\
+To edit the tab control thing, go to nano .inputrc from your root directory.\
+To substitute something in the previous line, type something like this... ^toreplace^touse\
+To search previous lines, use Ctrl-R.\
+To leave that screen you can get stuck in, use q when the END is highlighted.\
+To learn the escape characters of buttons, first type ^V\
+Jump to start of line ^A\
+Jump to end of line ^E\
+Clear text onward ^K\
+Clear backward by word ^W\
+Toggle between current cursor position and start of line ^XX\
+Clear whole line ^U\
+Bring last line back ^Y\
+Search previous lines ^R\
+! preceding starting character, Enter invokes last command\
+To modify the last command, type !<firstfewcharacters>:s/<toreplace>/<desired>\
+Keep Mac awake: $ caffeinate -u -t 600 (add options to set timer)\
+------------------------------------------------------\
+13:13:15|~ $ irb\
+irb(main):001:0> from_key = [1,2,3,4,5,6]\
+=> [1, 2, 3, 4, 5, 6]\
+irb(main):002:0> to_key = [-1,-2,-3,-4,-5,-6]\
+=> [-1, -2, -3, -4, -5, -6]\
+irb(main):003:0> array = [3,4,5]\
+=> [3, 4, 5]\
+irb(main):004:0> array.each do |x|\
+irb(main):005:1* for j<from_key.length\
+irb(main):006:2> if x == from_key[j]\
+irb(main):007:3> x = to_key[j]\
+irb(main):008:3> end\
+irb(main):009:2> end\
+irb(main):010:1> end\
+SyntaxError: (irb):5: syntax error, unexpected '<', expecting :: or '[' or '.'\
+for j<from_key.length\
+      ^\
+(irb):10: syntax error, unexpected keyword_end, expecting end-of-input\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):011:0> for [0,from_key.length]\
+irb(main):012:1> puts "yo"\
+irb(main):013:1> end\
+SyntaxError: (irb):11: syntax error, unexpected '\\n', expecting :: or '[' or '.'\
+(irb):13: syntax error, unexpected keyword_end, expecting end-of-input\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):014:0> man for\
+irb(main):015:1* \
+irb(main):016:1* end\
+SyntaxError: (irb):16: syntax error, unexpected keyword_end\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):017:0> help for\
+irb(main):018:1* end\
+SyntaxError: (irb):18: syntax error, unexpected keyword_end\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):019:0> for j in 0..from_key.length\
+irb(main):020:1> puts "yo"\
+irb(main):021:1> end\
+yo\
+yo\
+yo\
+yo\
+yo\
+yo\
+yo\
+=> 0..6\
+irb(main):022:0> array.each do |x|\
+irb(main):023:1* for j in 0..from_key.length\
+irb(main):024:2> if x == from_key[j]\
+irb(main):025:3> x = to_key[j]\
+irb(main):026:3> end\
+irb(main):027:2> end\
+irb(main):028:1> end\
+=> [3, 4, 5]\
+irb(main):029:0> array\
+=> [3, 4, 5]\
+irb(main):030:0> from_key\
+=> [1, 2, 3, 4, 5, 6]\
+irb(main):031:0> to_key\
+=> [-1, -2, -3, -4, -5, -6]\
+irb(main):032:0> array\
+=> [3, 4, 5]\
+irb(main):033:0> array.each do |x|\
+irb(main):034:1* puts "Let's start with x as #\{x\}"\
+irb(main):035:1> for j in 0..from_key.length\
+irb(main):036:2> if x == from_key[j]\
+irb(main):037:3> puts "x is #\{x\}"\
+irb(main):038:3> x = to_key[j]\
+irb(main):039:3> puts "now x is #\{x\}"\
+irb(main):040:3> end\
+irb(main):041:2> end\
+irb(main):042:1> end\
+Let's start with x as 3\
+x is 3\
+now x is -3\
+Let's start with x as 4\
+x is 4\
+now x is -4\
+Let's start with x as 5\
+x is 5\
+now x is -5\
+=> [3, 4, 5]\
+irb(main):043:0> from_key\
+=> [1, 2, 3, 4, 5, 6]\
+irb(main):044:0> to)key\
+SyntaxError: (irb):44: syntax error, unexpected ')', expecting end-of-input\
+to)key\
+   ^\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):045:0> tokey\
+NameError: undefined local variable or method `tokey' for main:Object\
+	from (irb):45\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):046:0> to_key\
+=> [-1, -2, -3, -4, -5, -6]\
+irb(main):047:0> array\
+=> [3, 4, 5]\
+irb(main):048:0> array.each_with_index do |x,i|\
+irb(main):049:1* puts "Let's start with x as #\{x\}"\
+irb(main):050:1> for j in 0..from_key.length\
+irb(main):051:2> if x == from_key[j]\
+irb(main):052:3> puts "x is #\{x\}"\
+irb(main):053:3> x = to_key[j]\
+irb(main):054:3> puts "now x is #\{x\}"\
+irb(main):055:3> array[i] = x\
+irb(main):056:3> puts "and now array[i] = #\{array[i]\}"\
+irb(main):057:3> end\
+irb(main):058:2> end\
+irb(main):059:1> end\
+Let's start with x as 3\
+x is 3\
+now x is -3\
+and now array[i] = -3\
+Let's start with x as 4\
+x is 4\
+now x is -4\
+and now array[i] = -4\
+Let's start with x as 5\
+x is 5\
+now x is -5\
+and now array[i] = -5\
+=> [-3, -4, -5]\
+irb(main):060:0> array\
+=> [-3, -4, -5]\
+irb(main):061:0> hash = \{z: 9, y: 8, x: 7, w: 6, v: 5\}\
+=> \{:z=>9, :y=>8, :x=>7, :w=>6, :v=>5\}\
+irb(main):062:0> hash.keys\
+=> [:z, :y, :x, :w, :v]\
+irb(main):063:0> hash.keys[0].to_s\
+=> "z"\
+irb(main):064:0> genconsoptionskeys = hash.keys.map \{|symbo| symbo.to_s\}\
+=> ["z", "y", "x", "w", "v"]\
+irb(main):065:0> hash\
+=> \{:z=>9, :y=>8, :x=>7, :w=>6, :v=>5\}\
+irb(main):066:0> a = 5 < 6 "b" : "k"\
+SyntaxError: (irb):66: syntax error, unexpected tSTRING_BEG, expecting end-of-input\
+a = 5 < 6 "b" : "k"\
+           ^\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):067:0> a = 5 < 6 ? "b" : "k"\
+=> "b"\
+irb(main):068:0> resp = gets.chomp.downcase\
+resp_scanned = resp.scan(/([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*/)[0]\
+=> "resp_scanned = resp.scan(/([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*/)[0]"\
+irb(main):069:0> resp = gets.chomp.downcase\
+bcgr\
+=> "bcgr"\
+irb(main):070:0> resp_scanned = resp.scan(/([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*/)[0]\
+=> ["b", "c", "g", "r"]\
+irb(main):071:0> module Total\
+irb(main):072:1> \
+irb(main):073:1* \
+irb(main):074:1* module Constants\
+irb(main):075:2> @@gender = "female" #needed capital G\
+irb(main):076:2> end\
+irb(main):077:1> \
+irb(main):078:1* module Means\
+irb(main):079:2> def change(butt)\
+irb(main):080:3> hey = butt.upcase\
+irb(main):081:3> return hey\
+irb(main):082:3> end\
+irb(main):083:2> end\
+irb(main):084:1> module HisMod\
+irb(main):085:2> def laughs\
+irb(main):086:3> puts "hahahahaha"\
+irb(main):087:3> end\
+irb(main):088:2> def offends\
+irb(main):089:3> puts "You stupid FUCKER!"\
+irb(main):090:3> end\
+irb(main):091:2> end\
+irb(main):092:1> \
+irb(main):093:1* module HerMod\
+irb(main):094:2> def laughs\
+irb(main):095:3> puts "hehehehehe"\
+irb(main):096:3> end\
+irb(main):097:2> def offends\
+irb(main):098:3> say = "If you don't mind being seen as trash, good for oyu!"\
+irb(main):099:3> new_say = HisMod::change (say)\
+irb(main):100:3> puts new_say\
+irb(main):101:3> end\
+irb(main):102:2> end\
+irb(main):103:1> \
+irb(main):104:1* class Person\
+irb(main):105:2> include Total::Constants\
+irb(main):106:2> def initialize\
+irb(main):107:3> gender = @@gender\
+irb(main):108:3> Total.put_break\
+irb(main):109:3> puts "Gender is #\{gender\}. Understood?"\
+irb(main):110:3> puts "No, it's #\{gender\}!"\
+irb(main):111:3> extend HisMod if gender == "male"\
+irb(main):112:3> extend HerMod if gender == "female"\
+irb(main):113:3> puts "Turns out, gender is #\{gender\}. I already extended the appropriate module and am ready to make you laugh."\
+irb(main):114:3> self.laughs\
+irb(main):115:3> end\
+irb(main):116:2> def piss\
+irb(main):117:3> self.offends\
+irb(main):118:3> end\
+irb(main):119:2> end\
+irb(main):120:1> \
+irb(main):121:1* end\
+=> :piss\
+irb(main):122:0> \
+irb(main):123:0* tom = Total::Person.new\
+NoMethodError: undefined method `put_break' for Total:Module\
+	from (irb):108:in `initialize'\
+	from (irb):123:in `new'\
+	from (irb):123\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):124:0> module Total\
+irb(main):125:1> \
+irb(main):126:1* \
+irb(main):127:1* module Constants\
+irb(main):128:2> @@gender = "female" #needed capital G\
+irb(main):129:2> end\
+irb(main):130:1> \
+irb(main):131:1* module Means\
+irb(main):132:2> def change(butt)\
+irb(main):133:3> hey = butt.upcase\
+irb(main):134:3> return hey\
+irb(main):135:3> end\
+irb(main):136:2> end\
+irb(main):137:1> module HisMod\
+irb(main):138:2> def laughs\
+irb(main):139:3> puts "hahahahaha"\
+irb(main):140:3> end\
+irb(main):141:2> def offends\
+irb(main):142:3> puts "You stupid FUCKER!"\
+irb(main):143:3> end\
+irb(main):144:2> end\
+irb(main):145:1> \
+irb(main):146:1* module HerMod\
+irb(main):147:2> def laughs\
+irb(main):148:3> puts "hehehehehe"\
+irb(main):149:3> end\
+irb(main):150:2> def offends\
+irb(main):151:3> say = "If you don't mind being seen as trash, good for oyu!"\
+irb(main):152:3> new_say = HisMod::change (say)\
+irb(main):153:3> puts new_say\
+irb(main):154:3> end\
+irb(main):155:2> end\
+irb(main):156:1> \
+irb(main):157:1* class Person\
+irb(main):158:2> include Total::Constants\
+irb(main):159:2> def initialize\
+irb(main):160:3> gender = @@gender\
+irb(main):161:3> puts "Gender is #\{gender\}. Understood?"\
+irb(main):162:3> puts "No, it's #\{gender\}!"\
+irb(main):163:3> extend HisMod if gender == "male"\
+irb(main):164:3> extend HerMod if gender == "female"\
+irb(main):165:3> puts "Turns out, gender is #\{gender\}. I already extended the appropriate module and am ready to make you laugh."\
+irb(main):166:3> self.laughs\
+irb(main):167:3> end\
+irb(main):168:2> def piss\
+irb(main):169:3> self.offends\
+irb(main):170:3> end\
+irb(main):171:2> end\
+irb(main):172:1> \
+irb(main):173:1* end\
+=> :piss\
+irb(main):174:0> \
+irb(main):175:0* tom = Total::Person.new\
+Gender is female. Understood?\
+No, it's female!\
+Turns out, gender is female. I already extended the appropriate module and am ready to make you laugh.\
+hehehehehe\
+=> #<Total::Person:0x007fe72b051620>\
+irb(main):176:0> tom.piss\
+NoMethodError: undefined method `change' for Total::HisMod:Module\
+	from (irb):152:in `offends'\
+	from (irb):169:in `piss'\
+	from (irb):176\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):177:0> clr\
+irb(main):001:0> irb\
+irb#1(main):001:0> module Total\
+irb#1(main):002:1> \
+irb#1(main):003:1* \
+irb#1(main):004:1* module Constants\
+irb#1(main):005:2> @@gender = "female" #needed capital G\
+irb#1(main):006:2> end\
+irb#1(main):007:1> \
+irb#1(main):008:1* module Means\
+irb#1(main):009:2> def change(butt)\
+irb#1(main):010:3> hey = butt.upcase\
+irb#1(main):011:3> return hey\
+irb#1(main):012:3> end\
+irb#1(main):013:2> end\
+irb#1(main):014:1> \
+irb#1(main):015:1* module HisMod\
+irb#1(main):016:2> def laughs\
+irb#1(main):017:3> puts "hahahahaha"\
+irb#1(main):018:3> end\
+irb#1(main):019:2> def offends\
+irb#1(main):020:3> puts "You stupid FUCKER!"\
+irb#1(main):021:3> end\
+irb#1(main):022:2> end\
+irb#1(main):023:1> \
+irb#1(main):024:1* module HerMod\
+irb#1(main):025:2> def laughs\
+irb#1(main):026:3> puts "hehehehehe"\
+irb#1(main):027:3> end\
+irb#1(main):028:2> def offends\
+irb#1(main):029:3> say = "If you don't mind being seen as trash, good for oyu!"\
+irb#1(main):030:3> new_say = Means::change (say)\
+irb#1(main):031:3> puts new_say\
+irb#1(main):032:3> end\
+irb#1(main):033:2> end\
+irb#1(main):034:1> \
+irb#1(main):035:1* class Person\
+irb#1(main):036:2> include Total::Constants\
+irb#1(main):037:2> def initialize\
+irb#1(main):038:3> gender = @@gender\
+irb#1(main):039:3> puts "Gender is #\{gender\}. Understood?"\
+irb#1(main):040:3> puts "No, it's #\{gender\}!"\
+irb#1(main):041:3> extend HisMod if gender == "male"\
+irb#1(main):042:3> extend HerMod if gender == "female"\
+irb#1(main):043:3> puts "Turns out, gender is #\{gender\}. I already extended the appropriate module and am ready to make you laugh."\
+irb#1(main):044:3> self.laughs\
+irb#1(main):045:3> end\
+irb#1(main):046:2> def piss\
+irb#1(main):047:3> self.offends\
+irb#1(main):048:3> end\
+irb#1(main):049:2> end\
+irb#1(main):050:1> \
+irb#1(main):051:1* end\
+=> :piss\
+irb#1(main):052:0> \
+irb#1(main):053:0* tom = Total::Person.new\
+Gender is female. Understood?\
+No, it's female!\
+Turns out, gender is female. I already extended the appropriate module and am ready to make you laugh.\
+hehehehehe\
+=> #<Total::Person:0x007fd8931af680>\
+irb#1(main):054:0> tom.piss\
+NoMethodError: undefined method `change' for Total::Means:Module\
+	from (irb#1):30:in `offends'\
+	from (irb#1):47:in `piss'\
+	from (irb#1):54\
+irb#1(main):055:0> clr\
+irb(main):001:0> module Total\
+irb(main):002:1> \
+irb(main):003:1* \
+irb(main):004:1* module Constants\
+irb(main):005:2> @@gender = "female" #needed capital G\
+irb(main):006:2> end\
+irb(main):007:1> \
+irb(main):008:1* module Means\
+irb(main):009:2> def change(butt)\
+irb(main):010:3> hey = butt.upcase\
+irb(main):011:3> return hey\
+irb(main):012:3> end\
+irb(main):013:2> end\
+irb(main):014:1> \
+irb(main):015:1* module HisMod\
+irb(main):016:2> def laughs\
+irb(main):017:3> puts "hahahahaha"\
+irb(main):018:3> end\
+irb(main):019:2> def offends\
+irb(main):020:3> puts "You stupid FUCKER!"\
+irb(main):021:3> end\
+irb(main):022:2> end\
+irb(main):023:1> \
+irb(main):024:1* module HerMod\
+irb(main):025:2> def laughs\
+irb(main):026:3> puts "hehehehehe"\
+irb(main):027:3> end\
+irb(main):028:2> def offends\
+irb(main):029:3> say = "If you don't mind being seen as trash, good for oyu!"\
+irb(main):030:3> new_say = ::Means.change (say)\
+irb(main):031:3> puts new_say\
+irb(main):032:3> end\
+irb(main):033:2> end\
+irb(main):034:1> \
+irb(main):035:1* class Person\
+irb(main):036:2> include Total::Constants\
+irb(main):037:2> def initialize\
+irb(main):038:3> gender = @@gender\
+irb(main):039:3> puts "Gender is #\{gender\}. Understood?"\
+irb(main):040:3> puts "No, it's #\{gender\}!"\
+irb(main):041:3> extend HisMod if gender == "male"\
+irb(main):042:3> extend HerMod if gender == "female"\
+irb(main):043:3> puts "Turns out, gender is #\{gender\}. I already extended the appropriate module and am ready to make you laugh."\
+irb(main):044:3> self.laughs\
+irb(main):045:3> end\
+irb(main):046:2> def piss\
+irb(main):047:3> self.offends\
+irb(main):048:3> end\
+irb(main):049:2> end\
+irb(main):050:1> \
+irb(main):051:1* end\
+=> :piss\
+irb(main):052:0> \
+irb(main):053:0* tom = Total::Person.new\
+Gender is female. Understood?\
+No, it's female!\
+Turns out, gender is female. I already extended the appropriate module and am ready to make you laugh.\
+hehehehehe\
+=> #<Total::Person:0x007fe4da864860>\
+irb(main):054:0> tom.piss\
+NameError: uninitialized constant Means\
+	from (irb):30:in `offends'\
+	from (irb):47:in `piss'\
+	from (irb):54\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):055:0> module Total\
+irb(main):056:1> \
+irb(main):057:1* \
+irb(main):058:1* module Constants\
+irb(main):059:2> @@gender = "female" #needed capital G\
+irb(main):060:2> end\
+irb(main):061:1> \
+irb(main):062:1* module Means\
+irb(main):063:2> def self.change(butt)\
+irb(main):064:3> hey = butt.upcase\
+irb(main):065:3> return hey\
+irb(main):066:3> end\
+irb(main):067:2> end\
+irb(main):068:1> \
+irb(main):069:1* module HisMod\
+irb(main):070:2> def laughs\
+irb(main):071:3> puts "hahahahaha"\
+irb(main):072:3> end\
+irb(main):073:2> def offends\
+irb(main):074:3> puts "You stupid FUCKER!"\
+irb(main):075:3> end\
+irb(main):076:2> end\
+irb(main):077:1> \
+irb(main):078:1* module HerMod\
+irb(main):079:2> def laughs\
+irb(main):080:3> puts "hehehehehe"\
+irb(main):081:3> end\
+irb(main):082:2> def offends\
+irb(main):083:3> say = "If you don't mind being seen as trash, good for oyu!"\
+irb(main):084:3> new_say = Means.change (say)\
+irb(main):085:3> puts new_say\
+irb(main):086:3> end\
+irb(main):087:2> end\
+irb(main):088:1> \
+irb(main):089:1* class Person\
+irb(main):090:2> include Total::Constants\
+irb(main):091:2> def initialize\
+irb(main):092:3> gender = @@gender\
+irb(main):093:3> puts "Gender is #\{gender\}. Understood?"\
+irb(main):094:3> puts "No, it's #\{gender\}!"\
+irb(main):095:3> extend HisMod if gender == "male"\
+irb(main):096:3> extend HerMod if gender == "female"\
+irb(main):097:3> puts "Turns out, gender is #\{gender\}. I already extended the appropriate module and am ready to make you laugh."\
+irb(main):098:3> self.laughs\
+irb(main):099:3> end\
+irb(main):100:2> def piss\
+irb(main):101:3> self.offends\
+irb(main):102:3> end\
+irb(main):103:2> end\
+irb(main):104:1> \
+irb(main):105:1* end\
+=> :piss\
+irb(main):106:0> \
+irb(main):107:0* tom = Total::Person.new\
+Gender is female. Understood?\
+No, it's female!\
+Turns out, gender is female. I already extended the appropriate module and am ready to make you laugh.\
+hehehehehe\
+=> #<Total::Person:0x007fe4dc006838>\
+irb(main):108:0> tom.piss\
+IF YOU DON'T MIND BEING SEEN AS TRASH, GOOD FOR OYU!\
+=> nil\
+irb(main):109:0> clr\
+irb(main):001:0> \
+}
