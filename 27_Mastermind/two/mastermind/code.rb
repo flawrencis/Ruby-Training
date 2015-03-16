@@ -1,3 +1,4 @@
+#FILE NOT USED
 #Do I need to keep the code private?? Yeah, I'm going to make all of these functions private.
 
 module Mastermind

@@ -33,7 +33,7 @@ module Mastermind
 		
 		def self.translate_array(array,from_key,to_key)
 			puts "ERROR: Arrays not equal" if from_key.length != to_key.length
-			puts "DEBUG: We are at the beginning of translate_array.\nThe array is starting as #{array}."
+#			puts "DEBUG: We are at the beginning of translate_array.\nThe array is starting as #{array}."
 			array.each_with_index do |x,i|
 #				puts "Let's start with x as #{x}"
 				for j in 0..from_key.length
@@ -46,7 +46,7 @@ module Mastermind
 						end
 					end
 				end
-			puts "DEBUG: The new array is #{array}."
+#			puts "DEBUG: The new array is #{array}."
 			return array
 			end
 		
@@ -76,7 +76,7 @@ module Mastermind
 		def self.arr_rand_ord_to_chr
 			rand_ord_array = Array.new(GenCons::CodeLength) {rand(97..103)} 
 			chr_array = rand_ord_array.map {|ord_num| ord_num.chr}
-			puts "DEBUG: arr_rand_ord_to_chr is returning #{chr_array}!"
+#			puts "DEBUG: arr_rand_ord_to_chr is returning #{chr_array}!"
 			return chr_array
 			end
 		
@@ -95,6 +95,11 @@ lib_path = File.expand_path(File.dirname(__FILE__))
 Dir[lib_path + "/mastermind/*.rb"].each { |file| require file }
 
 puts "Hey, first, say what you want to call it without spaces followed by '=Mastermind::Game.new'."
+
+#MISSING
+#No lamdas
+#No ternary operators
+#No private functions
 
 #Fail
 #puts "What do you want to call this game? No spaces."

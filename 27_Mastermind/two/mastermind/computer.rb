@@ -9,7 +9,7 @@ module Mastermind
 			end		
 		
 		def pull_module(info)
-			p "DEBUG: I'm in the computer.rb file and in the pull_module function and will extend the following because info is #{info}"
+#			p "DEBUG: I'm in the computer.rb file and in the pull_module function and will extend the following because info is #{info}"
 			p "Codemaker" if info == GenCons::MakerTitle
 			p "Codebreaker" if info == GenCons::BreakerTitle
 			extend Ccodemaker if info == GenCons::MakerTitle
@@ -18,13 +18,9 @@ module Mastermind
 		
 		def get_name
 			orig_os_name = `sw_vers -productName`.chomp
-			orig_ver_name = `sw_vers -productVersion`
+			orig_ver_name = `sw_vers -productVersion`.chomp
 			
 			tex_os_name = orig_os_name.downcase.scan(/\S/)
-#			arr_os_name = tex_os_name.split("")
-#			fin_os_name = arr_os_name[0,1,2].join
-#			fin_os_name << arr_os_name[-2]
-#			fin_os_name << arr_os_name[-1]
 			fin_os_name = tex_os_name[0..2].join
 			fin_os_name << tex_os_name[-2]
 			fin_os_name << tex_os_name[-1]

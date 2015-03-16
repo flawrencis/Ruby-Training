@@ -35,9 +35,9 @@ module Mastermind
 			resp = gets.chomp.downcase
 			GenMeans.put_break
 			resp = GenMeans.print_options if resp == "o"
-			puts "DEBUG: resp is #{resp} which is of class #{resp.class}"
+#			puts "DEBUG: resp is #{resp} which is of class #{resp.class}"
 			resp_scanned = resp.scan(/([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*([bcgrwym])[^bcgrwym]*/)[0]
-			puts "DEBUG: resp_scanned is #{resp_scanned} which is of class #{resp_scanned.class}."
+#			puts "DEBUG: resp_scanned is #{resp_scanned} which is of class #{resp_scanned.class}."
 			pre_guess_colored = GenMeans.colorize_array(resp_scanned)
 			guess = pre_guess_colored.join(" ")
 			@guess_grid << [round,guess,"xxxx"]
@@ -61,7 +61,6 @@ module Mastermind
 		@@m_instructions = "\n\e[1;31mOkay!\e[0m Lemme talk to the codemaker.\n\nCodemaker, we gotta make a code.\nYour opponent wins if they guess the code before the maximum number of rounds.\nThe length of the code has been pre-determined.\nUse the upcoming list to know what your options are."
 		@@m_explanation = "They will guess the code.\n\tFor every element that is correct and in the right place, give a 2.\n\tFor every additional element that is correct, give a 1.\n\tFor every additional element, give a 0.\nType this digit code without any additional punctuation or characters, followed by the return key."
 		def intro(length,rounds)
-#			GenMeans.put_break
 			directions = @@m_instructions
 			puts directions
 			puts "Maximum rounds: #{rounds}.\nCode length: #{length}"
@@ -71,7 +70,7 @@ module Mastermind
 			blahblah = gets
 			GenMeans.put_break
 			the_code = get_code(length)
-			puts "DEBUG: I'm in the Codemaker's intro.\nI just got the code from the get_code function.\nThe code is....................#{the_code}"
+#			puts "DEBUG: I'm in the Codemaker's intro.\nI just got the code from the get_code function.\nThe code is....................#{the_code}"
 			return the_code
 			end
 		

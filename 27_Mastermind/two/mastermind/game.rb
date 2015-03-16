@@ -3,7 +3,6 @@ module Mastermind
 		attr_reader :game_name
 		@@record = Hash.new
 		def initialize
-#			@game_name = name
 			@round_num = 0
 			@max_rounds = GenCons::MaxRounds
 			@code_length = GenCons::CodeLength
@@ -54,7 +53,6 @@ module Mastermind
 			player_dos = Player.new(@game_type) if need
 			player_dos ||= Computer.new(GenCons.role_options)
 			Game.new_entry(player_dos.user_name,player_dos.role)
-	#		if player_uno[:role]== GenCons::BreakerTitle
 			if player_uno.role == GenCons::BreakerTitle
 				codebreaker = player_uno
 				codemaker = player_dos
@@ -70,7 +68,7 @@ module Mastermind
 		def game_play(code_length, max_rounds, player_one, player_two, *other_players)
 			player_one.intro(code_length,max_rounds)
 			the_code = player_two.intro(code_length,max_rounds)
-			puts "DEBUG: The code is #{the_code}"
+#			puts "DEBUG: The code is #{the_code}"
 			correct_response = "Just decided code"
 			maker_role_in_array = Array.new [GenCons::MakerTitle]
 			checker = Computer.new(maker_role_in_array)
@@ -96,7 +94,6 @@ module Mastermind
 			puts "Congratulations!"
 			puts @@record[victor.user_name.to_sym]
 			puts "There are your stats! Good bye!"
-#			exit(0)
 			end
 
 

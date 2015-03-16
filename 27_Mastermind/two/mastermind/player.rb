@@ -55,8 +55,6 @@ module Mastermind
 		
 		def pull_module(info)
 #			p "DEBUG: I'm in the player.rb file and in the pull_module function and will extend the following because info is #{info}"
-#			p "Codemaker" if info == GenCons::MakerTitle
-#			p "Codebreaker" if info == GenCons::BreakerTitle
 			extend Codemaker if info == GenCons::MakerTitle
 			extend Codebreaker if info == GenCons::BreakerTitle
 			end
@@ -65,12 +63,6 @@ module Mastermind
 			@my_hash = {user_name: info[0], real_name: info[1], role: info[2]}
 			end
 				
-#		def set_up
-#			puts instructions
-#			end
-		
-#		def victory?
-#			true if 
 		end
 			
 	end
