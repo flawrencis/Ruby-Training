@@ -9,7 +9,7 @@ class Game
 		end
 	
 	def intro
-		puts "Watch out! It's a proper noun!" if @the_word[0].ord => 65 || @the_word[0].ord =< 90
+		puts "Watch out! It's a proper noun!" if @the_word[0].ord >= 65 || @the_word[0].ord <= 90
 		end
 	
 	def game_play
@@ -18,18 +18,32 @@ class Game
 		while @round < @max_rounds
 			
 			show_spaces(@round,@the_word.length - @round)
+			#this if clause and some other stuff below is no bueno. Need to properly set up the word.
+			if correct_guess? #need to define this method
+				lett_known << correct_guess
+				else
+				hanging << rounds_array[error_num]
+				puts hanging
+				end
 			end
 		end
 	
+	def word_setup #could use uniq in this part
+		word_array_1 = @the_word.split
+		word_length = @the_word.length
+		lett_freq_hash = Hash.new
+		word_array_1.each do |letter|
+			lett_freq_hash
+	
 	def show_spaces(round,length)
 		spaces = String.new
-		for i = 1..length
+		for i in 1..length
 			spaces << " _"
 			end
+		spaces[i_of_known] = lett_known
 		puts spaces
 		end
-			
-		
+
 	
 	def make_rounds_parts
 		body_parts = 6
