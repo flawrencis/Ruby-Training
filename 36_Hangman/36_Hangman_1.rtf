@@ -1,0 +1,300 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red10\green12\blue39;}
+\margl1440\margr1440\vieww14300\viewh7920\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs22 \cf1 \cb2 \CocoaLigature0 Last login: Fri Mar 20 14:30:21 on ttys000\
+Fri Mar 20 14:30:41 CDT 2015\
+\
+-------------------------------------------------\
+If you need to create a platform specific folder using Phonegap, please do the following:\
+1) First, run the 'echo PATH=$PATH:/Users/francislawrence/Programming/phonegap-2.9.1/lib/<specific_platform>/bin' command.\
+2) Then, you need to change your working directory to the bin of that platform in that same phonegap folder.\
+3) Then, run the 'create name com.example.name Name' command.\
+\
+Also, if you need to change any of these settings, go to your home directory (~) and type \'91nano .bash_profile\'92.\
+\
+Also, if you need to do the EMULATE command, you have to go to the app folder and then run \'91ripple emulate\'92.\
+\
+To edit the tab control thing, go to nano .inputrc from your root directory.\
+To substitute something in the previous line, type something like this... ^toreplace^touse\
+To search previous lines, use Ctrl-R.\
+To leave that screen you can get stuck in, use q when the END is highlighted.\
+To learn the escape characters of buttons, first type ^V\
+Jump to start of line ^A\
+Jump to end of line ^E\
+Clear text onward ^K\
+Clear backward by word ^W\
+Toggle between current cursor position and start of line ^XX\
+Clear whole line ^U\
+Bring last line back ^Y\
+Search previous lines ^R\
+! preceding starting character, Enter invokes last command\
+To modify the last command, type !<firstfewcharacters>:s/<toreplace>/<desired>\
+Keep Mac awake: $ caffeinate -u -t 600 (add options to set timer)\
+------------------------------------------------------\
+14:30:41|~ $ irb\
+irb(main):001:0> hash\
+=> 1981706478636389814\
+irb(main):002:0> some_hash\
+NameError: undefined local variable or method `some_hash' for main:Object\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> some_hash = Hash.new\
+=> \{\}\
+irb(main):004:0> some_hash[:a] << 1\
+NoMethodError: undefined method `<<' for nil:NilClass\
+	from (irb):4\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):005:0> some_hash[:a] = 1\
+=> 1\
+irb(main):006:0> some_hash[:a] << 2\
+=> 4\
+irb(main):007:0> some_hash\
+=> \{:a=>1\}\
+irb(main):008:0> 3 << 2\
+=> 12\
+irb(main):009:0> 1 << 2\
+=> 4\
+irb(main):010:0> 3\
+=> 3\
+irb(main):011:0> 5<<2\
+=> 20\
+irb(main):012:0> 5<<<2\
+SyntaxError: (irb):12: syntax error, unexpected '<'\
+5<<<2\
+    ^\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):013:0> 11 << 4\
+=> 176\
+irb(main):014:0> 176 / 4\
+=> 44\
+irb(main):015:0> some_hash[:A]\
+=> nil\
+irb(main):016:0> some_hash[:a]\
+=> 1\
+irb(main):017:0> some_hash[a]\
+NameError: undefined local variable or method `a' for main:Object\
+	from (irb):17\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):018:0> some_hash["a"]\
+=> nil\
+irb(main):019:0> some_hash[:a] = 1\
+=> 1\
+irb(main):020:0> some_hash[:a] = 2\
+=> 2\
+irb(main):021:0> some_hash\
+=> \{:a=>2\}\
+irb(main):022:0> some_hash\{:a => 3\}\
+SyntaxError: (irb):22: syntax error, unexpected =>, expecting '\}'\
+some_hash\{:a => 3\}\
+               ^\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):023:0> some_hash\{:a <= 3\}\
+NoMethodError: undefined method `some_hash' for main:Object\
+	from (irb):23\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):024:0> some_hash(:a <= 3)\
+ArgumentError: comparison of Symbol with 3 failed\
+	from (irb):24:in `<='\
+	from (irb):24\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):025:0> some_hash(:a => 3)\
+NoMethodError: undefined method `some_hash' for main:Object\
+	from (irb):25\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):026:0> some_hash\
+=> \{:a=>2\}\
+irb(main):027:0> some_hash = \{:a => 4\}\
+=> \{:a=>4\}\
+irb(main):028:0> some_hash\
+=> \{:a=>4\}\
+irb(main):029:0> some_hash = \{:a => [4]\}\
+=> \{:a=>[4]\}\
+irb(main):030:0> some_hash[:a] << 5\
+=> [4, 5]\
+irb(main):031:0> some_hash\
+=> \{:a=>[4, 5]\}\
+irb(main):032:0> joe = 5\
+=> 5\
+irb(main):033:0> some_hash[:a] = [joe]\
+=> [5]\
+irb(main):034:0> other_hash = Hash.new([])\
+=> \{\}\
+irb(main):035:0> other_hash[:a] << 1\
+=> [1]\
+irb(main):036:0> array\
+NameError: undefined local variable or method `array' for main:Object\
+	from (irb):36\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):037:0> array = [1,2,3,4,5]\
+=> [1, 2, 3, 4, 5]\
+irb(main):038:0> indices\
+NameError: undefined local variable or method `indices' for main:Object\
+	from (irb):38\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):039:0> exit\
+15:19:37|~ $ nano .irbrc\
+15:27:17|~ $ nano .bash_profile\
+15:28:54|~ $ irb\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = This is a test string. It's cool for some stuff.\
+num = 5\
+irb(main):001:0> array_1 = [1,4]\
+=> [1, 4]\
+irb(main):002:0> hsh[:a] = array_1\
+NameError: undefined local variable or method `hsh' for main:Object\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> hsh\
+NameError: undefined local variable or method `hsh' for main:Object\
+	from (irb):3\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> exit\
+15:30:02|~ $ nano .irbrc\
+15:31:29|~ $ irb\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = This is a test string. It's cool for some stuff.\
+num = 5\
+irb(main):001:0> array\
+NameError: undefined local variable or method `array' for main:Object\
+	from (irb):1\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):002:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = This is a test string. It's cool for some stuff.\
+num = 5\
+irb(main):001:0> exit\
+15:32:38|~ $ nano .irbrc\
+15:33:34|~ $ irb\
+load error: /Users/francislawrence/.irbrc\
+NameError: undefined local variable or method `array' for main:Object\
+	/Users/francislawrence/.irbrc:49:in `<top (required)>'\
+	/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/irb/init.rb:230:in `load'\
+	/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/irb/init.rb:230:in `run_config'\
+	/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/irb/init.rb:19:in `setup'\
+irb(main):001:0> exit\
+15:33:44|~ $ nano .irbrc\
+15:34:08|~ $ irb\
+irb(main):001:0> set_variables\
+=> 5\
+irb(main):002:0> array\
+NameError: undefined local variable or method `array' for main:Object\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> exit\
+15:34:24|~ $ nano .irbrc\
+15:35:11|~ $ irb\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = This is a test string. It's cool for some stuff.\
+num = 5\
+load error: /Users/francislawrence/.irbrc\
+NoMethodError: undefined method `attr_reader' for main:Object\
+	/Users/francislawrence/.irbrc:49:in `<top (required)>'\
+	/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/irb/init.rb:230:in `load'\
+	/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/irb/init.rb:230:in `run_config'\
+	/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/irb/init.rb:19:in `setup'\
+irb(main):001:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = This is a test string. It's cool for some stuff.\
+num = 5\
+load error: /Users/francislawrence/.irbrc\
+NoMethodError: undefined method `attr_reader' for main:Object\
+	/Users/francislawrence/.irbrc:49:in `<top (required)>'\
+	/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/irb/init.rb:230:in `load'\
+	/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/irb/init.rb:230:in `run_config'\
+	/Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/irb/init.rb:19:in `setup'\
+irb(main):001:0> main.array\
+NameError: undefined local variable or method `main' for main:Object\
+	from (irb):1\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):002:0> exit\
+15:37:12|~ $ nano .irbrc\
+15:38:59|~ $ irb\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = This is a test string. It's cool for some stuff.\
+num = 5\
+irb(main):001:0> array = [1, 2, 3, 4, 5, 6]\
+=> [1, 2, 3, 4, 5, 6]\
+irb(main):002:0> string_array = ["a", "b", "c", "d", "e"]\
+=> ["a", "b", "c", "d", "e"]\
+irb(main):003:0> hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+=> \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+irb(main):004:0> string = This is a test string. It's cool for some stuff.\
+irb(main):005:0' num = 5\
+irb(main):006:0' exit\
+irb(main):007:0' "\
+irb(main):008:0' '\
+NoMethodError: undefined method `It' for nil:NilClass\
+	from (irb):4\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):009:0> exit\
+15:39:28|~ $ nano .irbrc\
+15:40:24|~ $ irb\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> array = [1, 2, 3, 4, 5, 6]\
+=> [1, 2, 3, 4, 5, 6]\
+irb(main):002:0> string_array = ["a", "b", "c", "d", "e"]\
+=> ["a", "b", "c", "d", "e"]\
+irb(main):003:0> hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+=> \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+irb(main):004:0> string = "This is a test string. It's cool for some stuff."\
+=> "This is a test string. It's cool for some stuff."\
+irb(main):005:0> num = 5\
+=> 5\
+irb(main):006:0> array_1 = [1,4]\
+=> [1, 4]\
+irb(main):007:0> array[array_1]\
+TypeError: no implicit conversion of Array into Integer\
+	from (irb):7:in `[]'\
+	from (irb):7\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):008:0> array[array_1.each]\
+TypeError: no implicit conversion of Enumerator into Integer\
+	from (irb):8:in `[]'\
+	from (irb):8\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):009:0> array_1.to_i\
+NoMethodError: undefined method `to_i' for [1, 4]:Array\
+	from (irb):9\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):010:0> hsh_1 = \{a: [1,3]\}\
+=> \{:a=>[1, 3]\}\
+irb(main):011:0> hsh_1[:a].join(", ")\
+=> "1, 3"\
+irb(main):012:0> set = hsh_1[:a].join(", ")\
+=> "1, 3"\
+irb(main):013:0> array[set]\
+TypeError: no implicit conversion of String into Integer\
+	from (irb):13:in `[]'\
+	from (irb):13\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):014:0> array\
+=> [1, 2, 3, 4, 5, 6]\
+irb(main):015:0> array_1\
+=> [1, 4]\
+irb(main):016:0> array_1.each do |i|\
+irb(main):017:1* array[i] = "b"\
+irb(main):018:1> end\
+=> [1, 4]\
+irb(main):019:0> array\
+=> [1, "b", 3, 4, "b", 6]\
+irb(main):020:0> \
+}
