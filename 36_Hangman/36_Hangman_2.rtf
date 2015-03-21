@@ -1,0 +1,386 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red10\green12\blue39;\red75\green22\blue231;\red51\green180\blue193;
+}
+\margl1440\margr1440\vieww18080\viewh8180\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs22 \cf1 \cb2 \CocoaLigature0 Last login: Fri Mar 20 15:21:03 on ttys001\
+Sat Mar 21 04:48:25 CDT 2015\
+\
+-------------------------------------------------\
+If you need to create a platform specific folder using Phonegap, please do the following:\
+1) First, run the 'echo PATH=$PATH:/Users/francislawrence/Programming/phonegap-2.9.1/lib/<specific_platform>/bin' command.\
+2) Then, you need to change your working directory to the bin of that platform in that same phonegap folder.\
+3) Then, run the 'create name com.example.name Name' command.\
+\
+Also, if you need to change any of these settings, go to your home directory (~) and type \'91nano .bash_profile\'92.\
+\
+Also, if you need to do the EMULATE command, you have to go to the app folder and then run \'91ripple emulate\'92.\
+\
+04:48:25|~ $ irb\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> array = [1, 2, 3, 4, 5, 6]\
+=> [1, 2, 3, 4, 5, 6]\
+irb(main):002:0> string_array = ["a", "b", "c", "d", "e"]\
+=> ["a", "b", "c", "d", "e"]\
+irb(main):003:0> hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+=> \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+irb(main):004:0> string = "This is a test string. It's cool for some stuff."\
+=> "This is a test string. It's cool for some stuff."\
+irb(main):005:0> num = 5\
+=> 5\
+irb(main):006:0> def meth\
+irb(main):007:1> end\
+=> :meth\
+irb(main):008:0> def meth(arg_1,arg_opt = "Yes")\
+irb(main):009:1> if arg_opt == "Yes"\
+irb(main):010:2> obj = "This is an object."\
+irb(main):011:2> puts "I just created my object, called 'obj': #\{obj\}"\
+irb(main):012:2> elsif arg_opt == "No"\
+irb(main):013:2> obj[-1] = ","\
+irb(main):014:2> obj << " revised."\
+irb(main):015:2> puts "I just revised my object, still called 'obj': #\{obj\}"\
+irb(main):016:2> end\
+irb(main):017:1> end\
+=> :meth\
+irb(main):018:0> meth(5,"Yes")\
+I just created my object, called 'obj': This is an object.\
+=> nil\
+irb(main):019:0> meth(5,"No")\
+NoMethodError: undefined method `[]=' for nil:NilClass\
+	from (irb):13:in `meth'\
+	from (irb):19\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):020:0> puts meth(5)\
+I just created my object, called 'obj': This is an object.\
+\
+=> nil\
+irb(main):021:0> def declaration\
+irb(main):022:1> joe = 20\
+irb(main):023:1> round = joe + 5\
+irb(main):024:1> end\
+=> :declaration\
+irb(main):025:0> puts declaration\
+25\
+=> nil\
+irb(main):026:0> puts jon = declaration\
+25\
+=> nil\
+irb(main):027:0> fire = 2\
+=> 2\
+irb(main):028:0> water = fire + 3\
+=> 5\
+irb(main):029:0> fire = 10\
+=> 10\
+irb(main):030:0> water\
+=> 5\
+irb(main):031:0> gets.chomp.scan(/[a-z]/)\
+blah blah blah\
+=> ["b", "l", "a", "h", "b", "l", "a", "h", "b", "l", "a", "h"]\
+irb(main):032:0> guess = gets.scan(/[a-z]/)[0]\
+\
+=> nil\
+irb(main):033:0> guess\
+=> nil\
+irb(main):034:0> guess.class\
+=> NilClass\
+irb(main):035:0> guess = gets.downcase.scan(/[a-z]/)[0]\
+\
+=> nil\
+irb(main):036:0> puts "\\e[34m34\\e[0m"\
+\cf3 34\cf1 \
+=> nil\
+irb(main):037:0> puts "\\e[36m36\\e[0m"\
+\cf4 36\cf1 \
+=> nil\
+irb(main):038:0> string\
+=> "This is a test string. It's cool for some stuff."\
+irb(main):039:0> string.include? "c"\
+=> true\
+irb(main):040:0> def correct_guess?(word,lett)\
+irb(main):041:1> \
+Display all 356 possibilities? (y or n) \
+irb(main):041:1> n\
+irb(main):042:1> correct_guess?\
+irb(main):043:1> n\
+irb(main):044:1> end\
+=> :correct_guess?\
+irb(main):045:0> def correct_guess?(word,lett)\
+irb(main):046:1> \
+Display all 357 possibilities? (y or n) \
+irb(main):046:1> if word.include? lett\
+irb(main):047:2> \
+Display all 357 possibilities? (y or n) \
+irb(main):047:2> \
+Display all 357 possibilities? (y or n) \
+irb(main):047:2> return lett\
+irb(main):048:2> \
+Display all 357 possibilities? (y or n) \
+irb(main):048:2> \
+Display all 357 possibilities? (y or n) \
+irb(main):048:2> else\
+irb(main):049:2* \
+Display all 357 possibilities? (y or n) \
+irb(main):049:2* \
+Display all 357 possibilities? (y or n) \
+irb(main):049:2* return false\
+irb(main):050:2> \
+Display all 357 possibilities? (y or n) \
+irb(main):050:2> \
+Display all 357 possibilities? (y or n) \
+irb(main):050:2> end\
+irb(main):051:1> \
+Display all 357 possibilities? (y or n) \
+irb(main):051:1> end\
+=> :correct_guess?\
+irb(main):052:0> if correct_guess?("blah","h")\
+irb(main):053:1> lett_known = correct_guess\
+irb(main):054:1> puts lett_known\
+irb(main):055:1> end\
+NameError: undefined local variable or method `correct_guess' for main:Object\
+	from (irb):53\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):056:0> puts array\
+1\
+2\
+3\
+4\
+5\
+6\
+=> nil\
+irb(main):057:0> array.id\
+NoMethodError: undefined method `id' for [1, 2, 3, 4, 5, 6]:Array\
+	from (irb):57\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):058:0> 5.id\
+NoMethodError: undefined method `id' for 5:Fixnum\
+	from (irb):58\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):059:0> hanging = Array.new \{"0/10"\}\
+=> []\
+irb(main):060:0> hanging\
+=> []\
+irb(main):061:0> hanging = Array.new("0/10")\
+TypeError: no implicit conversion of String into Integer\
+	from (irb):61:in `initialize'\
+	from (irb):61:in `new'\
+	from (irb):61\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):062:0> hanging = Array.new(1) \{"0/10"\}\
+=> ["0/10"]\
+irb(main):063:0> hanging << 3\
+=> ["0/10", 3]\
+irb(main):064:0> file_name = gets.chomp.scan(/(^\\.)*\\./)\
+we_can_call it_whatever.txt\
+=> [[nil]]\
+irb(main):065:0> file_name = gets.chomp.scan(/(^[\\.])*\\./)\
+we_can_call it_whatever.txt\
+=> [[nil]]\
+irb(main):066:0> file_name = gets.chomp.scan(/([^\\.])*\\./)\
+blah.txt\
+=> [["h"]]\
+irb(main):067:0> file_name = gets.chomp.scan(/([^\\.]*)\\./)\
+blah bla_h.txt\
+=> [["blah bla_h"]]\
+irb(main):068:0> file_name[0]\
+=> ["blah bla_h"]\
+irb(main):069:0> file_name = file_name[0][0]\
+=> "blah bla_h"\
+irb(main):070:0> file_name.gsub! /s/ "_"\
+SyntaxError: (irb):70: syntax error, unexpected tSTRING_BEG, expecting end-of-input\
+file_name.gsub! /s/ "_"\
+                     ^\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):071:0> file_name.gsub! (/s/ "_")\
+SyntaxError: (irb):71: syntax error, unexpected tSTRING_BEG, expecting ')'\
+file_name.gsub! (/s/ "_")\
+                      ^\
+(irb):71: syntax error, unexpected ')', expecting end-of-input\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):072:0> file_name.gsub! (/s/,"_")\
+SyntaxError: (irb):72: syntax error, unexpected ',', expecting ')'\
+file_name.gsub! (/s/,"_")\
+                     ^\
+(irb):72: syntax error, unexpected ')', expecting end-of-input\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):073:0> man gsub\
+NameError: undefined local variable or method `gsub' for main:Object\
+	from (irb):73\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):074:0> file_name.gsub!(/s/,"_")\
+=> nil\
+irb(main):075:0> file_name\
+=> "blah bla_h"\
+irb(main):076:0> file_name.gsub!(/s/,"_")\
+=> nil\
+irb(main):077:0> file_name.gsub!(/[s]/,"_")\
+=> nil\
+irb(main):078:0> file_name.gsub!(/\\s/,"_")\
+=> "blah_bla_h"\
+irb(main):079:0> File.methods\
+=> [:directory?, :exist?, :exists?, :readable?, :readable_real?, :world_readable?, :writable?, :writable_real?, :world_writable?, :executable?, :executable_real?, :file?, :zero?, :size?, :size, :owned?, :grpowned?, :pipe?, :symlink?, :socket?, :blockdev?, :chardev?, :setuid?, :setgid?, :sticky?, :identical?, :stat, :lstat, :ftype, :atime, :mtime, :ctime, :birthtime, :utime, :chmod, :chown, :lchmod, :lchown, :link, :symlink, :readlink, :unlink, :delete, :rename, :umask, :truncate, :expand_path, :absolute_path, :realpath, :realdirpath, :basename, :dirname, :extname, :path, :split, :join, :fnmatch, :fnmatch?, :new, :open, :sysopen, :for_fd, :popen, :foreach, :readlines, :read, :binread, :write, :binwrite, :select, :pipe, :try_convert, :copy_stream, :allocate, :superclass, :freeze, :===, :==, :<=>, :<, :<=, :>, :>=, :to_s, :inspect, :included_modules, :include?, :name, :ancestors, :instance_methods, :public_instance_methods, :protected_instance_methods, :private_instance_methods, :constants, :const_get, :const_set, :const_defined?, :const_missing, :class_variables, :remove_class_variable, :class_variable_get, :class_variable_set, :class_variable_defined?, :public_constant, :private_constant, :singleton_class?, :include, :prepend, :module_exec, :class_exec, :module_eval, :class_eval, :method_defined?, :public_method_defined?, :private_method_defined?, :protected_method_defined?, :public_class_method, :private_class_method, :autoload, :autoload?, :instance_method, :public_instance_method, :nil?, :=~, :!~, :eql?, :hash, :class, :singleton_class, :clone, :dup, :itself, :taint, :tainted?, :untaint, :untrust, :untrusted?, :trust, :frozen?, :methods, :singleton_methods, :protected_methods, :private_methods, :public_methods, :instance_variables, :instance_variable_get, :instance_variable_set, :instance_variable_defined?, :remove_instance_variable, :instance_of?, :kind_of?, :is_a?, :tap, :send, :public_send, :respond_to?, :extend, :display, :method, :public_method, :singleton_method, :define_singleton_method, :object_id, :to_enum, :enum_for, :equal?, :!, :!=, :instance_eval, :instance_exec, :__send__, :__id__]\
+irb(main):080:0> File.methods.sort_by!\
+=> #<Enumerator: [:directory?, :exist?, :exists?, :readable?, :readable_real?, :world_readable?, :writable?, :writable_real?, :world_writable?, :executable?, :executable_real?, :file?, :zero?, :size?, :size, :owned?, :grpowned?, :pipe?, :symlink?, :socket?, :blockdev?, :chardev?, :setuid?, :setgid?, :sticky?, :identical?, :stat, :lstat, :ftype, :atime, :mtime, :ctime, :birthtime, :utime, :chmod, :chown, :lchmod, :lchown, :link, :symlink, :readlink, :unlink, :delete, :rename, :umask, :truncate, :expand_path, :absolute_path, :realpath, :realdirpath, :basename, :dirname, :extname, :path, :split, :join, :fnmatch, :fnmatch?, :new, :open, :sysopen, :for_fd, :popen, :foreach, :readlines, :read, :binread, :write, :binwrite, :select, :pipe, :try_convert, :copy_stream, :allocate, :superclass, :freeze, :===, :==, :<=>, :<, :<=, :>, :>=, :to_s, :inspect, :included_modules, :include?, :name, :ancestors, :instance_methods, :public_instance_methods, :protected_instance_methods, :private_instance_methods, :constants, :const_get, :const_set, :const_defined?, :const_missing, :class_variables, :remove_class_variable, :class_variable_get, :class_variable_set, :class_variable_defined?, :public_constant, :private_constant, :singleton_class?, :include, :prepend, :module_exec, :class_exec, :module_eval, :class_eval, :method_defined?, :public_method_defined?, :private_method_defined?, :protected_method_defined?, :public_class_method, :private_class_method, :autoload, :autoload?, :instance_method, :public_instance_method, :nil?, :=~, :!~, :eql?, :hash, :class, :singleton_class, :clone, :dup, :itself, :taint, :tainted?, :untaint, :untrust, :untrusted?, :trust, :frozen?, :methods, :singleton_methods, :protected_methods, :private_methods, :public_methods, :instance_variables, :instance_variable_get, :instance_variable_set, :instance_variable_defined?, :remove_instance_variable, :instance_of?, :kind_of?, :is_a?, :tap, :send, :public_send, :respond_to?, :extend, :display, :method, :public_method, :singleton_method, :define_singleton_method, :object_id, :to_enum, :enum_for, :equal?, :!, :!=, :instance_eval, :instance_exec, :__send__, :__id__]:sort_by!>\
+irb(main):081:0> file_methods = File.methods.sort_by\
+=> #<Enumerator: [:directory?, :exist?, :exists?, :readable?, :readable_real?, :world_readable?, :writable?, :writable_real?, :world_writable?, :executable?, :executable_real?, :file?, :zero?, :size?, :size, :owned?, :grpowned?, :pipe?, :symlink?, :socket?, :blockdev?, :chardev?, :setuid?, :setgid?, :sticky?, :identical?, :stat, :lstat, :ftype, :atime, :mtime, :ctime, :birthtime, :utime, :chmod, :chown, :lchmod, :lchown, :link, :symlink, :readlink, :unlink, :delete, :rename, :umask, :truncate, :expand_path, :absolute_path, :realpath, :realdirpath, :basename, :dirname, :extname, :path, :split, :join, :fnmatch, :fnmatch?, :new, :open, :sysopen, :for_fd, :popen, :foreach, :readlines, :read, :binread, :write, :binwrite, :select, :pipe, :try_convert, :copy_stream, :allocate, :superclass, :freeze, :===, :==, :<=>, :<, :<=, :>, :>=, :to_s, :inspect, :included_modules, :include?, :name, :ancestors, :instance_methods, :public_instance_methods, :protected_instance_methods, :private_instance_methods, :constants, :const_get, :const_set, :const_defined?, :const_missing, :class_variables, :remove_class_variable, :class_variable_get, :class_variable_set, :class_variable_defined?, :public_constant, :private_constant, :singleton_class?, :include, :prepend, :module_exec, :class_exec, :module_eval, :class_eval, :method_defined?, :public_method_defined?, :private_method_defined?, :protected_method_defined?, :public_class_method, :private_class_method, :autoload, :autoload?, :instance_method, :public_instance_method, :nil?, :=~, :!~, :eql?, :hash, :class, :singleton_class, :clone, :dup, :itself, :taint, :tainted?, :untaint, :untrust, :untrusted?, :trust, :frozen?, :methods, :singleton_methods, :protected_methods, :private_methods, :public_methods, :instance_variables, :instance_variable_get, :instance_variable_set, :instance_variable_defined?, :remove_instance_variable, :instance_of?, :kind_of?, :is_a?, :tap, :send, :public_send, :respond_to?, :extend, :display, :method, :public_method, :singleton_method, :define_singleton_method, :object_id, :to_enum, :enum_for, :equal?, :!, :!=, :instance_eval, :instance_exec, :__send__, :__id__]:sort_by>\
+irb(main):082:0> file_methods\
+=> #<Enumerator: [:directory?, :exist?, :exists?, :readable?, :readable_real?, :world_readable?, :writable?, :writable_real?, :world_writable?, :executable?, :executable_real?, :file?, :zero?, :size?, :size, :owned?, :grpowned?, :pipe?, :symlink?, :socket?, :blockdev?, :chardev?, :setuid?, :setgid?, :sticky?, :identical?, :stat, :lstat, :ftype, :atime, :mtime, :ctime, :birthtime, :utime, :chmod, :chown, :lchmod, :lchown, :link, :symlink, :readlink, :unlink, :delete, :rename, :umask, :truncate, :expand_path, :absolute_path, :realpath, :realdirpath, :basename, :dirname, :extname, :path, :split, :join, :fnmatch, :fnmatch?, :new, :open, :sysopen, :for_fd, :popen, :foreach, :readlines, :read, :binread, :write, :binwrite, :select, :pipe, :try_convert, :copy_stream, :allocate, :superclass, :freeze, :===, :==, :<=>, :<, :<=, :>, :>=, :to_s, :inspect, :included_modules, :include?, :name, :ancestors, :instance_methods, :public_instance_methods, :protected_instance_methods, :private_instance_methods, :constants, :const_get, :const_set, :const_defined?, :const_missing, :class_variables, :remove_class_variable, :class_variable_get, :class_variable_set, :class_variable_defined?, :public_constant, :private_constant, :singleton_class?, :include, :prepend, :module_exec, :class_exec, :module_eval, :class_eval, :method_defined?, :public_method_defined?, :private_method_defined?, :protected_method_defined?, :public_class_method, :private_class_method, :autoload, :autoload?, :instance_method, :public_instance_method, :nil?, :=~, :!~, :eql?, :hash, :class, :singleton_class, :clone, :dup, :itself, :taint, :tainted?, :untaint, :untrust, :untrusted?, :trust, :frozen?, :methods, :singleton_methods, :protected_methods, :private_methods, :public_methods, :instance_variables, :instance_variable_get, :instance_variable_set, :instance_variable_defined?, :remove_instance_variable, :instance_of?, :kind_of?, :is_a?, :tap, :send, :public_send, :respond_to?, :extend, :display, :method, :public_method, :singleton_method, :define_singleton_method, :object_id, :to_enum, :enum_for, :equal?, :!, :!=, :instance_eval, :instance_exec, :__send__, :__id__]:sort_by>\
+irb(main):083:0> file_methods = File.methods.sort \{|x,y| x<=>y\}\
+=> [:!, :!=, :!~, :<, :<=, :<=>, :==, :===, :=~, :>, :>=, :__id__, :__send__, :absolute_path, :allocate, :ancestors, :atime, :autoload, :autoload?, :basename, :binread, :binwrite, :birthtime, :blockdev?, :chardev?, :chmod, :chown, :class, :class_eval, :class_exec, :class_variable_defined?, :class_variable_get, :class_variable_set, :class_variables, :clone, :const_defined?, :const_get, :const_missing, :const_set, :constants, :copy_stream, :ctime, :define_singleton_method, :delete, :directory?, :dirname, :display, :dup, :enum_for, :eql?, :equal?, :executable?, :executable_real?, :exist?, :exists?, :expand_path, :extend, :extname, :file?, :fnmatch, :fnmatch?, :for_fd, :foreach, :freeze, :frozen?, :ftype, :grpowned?, :hash, :identical?, :include, :include?, :included_modules, :inspect, :instance_eval, :instance_exec, :instance_method, :instance_methods, :instance_of?, :instance_variable_defined?, :instance_variable_get, :instance_variable_set, :instance_variables, :is_a?, :itself, :join, :kind_of?, :lchmod, :lchown, :link, :lstat, :method, :method_defined?, :methods, :module_eval, :module_exec, :mtime, :name, :new, :nil?, :object_id, :open, :owned?, :path, :pipe, :pipe?, :popen, :prepend, :private_class_method, :private_constant, :private_instance_methods, :private_method_defined?, :private_methods, :protected_instance_methods, :protected_method_defined?, :protected_methods, :public_class_method, :public_constant, :public_instance_method, :public_instance_methods, :public_method, :public_method_defined?, :public_methods, :public_send, :read, :readable?, :readable_real?, :readlines, :readlink, :realdirpath, :realpath, :remove_class_variable, :remove_instance_variable, :rename, :respond_to?, :select, :send, :setgid?, :setuid?, :singleton_class, :singleton_class?, :singleton_method, :singleton_methods, :size, :size?, :socket?, :split, :stat, :sticky?, :superclass, :symlink, :symlink?, :sysopen, :taint, :tainted?, :tap, :to_enum, :to_s, :truncate, :trust, :try_convert, :umask, :unlink, :untaint, :untrust, :untrusted?, :utime, :world_readable?, :world_writable?, :writable?, :writable_real?, :write, :zero?]\
+irb(main):084:0> Dir.pwd\
+=> "/Users/francislawrence"\
+irb(main):085:0> Dir.chdir "./desktop"\
+=> 0\
+irb(main):086:0> Dir.pwd\
+=> "/Users/francislawrence/Desktop"\
+irb(main):087:0> new_file = File.new("this.txt")\
+Errno::ENOENT: No such file or directory @ rb_sysopen - this.txt\
+	from (irb):87:in `initialize'\
+	from (irb):87:in `new'\
+	from (irb):87\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):088:0> new_file = File.open("this.txt")\
+Errno::ENOENT: No such file or directory @ rb_sysopen - this.txt\
+	from (irb):88:in `initialize'\
+	from (irb):88:in `open'\
+	from (irb):88\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):089:0> Dir.pwd\
+=> "/Users/francislawrence/Desktop"\
+irb(main):090:0> pwd = Dir.pwd\
+=> "/Users/francislawrence/Desktop"\
+irb(main):091:0> pwd << "/cheatsheet"\
+=> "/Users/francislawrence/Desktop/cheatsheet"\
+irb(main):092:0> pwd.exists?\
+NoMethodError: undefined method `exists?' for "/Users/francislawrence/Desktop/cheatsheet":String\
+	from (irb):92\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):093:0> pwd.exist?\
+NoMethodError: undefined method `exist?' for "/Users/francislawrence/Desktop/cheatsheet":String\
+	from (irb):93\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):094:0> cheat = cheatsheet\
+NameError: undefined local variable or method `cheatsheet' for main:Object\
+	from (irb):94\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):095:0> cheat = cheatsheet.txt\
+NameError: undefined local variable or method `cheatsheet' for main:Object\
+	from (irb):95\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):096:0> cheat = "cheatsheet"\
+=> "cheatsheet"\
+irb(main):097:0> File.exist?(cheat)\
+=> true\
+irb(main):098:0> string\
+=> "This is a test string. It's cool for some stuff."\
+irb(main):099:0> File.exist?(string)\
+=> false\
+irb(main):100:0> time = Time.new\
+=> 2015-03-21 06:34:20 -0500\
+irb(main):101:0> time.year[2,3]\
+ArgumentError: wrong number of arguments (2 for 1)\
+	from (irb):101:in `[]'\
+	from (irb):101\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):102:0> time.year([2,3])\
+ArgumentError: wrong number of arguments (1 for 0)\
+	from (irb):102:in `year'\
+	from (irb):102\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):103:0> time.year[-2]\
+=> 0\
+irb(main):104:0> time.year\
+=> 2015\
+irb(main):105:0> time.year[-1]\
+=> 0\
+irb(main):106:0> time.year[0]\
+=> 1\
+irb(main):107:0> time.year [0]\
+ArgumentError: wrong number of arguments (1 for 0)\
+	from (irb):107:in `year'\
+	from (irb):107\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):108:0> yr = time.year\
+=> 2015\
+irb(main):109:0> yr[2,3]\
+ArgumentError: wrong number of arguments (2 for 1)\
+	from (irb):109:in `[]'\
+	from (irb):109\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):110:0> yr.shift\
+NoMethodError: undefined method `shift' for 2015:Fixnum\
+	from (irb):110\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):111:0> yr_s = yr.to_s\
+=> "2015"\
+irb(main):112:0> yr_s = yr_s.shift\
+NoMethodError: undefined method `shift' for "2015":String\
+	from (irb):112\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):113:0> yr_s = yr_s.slice\
+ArgumentError: wrong number of arguments (0 for 1..2)\
+	from (irb):113:in `slice'\
+	from (irb):113\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):114:0> yr_s = yr_s.slice(2,3)\
+=> "15"\
+irb(main):115:0> time\
+=> 2015-03-21 06:34:20 -0500\
+irb(main):116:0> yr = time.year.to_s\
+=> "2015"\
+irb(main):117:0> time\
+=> 2015-03-21 06:34:20 -0500\
+irb(main):118:0> yr = time.year.to_s.slice(2,3)\
+=> "15"\
+irb(main):119:0> man File.new\
+ArgumentError: wrong number of arguments (0 for 1..3)\
+	from (irb):119:in `initialize'\
+	from (irb):119:in `new'\
+	from (irb):119\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):120:0> File.new man\
+NameError: undefined local variable or method `man' for main:Object\
+	from (irb):120\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):121:0> help File.new\
+ArgumentError: wrong number of arguments (0 for 1..3)\
+	from (irb):121:in `initialize'\
+	from (irb):121:in `new'\
+	from (irb):121\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):122:0> File new man\
+NameError: undefined local variable or method `man' for main:Object\
+	from (irb):122\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):123:0> man new\
+NameError: undefined local variable or method `new' for main:Object\
+	from (irb):123\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):124:0> man File::new\
+ArgumentError: wrong number of arguments (0 for 1..3)\
+	from (irb):124:in `initialize'\
+	from (irb):124:in `new'\
+	from (irb):124\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):125:0> man\
+NameError: undefined local variable or method `man' for main:Object\
+	from (irb):125\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):126:0> help\
+\
+Enter the method name you want to look up.\
+You can use tab to autocomplete.\
+Enter a blank line to exit.\
+\
+>> new\
+>> File::new\
+>> IO::new\
+>> IO::new\
+>> write\
+>> \
+}
