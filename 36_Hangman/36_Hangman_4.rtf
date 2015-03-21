@@ -1,0 +1,1875 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red10\green12\blue39;\red51\green180\blue193;\red52\green186\blue34;
+\red75\green22\blue231;}
+\margl1440\margr1440\vieww12280\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs22 \cf1 \cb2 \CocoaLigature0 Last login: Sat Mar 21 12:23:45 on ttys000\
+Sat Mar 21 14:48:47 CDT 2015\
+\
+-------------------------------------------------\
+If you need to create a platform specific folder using Phonegap, please do the following:\
+1) First, run the 'echo PATH=$PATH:/Users/francislawrence/Programming/phonegap-2.9.1/lib/<specific_platform>/bin' command.\
+2) Then, you need to change your working directory to the bin of that platform in that same phonegap folder.\
+3) Then, run the 'create name com.example.name Name' command.\
+\
+Also, if you need to change any of these settings, go to your home directory (~) and type \'91nano .bash_profile\'92.\
+\
+Also, if you need to do the EMULATE command, you have to go to the app folder and then run \'91ripple emulate\'92.\
+\
+To edit irb ish, use the bash command 'nano ~/.inputrc'.\
+To substitute something in the previous line, type something like this... ^toreplace^touse\
+To search previous lines, use Ctrl-R.\
+To leave that screen you can get stuck in, use q when the END is highlighted.\
+To learn the escape characters of buttons, first type ^V\
+Jump to start of line ^A\
+Jump to end of line ^E\
+Clear text onward ^K\
+Clear backward by word ^W\
+Toggle between current cursor position and start of line ^XX\
+Clear whole line ^U\
+Bring last line back ^Y\
+Search previous lines ^R\
+! preceding starting character, Enter invokes last command\
+To modify the last command, type !<firstfewcharacters>:s/<toreplace>/<desired>\
+Keep Mac awake: $ caffeinate -u -t 600 (add options to set timer)\
+------------------------------------------------------\
+14:48:47|~ $ nano .irbrc\
+15:00:12|~ $ irb\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> array = [1, 2, 3, 4, 5, 6]\
+=> [1, 2, 3, 4, 5, 6]\
+irb(main):002:0> string_array = ["a", "b", "c", "d", "e"]\
+=> ["a", "b", "c", "d", "e"]\
+irb(main):003:0> hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+=> \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+irb(main):004:0> string = "This is a test string. It's cool for some stuff."\
+=> "This is a test string. It's cool for some stuff."\
+irb(main):005:0> num = 5\
+=> 5\
+irb(main):006:0> r36\
+SyntaxError: /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:10: syntax error, unexpected end-of-input, expecting keyword_end\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.irbrc:43:in `r36'\
+	from (irb):6\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):007:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+NameError: undefined local variable or method `this_path' for Hangman:Module\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:8:in `<module:Hangman>'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:1:in `<top (required)>'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.irbrc:43:in `r36'\
+	from (irb):1\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):002:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+LoadError: cannot load such file -- /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/dict.txt\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:9:in `block in <module:Hangman>'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:8:in `each'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:8:in `<module:Hangman>'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:1:in `<top (required)>'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.irbrc:43:in `r36'\
+	from (irb):1\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):002:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+SyntaxError: /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:25: syntax error, unexpected '=', expecting keyword_end\
+			[a,b] = the_word.word_setup\
+			       ^\
+/Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:169: syntax error, unexpected end-of-input, expecting keyword_end\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:9:in `block in <module:Hangman>'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:8:in `each'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:8:in `<module:Hangman>'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:1:in `<top (required)>'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.irbrc:43:in `r36'\
+	from (irb):1\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):002:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+SyntaxError: /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:25: syntax error, unexpected '=', expecting keyword_end\
+			[a,b] = the_word.word_setup\
+			       ^\
+/Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:171: syntax error, unexpected end-of-input, expecting keyword_end\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:9:in `block in <module:Hangman>'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:8:in `each'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:8:in `<module:Hangman>'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:1:in `<top (required)>'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.irbrc:43:in `r36'\
+	from (irb):1\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):002:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+SyntaxError: /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:25: syntax error, unexpected '=', expecting keyword_end\
+			[a,b]=the_word.word_setup\
+			      ^\
+/Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:171: syntax error, unexpected end-of-input, expecting keyword_end\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:9:in `block in <module:Hangman>'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:8:in `each'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:8:in `<module:Hangman>'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:1:in `<top (required)>'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.irbrc:43:in `r36'\
+	from (irb):1\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):002:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+SyntaxError: /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:171: syntax error, unexpected end-of-input, expecting keyword_end\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:9:in `block in <module:Hangman>'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:8:in `each'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:8:in `<module:Hangman>'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:1:in `<top (required)>'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.irbrc:43:in `r36'\
+	from (irb):1\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):002:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+SyntaxError: /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/player.rb:50: syntax error, unexpected end-of-input, expecting keyword_end\
+...ry-if-it-doesnt-exist-with-ruby\
+...                               ^\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:9:in `block in <module:Hangman>'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:8:in `each'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:8:in `<module:Hangman>'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:1:in `<top (required)>'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.irbrc:43:in `r36'\
+	from (irb):1\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):002:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> pcya "WOOT. NINTH TIME IS THE CHARM."\
+\cf3 WOOT. NINTH TIME IS THE CHARM.\cf1 \
+=> nil\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a1 = Hangman::Game.new("a1")\
+DEBUG: This is \cf4 a1\cf1 !!!\
+NoMethodError: undefined method `/' for "Welcome to Hangman! At each turn, you can ":String\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:8:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> puts "Welcome to Hangman! At each turn, you can " /\
+irb(main):004:0* \
+Display all 349 possibilities? (y or n) \
+irb(main):004:0* y\
+NameError: undefined local variable or method `y' for main:Object\
+	from (irb):4\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):005:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a2 = Hangman::Game.new("a2")\
+DEBUG: This is \cf4 a2\cf1 !!!\
+NoMethodError: undefined method `/' for "Welcome to Hangman! At each turn, you can ":String\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:8:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+SyntaxError: /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:115: syntax error, unexpected keyword_else\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:9:in `block in <module:Hangman>'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:8:in `each'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:8:in `<module:Hangman>'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/hangman.rb:1:in `<top (required)>'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'\
+	from /Users/francislawrence/.irbrc:43:in `r36'\
+	from (irb):1\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):002:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a4 = Hangman::Game.new("a4")\
+DEBUG: This is \cf4 a4\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Francis Lawrence\
+NameError: uninitialized constant Hangman::Player::GenMeans\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/player.rb:13:in `get_name'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/player.rb:6:in `initialize'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:10:in `new'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:10:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36 \
+=> true\
+irb(main):002:0> a5 = Hangman::Game.new("a5")\
+DEBUG: This is \cf4 a5\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Francis Lawrence\
+----------------------------------------------------------------------------------\
+Thanks, Francis Lawrence. Your user_name is lawrfran.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+NameError: undefined local variable or method `fold_obj' for #<Hangman::Player:0x007fbf02071cf0 @user_name="lawrfran">\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/player.rb:36:in `folder_setup'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:11:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a6 = Hangman::Game.new("a6")\
+DEBUG: This is \cf4 a6\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Elton John\
+----------------------------------------------------------------------------------\
+Thanks, Elton John. Your user_name is johnelto.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+Errno::ENOENT: No such file or directory @ rb_sysopen - dict.txt\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/word.rb:6:in `initialize'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/word.rb:6:in `open'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/word.rb:6:in `initialize'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:22:in `new'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:22:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a7 = Hangman::Game.new("a7")\
+DEBUG: This is \cf4 a7\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Inell Lawrence\
+----------------------------------------------------------------------------------\
+Thanks, Inell Lawrence. Your user_name is lawrinel.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is brawling, which is of class String.\
+NoMethodError: undefined method `[]' for #<Hangman::Word:0x007fc1639530b8 @the_word="brawling">\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:66:in `intro'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:23:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a8 = Hangman::Game.new("a8")\
+DEBUG: This is \cf4 a8\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Cairo Lawrence\
+----------------------------------------------------------------------------------\
+Thanks, Cairo Lawrence. Your user_name is lawrcair.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is inclusion, which is of class String.\
+Watch out! It's a proper noun!\
+NoMethodError: undefined method `date' for 2015-03-21 15:33:44 -0500:Time\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/save.rb:8:in `initialize'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:25:in `new'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:25:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> time = Time.now\
+=> 2015-03-21 15:34:34 -0500\
+irb(main):004:0> time.day\
+=> 21\
+irb(main):005:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a9 = Hangman::Game.new("a9")\
+DEBUG: This is \cf4 a9\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Jimmi Simpson\
+----------------------------------------------------------------------------------\
+Thanks, Jimmi Simpson. Your user_name is simpjimm.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is sheen, which is of class String.\
+Watch out! It's a proper noun!\
+NameError: undefined local variable or method `i' for #<Hangman::Save:0x007faef9cf01e8>\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/save.rb:11:in `initialize'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:25:in `new'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:25:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a10 = Hangman::Game.new("a10")\
+DEBUG: This is \cf4 a10\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Ronald Martin\
+----------------------------------------------------------------------------------\
+Thanks, Ronald Martin. Your user_name is martrona.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is abdication, which is of class String.\
+Watch out! It's a proper noun!\
+What would you like to call the file \
+to which these data are saved?\
+^CIRB::Abort: abort then interrupt!\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/save.rb:19:in `call'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/save.rb:19:in `gets'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/save.rb:19:in `gets'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/save.rb:19:in `initialize'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:25:in `new'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:25:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a11 = Hangman::Game.new("a11")\
+DEBUG: This is \cf4 a11\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Sophia Pilipchuk\
+----------------------------------------------------------------------------------\
+Thanks, Sophia Pilipchuk. Your user_name is pilisoph.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is looter, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+good game\
+NoMethodError: undefined method `[]' for nil:NilClass\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/save.rb:19:in `initialize'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:25:in `new'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:25:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> gets.chomp.scan(/([^\\.]*)\\./)[0][0]\
+good game\
+NoMethodError: undefined method `[]' for nil:NilClass\
+	from (irb):3\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> gets.chomp.scan(/([^\\.]*)\\./)[0]\
+good game\
+=> nil\
+irb(main):005:0> gets.chomp.scan(/([^\\.]*)\\./)\
+good game\
+=> []\
+irb(main):006:0> gets.chomp.scan(/([^ \\.]*)\\./)\
+good game\
+=> []\
+irb(main):007:0> gets.chomp.scan(/([\\w|_]*)\\./)\
+good game.txt\
+=> [["game"]]\
+irb(main):008:0> gets.chomp.scan(/([\\w|_|\\s]*)\\./)\
+good game.txt\
+=> [["good game"]]\
+irb(main):009:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a12 = Hangman::Game.new("a12")\
+DEBUG: This is \cf4 a12\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Philip Vainikos\
+----------------------------------------------------------------------------------\
+Thanks, Philip Vainikos. Your user_name is vainphil.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is avowed, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+greek life    \
+NoMethodError: undefined method `gsub!' for []:Array\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/save.rb:20:in `initialize'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:25:in `new'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:25:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a13 = Hangman::Game.new("a13")\
+DEBUG: This is \cf4 a13\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Matthew Cook \
+----------------------------------------------------------------------------------\
+Thanks, Matthew Cook. Your user_name is cookmatt.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is whom, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+joe\
+NoMethodError: undefined method `[]' for nil:NilClass\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/save.rb:19:in `initialize'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:25:in `new'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:25:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> file_name = gets.chomp.scan(/([\\w|_|\\s]*)\\./)[0][0]\
+joe\
+NoMethodError: undefined method `[]' for nil:NilClass\
+	from (irb):3\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> file_name = gets.chomp.scan(/([\\w|_|\\s]*)\\./)[0][0]\
+good game\
+NoMethodError: undefined method `[]' for nil:NilClass\
+	from (irb):4\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):005:0> file_name = gets.chomp.scan(/([\\w|_|\\s]*)\\./)[0]\
+joe\
+=> nil\
+irb(main):006:0> file_name = gets.chomp.scan(/([\\w|_|\\s]*)\\./)[0]\
+good game\
+=> nil\
+irb(main):007:0> gets.chomp.scan(/([\\w|_|\\s]*)\\./)\
+good game\
+=> []\
+irb(main):008:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a14 = Hangman::Game.new("a14")\
+DEBUG: This is \cf4 a14\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Rosalin Franklin\
+----------------------------------------------------------------------------------\
+Thanks, Rosalin Franklin. Your user_name is franrosa.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is coon, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+dont care\
+DEBUG: The word is coon, of class String.\
+NoMethodError: undefined method `word_setup' for "coon":String\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:27:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a15 = Hangman::Game.new("a15")\
+DEBUG: This is \cf4 a15\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Alison Sunseri\
+----------------------------------------------------------------------------------\
+Thanks, Alison Sunseri. Your user_name is sunsalis.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is exhilarated, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+punk rock.txt\
+DEBUG: The word is exhilarated, of class String.\
+NoMethodError: undefined method `make_rounds_pars' for #<Hangman::Game:0x007fe005049380>\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:31:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+rarray = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a16 = Hangman::Game.new("a16")\
+DEBUG: This is \cf4 a16\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Ibrahim Bengali\
+----------------------------------------------------------------------------------\
+Thanks, Ibrahim Bengali. Your user_name is bengibra.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is bootee, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+inshallah\
+DEBUG: The word is bootee, of class String.\
+Whoa, I can't handle this game's setting for max errors!\
+NameError: undefined local variable or method `word_obj' for #<Hangman::Game:0x007f9eb387cae0>\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:79:in `game_start'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:40:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a17 = Hangman::Game.new("a17")\
+DEBUG: This is \cf4 a17\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Satyen Motiani\
+----------------------------------------------------------------------------------\
+Thanks, Satyen Motiani. Your user_name is motisaty.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+golf\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is preview, which is of class String.\
+NameError: undefined local variable or method `word_obj' for #<Hangman::Game:0x007f85a307cf80>\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:23:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a18 = Hangman::Game.new("a18")\
+DEBUG: This is \cf4 a18\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Reshard El-Shair\
+----------------------------------------------------------------------------------\
+Thanks, Reshard El-shair. Your user_name is elresh.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is Foraker, which is of class String.\
+Watch out! It's a proper noun!\
+What would you like to call the file \
+to which these data are saved?\
+politics\
+DEBUG: The word is Foraker, of class String.\
+Whoa, I can't handle this game's setting for max errors!\
+Are you ready?\
+\
+We are on Round 1 and have:\
+NoMethodError: undefined method `to_sym' for nil:NilClass\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/word.rb:37:in `make_spaces'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:94:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:82:in `game_start'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:40:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a19 = Hangman::Game.new("a19")\
+DEBUG: This is \cf4 a19\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Jonathan Bush\
+----------------------------------------------------------------------------------\
+Thanks, Jonathan Bush. Your user_name is bushjona.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is microchip, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+woes\
+DEBUG: The word is microchip, of class String.\
+ _ _ _ _ _ _ _ _ _\
+Are you ready?\
+\
+We are on Round 2 and have:\
+What would you like to guess now?\
+e\
+NameError: undefined local variable or method `vars_h' for #<Hangman::Game:0x007fc89c0037e8>\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:105:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:84:in `game_start'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:40:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a20 = Hangman::Game.new("a20")\
+DEBUG: This is \cf4 a20\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Richard Ezeolisa\
+----------------------------------------------------------------------------------\
+Thanks, Richard Ezeolisa. Your user_name is ezeorich.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is peevishly, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+nigeria\
+DEBUG: The word is peevishly, of class String.\
+ _ _ _ _ _ _ _ _ _\
+Are you ready?\
+\
+We are on Round 1 and have:\
+What would you like to guess now?\
+e\
+\
+TypeError: no implicit conversion of nil into String\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:150:in `include?'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:150:in `correct_guess?'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:105:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:82:in `game_start'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:40:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a21 = Hangman::Game.new("a21")\
+DEBUG: This is \cf4 a21\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Justin Redd\
+----------------------------------------------------------------------------------\
+Thanks, Justin Redd. Your user_name is reddjust.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is enfranchise, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+logic\
+DEBUG: The word is enfranchise, of class String.\
+ _ _ _ _ _ _ _ _ _ _ _\
+Are you ready?\
+\
+We are on Round 1 and have:\
+What would you like to guess now?\
+e\
+DEBUG: Guess is  of class NilClass.\
+DEBUG: Yo. The word is enfranchise of class String and the letter is  of class NilClass.\
+TypeError: no implicit conversion of nil into String\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:151:in `include?'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:151:in `correct_guess?'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:106:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:82:in `game_start'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:40:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a22 = Hangman::Game.new("a22")\
+DEBUG: This is \cf4 a22\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Dionna Gray\
+----------------------------------------------------------------------------------\
+Thanks, Dionna Gray. Your user_name is graydion.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is Libra, which is of class String.\
+Watch out! It's a proper noun!\
+What would you like to call the file \
+to which these data are saved?\
+baby\
+DEBUG: The word is Libra, of class String.\
+ _ _ _ _ _\
+Are you ready?\
+\
+We are on Round 1 and have that.\
+What would you like to guess now?\
+e\
+DEBUG: resp is e of class String.\
+DEBUG: want_save is  of class NilClass\
+DEBUG: On first try, guess is ["e"] of class Array\
+You are guessing \cf5 ["e"]\cf1 . If you want to change it, now is your last chance.\
+Just hit the Return key to continue with the blue guess.\
+Make your decision.\
+\
+Great! So you guessed !\
+NoMethodError: undefined method `<<' for nil:NilClass\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:146:in `get_guess'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:95:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:82:in `game_start'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:40:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a23 = Hangman::Game.new("a23")\
+DEBUG: This is \cf4 a23\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Jerome Fucker\
+----------------------------------------------------------------------------------\
+Thanks, Jerome Fucker. Your user_name is fuckjero.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is waking, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+weakass bitch\
+DEBUG: The word is waking, of class String.\
+ _ _ _ _ _ _\
+Are you ready?\
+\
+We are on Round 1 and have that.\
+What would you like to guess now?\
+e\
+DEBUG: resp is e of class String.\
+DEBUG: want_save is  of class NilClass\
+DEBUG: On first try, guess is e of class String\
+You are guessing \cf5 e\cf1 . If you want to change it, now is your last chance.\
+Just hit the Return key to continue with the blue guess.\
+Make your decision.\
+\
+Great! So you guessed !\
+NoMethodError: undefined method `<<' for nil:NilClass\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:146:in `get_guess'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:95:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:82:in `game_start'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:40:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a24 = Hangman::Game.new("a24")\
+DEBUG: This is \cf4 a24\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Dani Gray\
+----------------------------------------------------------------------------------\
+Thanks, Dani Gray. Your user_name is graydani.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is bobby, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+boobs\
+DEBUG: The word is bobby, of class String.\
+ _ _ _ _ _\
+Are you ready?\
+\
+We are on Round 1 and have that.\
+What would you like to guess now?\
+e\
+DEBUG: resp is e of class String.\
+DEBUG: want_save is  of class NilClass\
+DEBUG: On first try, guess is e of class String\
+You are guessing \cf5 e\cf1 . If you want to change it, now is your last chance.\
+Just hit the Return key to continue with the blue guess.\
+Make your decision.\
+\
+Great! So you guessed !\
+NoMethodError: undefined method `<<' for nil:NilClass\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:146:in `get_guess'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:95:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:82:in `game_start'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:40:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a25 = Hangman::Game.new("a25")\
+DEBUG: This is \cf4 a25\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+David Samuels\
+----------------------------------------------------------------------------------\
+Thanks, David Samuels. Your user_name is samudavi.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is bargaining, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+nerd\
+DEBUG: The word is bargaining, of class String.\
+ _ _ _ _ _ _ _ _ _ _\
+Are you ready?\
+ \
+We are on Round 1 and have that.\
+What would you like to guess now?\
+e\
+DEBUG: resp is e of class String.\
+DEBUG: want_save is  of class NilClass\
+DEBUG: On first try, guess is e of class String\
+You are guessing \cf5 e\cf1 . If you want to change it, now is your last chance.\
+Just hit the Return key to continue with the blue guess.\
+Make your decision.\
+\
+DEBUG: Your new guess is .\
+Great! So you guessed \cf3 e\cf1 !\
+NoMethodError: undefined method `<<' for nil:NilClass\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:147:in `get_guess'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:95:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:82:in `game_start'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:40:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a26 = Hangman::Game.new("a26")\
+DEBUG: This is \cf4 a26\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Greg Fields\
+----------------------------------------------------------------------------------\
+Thanks, Greg Fields. Your user_name is fielgreg.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is Calabrian, which is of class String.\
+Watch out! It's a proper noun!\
+What would you like to call the file \
+to which these data are saved?\
+korea\
+DEBUG: The word is Calabrian, of class String.\
+ _ _ _ _ _ _ _ _ _\
+Are you ready?\
+\
+We are on Round 1 and have that.\
+What would you like to guess now?\
+e\
+DEBUG: resp is e of class String.\
+DEBUG: want_save is  of class NilClass\
+DEBUG: On first try, guess is e of class String\
+You are guessing \cf5 e\cf1 . If you want to change it, now is your last chance.\
+Just hit the Return key to continue with the blue guess.\
+Make your decision.\
+\
+DEBUG: Your new guess is .\
+Great! So you guessed \cf3 e\cf1 !\
+DEBUG: Guess is  of class NilClass.\
+DEBUG: Yo. The word is Calabrian of class String and the letter is  of class NilClass.\
+TypeError: no implicit conversion of nil into String\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:154:in `include?'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:154:in `correct_guess?'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:106:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:82:in `game_start'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:40:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> pcya "DON'T ACTUALLY KNOW WHAT WENT WRONG LAST TIME.\\nTHREW IN SOME DEBUG COMMENTS."\
+\cf3 DON'T ACTUALLY KNOW WHAT WENT WRONG LAST TIME.\cf1 \
+\cf3 THREW IN SOME DEBUG COMMENTS.\cf1 \
+=> nil\
+irb(main):002:0> r36\
+=> true\
+irb(main):003:0> a27 = Hangman::Game.new("a27")\
+DEBUG: This is \cf4 a27\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Bye Felicia\
+----------------------------------------------------------------------------------\
+Thanks, Bye Felicia. Your user_name is felibye.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is archangel, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+homos\
+DEBUG: The word is archangel, of class String.\
+ _ _ _ _ _ _ _ _ _\
+Are you ready?\
+\
+We are on Round 1 and have that.\
+What would you like to guess now?\
+e\
+DEBUG: resp is e of class String.\
+DEBUG: want_save is  of class NilClass\
+DEBUG: On first try, guess is e of class String\
+You are guessing \cf5 e\cf1 . If you want to change it, now is your last chance.\
+Just hit the Return key to continue with the blue guess.\
+Make your decision.\
+\
+DEBUG: Your new guess is .\
+Great! So you guessed \cf3 e\cf1  which is of class String.\
+DEBUG: Guess is  of class NilClass.\
+DEBUG: Yo. The word is archangel of class String and the letter is  of class NilClass.\
+TypeError: no implicit conversion of nil into String\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:152:in `include?'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:152:in `correct_guess?'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:106:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:82:in `game_start'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:40:in `initialize'\
+	from (irb):3:in `new'\
+	from (irb):3\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):004:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a28 = Hangman::Game.new("a28")\
+DEBUG: This is \cf4 a28\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Richard Ferguson\
+----------------------------------------------------------------------------------\
+Thanks, Richard Ferguson. Your user_name is fergrich.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is glumly, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+jlms\
+DEBUG: The word is glumly, of class String.\
+ _ _ _ _ _ _\
+Are you ready?\
+\
+We are on Round 1 and have that.\
+What would you like to guess now?\
+e\
+DEBUG: resp is e of class String.\
+DEBUG: want_save is  of class NilClass\
+DEBUG: On first try, guess is e of class String\
+You are guessing \cf5 e\cf1 . If you want to change it, now is your last chance.\
+Just hit the Return key to continue with the blue guess.\
+Make your decision.\
+\
+DEBUG: Your new guess is .\
+Great! So you guessed \cf3 e\cf1  which is of class String.\
+DEBUG: Result from get_guess method was e, which happens to be of class String\
+DEBUG: Guess is  of class NilClass.\
+DEBUG: Yo. The word is glumly of class String and the letter is  of class NilClass.\
+TypeError: no implicit conversion of nil into String\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:153:in `include?'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:153:in `correct_guess?'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:107:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:82:in `game_start'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:40:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a29 = Hangman::Game.new("a29")\
+DEBUG: This is \cf4 a29\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Shonda Rimes\
+----------------------------------------------------------------------------------\
+Thanks, Shonda Rimes. Your user_name is rimeshon.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is post, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+drama\
+DEBUG: The word is post, of class String.\
+ _ _ _ _\
+Are you ready?\
+\
+We are on Round 1 and have that.\
+What would you like to guess now?\
+e\
+DEBUG: resp is e of class String.\
+DEBUG: want_save is  of class NilClass\
+DEBUG: On first try, guess is e of class String\
+You are guessing \cf5 e\cf1 . If you want to change it, now is your last chance.\
+Just hit the Return key to continue with the blue guess.\
+Make your decision.\
+\
+DEBUG: Your new guess is .\
+Great! So you guessed \cf3 e\cf1  which is of class String.\
+DEBUG: Result from get_guess method was e, which happens to be of class String.\
+DEBUG: Guess is  of class NilClass.\
+DEBUG: Yo. The word is post of class String and the letter is  of class NilClass.\
+TypeError: no implicit conversion of nil into String\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:154:in `include?'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:154:in `correct_guess?'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:108:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:82:in `game_start'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:40:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> pcya "I HAD\\ncase from_gg.class\\nwhen Fixnum\\netc\\n\\nINSTEAD OF WHEN 'FIXNUM'"\
+\cf3 I HAD\cf1 \
+\cf3 case from_gg.class\cf1 \
+\cf3 when Fixnum\cf1 \
+\cf3 etc\cf1 \
+\
+\cf3 INSTEAD OF WHEN 'FIXNUM'\cf1 \
+=> nil\
+irb(main):004:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a30 = Hangman::Game.new("a30")\
+DEBUG: This is \cf4 a30\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Robin Williams\
+----------------------------------------------------------------------------------\
+Thanks, Robin Williams. Your user_name is willrobi.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is decamp, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+dead\
+DEBUG: The word is decamp, of class String.\
+ _ _ _ _ _ _\
+Are you ready?\
+\
+We are on Round 1 and have that.\
+What would you like to guess now?\
+e\
+DEBUG: resp is e of class String.\
+DEBUG: want_save is  of class NilClass\
+DEBUG: On first try, guess is e of class String\
+You are guessing \cf5 e\cf1 . If you want to change it, now is your last chance.\
+Just hit the Return key to continue with the blue guess.\
+Make your decision.\
+\
+DEBUG: Your new guess is .\
+Great! So you guessed \cf3 e\cf1  which is of class String.\
+DEBUG: Result from get_guess method was e, which happens to be of class String.\
+DEBUG: Guess is  of class NilClass.\
+DEBUG: Yo. The word is decamp of class String and the letter is  of class NilClass.\
+TypeError: no implicit conversion of nil into String\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:154:in `include?'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:154:in `correct_guess?'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:108:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:82:in `game_start'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:40:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> ass = Array.new\
+=> []\
+irb(main):004:0> ass.class\
+=> Array\
+irb(main):005:0> joe = ass.class\
+=> Array\
+irb(main):006:0> joe.class\
+=> Class\
+irb(main):007:0> joe.class.to_s\
+=> "Class"\
+irb(main):008:0> joe.to_s\
+=> "Array"\
+irb(main):009:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a31 = Hangman::Game.new("a31")\
+DEBUG: This is \cf4 a31\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+John O'Leary\
+----------------------------------------------------------------------------------\
+Thanks, John O'leary. Your user_name is ojohn.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is occlude, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+brainiac\
+DEBUG: The word is occlude, of class String.\
+ _ _ _ _ _ _ _\
+Are you ready?\
+\
+We are on Round 1 and have that.\
+What would you like to guess now?\
+e\
+DEBUG: resp is e of class String.\
+DEBUG: want_save is  of class NilClass\
+DEBUG: On first try, guess is e of class String\
+You are guessing \cf5 e\cf1 . If you want to change it, now is your last chance.\
+Just hit the Return key to continue with the blue guess.\
+Make your decision.\
+\
+DEBUG: Your new guess is .\
+Great! So you guessed \cf3 e\cf1  which is of class String.\
+DEBUG: Result from get_guess method was e, which happens to be of class String.\
+DEBUG: Result from get_guess is e of class String.\
+DEBUG: Guess is e of class String.\
+DEBUG: Yo. The word is occlude of class String and the letter is e of class String.\
+NameError: undefined local variable or method `correct_guess' for #<Hangman::Game:0x007ff4e3845708>\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:109:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:82:in `game_start'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:40:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> pcya "FINALLY"\
+\cf3 FINALLY\cf1 \
+=> nil\
+irb(main):004:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a32 = Hangman::Game.new("a32")\
+DEBUG: This is \cf4 a32\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Eleanor Roosevelt\
+----------------------------------------------------------------------------------\
+Thanks, Eleanor Roosevelt. Your user_name is rooselea.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is sailboard, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+lady\
+DEBUG: The word is sailboard, of class String.\
+ _ _ _ _ _ _ _ _ _\
+Are you ready?\
+\
+We are on Round 1 and have that.\
+What would you like to guess now?\
+e\
+DEBUG: resp is e of class String.\
+DEBUG: want_save is  of class NilClass\
+DEBUG: On first try, guess is e of class String\
+You are guessing \cf5 e\cf1 . If you want to change it, now is your last chance.\
+Just hit the Return key to continue with the blue guess.\
+Make your decision.\
+\
+DEBUG: Your new guess is .\
+Great! So you guessed \cf3 e\cf1  which is of class String.\
+DEBUG: Result from get_guess method was e, which happens to be of class String.\
+DEBUG: Result from get_guess is e of class String.\
+DEBUG: Guess is e of class String.\
+DEBUG: Yo. The word is sailboard of class String and the letter is e of class String.\
+NameError: undefined local variable or method `hanging' for #<Hangman::Game:0x007ff7a0945a80>\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:122:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:82:in `game_start'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:40:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a33 = Hangman::Game.new("a36")\
+DEBUG: This is \cf4 a36\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Pinocchio Cricket\
+----------------------------------------------------------------------------------\
+Thanks, Pinocchio Cricket. Your user_name is cricpino.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is importantly, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+wooden\
+DEBUG: The word is importantly, of class String.\
+ _ _ _ _ _ _ _ _ _ _ _\
+Are you ready?\
+\
+We are on Round 1 and have that.\
+What would you like to guess now?\
+e\
+DEBUG: resp is e of class String.\
+DEBUG: want_save is  of class NilClass\
+DEBUG: On first try, guess is e of class String\
+You are guessing \cf5 e\cf1 . If you want to change it, now is your last chance.\
+Just hit the Return key to continue with the blue guess.\
+Make your decision.\
+\
+DEBUG: Your new guess is .\
+Great! So you guessed \cf3 e\cf1  which is of class String.\
+DEBUG: Result from get_guess method was e, which happens to be of class String.\
+DEBUG: Result from get_guess is e of class String.\
+DEBUG: Guess is e of class String.\
+DEBUG: Yo. The word is importantly of class String and the letter is e of class String.\
+head\
+1/8\
+NoMethodError: undefined method `to_sym' for nil:NilClass\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/word.rb:38:in `make_spaces'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:125:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:82:in `game_start'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:40:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a34 = Hangman::Game.new("a34")\
+DEBUG: This is \cf4 a34\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Penelope Cruz\
+----------------------------------------------------------------------------------\
+Thanks, Penelope Cruz. Your user_name is cruzpene.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is blithe, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+baddie\
+DEBUG: The word is blithe, of class String.\
+ _ _ _ _ _ _\
+Are you ready?\
+\
+We are on Round 1 and have that.\
+What would you like to guess now?\
+o\
+DEBUG: resp is o of class String.\
+DEBUG: want_save is  of class NilClass\
+DEBUG: On first try, guess is o of class String\
+You are guessing \cf5 o\cf1 . If you want to change it, now is your last chance.\
+Just hit the Return key to continue with the blue guess.\
+Make your decision.\
+\
+DEBUG: Your new guess is .\
+Great! So you guessed \cf3 o\cf1  which is of class String.\
+DEBUG: Result from get_guess method was o, which happens to be of class String.\
+DEBUG: Result from get_guess is o of class String.\
+DEBUG: Guess is o of class String.\
+DEBUG: Yo. The word is blithe of class String and the letter is o of class String.\
+head\
+1/8\
+0\
+o_ _ _ _ _ _\
+We are on Round 2 and have that.\
+What would you like to guess now?\
+^CIRB::Abort: abort then interrupt!\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:131:in `call'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:131:in `gets'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:131:in `gets'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:131:in `get_guess'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:95:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:82:in `game_start'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:40:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a35 = Hangman::Game.new("a35")\
+DEBUG: This is \cf4 a35\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Darien Gray\
+----------------------------------------------------------------------------------\
+Thanks, Darien Gray. Your user_name is graydari.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+   \
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is seven, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+werid\
+DEBUG: The word is seven, of class String.\
+ _ _ _ _ _\
+Are you ready?\
+\
+We are on Round 1 and have that.\
+What would you like to guess now?\
+e\
+DEBUG: resp is e of class String.\
+DEBUG: want_save is  of class NilClass\
+DEBUG: On first try, guess is e of class String\
+You are guessing \cf5 e\cf1 . If you want to change it, now is your last chance.\
+Just hit the Return key to continue with the blue guess.\
+Make your decision.\
+\
+DEBUG: Your new guess is .\
+Great! So you guessed \cf3 e\cf1  which is of class String.\
+DEBUG: Result from get_guess method was e, which happens to be of class String.\
+DEBUG: Result from get_guess is e of class String.\
+DEBUG: Guess is e of class String.\
+DEBUG: Yo. The word is seven of class String and the letter is e of class String.\
+DEBUG: Yo. The word is seven of class String and the letter is e of class String.\
+You correctly guessed e.\
+This letter appears  times!\
+e_ _ _ _ _\
+Still gotta watch your progress!\
+0/10\
+We are on Round 2 and have that.\
+What would you like to guess now?\
+^CIRB::Abort: abort then interrupt!\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:132:in `call'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:132:in `gets'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:132:in `gets'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:132:in `get_guess'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:95:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:82:in `game_start'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:40:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a36 = Hangman::Game.new("a33")\
+DEBUG: This is \cf4 a33\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Rebecca Sheridan\
+----------------------------------------------------------------------------------\
+Thanks, Rebecca Sheridan. Your user_name is sherrebe.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is aldehyde, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+maybe weak\
+DEBUG: The word is aldehyde, of class String.\
+DEBUG: Lett_i_hash = \{\}!!\
+DEBUG: Lett_freq_hash is \{:aldehyde=>1\}!!\
+ _ _ _ _ _ _ _ _\
+Are you ready?\
+^CIRB::Abort: abort then interrupt!\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:81:in `call'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:81:in `gets'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:81:in `gets'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:81:in `game_start'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:40:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> pcya "WHOA THAT'S WAY WRONG.\\nWAY FUCKING WRONG.\\nDAMN IT."\
+\cf3 WHOA THAT'S WAY WRONG.\cf1 \
+\cf3 WAY FUCKING WRONG.\cf1 \
+\cf3 DAMN IT.\cf1 \
+=> nil\
+irb(main):004:0> array = [1,2,3,4,5]\
+=> [1, 2, 3, 4, 5]\
+irb(main):005:0> array.each_with_index\
+=> #<Enumerator: [1, 2, 3, 4, 5]:each_with_index>\
+irb(main):006:0> array.each_with_index do |num,i|\
+irb(main):007:1* puts "The number is #\{num\} and it is at #\{i\} in the array."\
+irb(main):008:1> end\
+The number is 1 and it is at 0 in the array.\
+The number is 2 and it is at 1 in the array.\
+The number is 3 and it is at 2 in the array.\
+The number is 4 and it is at 3 in the array.\
+The number is 5 and it is at 4 in the array.\
+=> [1, 2, 3, 4, 5]\
+irb(main):009:0> \
+}

@@ -20,18 +20,20 @@ module Hangman
 		
 		def folder_setup
 			fold_needed = folder_check
-			Dir.chdir './records' do |rec_fold|
+			fold_obj = Dir.chdir './records' do |rec_fold|
 				current_path = Dir.getwd
 				if fold_needed
-					puts "You do not yet have a folder for your"/
-						" data. I am going to make one now."
+					puts "You do not yet have a folder for your"
+					puts "data. I am going to make one now."
 					Dir.mkdir(current_path + "/" + @user_name)
 					else
 					puts "You have a folder from previous games."
 #					wd = Dir.getwd
 					end
-				fold_obj = Dir.new(
+				fold_o = Dir.new(
 					"#{current_path}/#{@user_name}")
+				return fold_o
+				end
 			return fold_obj
 			end
 			

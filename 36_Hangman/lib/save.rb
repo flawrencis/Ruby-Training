@@ -5,20 +5,22 @@ module Hangman
 			@fold_obj = fold_obj
 			yr = time.year.to_s.slice(2,3)
 			mo = time.month.to_s
-			da = time.date.to_s
+			da = time.day.to_s
 			prefix = "#{yr}#{mo}#{da}_"
+			i = 0
 			begin
 				case i
 					when 0
-					puts "What would you like to call the file "/
-						"to which these data are saved?"
+					puts "What would you like to call the file "
+					puts "to which these data are saved?"
 					else
 					puts "I need a different name. That one exists."
 					end
-				file_name = gets.chomp.scan(/([^\.]*)\./)[0][0]
+				file_name = gets.chomp.scan(/([^\.]*)\.?/)[0][0]
 				file_name.gsub!(/\s/,"_")
 				file_name << ".txt"
-				end while File.exist?(file_name) end #DELETE THIS SECOND END OR CODE WON'T WORK. ONLY HERE FOR FORMATTING.
+				i += 1
+				end while File.exist?(file_name) #end #DELETE THIS SECOND END OR CODE WON'T WORK. ONLY HERE FOR FORMATTING.
 			
 			file_name.prepend(prefix)
 			
