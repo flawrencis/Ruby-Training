@@ -1,0 +1,17 @@
+#WORKS
+Dir.chdir './test' do |folder|
+user = "fran"
+result = Dir.glob("#{user}*")
+puts result
+result.eql? []
+end
+-----------------
+#WORKS
+fob = Dir.chdir './test' do |folder|
+user = "bro"
+current_path = Dir.getwd
+puts current_path.class
+puts user.class
+Dir.mkdir(current_path + "/" + user)
+@fob = Dir.new("#{current_path}/#{user}")
+end

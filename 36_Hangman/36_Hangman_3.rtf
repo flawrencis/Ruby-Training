@@ -1,0 +1,655 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red10\green12\blue39;\red51\green180\blue193;}
+\margl1440\margr1440\vieww11100\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs22 \cf1 \cb2 \CocoaLigature0 Last login: Sat Mar 21 04:48:25 on ttys000\
+Sat Mar 21 07:19:42 CDT 2015\
+\
+-------------------------------------------------\
+If you need to create a platform specific folder using Phonegap, please do the following:\
+1) First, run the 'echo PATH=$PATH:/Users/francislawrence/Programming/phonegap-2.9.1/lib/<specific_platform>/bin' command.\
+2) Then, you need to change your working directory to the bin of that platform in that same phonegap folder.\
+3) Then, run the 'create name com.example.name Name' command.\
+\
+Also, if you need to change any of these settings, go to your home directory (~) and type \'91nano .bash_profile\'92.\
+\
+Also, if you need to do the EMULATE command, you have to go to the app folder and then run \'91ripple emulate\'92.\
+\
+07:19:43|~ $ irb\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> array = [1, 2, 3, 4, 5, 6]\
+=> [1, 2, 3, 4, 5, 6]\
+irb(main):002:0> string_array = ["a", "b", "c", "d", "e"]\
+=> ["a", "b", "c", "d", "e"]\
+irb(main):003:0> hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+=> \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+irb(main):004:0> string = "This is a test string. It's cool for some stuff."\
+=> "This is a test string. It's cool for some stuff."\
+irb(main):005:0> num = 5\
+=> 5\
+irb(main):006:0> __FILE__\
+=> "(irb)"\
+irb(main):007:0> File.expand_path(__FILE__)\
+=> "/Users/francislawrence/(irb)"\
+irb(main):008:0> this_path = File.expand_path(__FILE__)\
+=> "/Users/francislawrence/(irb)"\
+irb(main):009:0> Dir.pwd\
+=> "/Users/francislawrence"\
+irb(main):010:0> require_relative (this_path,0)\
+SyntaxError: (irb):10: syntax error, unexpected ',', expecting ')'\
+require_relative (this_path,0)\
+                            ^\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):011:0> man\
+NameError: undefined local variable or method `man' for main:Object\
+	from (irb):11\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):012:0> help\
+\
+Enter the method name you want to look up.\
+You can use tab to autocomplete.\
+Enter a blank line to exit.\
+\
+>> require_relative\
+>> this_path<<"/lib"\
+Nothing known about .this_path<<"/lib"\
+>> \
+=> nil\
+irb(main):013:0> this_path << "/lib"\
+=> "/Users/francislawrence/(irb)/lib"\
+irb(main):014:0> Dir[./././]\
+SyntaxError: (irb):14: syntax error, unexpected '.', expecting ']'\
+Dir[./././]\
+     ^\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):015:0> Dir.pwd\
+=> "/Users/francislawrence"\
+irb(main):016:0> Dir.chdir "././././desktop"\
+=> 0\
+irb(main):017:0> Dir.pwd\
+=> "/Users/francislawrence/Desktop"\
+irb(main):018:0> by_dir = File.Dir(__FILE__)\
+NoMethodError: undefined method `Dir' for File:Class\
+	from (irb):18\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):019:0> by_dir = Dir(__FILE__)\
+NoMethodError: undefined method `Dir' for main:Object\
+	from (irb):19\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):020:0> by_dir = Dir(__FILE__)\
+[1]+  Stopped                 irb\
+07:31:35|~ $ irb\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> array = [1, 2, 3, 4, 5, 6]\
+=> [1, 2, 3, 4, 5, 6]\
+irb(main):002:0> string_array = ["a", "b", "c", "d", "e"]\
+=> ["a", "b", "c", "d", "e"]\
+irb(main):003:0> hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+=> \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+irb(main):004:0> string = "This is a test string. It's cool for some stuff."\
+=> "This is a test string. It's cool for some stuff."\
+irb(main):005:0> num = 5\
+=> 5\
+irb(main):006:0> enc = File.dirname(__FILE__)\
+=> "."\
+irb(main):007:0> Dir.pwd\
+=> "/Users/francislawrence"\
+irb(main):008:0> __FILE__\
+=> "(irb)"\
+irb(main):009:0> no_dir = File.expand_path(__FILE__)\
+=> "/Users/francislawrence/(irb)"\
+irb(main):010:0> yes_dir = File.expand_path(enc))\
+SyntaxError: (irb):10: syntax error, unexpected ')', expecting end-of-input\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):011:0> yes_dir = File.expand_path(enc)\
+=> "/Users/francislawrence"\
+irb(main):012:0> pcya "OH. OBVS"\
+\cf3 OH. OBVS\cf1 \
+=> nil\
+irb(main):013:0> Dir.chdir "./desktop"\
+=> 0\
+irb(main):014:0> Dir.chdir "./test" do |folder|\
+irb(main):015:1* File.open("test_file.txt","r") do |file|\
+irb(main):016:2* file.puts "Hi."\
+irb(main):017:2> end\
+irb(main):018:1> end\
+Errno::ENOENT: No such file or directory @ rb_sysopen - test_file.txt\
+	from (irb):15:in `initialize'\
+	from (irb):15:in `open'\
+	from (irb):15:in `block in irb_binding'\
+	from (irb):14:in `chdir'\
+	from (irb):14\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):019:0> Dir.pwd\
+=> "/Users/francislawrence/Desktop"\
+irb(main):020:0> Dir.chdir "./test" do |folder|\
+irb(main):021:1* File.new("test_file.txt","w") do |file|\
+irb(main):022:2* file.puts "Hi."\
+irb(main):023:2> end\
+irb(main):024:1> end\
+(irb):21: warning: File::new() does not take block; use File::open() instead\
+=> #<File:test_file.txt>\
+irb(main):025:0> Dir.chdir "./test" do |folder|\
+irb(main):026:1* File.open("test_file.txt","r") do |file|\
+irb(main):027:2* ^C\
+irb(main):027:0> Dir.pwd\
+=> "/Users/francislawrence/Desktop"\
+irb(main):028:0> Dir.chdir "./test" do |folder|\
+irb(main):029:1* File.open("test_file.txt","w") do |file|\
+irb(main):030:2* file.puts "Hi."\
+irb(main):031:2> end\
+irb(main):032:1> end\
+=> nil\
+irb(main):033:0> Dir.pwd\
+=> "/Users/francislawrence/Desktop"\
+irb(main):034:0> Dir.chdir './test' do |folder|\
+irb(main):035:1* \
+Display all 353 possibilities? (y or n) \
+irb(main):035:1* \
+irb(main):036:1* end\
+=> nil\
+irb(main):037:0> Dir.chdir './test' do |folder|\
+irb(main):038:1* user = "fran"\
+irb(main):039:1> result = File.exist?("#\{user\}*")\
+irb(main):040:1> puts result\
+irb(main):041:1> end\
+false\
+=> nil\
+irb(main):042:0> Dir.chdir './test' do |folder|\
+irb(main):043:1* user = "fran"\
+irb(main):044:1> result = File.exist?(user + /.*/)\
+irb(main):045:1> puts result\
+irb(main):046:1> end\
+TypeError: no implicit conversion of Regexp into String\
+	from (irb):44:in `+'\
+	from (irb):44:in `block in irb_binding'\
+	from (irb):42:in `chdir'\
+	from (irb):42\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):047:0> Dir.chdir './test' do |folder|\
+irb(main):048:1* user = "fran"\
+irb(main):049:1> result = Dir.glob("#\{user\}*")\
+irb(main):050:1> puts result\
+irb(main):051:1> end\
+fran test file.txt\
+=> nil\
+irb(main):052:0> Dir.chdir './test' do |folder|\
+irb(main):053:1* user = "fran"\
+irb(main):054:1> result = Dir.glob("#\{user\}*")\
+irb(main):055:1> puts result\
+irb(main):056:1> return true\
+irb(main):057:1> end\
+fran test file.txt\
+LocalJumpError: unexpected return\
+	from (irb):56:in `block in irb_binding'\
+	from (irb):52:in `chdir'\
+	from (irb):52\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):058:0> Dir.chdir './test' do |folder|\
+irb(main):059:1* user = "fran"\
+irb(main):060:1> result = Dir.glob("#\{user\}*")\
+irb(main):061:1> puts result\
+irb(main):062:1> true\
+irb(main):063:1> end\
+fran test file.txt\
+=> true\
+irb(main):064:0> result\
+NameError: undefined local variable or method `result' for main:Object\
+	from (irb):64\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):065:0> Dir.chdir './test' do |folder|\
+irb(main):066:1* user = "fran"\
+irb(main):067:1> result = Dir.glob("#\{user\}*")\
+irb(main):068:1> puts result\
+irb(main):069:1> true unless result == nil\
+irb(main):070:1> end\
+fran test file.txt\
+=> true\
+irb(main):071:0> Dir.chdir './test' do |folder|\
+irb(main):072:1* user = "fran"\
+irb(main):073:1> result = Dir.glob("bap*")\
+irb(main):074:1> puts result\
+irb(main):075:1> true unless result == nil\
+irb(main):076:1> end\
+=> true\
+irb(main):077:0> String.methods\
+=> [:try_convert, :allocate, :new, :superclass, :freeze, :===, :==, :<=>, :<, :<=, :>, :>=, :to_s, :inspect, :included_modules, :include?, :name, :ancestors, :instance_methods, :public_instance_methods, :protected_instance_methods, :private_instance_methods, :constants, :const_get, :const_set, :const_defined?, :const_missing, :class_variables, :remove_class_variable, :class_variable_get, :class_variable_set, :class_variable_defined?, :public_constant, :private_constant, :singleton_class?, :include, :prepend, :module_exec, :class_exec, :module_eval, :class_eval, :method_defined?, :public_method_defined?, :private_method_defined?, :protected_method_defined?, :public_class_method, :private_class_method, :autoload, :autoload?, :instance_method, :public_instance_method, :nil?, :=~, :!~, :eql?, :hash, :class, :singleton_class, :clone, :dup, :itself, :taint, :tainted?, :untaint, :untrust, :untrusted?, :trust, :frozen?, :methods, :singleton_methods, :protected_methods, :private_methods, :public_methods, :instance_variables, :instance_variable_get, :instance_variable_set, :instance_variable_defined?, :remove_instance_variable, :instance_of?, :kind_of?, :is_a?, :tap, :send, :public_send, :respond_to?, :extend, :display, :method, :public_method, :singleton_method, :define_singleton_method, :object_id, :to_enum, :enum_for, :equal?, :!, :!=, :instance_eval, :instance_exec, :__send__, :__id__]\
+irb(main):078:0> Dir.chdir './test' do |folder|\
+irb(main):079:1* user = "fran"\
+irb(main):080:1> result = Dir.glob("bap*")\
+irb(main):081:1> puts result\
+irb(main):082:1> result.eql? nil\
+irb(main):083:1> end\
+=> false\
+irb(main):084:0> Dir.chdir './test' do |folder|\
+irb(main):085:1* user = "fran"\
+irb(main):086:1> result = Dir.glob("bap*")\
+irb(main):087:1> puts result\
+irb(main):088:1> result.eql? []\
+irb(main):089:1> end\
+=> true\
+irb(main):090:0> Dir.chdir './test' do |folder|\
+irb(main):091:1* user = "fran"\
+irb(main):092:1> result = Dir.glob("#\{user\}*")\
+irb(main):093:1> puts result\
+irb(main):094:1> result.eql? []\
+irb(main):095:1> end\
+fran test file.txt\
+=> false\
+irb(main):096:0> Dir.pwd\
+=> "/Users/francislawrence/Desktop"\
+irb(main):097:0> Dir.chdir './test' do |folder|\
+irb(main):098:1* user = "fran"\
+irb(main):099:1> result = Dir.glob("#\{user\}*")\
+irb(main):100:1> puts result\
+irb(main):101:1> result.eql? []\
+irb(main):102:1> end\
+fran\
+fran test file.txt\
+=> false\
+irb(main):103:0> wd = Dir.wd\
+NoMethodError: undefined method `wd' for Dir:Class\
+	from (irb):103\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):104:0> Dir.getwd\
+=> "/Users/francislawrence/Desktop"\
+irb(main):105:0> Dir.open('yes')\
+Errno::ENOENT: No such file or directory @ dir_initialize - yes\
+	from (irb):105:in `open'\
+	from (irb):105\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):106:0> Dir.open('./yes')\
+Errno::ENOENT: No such file or directory @ dir_initialize - ./yes\
+	from (irb):106:in `open'\
+	from (irb):106\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):107:0> Dir['test']\
+=> ["test"]\
+irb(main):108:0> Dir.pwd\
+=> "/Users/francislawrence/Desktop"\
+irb(main):109:0> folder = Dir["test"]\
+=> ["test"]\
+irb(main):110:0> folder\
+=> ["test"]\
+irb(main):111:0> folder = Dir["test"][0]\
+=> "test"\
+irb(main):112:0> folder = Dir.mkdir('test_2')\
+=> 0\
+irb(main):113:0> Dir.pwd\
+=> "/Users/francislawrence/Desktop"\
+irb(main):114:0> folder\
+=> 0\
+irb(main):115:0> folder = Dir.new('test_3')\
+Errno::ENOENT: No such file or directory @ dir_initialize - test_3\
+	from (irb):115:in `initialize'\
+	from (irb):115:in `new'\
+	from (irb):115\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):116:0> folder = Dir.new('./test_3')\
+Errno::ENOENT: No such file or directory @ dir_initialize - ./test_3\
+	from (irb):116:in `initialize'\
+	from (irb):116:in `new'\
+	from (irb):116\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):117:0> folder = Dir.new './test_3'\
+Errno::ENOENT: No such file or directory @ dir_initialize - ./test_3\
+	from (irb):117:in `initialize'\
+	from (irb):117:in `new'\
+	from (irb):117\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):118:0> folder = Dir.new '/test_3'\
+Errno::ENOENT: No such file or directory @ dir_initialize - /test_3\
+	from (irb):118:in `initialize'\
+	from (irb):118:in `new'\
+	from (irb):118\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):119:0> folder = Dir.new 'test_3'\
+Errno::ENOENT: No such file or directory @ dir_initialize - test_3\
+	from (irb):119:in `initialize'\
+	from (irb):119:in `new'\
+	from (irb):119\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):120:0> folder = Dir.new("test_3")\
+Errno::ENOENT: No such file or directory @ dir_initialize - test_3\
+	from (irb):120:in `initialize'\
+	from (irb):120:in `new'\
+	from (irb):120\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):121:0> folder = Dir.new("test_2")\
+=> #<Dir:test_2>\
+irb(main):122:0> folder\
+=> #<Dir:test_2>\
+irb(main):123:0> folder.glob\
+NoMethodError: undefined method `glob' for #<Dir:test_2>\
+	from (irb):123\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):124:0> joe = 5\
+=> 5\
+irb(main):125:0> folder.dirname\
+NoMethodError: undefined method `dirname' for #<Dir:test_2>\
+	from (irb):125\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):126:0> Dir.dirname folder\
+NoMethodError: undefined method `dirname' for Dir:Class\
+	from (irb):126\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):127:0> folder.path\
+=> "test_2"\
+irb(main):128:0> Dir.chdir ..\
+irb(main):129:0* ^C\
+irb(main):129:0> Dir.chdir ".."\
+=> 0\
+irb(main):130:0> Dir.pwd\
+=> "/Users/francislawrence"\
+irb(main):131:0> folder.path\
+=> "test_2"\
+irb(main):132:0> folder.to_path\
+=> "test_2"\
+irb(main):133:0> File.expand_path(folder)\
+=> "/Users/francislawrence/test_2"\
+irb(main):134:0> File.dirname(folder)\
+=> "."\
+irb(main):135:0> File.expand_path(File.dirname(folder))\
+=> "/Users/francislawrence"\
+irb(main):136:0> File.expand_path(.)\
+SyntaxError: (irb):136: syntax error, unexpected '.', expecting ')'\
+File.expand_path(.)\
+                  ^\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):137:0> File.expand_path\
+ArgumentError: wrong number of arguments (0 for 1..2)\
+	from (irb):137:in `expand_path'\
+	from (irb):137\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):138:0> File.path\
+ArgumentError: wrong number of arguments (0 for 1)\
+	from (irb):138:in `path'\
+	from (irb):138\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):139:0> Dir.pwd\
+=> "/Users/francislawrence"\
+irb(main):140:0> Dir.chdir "desktop"\
+=> 0\
+irb(main):141:0> Dir.pwd\
+=> "/Users/francislawrence/Desktop"\
+irb(main):142:0> Dir.chdir './test' do |folder|\
+irb(main):143:1* user = "fran"\
+irb(main):144:1> current_path = Dir.getwd\
+irb(main):145:1> Dir.mkdir(current_path + user)\
+irb(main):146:1> fob = Dir.new[current_path + user]\
+irb(main):147:1> end\
+ArgumentError: wrong number of arguments (0 for 1)\
+	from (irb):146:in `initialize'\
+	from (irb):146:in `new'\
+	from (irb):146:in `block in irb_binding'\
+	from (irb):142:in `chdir'\
+	from (irb):142\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):148:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> Dir.chdir './test' do |folder|\
+irb(main):002:1* user = "fran"\
+irb(main):003:1> current_path = Dir.getwd\
+irb(main):004:1> puts current_path.class\
+irb(main):005:1> puts user.class\
+irb(main):006:1> Dir.mkdir(current_path + user)\
+irb(main):007:1> fob = Dir.new[current_path + user]\
+irb(main):008:1> end^C\
+irb(main):008:0> Dir.pwd\
+=> "/Users/francislawrence/Desktop"\
+irb(main):009:0> Dir.chdir './test' do |folder|\
+irb(main):010:1* user = "fran"\
+irb(main):011:1> current_path = Dir.getwd\
+irb(main):012:1> puts current_path.class\
+irb(main):013:1> puts user.class\
+irb(main):014:1> Dir.mkdir(current_path + user)\
+irb(main):015:1> fob = Dir.new[current_path + user]\
+irb(main):016:1> end\
+String\
+String\
+Errno::EEXIST: File exists @ dir_s_mkdir - /Users/francislawrence/Desktop/testfran\
+	from (irb):14:in `mkdir'\
+	from (irb):14:in `block in irb_binding'\
+	from (irb):9:in `chdir'\
+	from (irb):9\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):017:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> Dir.chdir './test' do |folder|\
+irb(main):002:1* user = "bro"\
+irb(main):003:1> current_path = Dir.getwd\
+irb(main):004:1> puts current_path.class\
+irb(main):005:1> puts user.class\
+irb(main):006:1> Dir.mkdir(current_path + user)\
+irb(main):007:1> fob = Dir.new["#\{current_path\}/#\{user\}"]\
+irb(main):008:1> end\
+String\
+String\
+ArgumentError: wrong number of arguments (0 for 1)\
+	from (irb):7:in `initialize'\
+	from (irb):7:in `new'\
+	from (irb):7:in `block in irb_binding'\
+	from (irb):1:in `chdir'\
+	from (irb):1\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):009:0> Dir.chdir './test' do |folder|\
+irb(main):010:1* user = "sis"\
+irb(main):011:1> current_path = Dir.getwd\
+irb(main):012:1> puts current_path.class\
+irb(main):013:1> puts user.class\
+irb(main):014:1> Dir.mkdir(current_path + user)\
+irb(main):015:1> fob = Dir.new("#\{current_path\}/#\{user\}")\
+irb(main):016:1> end\
+String\
+String\
+Errno::ENOENT: No such file or directory @ dir_initialize - /Users/francislawrence/Desktop/test/sis\
+	from (irb):15:in `initialize'\
+	from (irb):15:in `new'\
+	from (irb):15:in `block in irb_binding'\
+	from (irb):9:in `chdir'\
+	from (irb):9\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):017:0> fob\
+NameError: undefined local variable or method `fob' for main:Object\
+	from (irb):17\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):018:0> fob = Dir.new("#\{current_path\}/#\{user\}")\
+NameError: undefined local variable or method `current_path' for main:Object\
+	from (irb):18\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):019:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> Dir.chdir './test' do |folder|\
+irb(main):002:1* user = "aun"\
+irb(main):003:1> current_path = Dir.getwd\
+irb(main):004:1> puts current_path.class\
+irb(main):005:1> puts user.class\
+irb(main):006:1> Dir.mkdir(current_path + user)\
+irb(main):007:1> fob = Dir.new("#\{current_path\}/#\{user\}")\
+irb(main):008:1> puts fob\
+irb(main):009:1> end\
+String\
+String\
+Errno::ENOENT: No such file or directory @ dir_initialize - /Users/francislawrence/Desktop/test/aun\
+	from (irb):7:in `initialize'\
+	from (irb):7:in `new'\
+	from (irb):7:in `block in irb_binding'\
+	from (irb):1:in `chdir'\
+	from (irb):1\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):010:0> Dir.chdir './test' do |folder|\
+irb(main):011:1* user = "aun"\
+irb(main):012:1> current_path = Dir.getwd\
+irb(main):013:1> puts current_path.class\
+irb(main):014:1> puts user.class\
+irb(main):015:1> Dir.mkdir(current_path + "/" + user)\
+irb(main):016:1> fob = Dir.new("#\{current_path\}/#\{user\}")\
+irb(main):017:1> puts fob\
+irb(main):018:1> end\
+String\
+String\
+#<Dir:0x007fe5cb02a860>\
+=> nil\
+irb(main):019:0> fob\
+NameError: undefined local variable or method `fob' for main:Object\
+	from (irb):19\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):020:0> fob = Dir.new("#\{current_path\}/#\{user\}")\
+NameError: undefined local variable or method `current_path' for main:Object\
+	from (irb):20\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):021:0> fob\
+=> nil\
+irb(main):022:0> fob.id\
+NoMethodError: undefined method `id' for nil:NilClass\
+	from (irb):22\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):023:0> fob.ID\
+NoMethodError: undefined method `ID' for nil:NilClass\
+	from (irb):23\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):024:0> object.methods\
+NameError: undefined local variable or method `object' for main:Object\
+	from (irb):24\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):025:0> Object.methods\
+=> [:allocate, :new, :superclass, :freeze, :===, :==, :<=>, :<, :<=, :>, :>=, :to_s, :inspect, :included_modules, :include?, :name, :ancestors, :instance_methods, :public_instance_methods, :protected_instance_methods, :private_instance_methods, :constants, :const_get, :const_set, :const_defined?, :const_missing, :class_variables, :remove_class_variable, :class_variable_get, :class_variable_set, :class_variable_defined?, :public_constant, :private_constant, :singleton_class?, :include, :prepend, :module_exec, :class_exec, :module_eval, :class_eval, :method_defined?, :public_method_defined?, :private_method_defined?, :protected_method_defined?, :public_class_method, :private_class_method, :autoload, :autoload?, :instance_method, :public_instance_method, :nil?, :=~, :!~, :eql?, :hash, :class, :singleton_class, :clone, :dup, :itself, :taint, :tainted?, :untaint, :untrust, :untrusted?, :trust, :frozen?, :methods, :singleton_methods, :protected_methods, :private_methods, :public_methods, :instance_variables, :instance_variable_get, :instance_variable_set, :instance_variable_defined?, :remove_instance_variable, :instance_of?, :kind_of?, :is_a?, :tap, :send, :public_send, :respond_to?, :extend, :display, :method, :public_method, :singleton_method, :define_singleton_method, :object_id, :to_enum, :enum_for, :equal?, :!, :!=, :instance_eval, :instance_exec, :__send__, :__id__]\
+irb(main):026:0> fob.__id__\
+=> 8\
+irb(main):027:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> fob = Dir.chdir './test' do |folder|\
+irb(main):002:1* user = "aun"\
+irb(main):003:1> current_path = Dir.getwd\
+irb(main):004:1> puts current_path.class\
+irb(main):005:1> puts user.class\
+irb(main):006:1> Dir.mkdir(current_path + "/" + user)\
+irb(main):007:1> @fob = Dir.new("#\{current_path\}/#\{user\}")\
+irb(main):008:1> end\
+String\
+String\
+Errno::EEXIST: File exists @ dir_s_mkdir - /Users/francislawrence/Desktop/test/aun\
+	from (irb):6:in `mkdir'\
+	from (irb):6:in `block in irb_binding'\
+	from (irb):1:in `chdir'\
+	from (irb):1\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):009:0> fob = Dir.chdir './test' do |folder|\
+irb(main):010:1* user = "bro"\
+irb(main):011:1> current_path = Dir.getwd\
+irb(main):012:1> puts current_path.class\
+irb(main):013:1> puts user.class\
+irb(main):014:1> Dir.mkdir(current_path + "/" + user)\
+irb(main):015:1> @fob = Dir.new("#\{current_path\}/#\{user\}")\
+irb(main):016:1> end\
+String\
+String\
+=> #<Dir:/Users/francislawrence/Desktop/test/bro>\
+irb(main):017:0> fob\
+=> #<Dir:/Users/francislawrence/Desktop/test/bro>\
+irb(main):018:0> fob.path\
+=> "/Users/francislawrence/Desktop/test/bro"\
+irb(main):019:0> fob.entries\
+=> [".", ".."]\
+irb(main):020:0> fob.new\
+NoMethodError: undefined method `new' for #<Dir:/Users/francislawrence/Desktop/test/bro>\
+	from (irb):20\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):021:0> Dir.pwd\
+=> "/Users/francislawrence/Desktop"\
+irb(main):022:0> Dir.chdir fob.path\
+=> 0\
+irb(main):023:0> Dir.mkdir "a"\
+=> 0\
+irb(main):024:0> Dir.mkdir "b"\
+=> 0\
+irb(main):025:0> Dir.mkdir "1"\
+=> 0\
+irb(main):026:0> Dir.mkdir "r"\
+=> 0\
+irb(main):027:0> Dir.mkdir "_"\
+=> 0\
+irb(main):028:0> Dir.pwd\
+=> "/Users/francislawrence/Desktop/test/bro"\
+irb(main):029:0> fob.entries\
+=> [".", "..", "1", "_", "a", "b", "r"]\
+irb(main):030:0> fob.entries.select(/[^wl]/)\
+ArgumentError: wrong number of arguments (1 for 0)\
+	from (irb):30:in `select'\
+	from (irb):30\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):031:0> fob.entries.select /[^wl]/\
+ArgumentError: wrong number of arguments (1 for 0)\
+	from (irb):31:in `select'\
+	from (irb):31\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):032:0> fold_obj.entries.select \{|name| name[0] ~= /[^wl]/\}\
+SyntaxError: (irb):32: syntax error, unexpected '~', expecting '\}'\
+fold_obj.entries.select \{|name| name[0] ~= /[^wl]/\}\
+                                         ^\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):033:0> fold_obj.entries.select \{|name| name[0] =~ /[^wl]/\}\
+NameError: undefined local variable or method `fold_obj' for main:Object\
+	from (irb):33\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):034:0> fob.entries.select \{|name| name[0] =~ /[^wl]/\}\
+=> [".", "..", "1", "_", "a", "b", "r"]\
+irb(main):035:0> fob.entries.select \{|name| name[0] =~ /[^a..d]/\}\
+=> ["1", "_", "b", "r"]\
+irb(main):036:0> fob.entries.select \{|name| name[0] =~ /[^abcd]/\}\
+=> [".", "..", "1", "_", "r"]\
+irb(main):037:0> fob.entries.select \{|name| name[0] =~ /[^a-d]/\}\
+=> [".", "..", "1", "_", "r"]\
+irb(main):038:0> Dir.mkdir "ga"\
+=> 0\
+irb(main):039:0> fob.entries.select \{|name| name[0] =~ /[^a-d]/\}\
+=> [".", "..", "1", "_", "ga", "r"]\
+irb(main):040:0> Dir.mkdir "Aa"\
+=> 0\
+irb(main):041:0> fob.entries.select \{|name| name[0] =~ /[^a-d]/\}\
+=> [".", "..", "1", "_", "Aa", "ga", "r"]\
+irb(main):042:0> fob.entries.select \{|name| name[0] =~ /([^a-d]|[^A-D])/\}\
+=> [".", "..", "1", "_", "a", "Aa", "b", "ga", "r"]\
+irb(main):043:0> fob.entries.select \{|name| name[0] =~ /([^a-dA-D])/\}\
+=> [".", "..", "1", "_", "ga", "r"]\
+irb(main):044:0> resp = gets.chomp.scan(/\\d/)[0]\
+172723262\
+=> "1"\
+irb(main):045:0> gets.chomp.scan(/save/)\
+blah i want to save blah\
+=> ["save"]\
+irb(main):046:0> gets.chomp.scan(/save/)\
+g\
+=> []\
+irb(main):047:0> gets.chomp.scan(/save/)\
+s\
+=> []\
+irb(main):048:0> exit\
+10:52:19|~ $ \
+}
