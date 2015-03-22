@@ -39,7 +39,7 @@ module Hangman
 				rounds_array: rounds_array}
 			game_start(start_vars_h)
 			end
-
+#	COULD USE A MERGE OR UPDATE METHOD TO PUT HASH VALUES IN GAME'S HASH.
 		def load_check(fold_obj)
 			puts "Would you like to load a past, "
 			puts "unfinished game?"

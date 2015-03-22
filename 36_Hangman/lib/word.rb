@@ -14,7 +14,7 @@ module Hangman
 			end
 
 		def word_setup #could use uniq in this part
-			word_array_1 = @the_word.downcase.split
+			word_array_1 = @the_word.downcase.split("")
 			word_length = @the_word.length
 			lett_freq_hash = Hash.new
 			@lett_i_hash = Hash.new([])
