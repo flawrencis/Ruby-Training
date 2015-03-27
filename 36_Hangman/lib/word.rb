@@ -27,7 +27,7 @@ module Hangman
 				lett_freq_hash[lett_sym] ||= 0
 				lett_freq_hash[lett_sym] += 1
 				puts "DEBUG: I've just added 1 to the value under the lett_sym (#{lett_sym}) key in lett_freq_hash, which is now #{lett_freq_hash}."
-				@lett_i_hash[lett_sym] << i
+				@lett_i_hash[lett_sym] += [i]
 				puts "DEBUG: I've just added that index value (#{i}) to the lett_sym (#{lett_sym}) key in lett_i_hash, which is now #{@lett_i_hash}."
 				end
 			puts "DEBUG: Lett_i_hash = #{@lett_i_hash}!!"
@@ -39,15 +39,14 @@ module Hangman
 			if goal == "new"
 				@spaces = String.new
 				for i in 1..length
-					@spaces << " _"
+					@spaces << "  _"
 					end
 				puts @spaces
 				elsif goal == "update"
 				lett_sym = new_lett.to_sym
 				this_lett_i_array = @lett_i_hash[lett_sym]
 				this_lett_i_array.each do |i|
-					@spaces[2*i] = new_lett
-					
+					@spaces[3*(i+1)] = new_lett
 					end
 				puts @spaces
 				end
@@ -58,3 +57,8 @@ module Hangman
 
 		end
 	end
+
+=begin
+Sources
+http://stackoverflow.com/questions/11589269/ruby-adding-to-hash-with-array-value
+=end

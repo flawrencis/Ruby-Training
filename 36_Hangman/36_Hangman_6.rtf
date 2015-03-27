@@ -1,0 +1,372 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red10\green12\blue39;\red52\green186\blue34;\red51\green180\blue193;
+\red75\green22\blue231;}
+\margl1440\margr1440\vieww12000\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs22 \cf1 \cb2 \CocoaLigature0 Last login: Tue Mar 24 05:45:39 on console\
+Thu Mar 26 10:07:52 CDT 2015\
+\
+-------------------------------------------------\
+If you need to create a platform specific folder using Phonegap, please do the following:\
+1) First, run the 'echo PATH=$PATH:/Users/francislawrence/Programming/phonegap-2.9.1/lib/<specific_platform>/bin' command.\
+2) Then, you need to change your working directory to the bin of that platform in that same phonegap folder.\
+3) Then, run the 'create name com.example.name Name' command.\
+\
+Also, if you need to change any of these settings, go to your home directory (~) and type \'91nano .bash_profile\'92.\
+\
+Also, if you need to do the EMULATE command, you have to go to the app folder and then run \'91ripple emulate\'92.\
+\
+To edit irb ish, use the bash command 'nano ~/.inputrc'.\
+To substitute something in the previous line, type something like this... ^toreplace^touse\
+To search previous lines, use Ctrl-R.\
+To leave that screen you can get stuck in, use q when the END is highlighted.\
+To learn the escape characters of buttons, first type ^V\
+Jump to start of line ^A\
+Jump to end of line ^E\
+Clear text onward ^K\
+Clear backward by word ^W\
+Toggle between current cursor position and start of line ^XX\
+Clear whole line ^U\
+Bring last line back ^Y\
+Search previous lines ^R\
+! preceding starting character, Enter invokes last command\
+To modify the last command, type !<firstfewcharacters>:s/<toreplace>/<desired>\
+Keep Mac awake: $ caffeinate -u -t 600 (add options to set timer)\
+------------------------------------------------------\
+10:07:52|~ $ irb\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> r36\
+=> true\
+irb(main):002:0> a39 = Hangman::Game.new("a39")\
+DEBUG: This is \cf3 a39\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Francis Edmund\
+----------------------------------------------------------------------------------\
+Thanks, Francis Edmund. Your user_name is edmufran.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is tallish, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+don't care\
+DEBUG: The word is tallish, of class String.\
+DEBUG: word_array_1 is ["t", "a", "l", "l", "i", "s", "h"]!\
+DEBUG: Letter of word_array_1 is t.\
+DEBUG: Index of that letter is 0.\
+DEBUG: lett_sym is t.\
+DEBUG: I've just added 1 to the value under the lett_sym (t) key in lett_freq_hash, which is now \{:t=>1\}.\
+DEBUG: I've just added that index value (0) to the lett_sym (t) key in lett_i_hash, which is now \{\}.\
+DEBUG: Letter of word_array_1 is a.\
+DEBUG: Index of that letter is 1.\
+DEBUG: lett_sym is a.\
+DEBUG: I've just added 1 to the value under the lett_sym (a) key in lett_freq_hash, which is now \{:t=>1, :a=>1\}.\
+DEBUG: I've just added that index value (1) to the lett_sym (a) key in lett_i_hash, which is now \{\}.\
+DEBUG: Letter of word_array_1 is l.\
+DEBUG: Index of that letter is 2.\
+DEBUG: lett_sym is l.\
+DEBUG: I've just added 1 to the value under the lett_sym (l) key in lett_freq_hash, which is now \{:t=>1, :a=>1, :l=>1\}.\
+DEBUG: I've just added that index value (2) to the lett_sym (l) key in lett_i_hash, which is now \{\}.\
+DEBUG: Letter of word_array_1 is l.\
+DEBUG: Index of that letter is 3.\
+DEBUG: lett_sym is l.\
+DEBUG: I've just added 1 to the value under the lett_sym (l) key in lett_freq_hash, which is now \{:t=>1, :a=>1, :l=>2\}.\
+DEBUG: I've just added that index value (3) to the lett_sym (l) key in lett_i_hash, which is now \{\}.\
+DEBUG: Letter of word_array_1 is i.\
+DEBUG: Index of that letter is 4.\
+DEBUG: lett_sym is i.\
+DEBUG: I've just added 1 to the value under the lett_sym (i) key in lett_freq_hash, which is now \{:t=>1, :a=>1, :l=>2, :i=>1\}.\
+DEBUG: I've just added that index value (4) to the lett_sym (i) key in lett_i_hash, which is now \{\}.\
+DEBUG: Letter of word_array_1 is s.\
+DEBUG: Index of that letter is 5.\
+DEBUG: lett_sym is s.\
+DEBUG: I've just added 1 to the value under the lett_sym (s) key in lett_freq_hash, which is now \{:t=>1, :a=>1, :l=>2, :i=>1, :s=>1\}.\
+DEBUG: I've just added that index value (5) to the lett_sym (s) key in lett_i_hash, which is now \{\}.\
+DEBUG: Letter of word_array_1 is h.\
+DEBUG: Index of that letter is 6.\
+DEBUG: lett_sym is h.\
+DEBUG: I've just added 1 to the value under the lett_sym (h) key in lett_freq_hash, which is now \{:t=>1, :a=>1, :l=>2, :i=>1, :s=>1, :h=>1\}.\
+DEBUG: I've just added that index value (6) to the lett_sym (h) key in lett_i_hash, which is now \{\}.\
+DEBUG: Lett_i_hash = \{\}!!\
+DEBUG: Lett_freq_hash is \{:t=>1, :a=>1, :l=>2, :i=>1, :s=>1, :h=>1\}!!\
+ _ _ _ _ _ _ _\
+Are you ready?\
+^CIRB::Abort: abort then interrupt!\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:81:in `call'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:81:in `gets'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:81:in `gets'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:81:in `game_start'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:40:in `initialize'\
+	from (irb):2:in `new'\
+	from (irb):2\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):003:0> pcya "DAMN IT!"\
+\cf4 DAMN IT!\cf1 \
+=> nil\
+irb(main):004:0> clr\
+array = [1, 2, 3, 4, 5, 6]\
+string_array = ["a", "b", "c", "d", "e"]\
+hsh = \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+string = "This is a test string. It's cool for some stuff."\
+num = 5\
+irb(main):001:0> arr = []\
+=> []\
+irb(main):002:0> arr << 1\
+=> [1]\
+irb(main):003:0> arr\
+=> [1]\
+irb(main):004:0> arr << 2\
+=> [1, 2]\
+irb(main):005:0> arr\
+=> [1, 2]\
+irb(main):006:0> h_of_a = Hash.new([])\
+=> \{\}\
+irb(main):007:0> h_of_a[:a] << 1\
+=> [1]\
+irb(main):008:0> h_of_a\
+=> \{\}\
+irb(main):009:0> h_of_a[:a]\
+=> [1]\
+irb(main):010:0> h_of_a["str_ey"] << 1\
+=> [1, 1]\
+irb(main):011:0> h_of_a\
+=> \{\}\
+irb(main):012:0> h_of_a["str_ey"] \
+=> [1, 1]\
+irb(main):013:0> h_of_a["str_ey"] << 2\
+=> [1, 1, 2]\
+irb(main):014:0> h_of_a\
+=> \{\}\
+irb(main):015:0> h_of_a\
+=> \{\}\
+irb(main):016:0> h_of_a[:a] += [1]\
+=> [1, 1, 2, 1]\
+irb(main):017:0> h_of_a = Hash.new([])\
+=> \{\}\
+irb(main):018:0> h_of_a["a"]\
+=> []\
+irb(main):019:0> h_of_a["a"] += [1]\
+=> [1]\
+irb(main):020:0> h_of_a["a"]\
+=> [1]\
+irb(main):021:0> h_of_a\
+=> \{"a"=>[1]\}\
+irb(main):022:0> r36\
+=> true\
+irb(main):023:0> a40 = Hangman::Game.new("a40")\
+DEBUG: This is \cf3 a40\cf1 !!!\
+Welcome to Hangman! At each turn, you can\
+type 'save' to save your game and leave.\
+What's your name? Example: John Butt\
+Sterling Archer\
+----------------------------------------------------------------------------------\
+Thanks, Sterling Archer. Your user_name is archster.\
+You do not yet have a folder for your\
+data. I am going to make one now.\
+Would you like to load a past, \
+unfinished game?\
+.\
+..\
+Give me the number of the one you want\
+to finish or press Return for a new game.\
+\
+Choosing a word between 5 and 12 characters.\
+DEBUG: The word is refreeze, which is of class String.\
+What would you like to call the file \
+to which these data are saved?\
+asshole\
+The filename is 15326_asshole.txt.\
+DEBUG: The word is refreeze, of class String.\
+DEBUG: word_array_1 is ["r", "e", "f", "r", "e", "e", "z", "e"]!\
+DEBUG: Letter of word_array_1 is r.\
+DEBUG: Index of that letter is 0.\
+DEBUG: lett_sym is r.\
+DEBUG: I've just added 1 to the value under the lett_sym (r) key in lett_freq_hash, which is now \{:r=>1\}.\
+DEBUG: I've just added that index value (0) to the lett_sym (r) key in lett_i_hash, which is now \{:r=>[0]\}.\
+DEBUG: Letter of word_array_1 is e.\
+DEBUG: Index of that letter is 1.\
+DEBUG: lett_sym is e.\
+DEBUG: I've just added 1 to the value under the lett_sym (e) key in lett_freq_hash, which is now \{:r=>1, :e=>1\}.\
+DEBUG: I've just added that index value (1) to the lett_sym (e) key in lett_i_hash, which is now \{:r=>[0], :e=>[1]\}.\
+DEBUG: Letter of word_array_1 is f.\
+DEBUG: Index of that letter is 2.\
+DEBUG: lett_sym is f.\
+DEBUG: I've just added 1 to the value under the lett_sym (f) key in lett_freq_hash, which is now \{:r=>1, :e=>1, :f=>1\}.\
+DEBUG: I've just added that index value (2) to the lett_sym (f) key in lett_i_hash, which is now \{:r=>[0], :e=>[1], :f=>[2]\}.\
+DEBUG: Letter of word_array_1 is r.\
+DEBUG: Index of that letter is 3.\
+DEBUG: lett_sym is r.\
+DEBUG: I've just added 1 to the value under the lett_sym (r) key in lett_freq_hash, which is now \{:r=>2, :e=>1, :f=>1\}.\
+DEBUG: I've just added that index value (3) to the lett_sym (r) key in lett_i_hash, which is now \{:r=>[0, 3], :e=>[1], :f=>[2]\}.\
+DEBUG: Letter of word_array_1 is e.\
+DEBUG: Index of that letter is 4.\
+DEBUG: lett_sym is e.\
+DEBUG: I've just added 1 to the value under the lett_sym (e) key in lett_freq_hash, which is now \{:r=>2, :e=>2, :f=>1\}.\
+DEBUG: I've just added that index value (4) to the lett_sym (e) key in lett_i_hash, which is now \{:r=>[0, 3], :e=>[1, 4], :f=>[2]\}.\
+DEBUG: Letter of word_array_1 is e.\
+DEBUG: Index of that letter is 5.\
+DEBUG: lett_sym is e.\
+DEBUG: I've just added 1 to the value under the lett_sym (e) key in lett_freq_hash, which is now \{:r=>2, :e=>3, :f=>1\}.\
+DEBUG: I've just added that index value (5) to the lett_sym (e) key in lett_i_hash, which is now \{:r=>[0, 3], :e=>[1, 4, 5], :f=>[2]\}.\
+DEBUG: Letter of word_array_1 is z.\
+DEBUG: Index of that letter is 6.\
+DEBUG: lett_sym is z.\
+DEBUG: I've just added 1 to the value under the lett_sym (z) key in lett_freq_hash, which is now \{:r=>2, :e=>3, :f=>1, :z=>1\}.\
+DEBUG: I've just added that index value (6) to the lett_sym (z) key in lett_i_hash, which is now \{:r=>[0, 3], :e=>[1, 4, 5], :f=>[2], :z=>[6]\}.\
+DEBUG: Letter of word_array_1 is e.\
+DEBUG: Index of that letter is 7.\
+DEBUG: lett_sym is e.\
+DEBUG: I've just added 1 to the value under the lett_sym (e) key in lett_freq_hash, which is now \{:r=>2, :e=>4, :f=>1, :z=>1\}.\
+DEBUG: I've just added that index value (7) to the lett_sym (e) key in lett_i_hash, which is now \{:r=>[0, 3], :e=>[1, 4, 5, 7], :f=>[2], :z=>[6]\}.\
+DEBUG: Lett_i_hash = \{:r=>[0, 3], :e=>[1, 4, 5, 7], :f=>[2], :z=>[6]\}!!\
+DEBUG: Lett_freq_hash is \{:r=>2, :e=>4, :f=>1, :z=>1\}!!\
+ _ _ _ _ _ _ _ _\
+Are you ready?\
+\
+We are on Round 1 and have that.\
+What would you like to guess now?\
+a\
+DEBUG: resp is a of class String.\
+DEBUG: want_save is  of class NilClass\
+DEBUG: On first try, guess is a of class String\
+You are guessing \cf5 a\cf1 . If you want to change it, now is your last chance.\
+Just hit the Return key to continue with the blue guess.\
+Make your decision.\
+\
+DEBUG: Your new guess is .\
+Great! So you guessed \cf4 a\cf1  which is of class String.\
+DEBUG: Result from get_guess method was a, which happens to be of class String.\
+DEBUG: Result from get_guess is a of class String.\
+DEBUG: Guess is a of class String.\
+DEBUG: Yo. The word is refreeze of class String and the letter is a of class String.\
+head\
+1/8\
+\
+We are on Round 2 and have that.\
+What would you like to guess now?\
+e\
+DEBUG: resp is e of class String.\
+DEBUG: want_save is  of class NilClass\
+DEBUG: On first try, guess is e of class String\
+You are guessing \cf5 e\cf1 . If you want to change it, now is your last chance.\
+Just hit the Return key to continue with the blue guess.\
+Make your decision.\
+\
+DEBUG: Your new guess is .\
+Great! So you guessed \cf4 e\cf1  which is of class String.\
+DEBUG: Result from get_guess method was e, which happens to be of class String.\
+DEBUG: Result from get_guess is e of class String.\
+DEBUG: Guess is e of class String.\
+DEBUG: Yo. The word is refreeze of class String and the letter is e of class String.\
+DEBUG: Yo. The word is refreeze of class String and the letter is e of class String.\
+You correctly guessed e.\
+This letter appears 4 times!\
+ _e_ _ _e_e_ _e_\
+Still gotta watch your progress!\
+head\
+1/8\
+We are on Round 3 and have that.\
+What would you like to guess now?\
+t\
+DEBUG: resp is t of class String.\
+DEBUG: want_save is  of class NilClass\
+DEBUG: On first try, guess is t of class String\
+You are guessing \cf5 t\cf1 . If you want to change it, now is your last chance.\
+Just hit the Return key to continue with the blue guess.\
+Make your decision.\
+\
+DEBUG: Your new guess is .\
+Great! So you guessed \cf4 t\cf1  which is of class String.\
+DEBUG: Result from get_guess method was t, which happens to be of class String.\
+DEBUG: Result from get_guess is t of class String.\
+DEBUG: Guess is t of class String.\
+DEBUG: Yo. The word is refreeze of class String and the letter is t of class String.\
+head\
+rope\
+2/8\
+ _e_ _ _e_e_ _e_\
+We are on Round 4 and have that.\
+What would you like to guess now?\
+a\
+DEBUG: resp is a of class String.\
+DEBUG: want_save is  of class NilClass\
+DEBUG: On first try, guess is a of class String\
+You are guessing \cf5 a\cf1 . If you want to change it, now is your last chance.\
+Just hit the Return key to continue with the blue guess.\
+Make your decision.\
+b\
+DEBUG: Your new guess is b.\
+NoMethodError: undefined method `join' for "b":String\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:146:in `get_guess'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:95:in `game_play'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:82:in `game_start'\
+	from /Users/francislawrence/Programming/Ruby-Training_l/36_Hangman/lib/game.rb:40:in `initialize'\
+	from (irb):23:in `new'\
+	from (irb):23\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):024:0> guess_new = gets.downcase.scan(/[a-z]/)[0]\
+^CIRB::Abort: abort then interrupt!\
+	from (irb):24:in `call'\
+	from (irb):24:in `gets'\
+	from (irb):24:in `gets'\
+	from (irb):24\
+	from /Users/francislawrence/.rbenv/versions/2.2.0/bin/irb:11:in `<main>'\
+irb(main):025:0> guess_new = gets.downcase.scan(/[a-z]/)[0,1]\
+abc\
+=> ["a"]\
+irb(main):026:0> guess_new = gets.downcase.scan(/[a-z]\{2\}/)[0,1]\
+abc\
+=> ["ab"]\
+irb(main):027:0> guess_new = gets.downcase.scan(/[a-z]\{2\}/)[0,1]\
+a\
+=> []\
+irb(main):028:0> guess_new = gets.downcase.scan(/[a-z]\{0,2\}/)[0,1]\
+abc\
+=> ["ab"]\
+irb(main):029:0> guess_new = gets.downcase.scan(/[a-z]\{0,2\}/)[0,1]\
+a\
+=> ["a"]\
+irb(main):030:0> guess_new = gets.downcase.scan(/[a-z]\{0,2\}/)\
+abc\
+=> ["ab", "c", "", ""]\
+irb(main):031:0> guess_new = gets.chomp.downcase.scan(/[a-z]\{0,2\}/)\
+abc\
+=> ["ab", "c", ""]\
+irb(main):032:0> guess_new = gets.chomp.downcase.scan(/[a-z]\{0,2\}/)\
+a\
+=> ["a", ""]\
+irb(main):033:0> guess_new = gets.chomp.downcase.scan(/[a-z]\{0,2\}/)[0]\
+abc\
+=> "ab"\
+irb(main):034:0> guess_new = gets.chomp.downcase.scan(/[a-z]\{0,2\}/)[0]\
+a\
+=> "a"\
+irb(main):035:0> guess_new = gets.downcase.scan(/[a-z]\{0,2\}/)[0]\
+abc\
+=> "ab"\
+irb(main):036:0> guess_new = gets.downcase.scan(/[a-z]\{0,2\}/)[0,1]\
+abc         \
+=> ["ab"]\
+irb(main):037:0> guess_new = gets.downcase.scan(/[a-z]\{0,2\}/)[0]\
+abc\
+=> "ab"\
+irb(main):038:0> guess_new[0]\
+=> "a"\
+irb(main):039:0> exit\
+05:59:09|~ $ \
+}

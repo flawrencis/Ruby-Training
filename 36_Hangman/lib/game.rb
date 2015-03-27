@@ -118,12 +118,14 @@ module Hangman
 #					@word_obj.make_spaces(num_spaces, "update",lett_guess)
 					else
 					h[:error_num] += 1
-					error_num = h[:error_num]
-					h[:hanging][-1] = h[:rounds_array][error_num - 1]
-					h[:hanging] << "#{error_num}/#{max_errors}"
+					error_num_for_show = h[:error_num]
+					h[:hanging][-1] = h[:rounds_array][error_num_for_show - 1]
+					h[:hanging] << "#{error_num_for_show}/#{max_errors}"
 					puts h[:hanging]
 					puts spaces
 					end
+				check_game_over(h[:error_num],
+					h[:round],@spaces,the_word)
 				end
 			end
 
@@ -141,9 +143,9 @@ module Hangman
 				end
 			
 			puts "You are guessing \e[34m#{guess}\e[0m. If you want to change it, now is your last chance.\nJust hit the Return key to continue with the blue guess.\nMake your decision."
-			guess_new = gets.downcase.scan(/[a-z]/)[0]
+			guess_new = gets.downcase.scan(/[a-z]{0,2}/)[0]
 			puts "DEBUG: Your new guess is #{guess_new}."
-			if guess_new != nil && guess_new[0,1].join != "no"
+			if guess_new != nil && guess_new != "no"
 				guess = guess_new[0]
 				end
 			puts "Great! So you guessed \e[36m#{guess}\e[0m which is of class #{guess.class}."

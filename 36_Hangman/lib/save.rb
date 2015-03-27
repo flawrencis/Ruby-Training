@@ -7,6 +7,7 @@ module Hangman
 			mo = time.month.to_s
 			da = time.day.to_s
 			prefix = "#{yr}#{mo}#{da}_"
+			mo.prepend("0") if mo.length == 1
 			i = 0
 			begin
 				case i
@@ -23,6 +24,8 @@ module Hangman
 				end while File.exist?(file_name) #end #DELETE THIS SECOND END OR CODE WON'T WORK. ONLY HERE FOR FORMATTING.
 			
 			file_name.prepend(prefix)
+					
+			puts "The filename is #{file_name}."
 			
 			@record_file = Dir.chdir @fold_obj.path do |d|
 				File.new(file_name,"a")
