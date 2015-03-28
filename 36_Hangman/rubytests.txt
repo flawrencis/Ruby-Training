@@ -15,3 +15,22 @@ puts user.class
 Dir.mkdir(current_path + "/" + user)
 @fob = Dir.new("#{current_path}/#{user}")
 end
+------------------
+def mth(var)
+puts "We are running mth with var, which is #{var}."
+puts "Oh, we need to call mth_two!"
+joe = mth_two(var)
+puts "After running mth_two, var is #{var}\neven though mth_two only returned values into joe,\nwhich is now #{joe}."
+end
+
+def mth_two(rav)
+puts "Hey, I'm in mth_two. rav is #{rav}."
+rav.downcase!
+puts "Now, rav is #{rav}.\nLet's make some other variables that we can return."
+num = rav.length
+arr = rav.split
+return num
+end
+
+Crazy lesson: var ends up tweaked in mth.
+----------------

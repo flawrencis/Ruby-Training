@@ -49,6 +49,7 @@ module Hangman
 			puts "Give me the number of the one you want"
 			puts "to finish or press Return for a new game."
 			resp = gets.chomp.scan(/\d/)[0]
+			GenMeans.put_break
 			return resp
 			end
 
@@ -76,14 +77,16 @@ module Hangman
 			vars_h[:guess_record] = []
 			the_word = vars_h[:word]
 			num_spaces = the_word.length
-			@word_obj.make_spaces(num_spaces)
+			spaces = @word_obj.make_spaces(num_spaces)
+#			puts spaces
 			puts "Are you ready?"
 			gets.chomp
-			game_play(vars_h)
+			GenMeans.put_break
+			game_play(vars_h,spaces)
 			end
 			
 
-		def game_play(h)
+		def game_play(h,spaces)
 			max_errors = h[:max_errors]
 			while h[:error_num] < max_errors + 1
 				h[:round] += 1
@@ -91,47 +94,65 @@ module Hangman
 				puts "We are on Round #{round} and have that."
 				the_word = h[:word]
 				num_spaces = the_word.length
+				guesses = h[:guess_record]
+				puts "You have so far guessed #{guesses.to_s}."
 				puts "What would you like to guess now?"
 				from_gg = get_guess
 				gg_class = from_gg.class
 				puts "DEBUG: Result from get_guess method was #{from_gg}, which happens to be of class #{gg_class}."
 				case gg_class.to_s
 					when "Fixnum"
+					puts "Oh, you'd like to save!? Okay!"
 					dest = h[:save_obj]
 					dest.saver(h)
+					puts "DEBUG: I'm in the game_play method.\nI just saved the shit, hopefully.\nNow, let's break."
+					break
 					when "String"
 					puts "DEBUG: Result from get_guess is #{from_gg} of class #{from_gg.class}."
 					h[:guess_record] << from_gg
 					end
 				lett_guess = h[:guess_record][-1]
 				puts "DEBUG: Guess is #{lett_guess} of class #{lett_guess.class}."	
-				if correct_guess?(the_word,lett_guess)
-					letter = correct_guess?(the_word,lett_guess)
+				puts "DEBUG: Right before correct_guess?, spaces is #{spaces}."
+				letter = correct_guess?(the_word,lett_guess)
+				puts "DEBUG: Right after correct_guess?, spaces is #{spaces}."
+				if letter
 					lett_sym = letter.to_sym
 					lett_freq = h[:lett_freq_h][lett_sym]
+					lett_place = h[:lett_i_hash][lett_sym]
 					puts "You correctly guessed #{lett_guess}."
 					puts "This letter appears #{lett_freq} times!"
+					puts "The letter goes in the #{lett_place} place(s)."
 					spaces =						@word_obj.make_spaces(num_spaces,"update", 
 							lett_guess)
 					puts "Still gotta watch your progress!"
-					puts h[:hanging]
+					h[:hanging].each {|meti| puts "\t#{meti}"}
 #					@word_obj.make_spaces(num_spaces, "update",lett_guess)
 					else
 					h[:error_num] += 1
 					error_num_for_show = h[:error_num]
 					h[:hanging][-1] = h[:rounds_array][error_num_for_show - 1]
 					h[:hanging] << "#{error_num_for_show}/#{max_errors}"
-					puts h[:hanging]
+					puts "No! Sorry! That was wrong! That was error #{error_num_for_show}."
+					h[:hanging].each {|meti| puts "\t#{meti}"}
 					puts spaces
 					end
-				check_game_over(h[:error_num],
-					h[:round],@spaces,the_word)
+				puts "DEBUG: Now about to run the check_game_over method!"
+				is_it_over = check_game_over(h[:error_num],
+					h[:round],spaces,the_word,h)
+				if is_it_over
+					puts "Bye."
+					break
+					else
+					puts "DEBUG: It ain't over yet, son!"
+					end
 				end
 			end
 
 			
 		def get_guess
 			resp = gets.downcase.chomp
+			GenMeans.put_break
 			puts "DEBUG: resp is #{resp} of class #{resp.class}."
 			want_save = resp.scan(/save/)[0]
 			puts "DEBUG: want_save is #{want_save} of class #{want_save.class}"
@@ -143,10 +164,13 @@ module Hangman
 				end
 			
 			puts "You are guessing \e[34m#{guess}\e[0m. If you want to change it, now is your last chance.\nJust hit the Return key to continue with the blue guess.\nMake your decision."
-			guess_new = gets.downcase.scan(/[a-z]{0,2}/)[0]
+			guess_new_resp = gets.strip.downcase.scan(/[a-z]{0,2}/)
+			GenMeans.put_break
+			guess_new = guess_new_resp[0]
 			puts "DEBUG: Your new guess is #{guess_new}."
-			if guess_new != nil && guess_new != "no"
-				guess = guess_new[0]
+			if guess_new_resp != [""] && guess_new != "no"
+				puts "DEBUG: Because guess_new is not nil nor 'no' and is instead #{guess_new_resp} of class #{guess_new_resp.class}, we are changing the value of guess. Guess will become #{guess_new} of class #{guess_new.class}."
+				guess = guess_new
 				end
 			puts "Great! So you guessed \e[36m#{guess}\e[0m which is of class #{guess.class}."
 			return guess
@@ -154,16 +178,31 @@ module Hangman
 		
 		def correct_guess?(word,lett)
 			puts "DEBUG: Yo. The word is #{word} of class #{word.class} and the letter is #{lett} of class #{lett.class}."
+			word.downcase!
 			if word.include? lett
 				return lett
 				else
 				return false
 				end
 			end
-
-
-
-
+		
+		def check_game_over(e_num, round, spaces, the_word, the_hash)
+			puts "DEBUG: I'm in the check_game_over method. At the beginning, spaces is #{spaces}."
+			adj_spaces = spaces.gsub(/\s/,'')
+			if e_num == max_rounds
+				puts "Sorry, you are dead. You made it to round #{round}, but now you have lost. Saving game and finishing now."
+				game_over(GenCons::LostOutcome,the_hash)
+				return true
+				elsif adj_spaces == the_word.downcase
+				puts "You got it! You guessed a #{the_word.length}-letter word in only #{round} rounds! You won! Game over! Saving and finishing."
+				game_over(GenCons::WinOutcome,the_hash)
+				puts "DEBUG: At the end, spaces is #{spaces}."
+				return true
+				else
+				puts "DEBUG: At the end, spaces is #{spaces}."
+				return false
+				end
+			end
 
 		def make_rounds_parts(max)
 			body_parts = 6
@@ -174,8 +213,11 @@ module Hangman
 			the_rounds_array = rounds_array.slice(0,max-1)
 			end
 		
-		def game_over(file,outcome)
-			save_obj.finish(file,outcome)
+		def game_over(outcome,final_hash)
+			puts "DEBUG: THE GAME_OVER FUNCTION IS BEING RUN."
+			dest = final_hash[:save_obj]
+			puts "DEBUG: We just set the destination to #{dest} which should be an object."
+			dest.finish(outcome,final_hash)
 			end
 			
 		end

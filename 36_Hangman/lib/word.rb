@@ -41,12 +41,19 @@ module Hangman
 				for i in 1..length
 					@spaces << "  _"
 					end
+				puts "DEBUG: Spaces is of length #{@spaces.length}."
 				puts @spaces
 				elsif goal == "update"
 				lett_sym = new_lett.to_sym
 				this_lett_i_array = @lett_i_hash[lett_sym]
 				this_lett_i_array.each do |i|
-					@spaces[3*(i+1)] = new_lett
+					puts "DEBUG: Spaces is #{@spaces} and of length #{@spaces.length}."
+					puts "DEBUG: Yo. i is #{i}."
+					spot = 3*(i+1) - 1
+					puts "DEBUG: Spot is #{spot}!"
+					current = @spaces[spot]
+					@spaces[spot] = new_lett
+					puts "DEBUG: I just put #{new_lett} in the #{spot} spot of spaces. That means the new letter will replace #{current}."
 					end
 				puts @spaces
 				end

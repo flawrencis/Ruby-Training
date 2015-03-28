@@ -2,6 +2,8 @@ module Hangman
 	
 	module GenCons
 		FinishPhrase = "FINISHED..!..BAMWAMKALMAZAM..!..FINISHED"
+		LostOutcome = "LOST"
+		WinOutcome = "WON"
 		end
 	module GenMeans
 		def self.put_break
