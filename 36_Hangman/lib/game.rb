@@ -8,10 +8,12 @@ module Hangman
 			time = Time.new
 			@player = Player.new
 			fold_obj = @player.folder_setup
-			resp = load_check(fold_obj)
+			resp = load_check_y(fold_obj)
+#			resp = load_check(fold_obj)
 			if resp
 				puts "DEBUG: Resp is #{resp} of class #{resp.class}"
-				loaded_vars_h = load_file(resp,fold_obj)
+				loaded_vars_h = load_file_y(resp,fold_obj)
+#				loaded_vars_h = load_file(resp,fold_obj)
 				puts "DEBUG: The variables loaded are in this hash.\n#{loaded_vars_h}"
 				game_play(loaded_vars_h)
 				return
@@ -34,6 +36,7 @@ module Hangman
 				lett_i_hash: lett_i_hash,
 				save_obj: save_obj,
 				rounds_array: rounds_array}
+			puts "DEBUG: Okay, we're starting the game with the game_start method since you didn't load anything."
 			game_start(start_vars_h)
 			end
 #	COULD USE A MERGE OR UPDATE METHOD TO PUT HASH VALUES IN GAME'S HASH.
@@ -46,6 +49,25 @@ module Hangman
 			puts "to finish or press Return for a new game."
 			resp = gets.chomp.scan(/\d/)[0]
 			GenMeans.put_break
+			return resp
+			end
+		
+		def load_check_y(fold_obj)
+			puts "Would you like to load a past, unfinished game?"
+			unfin_options = fold_obj.entries.select {|name|
+				name =~ /.*\.yml$/}
+#			puts unfin_options
+			Dir.chdir fold_obj.path do |d|
+				unfin_options.each do |option|
+					updated = File.mtime(option)
+					puts "#{option}, last updated at #{updated}"
+					end
+				end
+			puts "Give me the number of the one you want"
+			puts "to finish or press Return for a new game."
+			resp = gets.chomp.scan(/\d/)[0]
+			GenMeans.put_break
+			puts "DEBUG: resp is #{resp}."
 			return resp
 			end
 
@@ -71,11 +93,35 @@ module Hangman
 							end
 						end
 						puts "DEBUG: Did we do it??? Is the set set to #{set}??"
-						return set
+						set
+#						return set
 					end
-				return hsh
+				hsh
+#				return hsh
 				end
 			return h_sh
+			end
+
+		def load_file_y(resp,fold_obj)
+			unfin_options = fold_obj.entries.select {|name|
+				name =~ /.*\.yml$/}
+			load_name = unfin_options[resp.to_i - 1]
+			puts "DEBUG: load_name is #{load_name} of class #{load_name.class} because you gave the response of #{resp} of class #{resp.class}. That was changed to an integer and had a 1 subtracted from it. Then, the unfin_options array, which is #{unfin_options} of class #{unfin_options.class} had the #{resp.to_i - 1}th (of class #{(resp.to_i-1).class}) element set to load_name."
+			h_sh_y = Dir.chdir fold_obj.path do |d|
+				puts "DEBUG: Yo. d is #{d}, from the 'Dir.chdir fold_obj.path' thing where @fold_obj is #{fold_obj} and its path to which we are changing is #{fold_obj.path}!"
+				hsh_y = File.open(load_name,"r") do |f|
+					puts "DEBUG: Great. We just opened #{load_name} and are reading it and setting it to hsh_y."
+					YAML::load(f.read)
+					end
+				puts "DEBUG: hsh_y is #{hsh_y} and will be set to h_sh_y."
+				hsh_y
+				end
+			puts "DEBUG: h_sh_y is #{h_sh_y}."
+			h_sh_y[:save_obj].fold_obj = fold_obj
+			h_sh_y[:save_obj].open_stream(load_name)
+			#setting hash from h_sh_y, which is yaml object
+			hash = h_sh_y
+			
 			end
 			
 			
@@ -92,16 +138,18 @@ module Hangman
 			vars_h[:guess_record] = []
 			the_word = vars_h[:word]
 			num_spaces = the_word.length
-			vars_h[:spaces] = @word_obj.make_spaces(num_spaces)
+			vars_h[:spaces] = vars_h[:word_obj].make_spaces(num_spaces)
 #			puts spaces
 			puts "Are you ready?"
 			gets.chomp
 			GenMeans.put_break
-			game_play(vars_h)
+			game_play(vars_h,true)
+			
 			end
 			
 
-		def game_play(h)
+		def game_play(h,new=false)
+			puts h[:spaces] unless new
 			max_errors = h[:max_errors]
 			spaces = h[:spaces]
 			err_num_for_debug = h[:error_num]
@@ -123,7 +171,8 @@ module Hangman
 					puts "Oh, you'd like to save!? Okay!"
 					h[:spaces] = spaces
 					dest = h[:save_obj]
-					dest.saver(h)
+#					dest.saver(h)
+					dest.saver_y(h)
 					puts "DEBUG: I'm in the game_play method.\nI just saved the shit, hopefully.\nNow, let's break."
 					break
 					when "String"
@@ -142,7 +191,7 @@ module Hangman
 					puts "You correctly guessed #{lett_guess}."
 					puts "This letter appears #{lett_freq} times!"
 					puts "The letter goes in the #{lett_place} place(s)."
-					spaces =						@word_obj.make_spaces(num_spaces,"update", 
+					spaces =						h[:word_obj].make_spaces(num_spaces,"update", 
 							lett_guess)
 					puts "Still gotta watch your progress!"
 					h[:hanging].each {|meti| puts "\t#{meti}"}

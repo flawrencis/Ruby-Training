@@ -36,7 +36,7 @@ module Hangman
 			return [@lett_i_hash,lett_freq_hash]
 			end
 
-		def make_spaces(length,goal="new",new_lett = nil)
+		def make_spaces(length,goal="new", new_lett = nil)
 			if goal == "new"
 				@spaces = String.new
 				for i in 1..length

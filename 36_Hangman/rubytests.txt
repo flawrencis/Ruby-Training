@@ -34,3 +34,20 @@ end
 
 Crazy lesson: var ends up tweaked in mth.
 ----------------
+#WORKS
+class Person
+attr_reader :height #this is the key
+
+def initialize
+age = 30
+@height = 70
+end
+
+def growth
+future_height = self.height * 2 #to this
+puts "This person will be #{future_height}."
+end
+end
+
+sean = Person.new
+sean.growth
