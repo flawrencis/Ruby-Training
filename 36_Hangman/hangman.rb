@@ -17,5 +17,6 @@ module Hangman
 		end
 	end
 
+#Do I need to use single quotes instead of double??? Would I be able to?? Would that solve my problems??
 
 
