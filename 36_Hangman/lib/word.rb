@@ -1,6 +1,7 @@
 module Hangman
 	class Word
-		attr_accessor :the_word, :lett_i_hash, :spaces
+		
+		attr_reader :the_word
 		def initialize 
 			puts "Choosing a word between 5 and 12 characters."
 			dictionary = File.open "./lib/dict.txt"

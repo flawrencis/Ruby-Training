@@ -1,7 +1,6 @@
 module Hangman
 	class Player
 		
-		attr_reader :user_name
 		def initialize
 			name_array = get_name
 			@user_name = name_array[0]

@@ -1,7 +1,6 @@
 module Hangman
 	class Game
 
-		attr_reader :the_word, :player, :round, :max_rounds, :error_num
 		def initialize(debug_version)
 			puts "DEBUG: This is \e[32m#{debug_version}\e[0m!!!"
 			puts "Welcome to Hangman! At each turn, you can" 
@@ -11,11 +10,9 @@ module Hangman
 			fold_obj = @player.folder_setup
 			resp = load_check(fold_obj)
 			if resp
-				puts "DEBUG: Resp is #{resp}"
-				puts "of class #{resp.class}"
+				puts "DEBUG: Resp is #{resp} of class #{resp.class}"
 				loaded_vars_h = load_file(resp,fold_obj)
-				puts "DEBUG: The variables loaded are in"
-				puts "this hash.\n#{loaded_vars_h}"
+				puts "DEBUG: The variables loaded are in this hash.\n#{loaded_vars_h}"
 				game_play(loaded_vars_h)
 				return
 				end
@@ -41,8 +38,7 @@ module Hangman
 			end
 #	COULD USE A MERGE OR UPDATE METHOD TO PUT HASH VALUES IN GAME'S HASH.
 		def load_check(fold_obj)
-			puts "Would you like to load a past, "
-			puts "unfinished game?"
+			puts "Would you like to load a past, unfinished game?"
 			unfin_options = fold_obj.entries.select {|name|
 				name[0] =~ /[^wlWL]/}
 			puts unfin_options
@@ -57,10 +53,29 @@ module Hangman
 		def load_file(resp,fold_obj)
 			unfin_options = fold_obj.entries.select {|name|
 				name[0] =~ /[^wlWL]/}
-			load_name = unfin_options[resp-1]
-			hsh = File.open(load_name,"r") do |f|
-				f.readlines #CAN'T DO THIS ISH UNTIL I ACTUALL KNOW HOW THIS ISH IS BEING WRITTEN INTO THE FILE.
+			load_name = unfin_options[resp.to_i - 1]
+			h_sh = Dir.chdir fold_obj.path do |d|
+				puts "DEBUG: Yo. d is #{d}, from the 'Dir.chdir fold_obj.path' thing where @fold_obj is #{fold_obj} and its path to which we are changing is #{fold_obj.path}!"
+				hsh = File.open(load_name,"r") do |f|
+					lines = f.readlines
+					set = Hash.new
+					lines.each_with_index do |line,linum|
+						puts "DEBUG: We are working with the #{linum} line, which reads '#{line.chomp}'"
+						if line[0] == ":"
+							puts "DEBUG: Oh, nice! The first thing of this line is a ':'! In all, the line is #{line.chomp}, as I just said."
+							linee = line.chomp.split("")
+							lineee = linee.shift
+							lineee = linee.join
+							symb = lineee.to_sym
+							set[symb] = lines[linum+1]
+							end
+						end
+						puts "DEBUG: Did we do it??? Is the set set to #{set}??"
+						return set
+					end
+				return hsh
 				end
+			return h_sh
 			end
 			
 			
@@ -77,17 +92,20 @@ module Hangman
 			vars_h[:guess_record] = []
 			the_word = vars_h[:word]
 			num_spaces = the_word.length
-			spaces = @word_obj.make_spaces(num_spaces)
+			vars_h[:spaces] = @word_obj.make_spaces(num_spaces)
 #			puts spaces
 			puts "Are you ready?"
 			gets.chomp
 			GenMeans.put_break
-			game_play(vars_h,spaces)
+			game_play(vars_h)
 			end
 			
 
-		def game_play(h,spaces)
+		def game_play(h)
 			max_errors = h[:max_errors]
+			spaces = h[:spaces]
+			err_num_for_debug = h[:error_num]
+			puts "DEBUG: Max_errors is #{max_errors} of class #{max_errors.class}.\nDEBUG: Error num is #{err_num_for_debug} of class #{err_num_for_debug.class}."
 			while h[:error_num] < max_errors + 1
 				h[:round] += 1
 				round = h[:round]
@@ -103,6 +121,7 @@ module Hangman
 				case gg_class.to_s
 					when "Fixnum"
 					puts "Oh, you'd like to save!? Okay!"
+					h[:spaces] = spaces
 					dest = h[:save_obj]
 					dest.saver(h)
 					puts "DEBUG: I'm in the game_play method.\nI just saved the shit, hopefully.\nNow, let's break."
@@ -137,9 +156,9 @@ module Hangman
 					h[:hanging].each {|meti| puts "\t#{meti}"}
 					puts spaces
 					end
+				h[:spaces] = spaces
 				puts "DEBUG: Now about to run the check_game_over method!"
-				is_it_over = check_game_over(h[:error_num],
-					h[:round],spaces,the_word,h)
+				is_it_over = check_game_over(spaces,the_word,h)
 				if is_it_over
 					puts "Bye."
 					break
@@ -186,9 +205,12 @@ module Hangman
 				end
 			end
 		
-		def check_game_over(e_num, round, spaces, the_word, the_hash)
+		def check_game_over(spaces, the_word, the_hash)
 			puts "DEBUG: I'm in the check_game_over method. At the beginning, spaces is #{spaces}."
 			adj_spaces = spaces.gsub(/\s/,'')
+			e_num = the_hash[:error_num]
+			max_rounds = the_hash[:max_errors]
+			round = the_hash[:round]
 			if e_num == max_rounds
 				puts "Sorry, you are dead. You made it to round #{round}, but now you have lost. Saving game and finishing now."
 				game_over(GenCons::LostOutcome,the_hash)
@@ -207,8 +229,7 @@ module Hangman
 		def make_rounds_parts(max)
 			body_parts = 6
 			galley_parts = 3
-			rounds_array = ["head", "rope", "torso", "beam", "base", 
-				"right_arm", "left_arm","right_leg", "left_leg"]
+			rounds_array = ["head", "rope", "torso", "beam", "base", "right_arm", "left_arm","right_leg", "left_leg"]
 			puts "Whoa, I can't handle this game's setting for max errors!" if max > rounds_array.length
 			the_rounds_array = rounds_array.slice(0,max-1)
 			end

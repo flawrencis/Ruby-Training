@@ -1,6 +1,5 @@
 module Hangman
 	class Save
-		attr_accessor :fold_obj, :record_file
 		def initialize(time,fold_obj)
 			@fold_obj = fold_obj
 			yr = time.year.to_s.slice(2,3)
@@ -42,7 +41,13 @@ module Hangman
 				puts "DEBUG: Yo. d is #{d}, from the 'Dir.chdir @fold_obj.path' thing where @fold_obj is #{@fold_obj} and its path to which we are changing is #{@fold_obj.path}!"
 				File.open(@record_file,"a") do |f|
 					puts "DEBUG: YO. f is #{f}, from the 'File.open(file,\"a\")' thing where file is #{@record_file}!!\nDEBUG.. So let's write some damn details!"
-					f.write details
+					details.each do |o|
+						the_sym = o[0].inspect
+						the_value = o[1].inspect
+						f.puts the_sym
+						f.puts the_value
+						f.puts ""
+						end
 					end
 				end
 			end
